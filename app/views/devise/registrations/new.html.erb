@@ -57,6 +57,9 @@
       padding-bottom: 0px;
       padding-top: 12px;
     }
+    .label{
+      color: white;
+    }
   </style>
     <h1 class="text-center">limpp</h1>
     <div class="d-flex justify-content-center mt-5">
@@ -80,23 +83,23 @@
                     required: true,
                     label: "Digite seu email",
                     autofocus: true,
-                    input_html: { autocomplete: "email" }%>
+                    input_html: { autocomplete: "email", class: 'rounded-pill' }%>
         <%= f.input :password,
                     required: true,
                     label: "Crie uma senha",
                     hint: ("mínimo de #{@minimum_password_length} caracteres" if @minimum_password_length),
-                    input_html: { autocomplete: "new-password" } %>
+                    input_html: { autocomplete: "new-password", class: 'rounded-pill' } %>
         <%= f.input :password_confirmation,
                     label: "Confirme sua senha",
                     required: true,
-                    input_html: { autocomplete: "new-password" } %>
+                    input_html: { autocomplete: "new-password", class: 'rounded-pill' } %>
       </div>
 
-      <div class="form-actions">
+      <div class="form-actions mt-2 d-flex justify-content-end">
         <%= f.button :submit, "Cadastrar", class:"btn btn-cadastrar" %>
       </div>
     <% end %>
-      <div class="mt-5">
+      <div class="mt-2">
       <%= link_to root_path, class:"btn btn-inicio" do %>
         <figure class="d-flex align-items-center">
            <%= image_tag "inicio.png" %><figcaption class="ml-2 mt-1">Início</figcaption>

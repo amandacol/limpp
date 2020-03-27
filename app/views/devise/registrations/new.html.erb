@@ -1,5 +1,26 @@
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap" rel="stylesheet">
 <div class="container-fluid mt-5">
-    <h2 class="text-center">limpp</h2>
+  <style>
+    body{
+      background-color: #8F89DD;
+    }
+    h1{
+      font-family: 'Quicksand', sans-serif;
+      color: white;
+    }
+    p{
+      color: white;
+    }
+  </style>
+    <h1 class="text-center">limpp</h1>
+    <div class="d-flex justify-content-center">
+    <% unless current_user %>
+      <%= link_to '<i class="fab fa-facebook-f">        Entrar com o Facebook</i>'.html_safe, user_facebook_omniauth_authorize_path, class: "btn btn-primary btn-lg rounded-pill" %>
+    <% else %>
+  <%= current_user[:name] %>
+  <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "ownbutton" %>
+<% end %>
+    </div>
     <p class="text-center">ou preencha abaixo:</p>
 
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>

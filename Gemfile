@@ -7,6 +7,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'pg', '~> 0.21'
 gem 'puma'
 gem 'rails', '5.2.4.1'
+gem 'figaro'
 gem 'redis'
 
 gem 'autoprefixer-rails'
@@ -16,6 +17,7 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'pundit'
+gem 'omniauth-facebook'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

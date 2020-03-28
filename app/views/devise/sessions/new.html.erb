@@ -60,6 +60,11 @@
     .label{
       color: white;
     }
+    .forgot{
+      text-decoration: underline;
+      font-family: 'Montserrat', sans-serif;
+      color:white;
+    }
   </style>
 <h1 class="text-center">limpp</h1>
 <div class="d-flex justify-content-center mt-4">
@@ -81,6 +86,7 @@
   </div>
 
   <div class="form-actions mt-2 d-flex justify-content-end">
+    <%=    link_to 'Esqueceu sua senha?', new_user_password_path, class: "forgot mt-3 mr-3" %>
     <%= f.button :submit, "Log in", class:"btn btn-cadastrar" %>
   </div>
 <% end %>
@@ -94,5 +100,6 @@
   <div class="d-flex justify-content-center mt-2">
         <%=    link_to 'Não tem login ainda? Clique aqui!', new_user_registration_path, class: "btn btn-nologin" %>
   </div>
-
-<%= render "devise/shared/links" %>
+  <div class="d-flex justify-content-center mt-2">
+        <%=    link_to '<i class="fab fa-facebook-f"></i>  Entrar com o Facebook'.html_safe, user_facebook_omniauth_authorize_path, class: "btn btn-limpp" %>
+  </div>

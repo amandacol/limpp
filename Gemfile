@@ -1,8 +1,6 @@
 source 'https://rubygems.org'
 ruby '2.6.5'
 
-gem 'dotenv-rails', groups: [:development, :test]
-
 gem 'bootsnap', require: false
 gem 'devise'
 gem 'jbuilder', '~> 2.0'
@@ -19,6 +17,7 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'pundit'
 gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

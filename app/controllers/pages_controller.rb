@@ -3,4 +3,6 @@ class PagesController < ApplicationController
   include Pundit
   def home
   end
+  def first
+  end
 end

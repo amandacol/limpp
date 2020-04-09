@@ -22,9 +22,8 @@ class ItemsController < ApplicationController
     if params[:query].present?
       @items = policy_scope(Item).search_by_name_and_ingredient(params[:query])
     else
-      @items = Item.all
+      @items = policy_scope(Item)
     end
-    authorize @item
   end
 
   def edit

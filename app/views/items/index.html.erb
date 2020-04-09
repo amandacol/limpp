@@ -1,1 +1,30 @@
-<h1>teste</h1>
+<div class="container-fluid mt-5">
+  <style>
+    .lupa{
+      width: 30px;
+    }
+    .font{
+      color: #333132;
+      font-size: 14px;
+    }
+  </style>
+  <form>
+    <div class="d-flex justify-content-center">
+     <div class="input-group mb-3">
+        <%= form_tag items_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control rounded-pill shadow-sm p-3 bg-white rounded",
+          placeholder: "Busque por um produto ou ingrediente"
+        %>
+      <%= image_submit_tag("lupa.svg", class: 'lupa ml-3') %>
+      <% end %>
+     </div>
+    </div>
+   </form>
+   <div class="card shadow-sm bg-white mt-3" style="width: 21rem; border-radius: 8px; ">
+     <div class="card-body">
+       <p class="card-text font"><%= @name %>Nome do produto</p>
+     </div>
+   </div>
+</div>

@@ -7,7 +7,20 @@
       color: #333132;
       font-size: 14px;
     }
+    .btn-cadastrar{
+      color: white;
+      background-color: #333132;
+      border-radius: 30px;
+      padding: 0.3rem 1rem;
+      font-weight: bold;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      box-shadow: 0px 2px 2px #33313261;
+    }
   </style>
+  <% if policy(Item).create? %>
+    <%= link_to "Adicione um novo item", new_item_path, class: "btn btn-cadastrar mt-3"%>
+  <% end %>
   <form>
     <div class="d-flex justify-content-center">
      <div class="input-group mb-3">

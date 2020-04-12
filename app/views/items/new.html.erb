@@ -1,0 +1,20 @@
+<style>
+  h1{
+      font-family: 'Quicksand', sans-serif;
+      color: #707070;
+      font-size: 30px;
+    }
+    .font2{
+      color: #8F89DD;
+    }
+</style>
+<div class="container mt-3">
+
+  <div class="text-center mb-3">
+    <h1 class="text-center">Adicione um novo item</h1>
+    <%= link_to "Voltar para lista", items_path, class:'font2' %>
+  </div>
+
+  <%= render 'form', item: @item %>
+
+</div>

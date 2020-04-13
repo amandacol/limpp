@@ -41,10 +41,16 @@
      </div>
     </div>
    </form>
+   <% @items.each do |item| %>
    <div class="card shadow-sm bg-white mt-3" style="width: 20rem; border-radius: 8px; ">
      <div class="card-body d-flex justify-content-around">
+       <% if item.photo.attached? %>
+        <%= cl_image_tag item.photo.key, width: 200, height: 200, crop: :fill %>
+       <% else %>
        <img src="https://images.unsplash.com/photo-1503236823255-94609f598e71?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" class="card-photo"/>
-       <p class="card-text font">Nome do produto</p>
+       <% end %>
+       <p class="card-text font"><%= link_to item.name, item_path(item)%></p>
      </div>
    </div>
+   <% end %>
 </div>

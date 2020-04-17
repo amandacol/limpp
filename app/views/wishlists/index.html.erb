@@ -1,0 +1,27 @@
+<div class="container-fluid mt-5">
+  <style>
+    .font{
+      color: #707070;
+      font-size: 14px;
+    }
+    .card-photo{
+      box-shadow: 0px 2px 2px #33313261;
+      border-radius: 8px;
+      height: 70px;
+      width: 40%;
+    }
+  </style>
+   <div class="card-body d-flex justify-content-around">
+   <% @user_wishlists.each do |wishlist| %>
+    <div class="card shadow-sm bg-white mt-3" style="width: 20rem; border-radius: 8px; ">
+       <% if wishlist.item.photo.attached? %>
+        <%= cl_image_tag wishlist.item.photo.key, width: 200, height: 200, crop: :fill %>
+       <% else %>
+       <img src="https://images.unsplash.com/photo-1503236823255-94609f598e71?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" class="card-photo"/>
+       <% end %>
+       <p class="card-text font"><%= link_to wishlist.item.name, item_path(wishlist.item)%></p>
+    </div>
+   </div>
+   <%= link_to '<i class="far fa-trash-alt ml-2"></i>'.html_safe, item_wishlist_path(wishlist.item.id, wishlist.id), method: :delete, data: { confirm: 'Tem certeza?' }%></p>
+   <% end %>
+</div>

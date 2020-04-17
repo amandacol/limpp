@@ -18,11 +18,16 @@ class ItemsController < ApplicationController
   end
 
   def index
+    @wishlist = Wishlist.new
     if params[:query].present?
       @items = policy_scope(Item).search_by_name_and_ingredient(params[:query])
     else
       @items = policy_scope(Item)
     end
+  end
+
+  def show
+    @wishlist = Wishlist.new
   end
 
   def edit

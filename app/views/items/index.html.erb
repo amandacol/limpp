@@ -50,6 +50,11 @@
        <img src="https://images.unsplash.com/photo-1503236823255-94609f598e71?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" class="card-photo"/>
        <% end %>
        <p class="card-text font"><%= link_to item.name, item_path(item)%></p>
+         <div class="d-flex justify-content-end align-items-end">
+          <%= simple_form_for [item, Wishlist.new] do |s|  %>
+            <%= image_submit_tag("heart.png", class: 'lupa ml-2') %>
+          <% end %>
+         </div>
      </div>
    </div>
    <% end %>

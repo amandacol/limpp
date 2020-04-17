@@ -15,8 +15,13 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-        <li class="nav-item active">
+        <li class="nav-item active mt-2">
           <%= link_to "Home", root_path, class: "nav-link font" %>
+        </li>
+        <li class="nav-item active  mt-1">
+          <%= link_to wishlists_path, class:"mr-3" do %>
+          <%= image_tag "heart.png" %>
+          <% end %>
         </li>
         <li class="nav-item dropdown">
           <%= image_tag "usuario.svg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>

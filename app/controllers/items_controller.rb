@@ -28,6 +28,8 @@ class ItemsController < ApplicationController
 
   def show
     @wishlist = Wishlist.new
+    @reviews = @item.reviews
+    @review = Review.new
   end
 
   def edit

@@ -4,4 +4,11 @@ class ReviewPolicy < ApplicationPolicy
       scope.all
     end
   end
+  def index?
+    true
+  end
+
+  def create?
+    record.item.user != user
+  end
 end

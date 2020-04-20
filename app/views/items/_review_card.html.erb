@@ -1,0 +1,8 @@
+<div class="text-left row">
+  <div class="col-md-12">
+    <%= (1..review.stars.to_i).map {|_star| '<i class="fas fa-star"></i>' }.join.html_safe %>
+  </div>
+  <div class="col-md-12">
+    <%= review.buyagain ? "Sim" : "Não" %>
+  </div>
+</div>

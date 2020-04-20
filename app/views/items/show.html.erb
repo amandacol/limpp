@@ -4,6 +4,16 @@
       color: #707070;
       font-size: 14px;
     }
+    .btn-cadastrar{
+      color: white;
+      background-color: #333132;
+      border-radius: 30px;
+      padding: 0.3rem 1rem;
+      font-weight: bold;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      box-shadow: 0px 2px 2px #33313261;
+    }
   </style>
   <div class="card shadow-sm bg-white mt-3" style="width: 20rem; border-radius: 8px; ">
      <div class="card-body d-flex justify-content-around">
@@ -19,5 +29,35 @@
       <p class="mr-4"><%=link_to '<i class="far fa-edit"></i> Edit'.html_safe, edit_item_path(@item.id)%></p>
       <p class="ml-4"><%= link_to '<i class="far fa-trash-alt"></i> Delete'.html_safe, item_path(@item.id), method: :delete, data: { confirm: 'Tem certeza?' }%> </p>
   </div>
+  <% @reviews.last&.tap do |review| %>
+    <%= render "review_card", review: review %>
+  <% end %>
+
+  <% if current_user != @item.user %>
+    <%= form_for([@item, @review]) do |f| %>
+      <% if @review.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
+          <ul>
+            <% @review.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <div class="field">
+        <%= f.label :buyagain do %><br>
+        <%= f.radio_button :buyagain, 1 %>Sim<br>
+        <%= f.radio_button :buyagain, 0 %>Não<br>
+        <% end  %>
+      </div>
+      <div class="fas fa-star">
+        <%= f.select :stars, 1..5 %><br>
+      </div>
+      <div class="actions">
+        <%= f.submit 'Create Review', :class => "btn btn-cadastrar" %>
+      </div>
+    <% end %>
+  <% end %>
   <p class="font">Critérios de avaliação limpp</p>
 </div>

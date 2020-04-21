@@ -13,26 +13,42 @@
       color: #33D89E;
       background-color: white;
       border-radius: 30px;
-      padding: 0.5rem 2rem;
+      padding: 0.5rem 4rem;
       font-weight: bold;
       font-family: 'Montserrat', sans-serif;
       font-size: 15px;
+    }
+    .background{
+      background-color: #B1ADE7;
+      border-radius: 30px;
     }
     p{
       color: white;
       font-weight: bold;
       font-family: 'Montserrat', sans-serif;
     }
-    .btn-limpp {
+    .btn-face {
       color: white;
       background-color: #3A10AA;
       border-radius: 30px;
-      padding: 0.5rem 2rem;
+      padding: 0.5rem 1rem;
       font-weight: bold;
       font-family: 'Montserrat', sans-serif;
       font-size: 15px;
     }
-    .btn-limpp:hover {
+    .btn-face:hover {
+      box-shadow: 0px 0px 0px rgba(0, 0, 0, 0) !important;
+    }
+    .btn-google {
+      color: white;
+      background-color: #BF2D04;
+      border-radius: 30px;
+      padding: 0.5rem 1rem;
+      font-weight: bold;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 15px;
+    }
+    .btn-google:hover {
       box-shadow: 0px 0px 0px rgba(0, 0, 0, 0) !important;
     }
     i {
@@ -57,42 +73,36 @@
       padding-bottom: 0px;
       padding-top: 12px;
     }
-    .label{
+    .position{
+      margin-bottom: -18px;
+    }
+    .simple_form label {
       color: white;
+      font-family: 'Montserrat', sans-serif;
     }
   </style>
     <h1 class="text-center">limpp</h1>
-    <div class="d-flex justify-content-center mt-5">
-        <%=    link_to 'Já tenho login', user_session_path, class: "btn btn-login" %>
+    <div class="position d-flex justify-content-center mt-4">
+      <%= image_tag "usuario2.svg" %>
     </div>
-    <% unless current_user %>
-      <%=    link_to '<i class="fab fa-facebook-f"></i>  Entrar com o Facebook'.html_safe, user_facebook_omniauth_authorize_path, class: "btn btn-limpp d-flex justify-content-center mt-3" %>
-      <div>
-        <%= link_to '<i class="fab fa-google mt-1"></i>  Entrar com o Google'.html_safe, user_google_oauth2_omniauth_authorize_path, class: "btn btn-limpp d-flex justify-content-center mt-3" %>
-      </div>
-    <% else %>
-  <%= current_user[:name] %>
-  <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-limpp" %>
-<% end %>
-    </div>
-    <p class="text-center mt-4">ou preencha abaixo:</p>
-
+    <div class="background p-4">
+      <p class="text-center">Preencha o cadastro abaixo:</p>
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= f.error_notification %>
 
       <div class="form-inputs ml-3 mr-3">
         <%= f.input :email,
                     required: true,
-                    label: "Digite seu email",
+                    label: "Seu email",
                     autofocus: true,
                     input_html: { autocomplete: "email", class: 'rounded-pill' }%>
         <%= f.input :password,
                     required: true,
                     label: "Crie uma senha",
-                    hint: ("mínimo de #{@minimum_password_length} caracteres" if @minimum_password_length),
+                    hint: ("mínimo de #{@minimum_password_length} dígitos" if @minimum_password_length),
                     input_html: { autocomplete: "new-password", class: 'rounded-pill' } %>
         <%= f.input :password_confirmation,
-                    label: "Confirme sua senha",
+                    label: "Confirme a senha",
                     required: true,
                     input_html: { autocomplete: "new-password", class: 'rounded-pill' } %>
       </div>
@@ -101,6 +111,20 @@
         <%= f.button :submit, "Cadastrar", class:"btn btn-cadastrar" %>
       </div>
     <% end %>
+    </div>
+    <% unless current_user %>
+        <%= link_to '<i class="fab fa-google mt-1"></i>  Entrar com o Google'.html_safe, user_google_oauth2_omniauth_authorize_path, class: "btn btn-google d-flex justify-content-center mt-3 mr-5 ml-5" %>
+      <div>
+        <%= link_to '<i class="fab fa-facebook-f"></i>  Entrar com o Facebook'.html_safe, user_facebook_omniauth_authorize_path, class: "btn btn-face d-flex justify-content-center mt-3 mr-5 ml-5" %>
+      </div>
+    <% else %>
+  <%= current_user[:name] %>
+  <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-limpp" %>
+<% end %>
+    <div class="d-flex justify-content-center mt-3">
+        <%=    link_to 'Já possuo login', user_session_path, class: "btn btn-login" %>
+    </div>
+
       <div class="mt-2">
       <%= link_to root_path, class:"btn btn-inicio" do %>
         <figure class="d-flex align-items-center">

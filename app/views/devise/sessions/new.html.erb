@@ -100,7 +100,10 @@
                     label: "Sua senha",
                     required: false,
                     input_html: { autocomplete: "current-password", class: 'rounded-pill' } %>
-        <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+        <% if devise_mapping.rememberable? %>
+        <%= f.check_box :remember_me %>
+        <%= f.label :remember_me, "Lembrar login", class: 'deviselabels' %>
+        <% end %>
       </div>
 
       <div class="form-actions mt-2">

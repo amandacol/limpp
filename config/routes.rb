@@ -12,4 +12,5 @@ Rails.application.routes.draw do
     resources :reviews
   end
   resources :wishlists, only: [:index]
+  resources :newitems
 end

@@ -20,10 +20,8 @@
     }
 </style>
 <div class="container-fluid mt-4">
-  <div class="d-flex justify-content-center"><%= image_tag "recebido.png" %></div>
-    <h4 class="text-center mt-5">Recebemos sua sugestão!</h4>
-    <p class="text-center mt-5">O produto sobre o qual você deseja se informar está sob análise da nossa equipe técnica.</p>
-    <div class="d-flex justify-content-center mt-">
-        <%=    link_to 'Ok', root_path, class: "btn btn-avaliacao mt-4" %>
-    </div>
+  <div class="d-flex justify-content-center"><%= image_tag "novoitem.png" %></div>
+    <h4 class="text-center mt-5">Envie o rótulo para gente!</h4>
+    <p class="text-center mt-5">As fotos devem ser de rótulos de verdade, de produtos Industrializados de cosméticos e higiene pessoal. E estarem visíveis.</p>
+    <%= render 'form', newitem: @newitem %>
 </div>

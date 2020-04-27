@@ -20,10 +20,12 @@
     }
 </style>
 <div class="container-fluid mt-4">
-  <div class="d-flex justify-content-center"><%= image_tag "recebido.png" %></div>
-    <h4 class="text-center mt-5">Recebemos sua sugestão!</h4>
-    <p class="text-center mt-5">O produto sobre o qual você deseja se informar está sob análise da nossa equipe técnica.</p>
-    <div class="d-flex justify-content-center mt-">
-        <%=    link_to 'Ok', root_path, class: "btn btn-avaliacao mt-4" %>
+  <div class="d-flex justify-content-center"><%= image_tag "codigodebarra.png" %></div>
+    <h4 class="text-center mt-5">Ainda não avaliamos este produto.</h4>
+    <p class="text-center mt-5">Para sugerir a avaliação deste produto, clique no botão abaixo e envie as fotos do rótulo para nossa equipe.</p>
+    <div class="d-flex justify-content-center">
+    <% if policy(Newitem).create? %>
+        <%= link_to "Sugerir avaliação", new_newitem_path, class: "btn btn-avaliacao mt-4"%>
+    <% end %>
     </div>
 </div>

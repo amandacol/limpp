@@ -35,35 +35,26 @@
     <form>
     <div class="d-flex justify-content-center">
      <div class="input-group mb-3">
-        <%= form_tag items_path, method: :get do %>
+      <%= form_tag items_path, method: :get do %>
         <%= text_field_tag :query,
           params[:query],
           class: "form-control rounded-pill shadow-sm p-3 bg-white rounded",
           placeholder: "Busque por um produto ou ingrediente"
         %>
-      <%= image_submit_tag("lupa.svg", class: 'lupa ml-3') %>
+        <%= image_submit_tag("lupa.svg", class: 'lupa ml-3') %>
       <% end %>
      </div>
     </div>
    </form>
   <div class="d-flex justify-content-around mt-5">
-    <div>
-    <%= image_tag "hair.svg", class:'hair ml-4' %>
-    <p class="font mt-1">Cabelos</p>
-    </div>
-    <div>
-    <%= image_tag "personal.svg", class:'personal ml-3' %>
-    <p class="font ml-3">Higiene Pessoal</p>
-    </div>
-    <div>
-    <%= image_tag "skin.svg", class:'skin ml-4' %>
-    <p class="font mt-1 ml-1">Cuidados com a Pele</p>
-    </div>
-    <div>
-    <%= image_tag "make.svg", class:'make ml-4' %>
-    <p class="font mt-1">Maquiagem</p>
-    </div>
-  </div>
+    <nav>
+      <div class="nav nav-tabs ml-5" id="nav-tab" role="tablist">
+        <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true"><%= image_tag "hair.svg", class:'hair ml-4' %>  Cabelos</a>
+        <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false"><%= image_tag "personal.svg", class:'personal ml-3' %>  Higiene Pessoal</a>
+        <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false"><%= image_tag "skin.svg", class:'skin ml-4' %> Cuidados com a Pele</a>
+        <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false"><%= image_tag "make.svg", class:'make ml-4' %> Maquiagem</a>
+      </div>
+    </nav>
   <div class="d-flex justify-content-center mt-5">
     <%= image_tag "Posts-limpp.png", class:'posts' %>
   </div>

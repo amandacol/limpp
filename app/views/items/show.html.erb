@@ -5,8 +5,8 @@
       font-size: 14px;
     }
     .desconto{
-      width: 35px;
-      height: 35px;
+      width: 40px;
+      height: 40px;
     }
     .btn-cadastrar{
       color: white;
@@ -52,7 +52,7 @@
           <% @reviews.last&.tap do |review| %>
             <%= render "review_card", review: review %>
           <% end %>
-         <%= image_tag("desconto.png", class: 'desconto mb-1') %>
+         <%= image_tag("desconto2.png", class: 'desconto') %>
          <div>
           <%= simple_form_for [@item, Wishlist.new] do |s|  %>
             <%= image_submit_tag("heart.png", class: 'lupa ml-2') %>

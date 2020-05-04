@@ -22,8 +22,15 @@
 
       <%= simple_form_for @item do |f| %>
 
-        <%= f.input :name %>
-        <%= f.input :ingredient %>
+        <%= f.input :name,
+                    required: true,
+                    label: "Nome completo do produto" %>
+        <%= f.input :ingredient,
+                    label: "Ingrediente tóxico" %>
+        <%= f.input :certification,
+                    label: "Certificações" %>
+        <%= f.input :coupon,
+                    label: "Cupom de desconto" %>
         <%= f.input :photo,
                      required: true,
                      autofocus: true,

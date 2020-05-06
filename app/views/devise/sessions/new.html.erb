@@ -117,4 +117,11 @@
   </div>
         <%= link_to '<i class="fab fa-google mt-1"></i>  Entrar com Google'.html_safe, user_google_oauth2_omniauth_authorize_path, class: "btn btn-google d-flex justify-content-center mt-3" %>
         <%=    link_to '<i class="fab fa-facebook-f"></i>  Entrar com Facebook'.html_safe, user_facebook_omniauth_authorize_path, class: "btn btn-face d-flex justify-content-center mt-3" %>
+<div class="mt-2">
+      <%= link_to root_path, class:"btn btn-inicio" do %>
+        <figure class="d-flex align-items-center">
+           <%= image_tag "inicio.png" %><figcaption class="ml-2 mt-1">Início</figcaption>
+        </figure>
+      <% end %>
+      </div>
 </div>

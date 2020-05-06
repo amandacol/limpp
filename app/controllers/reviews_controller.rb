@@ -15,7 +15,6 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    byebug
     @review = Review.new(review_params)
     @review.user = current_user
     @review.item = @item

@@ -1,18 +1,64 @@
-<h2>Esqueceu sua senha?</h2>
+<style>
+  .background{
+      background-color: #67D89E;
+      border-radius: 30px;
+      margin: 15px;
+    }
+    .title{
+      font-family: 'Montserrat', sans-serif;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+    }
+    .btn-cadastrar{
+      color: white;
+      background-color: #333132;
+      border-radius: 30px;
+      padding: 0.5rem 2rem;
+      font-weight: bold;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      box-shadow: 0px 2px 2px #33313261;
+    }
+    .simple_form label {
+      color: white;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: bold;
+      font-size: 15px;
+    }
+    .btn-login{
+      background-color: #67D89E;
+      color: white;
+      border-radius: 30px;
+      font-weight: bold;
+      padding: 0.5rem 2rem;
+    }
+    .position{
+      margin-bottom: -40px;
+    }
+</style>
+<div class="position d-flex justify-content-center mt-5">
+      <%= image_tag "usuario2.svg" %>
+</div>
+<div class="background p-5">
+      <h2 class="title text-center mt-2">Esqueceu a senha?</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
+  <div class="form-inputs mt-4">
     <%= f.input :email,
+                label: "Seu e-mail cadastrado",
                 required: true,
                 autofocus: true,
-                input_html: { autocomplete: "email" } %>
+                input_html: { autocomplete: "email", class: 'rounded-pill' } %>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Recuperar minha senha" %>
+  <div class="form-actions mt-2 d-flex justify-content-end mr-3">
+    <%= f.button :submit, "Recuperar", class:"btn btn-cadastrar" %>
   </div>
 <% end %>
+</div>
 
-<%= render "devise/shared/links" %>
+<div class="d-flex justify-content-center mt-5">
+        <%=    link_to 'Já possuo login', user_session_path, class: "btn btn-login" %>
+    </div>

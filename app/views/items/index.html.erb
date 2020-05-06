@@ -55,7 +55,7 @@
        <% end %>
        <p class="card-text font"><%= link_to item.name, item_path(item)%></p>
        <div class="d-flex justify-content-end align-items-end">
-         <%= image_tag("desconto.png", class: 'desconto mb-1') %>
+         <%= image_tag("desconto2.png", class: 'desconto mb-1') %>
          <div>
           <%= simple_form_for [item, Wishlist.new] do |s|  %>
             <%= image_submit_tag("heart.png", class: 'lupa ml-2') %>

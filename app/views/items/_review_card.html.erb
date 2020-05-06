@@ -3,9 +3,12 @@
     color: #33D89E;
     width: 10px;
   }
+  .size{
+    width: 100px;
+  }
 </style>
 <div class="text-left row">
-  <div class="col-md-12">
-    <%= (1..review.stars.to_i).map {|_star| '<i class="fas fa-star star"></i>' }.join.html_safe %>
+  <div class="size">
+    <%= (1..review.stars.to_i).map {|_star| '<i class="fas fa-star star ml-2"></i>' }.join.html_safe %>
   </div>
 </div>

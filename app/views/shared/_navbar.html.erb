@@ -1,7 +1,10 @@
 <style>
-  .font{
-      color: #333132;
+  .fontnav{
+      color: white;
       font-size: 14px;
+    }
+    .dropdown .dropdown-menu a{
+      background-image: linear-gradient(to bottom, #66d79f, #00cdc8, #00bde8, #33a7f0, #8d8bdc);
     }
 </style>
 <% if current_user %>
@@ -13,10 +16,10 @@
 
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+    <ul class="navbar-nav mr-2">
       <% if user_signed_in? %>
         <li class="nav-item active mt-2">
-          <%= link_to "Home", root_path, class: "nav-link font" %>
+          <%= link_to "Home", root_path, class: "nav-link fontnav mr-1" %>
         </li>
         <li class="nav-item active  mt-1">
           <%= link_to wishlists_path, class:"mr-3" do %>
@@ -26,7 +29,11 @@
         <li class="nav-item dropdown">
           <%= image_tag "usuario.svg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item font" %>
+            <%= link_to "Início", root_path, class: "dropdown-item fontnav" %>
+            <%= link_to "Buscar produto", items_path, class: "dropdown-item fontnav" %>
+            <%= link_to "Produtos salvos", wishlists_path, class: "dropdown-item fontnav" %>
+            <%= link_to "Responsabilidade limpp", responsible_path, class: "dropdown-item fontnav" %>
+            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item fontnav" %>
           </div>
         </li>
       <% else %>

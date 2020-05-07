@@ -1,5 +1,8 @@
 <div class="container-fluid mt-5">
   <style>
+    .image{
+      width: 140px;
+    }
     .lupa{
       width: 30px;
     }
@@ -40,6 +43,9 @@
       padding: 0.7rem;
     }
   </style>
+  <div class="d-flex justify-content-center">
+    <%= image_tag "logolimpp.svg", class:'image' %>
+  </div>
   <% if policy(Item).create? %>
     <%= link_to "Adicione um novo item", new_item_path, class: "btn btn-cadastrar mt-3 mb-3"%>
   <% end %>

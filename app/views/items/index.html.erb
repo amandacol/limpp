@@ -10,6 +10,9 @@
     .font{
       color: #707070;
       font-size: 14px;
+      margin-left: -80px;
+      height: 84px;
+      width:180px;
     }
     .btn-cadastrar{
       color: white;
@@ -26,6 +29,15 @@
       border-radius: 8px;
       height: 70px;
       width: 40%;
+    }
+    .position{
+      margin-left: -25px;
+    }
+    .space{
+      margin-top: 60px;
+    }
+    .card-body{
+      padding: 0.7rem;
     }
   </style>
   <% if policy(Item).create? %>
@@ -47,21 +59,31 @@
    </form>
    <% @items.each do |item| %>
    <div class="card shadow-sm bg-white mt-3" style="width: 20rem; border-radius: 8px; ">
-     <div class="card-body d-flex justify-content-around">
+     <div class="card-body d-flex justify-content-start">
+       <div class="d-flex align-items-end position">
        <% if item.photo.attached? %>
         <%= cl_image_tag item.photo.key, width: 100, height: 100, crop: :fill %>
        <% else %>
-       <img src="https://images.unsplash.com/photo-1503236823255-94609f598e71?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" class="card-photo"/>
+        <img src="https://images.unsplash.com/photo-1503236823255-94609f598e71?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" class="card-photo"/>
        <% end %>
-       <p class="card-text font"><%= link_to item.name, item_path(item)%></p>
-       <div class="d-flex justify-content-end align-items-end">
+          <% item.reviews.last&.tap do |review| %>
+            <%= render "review_card", review: review %>
+          <% end %>
+       </div>
+       <p class="card-text font"><%= item.name %></p>
+       <div class="d-flex justify-content-end space">
          <%= image_tag("desconto2.png", class: 'desconto mb-1') %>
          <div>
-          <%= simple_form_for [item, Wishlist.new] do |s|  %>
+          <%= simple_form_for [@item, Wishlist.new] do |s|  %>
             <%= image_submit_tag("heart.png", class: 'lupa ml-2') %>
-          <% end %>
+        <% end %>
          </div>
        </div>
+      <div class="d-flex justify-content-end">
+      <%= link_to item_path(item), class:"component" do %>
+      <%= image_tag "Componente.svg" %>
+      <% end %>
+      </div>
      </div>
    </div>
    <% end %>

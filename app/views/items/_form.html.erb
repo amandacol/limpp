@@ -25,6 +25,12 @@
         <%= f.input :name,
                     required: true,
                     label: "Nome completo do produto" %>
+        <%= f.input :category,
+                    required: true,
+                    label: "Categoria do produto" %>
+        <%= f.input :subcategory,
+                    required: true,
+                    label: "Subcategoria do produto" %>
         <%= f.input :ingredient,
                     label: "Ingrediente tóxico" %>
         <%= f.input :certification,

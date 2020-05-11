@@ -20,7 +20,7 @@ end
   # config.authorize_with :cancancan
 
   ## == Pundit ==
-  # config.authorize_with :pundit
+  config.authorize_with :pundit
 
   ## == PaperTrail ==
   # config.audit_with :paper_trail, 'User', 'PaperTrail::Version' # PaperTrail >= 3.0.0

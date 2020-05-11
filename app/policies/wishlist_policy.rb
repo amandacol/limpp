@@ -14,7 +14,7 @@ class WishlistPolicy < ApplicationPolicy
     true
   end
   def show?
-    return true
+    true
   end
   def destroy?
     true

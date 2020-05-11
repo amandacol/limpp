@@ -9,6 +9,10 @@ class ItemPolicy < ApplicationPolicy
     return true
   end
 
+  def index?
+    return true
+  end
+
   def edit?
     return true
   end

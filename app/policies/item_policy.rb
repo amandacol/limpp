@@ -5,23 +5,16 @@ class ItemPolicy < ApplicationPolicy
     end
   end
 
-  def new?
-    return true
+  def rails_admin?(action)
+    case action
+      when :destroy, :new, :edit, :update, :create
+        false
+      else
+        super
+    end
   end
 
   def index?
-    return true
-  end
-
-  def edit?
-    return true
-  end
-
-  def update?
-    return true
-  end
-
-  def destroy?
     return true
   end
 
@@ -29,7 +22,4 @@ class ItemPolicy < ApplicationPolicy
     return true
   end
 
-  def create?
-    return true
-  end
 end

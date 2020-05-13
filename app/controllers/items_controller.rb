@@ -28,7 +28,6 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @wishlists = @item.wishlists
     @wishlist = Wishlist.new
     @reviews = @item.reviews
     @review = Review.new

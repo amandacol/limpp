@@ -24,7 +24,7 @@ class WishlistsController < ApplicationController
   def destroy
     @wishlist.destroy
     authorize @wishlist
-    redirect_to items_path
+    redirect_to wishlists_path
   end
 
   private

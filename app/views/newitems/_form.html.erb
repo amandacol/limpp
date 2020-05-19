@@ -12,10 +12,7 @@
 
 <%= simple_form_for @newitem do |f| %>
 
-        <%= f.input :photo,
-                     required: true,
-                     autofocus: true,
-                     input_html: { class: 'd-none' }, label_html: { class: 'upload-photo'}, label: 'Foto da frente do produto' %>
 
+        <%= f.input :photos, as: :file, input_html: { multiple: true } %>
         <%= image_submit_tag("fotografia.png", class: 'lupa ml-2') %>
       <% end %>

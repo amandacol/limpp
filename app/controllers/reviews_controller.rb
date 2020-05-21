@@ -1,9 +1,10 @@
 class ReviewsController < ApplicationController
   before_action :set_review, only: [:show, :edit]
-  before_action :set_item, only: [:index, :create]
+  before_action :set_item, only: [:index, :create, :new]
 
   def new
     @review = Review.new
+    authorize @review
   end
 
   def index
@@ -20,9 +21,10 @@ class ReviewsController < ApplicationController
     @review.item = @item
     authorize @review
     if @review.save
-      redirect_to @item
+      redirect_to new_item_review_path
     else
-      render :index
+      flash[:alert] = "Algo deu errado."
+      render :new
     end
   end
 

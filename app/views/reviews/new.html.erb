@@ -1,5 +1,10 @@
-<h1>Nova Review</h1>
-
-<%= render 'form', review: @review %>
-
-<%= link_to 'Back', item_path(@item) %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-4">
+      <%= simple_form_for @review do |f| %>
+        <%= f.input :stars, collection: (1..5).to_a, label: "De 1 a 5, o quanto aprova a qualidade desse produto?" %>
+        <%= f.submit "Envie sua avaliação" %>
+      <% end %>
+    </div>
+  </div>
+</div>

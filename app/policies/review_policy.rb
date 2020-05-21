@@ -9,6 +9,10 @@ class ReviewPolicy < ApplicationPolicy
   end
 
   def create?
-    record.item.user != user
+    true
+  end
+
+  def new?
+    true
   end
 end

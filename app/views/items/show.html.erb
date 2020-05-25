@@ -87,16 +87,49 @@
       color: #33D89E;
     }
     .active{
-      background-image: linear-gradient(to bottom, #66d79f, #00cdc8, #00bde8, #33a7f0, #8d8bdc);
+      background-color: #F2F2F2 !important;
       border: none;
-      color: white;
+      color: #333132 !important;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: bold;
+      font-size: 14px;
+      padding: 30px;
+    }
+    .show {
+      background: #F2F2F2 !important;
+      border: none;
+      color: #333132 !important;
+      font-family: 'Montserrat', sans-serif;
+
     }
     .nav-link{
-      color: #707070;
+      color: white;
       font-family: 'Montserrat', sans-serif;
     }
-    .show{
-      background-color: #F2F2F2 !important;
+    .nav-item{
+      background-image: linear-gradient(#66D8A0, #8D8BDB);
+      color: #333132 !important;
+      font-family: 'Montserrat', sans-serif;
+      border-radius: 23px;
+      border-color: white;
+      font-weight: bold;
+      font-size: 14px;
+    }
+    .fontnav{
+      color: #333132 !important;
+    }
+    .ingredientname{
+      background-color: white;
+      border-radius: 23px;
+      color: #707070;
+      padding: 10px;
+      padding-right: 70px;
+    }
+    .circle {
+    height: 35px;
+    width: 35px;
+    background-color: #555;
+    border-radius: 50%;
     }
   </style>
   <div class="card shadow-sm bg-white mt-3" style="width: 20rem; border-radius: 8px; ">
@@ -139,8 +172,18 @@
   </li>
 </ul>
 <div class="tab-content" id="pills-tabContent">
-  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">Sodium Laureth Sulfate</div>
-  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">Ecocert</div>
+  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+  <div class="d-flex align-items-center">
+  <p class=" ingredientname">Sodium Laureth Sulfate <div class="circle mb-3 ml-1"></div></p>
+  </div>
+  </div>
+  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+    <% if @item.certification.nil? %>
+    <p class="card-text">Esse item não tem os certificados considerados pelo limpp.</p>
+    <% else %>
+    <p class="card-text font"><%= @item.certification %></p>
+    <% end %>
+  </div>
   <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
     <% @reviews.last&.tap do |review| %>
       <%= render "review_card", review: review %>
@@ -154,32 +197,7 @@
 </div>
 </div>
 
-  <% if current_user != @item.user %>
-    <%= form_for([@item, @review]) do |f| %>
-      <% if @review.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
-          <ul>
-            <% @review.errors.full_messages.each do |message| %>
-              <li><%= message %></li>
-            <% end %>
-          </ul>
-        </div>
-      <% end %>
-      <p class="mt-3">Você compraria esse produto novamente?</p>
-      <div class="field">
-        <%= f.label :buyagain do %><br>
-        <%= f.radio_button :buyagain, 1 %>Sim<br>
-        <%= f.radio_button :buyagain, 0 %>Não<br>
-        <%= f.submit 'Clique para avaliar', :class => "btn btn-cadastrar" %>
-        <% end  %>
-      </div>
-    <% end %>
-      <%= simple_form_for ([@item, @review]) do |f| %>
-        <%= f.input :stars, collection: (1..5).to_a, label: "De 1 a 5, o quanto aprova a qualidade desse produto?" %>
-        <%= f.submit 'Clique para avaliar', :class => "btn btn-cadastrar" %>
-      <% end %>
-  <% end %>
+
   <div class="d-flex"><p class="font mt-4 ml-2">Critérios de avaliação</p><%= image_tag "logolimpp.svg" , class:"sizelogo mb-5" %> </div>
   <div class="d-flex justify-content-right"><%= image_tag "criterios.png" %>
       <div>
@@ -197,4 +215,3 @@
         </div>
       </div>
     </div>
-</div>

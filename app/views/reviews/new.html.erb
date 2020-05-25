@@ -130,7 +130,7 @@
         <%= f.radio_button :buyagain, 0 %> Não<p>
         <% end  %>
       </div>
-        <%= f.input :stars, collection: (1..5).to_a, class:"colorstar", label: "De 1 a 5, o quanto aprova a qualidade desse produto?" %>
+        <%= f.input :stars, collection: (1..5).to_a, label: "De 1 a 5, o quanto aprova a qualidade desse produto?" %>
         <%= f.association :item, as: :hidden %>
         <%= f.submit 'Clique para avaliar', :class => "btn btn-cadastrar" %>
       <% end %>

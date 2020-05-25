@@ -4,6 +4,7 @@ class ReviewsController < ApplicationController
 
   def new
     @review = Review.new
+    @review.item = @item
     authorize @review
   end
 
@@ -21,7 +22,7 @@ class ReviewsController < ApplicationController
     @review.item = @item
     authorize @review
     if @review.save
-      redirect_to new_item_review_path
+      redirect_to item_path(@item)
     else
       flash[:alert] = "Algo deu errado."
       render :new

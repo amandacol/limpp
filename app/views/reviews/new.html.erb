@@ -1,10 +1,138 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-4">
-      <%= simple_form_for @review do |f| %>
-        <%= f.input :stars, collection: (1..5).to_a, label: "De 1 a 5, o quanto aprova a qualidade desse produto?" %>
-        <%= f.submit "Envie sua avaliação" %>
-      <% end %>
-    </div>
+<div class="container-fluid">
+  <style>
+    .font{
+      color: #707070;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      margin-left: -80px;
+      height: 84px;
+      width:180px;
+    }
+    .fontbuy{
+      color: #707070;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      height: 4px;
+      width:180px;
+      white-space: nowrap;
+    }
+    .desconto{
+      width: 35px;
+      height: 35px;
+    }
+    .btn-cadastrar{
+      color: white;
+      background-color: #333132;
+      border-radius: 30px;
+      padding: 0.3rem 1rem;
+      font-weight: bold;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      box-shadow: 0px 2px 2px #33313261;
+    }
+    p{
+    color: #707070;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    text-decoration: none;
+    }
+    .position{
+      margin-left: -10px;
+    }
+    .space{
+      position: absolute;
+      bottom: 0px;
+      right: 17px;
+    }
+    .card-body{
+      padding: 0.7rem;
+    }
+    .notavailable{
+      position: absolute;
+      bottom: -56px;
+      left: 162px;
+      color: #67D89E;
+      font-size: 14px;
+      font-weight: bold;
+    }
+    .case{
+      position: absolute;
+      bottom: -2px;
+      left: 162px;
+    }
+    .star{
+      color: #33D89E;
+      width: 10px;
+    }
+    .nav-link{
+    display: block;
+    padding: 0.5rem 0.6rem !important;
+}
+    .sizelogo{
+      width: 60px;
+    }
+    .colorstar{
+      color: #33D89E;
+    }
+    .backgroud{
+      background-color:#F2F2F2;
+      border-radius: 20px;
+    }
+    .buyagain{
+      color: #33D89E;
+      background-color: white;
+      border-radius: 30px;
+      padding: 0.4rem 1.2rem;
+      font-weight: bold;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 15px;
+    }
+    .select{
+      color: #707070;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+    }
+  </style>
+  <div class="card shadow-sm bg-white mt-3" style="width: 20rem; border-radius: 8px; ">
+     <div class="card-body d-flex justify-content-start">
+       <div class="d-flex align-items-end position">
+       <% if @item.photo.attached? %>
+        <%= cl_image_tag @item.photo.key, width: 80, height: 80, crop: :fill %>
+       <% else %>
+        <img src="https://images.unsplash.com/photo-1503236823255-94609f598e71?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" class="card-photo"/>
+       <% end %>
+       <% if @item.reviews.empty? %>
+          <p class="card-text font notavailable"><%= "Item não avaliado" %></p>
+          <% else %>
+          <% @item.reviews.last&.tap do |review| %>
+            <%= render "review_card", review: review %>
+          <% end %>
+       <% end %>
+       </div>
+       <p class="card-text font case"><%= @item.name %></p>
+       <div class="d-flex justify-content-end space">
+         <%= image_tag("desconto2.png", class: 'desconto mb-1') %>
+         <div>
+          <%= simple_form_for [@item, Wishlist.new] do |s|  %>
+            <%= image_submit_tag("heart.png", class: 'lupa ml-2') %>
+        <% end %>
+         </div>
+       </div>
+     </div>
   </div>
+
+  <div class="backgroud">
+   <p class="fontbuy mt-3 align-self-center">Você compraria esse produto novamente?</p>
+      <div class="field mt-4">
+        <%= simple_form_for [@item, @review] do |f| %>
+        <%= f.label :buyagain do %><p class="buyagain">
+        <%= f.radio_button :buyagain, 1 %> Sim<p class="buyagain">
+        <%= f.radio_button :buyagain, 0 %> Não<p>
+        <% end  %>
+      </div>
+        <%= f.input :stars, collection: (1..5).to_a, class:"colorstar", label: "De 1 a 5, o quanto aprova a qualidade desse produto?" %>
+        <%= f.association :item, as: :hidden %>
+        <%= f.submit 'Clique para avaliar', :class => "btn btn-cadastrar" %>
+      <% end %>
+</div>
 </div>

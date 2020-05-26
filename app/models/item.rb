@@ -1,6 +1,6 @@
 class Item < ApplicationRecord
   include PgSearch::Model
-  has_many :wishlists, dependent: :destroy
+  has_many :wishlists, :through => :assignments, dependent: :destroy
   has_many :reviews, dependent: :destroy
   belongs_to :user
   has_one_attached :photo

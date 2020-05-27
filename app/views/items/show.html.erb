@@ -115,9 +115,6 @@
       font-weight: bold;
       font-size: 14px;
     }
-    .fontnav{
-      color: #333132 !important;
-    }
     .ingredientname{
       background-color: white;
       border-radius: 23px;
@@ -143,8 +140,8 @@
        <% if @item.reviews.empty? %>
           <p class="card-text font notavailable"><%= "Item não avaliado" %></p>
           <% else %>
-          <% @reviews.last&.tap do |review| %>
-            <%= render "review_card", review: review %>
+          <% @item.average.round(0).times do %>
+            <i class="fas fa-star star ml-2"></i>
           <% end %>
        <% end %>
        </div>
@@ -185,8 +182,9 @@
     <% end %>
   </div>
   <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-    <% @reviews.last&.tap do |review| %>
-      <%= render "review_card", review: review %>
+    <%= @item.average.round(0) %>
+    <% @item.average.round(0).times do %>
+      <i class="fas fa-star star ml-2"></i>
     <% end %>
     <p>Média Geral X de Y avaliações</p>
       <% @reviews.last&.tap do |review| %>

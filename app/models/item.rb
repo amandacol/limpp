@@ -9,4 +9,14 @@ class Item < ApplicationRecord
     using: {
       tsearch: { prefix: true }
     }
+
+    def calculate_average
+      reviews = self.reviews
+      @size = reviews.reject {|review| review.stars.nil?}
+      sum = 0
+      reviews.each do |review|
+      sum += review.stars unless review.stars.nil?
+      end
+      average = sum.fdiv(@size.size)
+    end
 end

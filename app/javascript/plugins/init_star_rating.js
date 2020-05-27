@@ -9,4 +9,3 @@ console.log($("#review_stars"))
 };
 
 export { initStarRating };
-

@@ -1,12 +1,10 @@
 <style>
+  .userlog{
+    width: 50px;
+  }
   .fontnav{
       color: white;
-      font-size: 14px;
-    }
-    .show{
-      background-image: linear-gradient(to bottom, #66d79f, #00cdc8, #00bde8, #33a7f0, #8d8bdc);
-      border: none;
-      color: white;
+      font-size: 15px;
     }
     .line{
       border-bottom: solid;
@@ -14,61 +12,76 @@
       border-width: 1px;
       margin-left: 55px;
     }
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      background-image: linear-gradient(to bottom, #66d79f, #00cdc8, #00bde8, #33a7f0, #8d8bdc);
+      border: none;
+      color: white;
+      display: none;
+      align-items: right;
+      position: absolute;
+      flex-grow: 0;
+      min-width: 100px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      padding: 12px 16px;
+      z-index: 1;
+      border-radius: 5px;
+      right: 0;
+      left: auto;
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    li {
+      list-style-type: none;
+    }
 </style>
-<% if current_user %>
-  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon d-flex justify-content-end">
 
-  <button class="navbar-toggler border-white" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <%= image_tag "menunavbar.svg" %>
-  </button>
-
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-2">
-      <% if user_signed_in? %>
-        <li class="nav-item dropdown">
-          <%= image_tag "usuario.svg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to root_path, class:"dropdown-item fontnav" do %>
-              <figure class="d-flex align-items-center mt-3">
-                <%= image_tag "inicio.png" %><figcaption class="ml-2 mt-1"> Início</figcaption>
-              </figure>
-            <% end %>
-            <p class="line"></p>
-            <%= link_to items_path, class:"dropdown-item fontnav" do %>
-              <figure class="d-flex align-items-center mt-3">
-                <%= image_tag "code.svg" %><figcaption class="ml-2 mt-1"> Buscar por produto ou ingrediente</figcaption>
-              </figure>
-            <% end %>
-            <p class="line"></p>
-            <%= link_to wishlists_path, class:"dropdown-item fontnav" do %>
-              <figure class="d-flex align-items-center mt-3">
-                <%= image_tag "coracao.svg" %><figcaption class="ml-2 mt-1"> Minha prateleira</figcaption>
-              </figure>
-            <% end %>
-            <p class="line"></p>
-             <%= link_to responsible_path, class:"dropdown-item fontnav" do %>
-              <figure class="d-flex align-items-center mt-3">
-                <%= image_tag "responsa.svg" %><figcaption class="ml-2 mt-1"> Responsabilidade limpp</figcaption>
-              </figure>
-            <% end %>
-            <p class="line"></p>
-            <%= link_to destroy_user_session_path, method: :delete, class:"dropdown-item fontnav" do %>
-              <figure class="d-flex align-items-center mt-3">
-                <%= image_tag "logout.png" %><figcaption class="ml-2 mt-1"> Log out</figcaption>
-              </figure>
-            <% end %>
-            <p class="line"></p>
-        </li>
-      <% else %>
-        <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-        </li>
+  <div class="d-flex justify-content-end">
+  <% if user_signed_in? %>
+  <div class="dropdown m-3">
+  <%= image_tag "menunavbar.svg" %>
+  <% end %>
+  <div class="dropdown-content">
+    <figure class="d-flex align-items-center mt-3">
+      <%= image_tag "usuario.svg", class:'userlog' %><figcaption class="ml-2 mt-1"> <%= current_user.email %></figcaption>
+    </figure>
+    <li>
+      <%= link_to root_path, class:"dropdown-item fontnav" do %>
+      <figure class="d-flex align-items-center mt-3">
+        <%= image_tag "inicio.png" %><figcaption class="ml-2 mt-1"> Início</figcaption>
+      </figure>
       <% end %>
-    </ul>
+      <p class="line"></p>
+      <%= link_to items_path, class:"dropdown-item fontnav" do %>
+      <figure class="d-flex align-items-center mt-3">
+        <%= image_tag "code.svg" %><figcaption class="ml-2 mt-1"> Buscar por produto ou ingrediente</figcaption>
+      </figure>
+      <% end %>
+      <p class="line"></p>
+      <%= link_to wishlists_path, class:"dropdown-item fontnav" do %>
+      <figure class="d-flex align-items-center mt-3">
+        <%= image_tag "coracao.svg" %><figcaption class="ml-2 mt-1"> Minha prateleira</figcaption>
+      </figure>
+      <% end %>
+      <p class="line"></p>
+      <%= link_to responsible_path, class:"dropdown-item fontnav" do %>
+      <figure class="d-flex align-items-center mt-3">
+        <%= image_tag "responsa.svg" %><figcaption class="ml-2 mt-1"> Responsabilidade limpp</figcaption>
+      </figure>
+      <% end %>
+      <p class="line"></p>
+      <%= link_to destroy_user_session_path, method: :delete, class:"dropdown-item fontnav" do %>
+      <figure class="d-flex align-items-center mt-3">
+        <%= image_tag "logout.png" %><figcaption class="ml-2 mt-1"> Log out</figcaption>
+      </figure>
+      <% end %>
+      <p class="line"></p>
+    </li>
   </div>
-</div>
-
-<% else %>
-
-<% end %>
+  </div>
+  </div>

@@ -10,6 +10,9 @@
 </style>
 <div class="text-left row">
   <div class="size">
-    <%= (1..review.stars.to_i).map {|_star| '<i class="fas fa-star star ml-2"></i>' }.join.html_safe %>
+    <%#= (1..review.stars.to_i).map {|_star| '<i class="fas fa-star star ml-2"></i>' }.join.html_safe %>
+    <% @item.average.round(0).times do %>
+      <i class="fas fa-star star ml-2"></i>
+    <% end %>
   </div>
 </div>

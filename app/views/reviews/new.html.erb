@@ -71,12 +71,10 @@
     .sizelogo{
       width: 60px;
     }
-    .colorstar{
-      color: #33D89E;
-    }
     .backgroud{
       background-color:#F2F2F2;
       border-radius: 20px;
+      padding: 10px;
     }
     .buyagain{
       color: #33D89E;
@@ -121,7 +119,7 @@
      </div>
   </div>
 
-  <div class="backgroud">
+  <div class="backgroud mt-3">
    <p class="fontbuy mt-3 align-self-center">Você compraria esse produto novamente?</p>
       <div class="field mt-4">
         <%= simple_form_for [@item, @review] do |f| %>

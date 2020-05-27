@@ -2,6 +2,7 @@ class ReviewsController < ApplicationController
   before_action :set_review, only: [:show, :edit]
   before_action :set_item, only: [:index, :create, :new]
 
+
   def new
     @review = Review.new
     @review.item = @item
@@ -27,12 +28,20 @@ class ReviewsController < ApplicationController
       flash[:alert] = "Algo deu errado."
       render :new
     end
+    update_product_average(@review)
   end
 
   private
 
     def set_review
       @review = Review.find(params[:id])
+    end
+
+    def update_product_average(review)
+      @review = review
+      @product = @review.item
+      @product.average = @product.calculate_average
+      @product.save
     end
 
     def set_item

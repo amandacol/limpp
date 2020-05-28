@@ -45,7 +45,6 @@
   <% if user_signed_in? %>
   <div class="dropdown m-3">
   <%= image_tag "menunavbar.svg" %>
-  <% end %>
   <div class="dropdown-content">
     <figure class="d-flex align-items-center mt-3">
       <%= image_tag "usuario.svg", class:'userlog' %><figcaption class="ml-2 mt-1"> <%= current_user.email %></figcaption>
@@ -84,4 +83,5 @@
     </li>
   </div>
   </div>
+  <% end %>
   </div>

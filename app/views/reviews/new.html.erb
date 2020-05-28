@@ -102,8 +102,8 @@
        <% if @item.reviews.empty? %>
           <p class="card-text font notavailable"><%= "Item não avaliado" %></p>
           <% else %>
-          <% @item.reviews.last&.tap do |review| %>
-            <%= render "review_card", review: review %>
+          <% @item.average.round(0).times do %>
+            <i class="fas fa-star star ml-2"></i>
           <% end %>
        <% end %>
        </div>
@@ -128,9 +128,8 @@
         <%= f.radio_button :buyagain, 0 %> Não<p>
         <% end  %>
       </div>
-      <p class="fontbuy mt-2 align-self-center">De 1 a 5, o quanto aprova a qualidade desse produto?</p>
-        <%= f.select :stars, 1..5 %><br>
-        <%= f.submit 'Clique para avaliar', :class => "btn btn-cadastrar mt-4 mb-3" %>
+        <%= f.input :stars, collection: (1..5).to_a, label: "De 1 a 5, o quanto aprova a qualidade desse produto?" %>
+        <%= f.submit 'Clique para avaliar', :class => "btn btn-cadastrar mt-3 mb-3" %>
       <% end %>
 </div>
 </div>

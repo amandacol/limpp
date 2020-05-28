@@ -128,9 +128,16 @@
         <%= f.radio_button :buyagain, 0 %> Não<p>
         <% end  %>
       </div>
-        <%= f.input :stars, collection: (1..5).to_a, label: "De 1 a 5, o quanto aprova a qualidade desse produto?" %>
-        <%= f.association :item, as: :hidden %>
-        <%= f.submit 'Clique para avaliar', :class => "btn btn-cadastrar" %>
+      <p class="fontbuy mt-2 align-self-center">De 1 a 5, o quanto aprova a qualidade desse produto?</p>
+        <%= f.select :stars, 1..5 %><br>
+        <%= f.submit 'Clique para avaliar', :class => "btn btn-cadastrar mt-4 mb-3" %>
       <% end %>
 </div>
 </div>
+
+<script>
+  $('#star-rating').raty({
+    path: '/assets/',
+    scoreName: 'review[rating]'
+  });
+</script>

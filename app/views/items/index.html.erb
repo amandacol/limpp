@@ -71,6 +71,10 @@
     .row{
       margin: 0 -7px;
     }
+    .star{
+      color: #33D89E;
+      width: 10px;
+    }
   </style>
   <div class="container p-1">
   <div class="d-flex justify-content-center">
@@ -127,7 +131,9 @@
          <% if item.reviews.empty? %>
             <p class="card-text font notavailable"><%= "Item não avaliado" %></p>
           <% else %>
-
+            <% item.average.round(0).times do %>
+              <i class="fas fa-star star ml-2"></i>
+            <% end %>
           <% end %>
          </div>
          <p class="card-text font case"><%= item.name %></p>

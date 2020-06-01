@@ -1,4 +1,5 @@
 class Wishlist < ApplicationRecord
   belongs_to :user
-  belongs_to :items
+  belongs_to :item
+  validates :item, uniqueness: { scope: :user }
 end

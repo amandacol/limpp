@@ -4,7 +4,7 @@
       color: #707070;
       font-family: 'Montserrat', sans-serif;
       font-size: 14px;
-      margin-left: -80px;
+      margin-left: -70px;
       height: 84px;
       width:180px;
     }
@@ -37,7 +37,7 @@
     text-decoration: none;
     }
     .position{
-      margin-left: -10px;
+      margin-left: -5px;
     }
     .space{
       position: absolute;
@@ -57,8 +57,8 @@
     }
     .case{
       position: absolute;
-      bottom: -2px;
-      left: 162px;
+      bottom: -20px;
+      left: 180px;
     }
     .star{
       color: #33D89E;
@@ -90,47 +90,83 @@
       font-family: 'Montserrat', sans-serif;
       font-size: 14px;
     }
+    a.br-active:after {
+      color: #67D89E !important;
+    }
+
+    a.br-selected:after {
+      color: #67D89E !important;
+    }
+    body {
+      padding-top: 50px;
+    }
+
+    .starter-template {
+      padding: 40px 15px;
+      text-align: center;
+    }
+    .fonthumby{
+      color: #33D89E;
+      background-color: white;
+      border-radius: 15px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 16px;
+      padding: 8px;
+      height: 4px;
+      width:180px;
+      white-space: nowrap;
+    }
+    .fonthumby:hover{
+      color: #707070;
+    }
+    .fonthumbno{
+      color: #33D89E;
+      background-color: white;
+      border-radius: 15px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 16px;
+      padding: 8px;
+      height: 4px;
+      width:180px;
+      white-space: nowrap;
+    }
+    .fonthumbno:hover{
+      color: #D93500;
+    }
+    .shadowcss{
+      box-shadow: 2px 2px 4px #D6D6D6;
+    }
   </style>
+  <div class="container p-1">
   <div class="card shadow-sm bg-white mt-3" style="width: 20rem; border-radius: 8px; ">
      <div class="card-body d-flex justify-content-start">
        <div class="d-flex align-items-end position">
        <% if @item.photo.attached? %>
-        <%= cl_image_tag @item.photo.key, width: 80, height: 80, crop: :fill %>
+        <%= cl_image_tag @item.photo.key, width: 80, height: 80, crop: :fill, class:"shadowcss bg-white rounded" %>
        <% else %>
         <img src="https://images.unsplash.com/photo-1503236823255-94609f598e71?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" class="card-photo"/>
        <% end %>
-       <% if @item.reviews.empty? %>
-          <p class="card-text font notavailable"><%= "Item não avaliado" %></p>
-          <% else %>
-          <% @item.average.round(0).times do %>
-            <i class="fas fa-star star ml-2"></i>
-          <% end %>
-       <% end %>
        </div>
        <p class="card-text font case"><%= @item.name %></p>
-       <div class="d-flex justify-content-end space">
-         <%= image_tag("desconto2.png", class: 'desconto mb-1') %>
-         <div>
-          <%= simple_form_for [@item, Wishlist.new] do |s|  %>
-            <%= image_submit_tag("heart.png", class: 'lupa ml-2') %>
-        <% end %>
-         </div>
-       </div>
      </div>
   </div>
 
-  <div class="backgroud mt-3">
-   <p class="fontbuy mt-3 align-self-center">Você compraria esse produto novamente?</p>
+  <div class="backgroud mt-3 mr-2">
+    <div class="p-2 ml-2 justify-content-center">
       <div class="field mt-4">
         <%= simple_form_for [@item, @review] do |f| %>
-        <%= f.label :buyagain do %><p class="buyagain">
-        <%= f.radio_button :buyagain, 1 %> Sim<p class="buyagain">
-        <%= f.radio_button :buyagain, 0 %> Não<p>
-        <% end  %>
+          <p class="fontbuy mt-3 align-self-center mb-5">Você compraria esse produto novamente?</p>
+          <span class="likeitem fonthumby"><i class="far fa-thumbs-up"></i> Sim</span>
+          <span class="dislikeitem fonthumbno ml-4"><i class="far fa-thumbs-down"></i> Não</span>
+          <%= f.check_box :buyagain, class: "d-none" %>
+        </div>
+        <div class="mt-5">
+          <%= f.input :stars, collection: (1..5).to_a, label: "De 1 a 5, o quanto aprova a qualidade desse produto?" %>
+          <%= f.submit 'Clique para avaliar', :class => "btn btn-cadastrar mt-4 mb-3" %>
+        <% end %>
+        </div>
       </div>
-        <%= f.input :stars, collection: (1..5).to_a, label: "De 1 a 5, o quanto aprova a qualidade desse produto?" %>
-        <%= f.submit 'Clique para avaliar', :class => "btn btn-cadastrar mt-3 mb-3" %>
-      <% end %>
-</div>
+    </div>
+  </div>
 </div>
 

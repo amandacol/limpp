@@ -13,7 +13,7 @@
     .font{
       color: #707070;
       font-size: 14px;
-      margin-left: -80px;
+      margin-left: -64px;
       height: 84px;
       width:180px;
     }
@@ -75,6 +75,9 @@
       color: #33D89E;
       width: 10px;
     }
+    .shadowcss{
+      box-shadow: 2px 2px 4px #D6D6D6;
+    }
   </style>
   <div class="container p-1">
   <div class="d-flex justify-content-center">
@@ -124,7 +127,7 @@
        <div class="card-body d-flex justify-content-start">
          <div class="d-flex align-items-end position">
          <% if item.photo.attached? %>
-          <%= cl_image_tag item.photo.key, width: 80, height: 80, crop: :fill %>
+          <%= cl_image_tag item.photo.key, width: 85, height: 85, crop: :fill, class:"shadowcss bg-white rounded" %>
          <% else %>
           <img src="https://images.unsplash.com/photo-1503236823255-94609f598e71?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" class="card-photo"/>
          <% end %>

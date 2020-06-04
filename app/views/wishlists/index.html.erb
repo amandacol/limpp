@@ -58,6 +58,10 @@
     .shadowcss{
       box-shadow: 2px 2px 4px #D6D6D6;
     }
+    .star{
+      color: #33D89E;
+      width: 10px;
+    }
   </style>
 <div class="container p-1">
   <div class="d-flex justify-content-center">
@@ -92,9 +96,9 @@
          <% if wishlist.item.reviews.empty? %>
            <p class="card-text font notavailable"><%= "Item não avaliado" %></p>
          <% else %>
-           <% wishlist.item.reviews.last&.tap do |review| %>
-           <%= render "review_card", review: review %>
-           <% end %>
+            <% wishlist.item.average.round(0).times do %>
+              <i class="fas fa-star star ml-2"></i>
+            <% end %>
          <% end %>
         </div>
            <p class="card-text font case"><%= wishlist.item.name %></p>

@@ -49,4 +49,3 @@ before_action :set_item, only: [:show, :edit, :update, :destroy]
     params.require(:ingredient).permit(:name, :classification, :impact, :article )
   end
 end
-end

@@ -18,30 +18,18 @@ before_action :set_item, only: [:show, :edit, :update, :destroy]
   end
 
   def index
-    @wishlist = Wishlist.new
-    @review = Review.new
-    if params[:query].present?
-      @ingredients = policy_scope(Ingredient).search_by_name_and_ingredient(params[:query])
-    else
-      @ingredients = policy_scope(Ingredient)
-    end
+
   end
 
   def show
-    @wishlist = Wishlist.new
-    @reviews = @ingredient.reviews
-    @review = Review.new
+
   end
 
   def edit
   end
 
   def update
-    if @ingredient.update(ingredient_params)
-      redirect_to ingredient_path(@ingredient)
-    else
-      render :edit
-  end
+
   end
 
 
@@ -58,7 +46,7 @@ before_action :set_item, only: [:show, :edit, :update, :destroy]
   end
 
   def ingredient_params
-    params.require(:ingredient).permit(:name, :ingredient, :certification, :category, :subcategory, :photo, :average, wishlist_ids: [] )
+    params.require(:ingredient).permit(:name, :classification, :impact, :article )
   end
 end
 end

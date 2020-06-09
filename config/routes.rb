@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :items do
     resources :wishlists, except: :index
     resources :reviews
+    resources :coupons
   end
   resources :wishlists, only: [:index]
   resources :newitems

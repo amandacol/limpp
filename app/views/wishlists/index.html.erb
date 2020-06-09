@@ -102,8 +102,12 @@
          <% end %>
         </div>
            <p class="card-text font case"><%= wishlist.item.name %></p>
-        <div class="d-flex justify-content-end space">
-            <%= image_tag("desconto2.png", class: 'desconto mb-1') %>
+          <div class="d-flex justify-content-end space">
+          <% if wishlist.item.coupons.exists? %>
+          <%= link_to item_coupons_path(wishlist.item) do %>
+            <%= image_tag "desconto2.png", class:"desconto mb-1" %>
+          <% end %>
+          <% end %>
           <div>
             <%= link_to '<i class="far fa-trash-alt trash ml-2 mt-2"></i>'.html_safe, item_wishlist_path(wishlist.item.id, wishlist.id), method: :delete, data: { confirm: 'Tem certeza?' }%></p>
           </div>

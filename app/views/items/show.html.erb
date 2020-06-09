@@ -159,15 +159,19 @@
        <% if @item.reviews.empty? %>
           <p class="card-text font notavailable"><%= "Item não avaliado" %></p>
           <% else %>
-          <% @item.average.round(0).times do %>
+          <% @item.average.times do %>
             <i class="fas fa-star star ml-2"></i>
           <% end %>
        <% end %>
        </div>
        <p class="card-text font case"><%= @item.name %></p>
        <div class="d-flex justify-content-end space">
-         <%= image_tag("desconto2.png", class: 'desconto mb-1') %>
-         <div>
+          <% if @item.coupons.exists? %>
+          <%= link_to item_coupons_path(@item) do %>
+            <%= image_tag "desconto2.png", class:"desconto mb-1" %>
+          <% end %>
+          <% end %>
+          <div>
           <%= simple_form_for [@item, Wishlist.new] do |s|  %>
             <%= image_submit_tag("heart.png", class: 'lupa ml-2') %>
         <% end %>
@@ -203,7 +207,7 @@
   <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
     <div class="d-flex">
     <p class="mr-1">Média geral</p>
-    <% @item.average.round(0).times do %>
+    <% @item.average.times do %>
       <i class="fas fa-star star ml-2"></i>
     <% end %>
     <p class="ml-3 mr-2">de</p><%= @item.reviews.count %> <p class="ml-2">Avaliações</p>

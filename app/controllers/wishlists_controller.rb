@@ -4,6 +4,7 @@ class WishlistsController < ApplicationController
   def index
   @user_items = current_user.items
   @user_wishlists = current_user.wishlists
+  @coupon = Coupon.new
   if params[:query].present?
       @wishlists = policy_scope(Wishlist).search_by_name_and_ingredient(params[:query])
     else

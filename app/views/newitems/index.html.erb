@@ -4,9 +4,10 @@
     font-weight: bold;
     font-family: 'Montserrat', sans-serif;
     }
-  p{
+  .evaluation{
     color: #707070;
     font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
     }
     .btn-avaliacao{
       color: white;
@@ -21,8 +22,8 @@
 </style>
 <div class="container-fluid mt-4">
   <div class="d-flex justify-content-center"><%= image_tag "barcode.svg" %></div>
-    <h4 class="text-center mt-5">Ainda não avaliamos este produto.</h4>
-    <p class="text-center mt-5">Para sugerir a avaliação deste produto, clique no botão abaixo e envie as fotos do rótulo para nossa equipe.</p>
+    <h5 class="text-center mt-5">Não encontrou um produto e gostaria que ele fosse avaliado?</h5>
+    <p class="text-center mt-5 evaluation">Para sugerir a avaliação, clique no botão abaixo e envie as fotos do rótulo para nossa equipe.</p>
     <div class="d-flex justify-content-center">
     <% if policy(Newitem).create? %>
         <%= link_to "Sugerir avaliação", new_newitem_path, class: "btn btn-avaliacao mt-4"%>

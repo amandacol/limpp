@@ -11,7 +11,11 @@ class CouponsController < ApplicationController
 
   def index
     @coupons = policy_scope(Coupon)
-    @coupon = Coupon.new
+    @item = Item.new
+  end
+
+  def show
+    @item = Item.new
   end
 
   def edit
@@ -37,18 +41,11 @@ class CouponsController < ApplicationController
       @coupon = Coupon.find(params[:id])
     end
 
-    def update_product_average(coupon)
-      @coupon = coupon
-      @product = @coupon.item
-      @product.average = @product.calculate_average
-      @product.save
-    end
-
     def set_item
       @item = Item.find(params[:item_id])
     end
 
     def coupon_params
-      params.require(:coupon).permit(:content, :item_id)
+      params.require(:coupon).permit(:content, :website, :item_id)
     end
 end

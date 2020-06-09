@@ -1,0 +1,37 @@
+<style>
+  h4{
+    color: #333132;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    }
+  p{
+    color: #707070;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    }
+    .btn-avaliacao{
+      color: white;
+      background-color: #8F89DD;
+      border-radius: 30px;
+      padding: 0.5rem 2rem;
+      font-weight: bold;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      box-shadow: 0px 2px 2px #33313261;
+    }
+    .recebido{
+      width: 100px;
+    }
+</style>
+<div class="container-fluid mt-5">
+  <div class="d-flex justify-content-center"><%= image_tag "coupongreen.png", class:"recebido mt-5" %></div>
+    <% @coupons.each do |coupon| %>
+    <h5 class="text-center mt-5"><%= coupon.content %></h5>
+    <p class="text-center mt-4">Temos um desconto exclusivo do limpp para este produto. Basta seguir pelo link abaixo.</p>
+    <div class="d-flex justify-content-center mt-">
+      <%= link_to coupon.website do %>
+        <p class="btn-avaliacao mb-1">Ir para o site</p>
+      <% end %>
+    </div>
+    <% end %>
+</div>

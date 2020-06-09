@@ -208,14 +208,18 @@
     <% end %>
     <p class="ml-3 mr-2">de</p><%= @item.reviews.count %> <p class="ml-2">Avaliações</p>
     </div>
-    <% @yes = (Review.where(buyagain: 1).count * 100.0 / Review.count).round(0) %>
-    <% @no = (Review.where(buyagain: 0).count * 100.0 / Review.count).round(0) %>
+    <% if @item.reviews.exists? %>
+    <% @yes = (@item.reviews.where(buyagain: 1).count * 100.0 / @item.reviews.count).round(0) %>
+    <% @no = (@item.reviews.where(buyagain: 0).count * 100.0 / @item.reviews.count).round(0) %>
     <% if @yes >= @no %>
       <div class="d-flex align-items-center">
        <span class="likeitem fonthumb"><i class="far fa-thumbs-up"><%= @yes %>%</i></span><p class="flex-nowrap mt-3">Comprariam novamente</p>
       </div>
     <% else %>
-       <span class="dislikeitem fonthumb"><i class="far fa-thumbs-down"><% @no %>%</i></span><p class="flex-nowrap mt-3">Não comprariam novamente</p>
+      <div class="d-flex align-items-center">
+       <span class="dislikeitem fonthumb"><i class="far fa-thumbs-down"><%= @no %>%</i></span><p class="flex-nowrap mt-3">Não comprariam novamente</p>
+      </div>
+    <% end %>
     <% end %>
     <br><%=    link_to 'Clique para avaliar esse produto', new_item_review_path(@item.id), class: "btn btn-cadastrar mt-1" %>
 </div>

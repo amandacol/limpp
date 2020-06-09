@@ -12,10 +12,10 @@ class Item < ApplicationRecord
 
     def calculate_average
       reviews = self.reviews
-      @size = reviews.reject {|review| review.stars.nil?}
+      @size = reviews.reject {|review| review.rating.nil?}
       sum = 0
       reviews.each do |review|
-      sum += review.stars unless review.stars.nil?
+      sum += review.rating unless review.rating.nil?
       end
       average = sum.fdiv(@size.size)
     end

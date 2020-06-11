@@ -25,7 +25,7 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to item_path(@item)
     else
-      flash[:alert] = "Algo deu errado."
+      flash[:alert] = "Você já avaliou esse produto."
       render :new
     end
     update_product_average(@review)

@@ -134,7 +134,7 @@
          <% if item.reviews.empty? %>
             <p class="card-text font notavailable"><%= "Item não avaliado" %></p>
           <% else %>
-            <% item.average.times do %>
+            <% item.calculate_average.times do %>
               <i class="fas fa-star star ml-2"></i>
             <% end %>
           <% end %>

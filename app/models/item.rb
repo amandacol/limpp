@@ -10,7 +10,6 @@ class Item < ApplicationRecord
     using: {
       tsearch: { prefix: true }
     }
-  scope :filter_by_category, -> (category) { where category: category }
 
     def calculate_average
       return 0 unless reviews.any?

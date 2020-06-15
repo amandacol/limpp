@@ -32,6 +32,8 @@ class ItemsController < ApplicationController
     @coupon = Coupon.new
     @reviews = @item.reviews
     @review = Review.new
+    @item = Item.find(params[:id])
+    @related_items = @item.find_related_tags
   end
 
   def edit
@@ -59,6 +61,6 @@ class ItemsController < ApplicationController
   end
 
   def item_params
-    params.require(:item).permit(:name, :ingredient, :certification, :category, :subcategory, :photo, :average)
+    params.require(:item).permit(:name, :ingredient, :category, :subcategory, :photo, :average, :tag_list, certification_photos: [])
   end
 end

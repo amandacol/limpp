@@ -84,7 +84,6 @@
     <%= image_tag "logolimpp.svg", class:'image' %>
   </div>
   <form>
-
     <div class="d-flex justify-content-center mt-4">
      <div class="input-group mb-3">
         <%= form_tag items_path, method: :get do %>
@@ -98,6 +97,14 @@
      </div>
     </div>
    </form>
+
+   <%= simple_form_for :search, url: items_path, method: "GET" do |f| %>
+  <%= f.input :category, label: "Categoria",  collection: $category, as: :check_boxes %>
+  <%= f.input :subcategory, label: "Subcategoria", collection: $subcategory, as: :check_boxes %>
+  <%= f.input :average, label: "Avaliações", collection: $average, as: :check_boxes %>
+  <%= f.submit "Search", class: "btn btn-primary" %>
+  <%= link_to "Reset", root_path  %>
+<% end %>
 <div class="d-flex justify-content-between mt-2">
   <div class="dropdown">
       <button class="btn btn-dropdown dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

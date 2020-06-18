@@ -21,7 +21,8 @@ class ItemsController < ApplicationController
     @wishlist = Wishlist.new
     @review = Review.new
     if params[:query].present?
-      @items = policy_scope(Item).search_by_name_and_ingredient(params[:query])
+      @filter = params["search"]["category"].concat(params["search"]["subcategory"]).concat(params["search"]["average"]).flatten.reject(&:blank?)
+      @items = policy_scope(Item).search_by_name_and_ingredient(params[:query]).tagged_with(@filter, any: true)
     else
       @items = policy_scope(Item)
     end

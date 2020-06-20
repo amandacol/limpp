@@ -22,7 +22,7 @@ gem 'omniauth-google-oauth2'
 gem 'cloudinary', '~> 1.12.0'
 gem 'rails_admin', '~> 2.0'
 gem 'acts-as-taggable-on', '~> 6.0'
-gem 'rails_admin_tag_list'
+gem 'rails_admin_tag_list', '~> 0.2.1'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

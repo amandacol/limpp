@@ -21,12 +21,19 @@ class ItemsController < ApplicationController
     @wishlist = Wishlist.new
     @review = Review.new
     if params[:query].present?
-      @filter = params["search"]["category"].concat(params["search"]["subcategory"]).concat(params["search"]["average"]).flatten.reject(&:blank?)
-      @items = policy_scope(Item).search_by_name_and_ingredient(params[:query]).tagged_with(@filter, any: true)
+      @items = policy_scope(Item).search_by_name_and_ingredient(params[:query])
     else
       @items = policy_scope(Item)
     end
   end
+
+  def tagged
+  if params[:tag].present?
+    @items = Item.tagged_with(params[:tag])
+  else
+    @items = Item.all
+  end
+end
 
   def show
     @wishlist = Wishlist.new
@@ -34,7 +41,6 @@ class ItemsController < ApplicationController
     @reviews = @item.reviews
     @review = Review.new
     @item = Item.find(params[:id])
-    @related_items = @item.find_related_tags
   end
 
   def edit
@@ -47,6 +53,7 @@ class ItemsController < ApplicationController
       render :edit
   end
   end
+
 
 
   def destroy
@@ -62,6 +69,6 @@ class ItemsController < ApplicationController
   end
 
   def item_params
-    params.require(:item).permit(:name, :ingredient, :category, :subcategory, :photo, :average, :tag_list, certification_photos: [])
+    params.require(:item).permit(:name, :ingredient, :photo, :tag, :average, :category_list, :subcategory_list, :toxicity_list, certification_photos: [])
   end
 end

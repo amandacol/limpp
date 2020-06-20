@@ -98,13 +98,8 @@
     </div>
    </form>
 
-   <%= simple_form_for :search, url: items_path, method: "GET" do |f| %>
-  <%= f.input :category, label: "Categoria",  collection: $category, as: :check_boxes %>
-  <%= f.input :subcategory, label: "Subcategoria", collection: $subcategory, as: :check_boxes %>
-  <%= f.input :average, label: "Avaliações", collection: $average, as: :check_boxes %>
-  <%= f.submit "Search", class: "btn btn-primary" %>
-  <%= link_to "Reset", root_path  %>
-<% end %>
+
+
 <div class="d-flex justify-content-between mt-2">
   <div class="dropdown">
       <button class="btn btn-dropdown dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -123,7 +118,18 @@
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
         <a class="dropdown-item" href="#">Por categoria</a>
+             <%= simple_form_for :search, url: items_path, method: "GET" do |f| %>
+              <%= f.input :category, label: "Categoria",  collection: $category, as: :check_boxes %>
+              <%= f.input :subcategory, label: "Subcategoria", collection: $subcategory, as: :check_boxes %>
+             <%= f.submit "Filtar", class: "btn btn-primary" %>
+             <%= link_to "Eliminar Filtro", root_path  %>
+          <% end %>
         <a class="dropdown-item" href="#">Por toxicidade</a>
+              <%= simple_form_for :search, url: items_path, method: "GET" do |f| %>
+              <%= f.input :toxicity, label: "Toxicidade", collection: $toxicity, as: :check_boxes %>
+             <%= f.submit "Filtar", class: "btn btn-primary" %>
+             <%= link_to "Eliminar Filtro", root_path  %>
+          <% end %>
         <a class="dropdown-item" href="#">Por avaliação</a>
       </div>
   </div>

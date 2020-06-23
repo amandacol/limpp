@@ -209,6 +209,9 @@
   </div>
   <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
     <div class="d-flex">
+    <% if @item.reviews.empty? %>
+      <br><%=    link_to 'Seja o primeiro a avaliar esse produto', new_item_review_path(@item.id), class: "btn btn-cadastrar mt-1" %>
+    <% else %>
     <p class="mr-1">Média geral</p>
     <% @item.calculate_average.times do %>
       <i class="fas fa-star star ml-2"></i>
@@ -229,6 +232,7 @@
     <% end %>
     <% end %>
     <br><%=    link_to 'Clique para avaliar esse produto', new_item_review_path(@item.id), class: "btn btn-cadastrar mt-1" %>
+    <% end %>
 </div>
 </div>
 

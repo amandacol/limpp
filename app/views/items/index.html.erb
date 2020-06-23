@@ -91,7 +91,9 @@
       background-color: #333132;
       color: white;
       font-weight: bold;
-      margin-left:-25px;
+      margin-left:-16px;
+      margin-bottom: -4px;
+      padding: 4px;
     }
     .btn-login{
       background-color: #67D89E;
@@ -103,6 +105,9 @@
    .font-search{
       font-family: 'Montserrat', sans-serif;
       font-size: 14px;
+   }
+   .col-form-label{
+    color: white !important;
    }
   </style>
   <div class="container p-1">
@@ -123,6 +128,7 @@
      </div>
     </div>
    </form>
+   <%= link_to "Eliminar filtros e buscas", items_path, class:"font ml-3"  %>
 
 
 
@@ -143,20 +149,15 @@
         <%= image_tag "filtrar.svg" %> Filtrar
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item fontfilter" href="#">Por categoria</a>
-             <%= simple_form_for :search_by_name_and_ingredient, method: "GET" do |f| %>
-              <%= f.input :category, label: "",  collection: $category, as: :check_boxes %>
-              <%= f.input :subcategory, label: "Subcategoria", collection: $subcategory, as: :check_boxes %>
+             <%= simple_form_for :search, method: "GET" do |f| %>
+             <p class="fontfilter">Por categoria</p>
+              <%= f.input :category, label:"", collection: $category, as: :check_boxes %>
+             <p class="fontfilter">Por subcategoria</p>
+              <%= f.input :subcategory, label:"",  collection: $subcategory, as: :check_boxes %>
+             <p class="fontfilter">Por toxicidade</p>
+              <%= f.input :toxicity, label:"",  collection: $toxicity, as: :check_boxes %>
              <%= f.submit "Filtar", class: "btn btn-login" %>
-             <%= link_to "Eliminar Filtro", items_path  %>
           <% end %>
-        <a class="dropdown-item fontfilter mt-3" href="#">Por toxicidade</a>
-              <%= simple_form_for :search_by_name_and_ingredient, method: "GET" do |f| %>
-              <%= f.input :toxicity, label: "", collection: $toxicity, as: :check_boxes %>
-             <%= f.submit "Filtar", class: "btn btn-login" %>
-             <%= link_to "Eliminar Filtro", items_path  %>
-          <% end %>
-        <a class="dropdown-item" href="#">Por avaliação</a>
       </div>
   </div>
 </div>
@@ -172,7 +173,7 @@
           <img src="https://images.unsplash.com/photo-1503236823255-94609f598e71?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" class="card-photo"/>
          <% end %>
          <% if item.reviews.empty? %>
-            <p class="card-text font notavailable"><%= "Item não avaliado" %></p>
+            <p class="card-text font notavailable"><%= "Não avaliado" %></p>
           <% else %>
             <% item.calculate_average.times do %>
               <i class="fas fa-star star ml-2"></i>
@@ -205,13 +206,3 @@
 </div>
 </div>
 
-<script type="text/javascript">
-  var checkBoxes = document.querySelectorAll(".form-check-input");
-  var form = document.querySelector('form');
-
-  for (const check of checkBoxes) {
-  check.addEventListener( 'change', function() {
-    Rails.fire(form, 'submit');
-  });
-  }
-</script>

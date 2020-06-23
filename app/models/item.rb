@@ -6,6 +6,7 @@ class Item < ApplicationRecord
   has_many :wishlists, dependent: :destroy
   has_many :reviews, dependent: :destroy
   has_many :coupons, dependent: :destroy
+  has_many :combinations, dependent: :destroy
   belongs_to :user
   has_one_attached :photo
   has_many_attached :certification_photos

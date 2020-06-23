@@ -22,6 +22,9 @@ class ItemsController < ApplicationController
     @review = Review.new
     if params[:query].present?
       @items = policy_scope(Item).search_by_name_and_ingredient(params[:query])
+    elsif params[:search].present?
+      @filter = params["search"]["category"].concat(params["search"]["subcategory"]).concat(params["search"]["toxicity"]).flatten.reject(&:blank?)
+      @items = policy_scope(Item).search_by_name_and_ingredient("#{@filter}")
     else
       @items = policy_scope(Item)
     end

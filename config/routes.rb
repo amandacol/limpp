@@ -17,4 +17,5 @@ Rails.application.routes.draw do
   resources :wishlists, only: [:index]
   resources :newitems
   resources :ingredients
+  resources :combination
 end

@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   get '/first' => 'pages#first'
   get '/sendtous' => 'pages#sendtous'
   get '/responsible' => 'pages#responsible'
-  get '/tagged', to: "items#tagged", as: :tagged
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :users
   resources :items do

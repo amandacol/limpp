@@ -27,14 +27,6 @@ class ItemsController < ApplicationController
     end
   end
 
-  def tagged
-  if params[:tag].present?
-    @items = Item.tagged_with(params[:tag])
-  else
-    @items = Item.all
-  end
-end
-
   def show
     @wishlist = Wishlist.new
     @coupon = Coupon.new
@@ -69,6 +61,6 @@ end
   end
 
   def item_params
-    params.require(:item).permit(:name, :ingredient, :photo, :tag, :average, :category_list, :subcategory_list, :toxicity_list, certification_photos: [])
+    params.require(:item).permit(:name, :ingredient, :photo, :tag, :average, :category, :subcategory, :toxicity, certification_photos: [])
   end
 end

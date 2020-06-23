@@ -12,8 +12,9 @@
     }
     .font{
       color: #707070;
-      font-size: 14px;
+      font-size: 13px;
       margin-left: -64px;
+      font-family: 'Montserrat', sans-serif;
       height: 84px;
       width:180px;
     }
@@ -62,6 +63,7 @@
       position: absolute;
       bottom: -2px;
       left: 162px;
+      font-family: 'Montserrat', sans-serif;
     }
     .component{
       position: absolute;
@@ -78,6 +80,30 @@
     .shadowcss{
       box-shadow: 2px 2px 4px #D6D6D6;
     }
+    .show{
+      min-width: 270px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      padding: 12px 16px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+    }
+    .fontfilter{
+      background-color: #333132;
+      color: white;
+      font-weight: bold;
+      margin-left:-25px;
+    }
+    .btn-login{
+      background-color: #67D89E;
+      color: white;
+      border-radius: 30px;
+      font-weight: bold;
+      padding: 0.3rem 1rem;
+    }
+   .font-search{
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+   }
   </style>
   <div class="container p-1">
   <div class="d-flex justify-content-center">
@@ -89,7 +115,7 @@
         <%= form_tag items_path, method: :get do %>
         <%= text_field_tag :query,
           params[:query],
-          class: "form-control rounded-pill shadow-sm p-3 bg-white rounded",
+          class: "form-control rounded-pill shadow-sm p-3 bg-white rounded font-search",
           placeholder: "Busque por um produto ou ingrediente"
         %>
       <%= image_submit_tag("lupa.svg", class: 'lupa ml-2') %>
@@ -117,18 +143,18 @@
         <%= image_tag "filtrar.svg" %> Filtrar
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="#">Por categoria</a>
-             <%= simple_form_for :search, url: items_path, method: "GET" do |f| %>
-              <%= f.input :category, label: "Categoria",  collection: $category, as: :check_boxes %>
+        <a class="dropdown-item fontfilter" href="#">Por categoria</a>
+             <%= simple_form_for :search_by_name_and_ingredient, method: "GET" do |f| %>
+              <%= f.input :category, label: "",  collection: $category, as: :check_boxes %>
               <%= f.input :subcategory, label: "Subcategoria", collection: $subcategory, as: :check_boxes %>
-             <%= f.submit "Filtar", class: "btn btn-primary" %>
-             <%= link_to "Eliminar Filtro", root_path  %>
+             <%= f.submit "Filtar", class: "btn btn-login" %>
+             <%= link_to "Eliminar Filtro", items_path  %>
           <% end %>
-        <a class="dropdown-item" href="#">Por toxicidade</a>
-              <%= simple_form_for :search, url: items_path, method: "GET" do |f| %>
-              <%= f.input :toxicity, label: "Toxicidade", collection: $toxicity, as: :check_boxes %>
-             <%= f.submit "Filtar", class: "btn btn-primary" %>
-             <%= link_to "Eliminar Filtro", root_path  %>
+        <a class="dropdown-item fontfilter mt-3" href="#">Por toxicidade</a>
+              <%= simple_form_for :search_by_name_and_ingredient, method: "GET" do |f| %>
+              <%= f.input :toxicity, label: "", collection: $toxicity, as: :check_boxes %>
+             <%= f.submit "Filtar", class: "btn btn-login" %>
+             <%= link_to "Eliminar Filtro", items_path  %>
           <% end %>
         <a class="dropdown-item" href="#">Por avaliação</a>
       </div>
@@ -178,3 +204,14 @@
   </div>
 </div>
 </div>
+
+<script type="text/javascript">
+  var checkBoxes = document.querySelectorAll(".form-check-input");
+  var form = document.querySelector('form');
+
+  for (const check of checkBoxes) {
+  check.addEventListener( 'change', function() {
+    Rails.fire(form, 'submit');
+  });
+  }
+</script>

@@ -1,5 +1,5 @@
 class IngredientsController < ApplicationController
-before_action :set_item, only: [:show, :edit, :update, :destroy]
+before_action :set_ingredient, only: [:show, :edit, :update, :destroy]
   def new
     @ingredient = Ingredient.new
     authorize @ingredient
@@ -18,11 +18,11 @@ before_action :set_item, only: [:show, :edit, :update, :destroy]
   end
 
   def index
-
+    @ingredients = policy_scope(Ingredient)
   end
 
   def show
-
+    @ingredient = Ingredient.find(params[:id])
   end
 
   def edit

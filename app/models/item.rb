@@ -28,4 +28,8 @@ class Item < ApplicationRecord
       return 0 unless reviews.any?
       reviews.average(:rating).to_i
     end
+
+    def count_certification_photo
+      certification_photos.count
+    end
 end

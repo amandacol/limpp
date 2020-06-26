@@ -127,6 +127,26 @@
       border-radius: 5px;
       right: 0;
       left: auto;
+      top: 20px;
+      width: 330px;
+    }
+    .sort{
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      background: white;
+      border: none;
+      color: #8F89DD;
+      display: none;
+      align-items: right;
+      position: absolute;
+      flex-grow: 0;
+      min-width: 100px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      padding: 12px 16px;
+      z-index: 1;
+      border-radius: 5px;
+      right: 0;
+      left: 10px;
       width: 330px;
     }
     .dropdown:hover .dropdown-content {
@@ -151,21 +171,18 @@
      </div>
     </div>
    </form>
-   <%= link_to "Eliminar filtros e buscas", items_path, class:"font ml-3"  %>
-
-
-
+   <%= link_to "Eliminar filtros, ordenações e buscas", items_path, class:"font ml-3"  %>
 <div class="d-flex justify-content-between mt-2">
-  <div class="dropdown">
+    <div class="dropdown">
       <button class="btn btn-dropdown dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <%= image_tag "ordenar.svg" %> Ordenar
       </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="#">Mais limpos</a>
-        <a class="dropdown-item" href="#">Melhor avaliados</a>
-        <a class="dropdown-item" href="#">Com certificados</a>
+        <div class="dropdown-content sort">
+        <a class="dropdown-item" href="#"> <%= link_to 'Melhor avaliados', items_path(order: 'average') %></a>
+        <a class="dropdown-item" href="#"> <%= link_to 'Mais limpos', items_path(order: 'combinations') %></a>
+        <a class="dropdown-item" href="#"> <%= link_to 'Com mais certificados', items_path(order: 'certifications') %></a>
       </div>
-  </div>
+    </div>
 
   <div class="dropdown">
       <button class="btn btn-dropdown dropdown-toggle mr-4" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

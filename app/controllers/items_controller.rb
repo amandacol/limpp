@@ -25,6 +25,14 @@ class ItemsController < ApplicationController
     elsif params[:search].present?
       @filter = params["search"]["category"].concat(params["search"]["subcategory"]).concat(params["search"]["toxicity"]).flatten.reject(&:blank?)
       @items = policy_scope(Item).search_by_name_and_ingredient("#{@filter}")
+    elsif case params[:order]
+           when 'average'
+    @items = policy_scope(Item).sort_by(&:calculate_average).reverse!
+  when 'combinations'
+   @items = policy_scope(Item).left_joins(:combinations).group('items.id').order('count(combinations.*) asc')
+  when 'certifications'
+    @items = policy_scope(Item).sort_by(&:count_certification_photo).reverse!
+  end
     else
       @items = policy_scope(Item)
     end
@@ -64,6 +72,6 @@ class ItemsController < ApplicationController
   end
 
   def item_params
-    params.require(:item).permit(:name, :ingredient, :photo, :tag, :average, :category, :subcategory, :toxicity, certification_photos: [])
+    params.require(:item).permit(:name, :ingredient, :photo, :tag, :average, :category, :subcategory, :toxicity, :order, certification_photos: [])
   end
 end

@@ -8,7 +8,7 @@ Devise.setup do |config|
     scope: 'email',
     info_fields: 'email, first_name, last_name',
     image_size: 'square',  # 50x50, guaranteed ratio
-    secure_image_url: true,
+    secure_image_url: true
    :google_oauth2, ENV['GOOGLE_CLIENT_ID'], ENV['GOOGLE_CLIENT_SECRET'], {}
 
   # The secret key used by Devise. Devise uses this key to generate

@@ -5,7 +5,7 @@ class WishlistsController < ApplicationController
   @user_items = current_user.items
   @user_wishlists = current_user.wishlists
   if params[:query].present?
-      @wishlists = policy_scope(Wishlist).search_by_item(params[:query])
+      @wishlists = policy_scope(Wishlist).multisearchable(params[:query])
     else
       @wishlists = policy_scope(Wishlist)
     end

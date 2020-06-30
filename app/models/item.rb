@@ -10,8 +10,9 @@ class Item < ApplicationRecord
   belongs_to :user
   has_one_attached :photo
   has_many_attached :certification_photos
+  multisearchable against: [:name]
   pg_search_scope :search_by_name_and_ingredient,
-    against: [ :name, :ingredient ],
+    against: [ :name ],
     associated_against: {
     category: [:name],
     subcategory: [:name],

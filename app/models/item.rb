@@ -23,7 +23,7 @@ class Item < ApplicationRecord
     }
 
     $category = ['Cabelos', 'Higiene Pessoal', 'Cuidados com a pele', 'Maquiagem']
-    $subcategory = ['Shampoos', 'Tratamentos Capilares', 'Finalizadores', 'Tinturas', 'Desodorantes', 'Higiene Bucal', 'Limpeza Facial', 'Limpeza Corporal', 'Tratamento Facial', 'Tratamento Corporal', 'Protetor Solar', 'Maquiagem Pele', 'Maquiagem Olhos', 'Maquiagem Lábios' ]
+    $subcategory = ['Shampoos', 'Tratamentos Capilares', 'Finalizadores Capilares', 'Tinturas', 'Desodorantes', 'Higiene Bucal', 'Limpeza Facial', 'Limpeza Corporal', 'Tratamento Facial', 'Tratamento Corporal', 'Protetor Solar', 'Maquiagem Pele', 'Maquiagem Olhos', 'Maquiagem Lábios' ]
     $toxicity = ['Não contém tóxicos avaliados pelo limpp', 'Muito Tóxico', 'Tóxico']
     def calculate_average
       return 0 unless reviews.any?

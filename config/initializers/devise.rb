@@ -10,8 +10,6 @@ Devise.setup do |config|
     image_size: 'square',  # 50x50, guaranteed ratio
     secure_image_url: true
 
-  config.omniauth :google_oauth2, ENV['GOOGLE_CLIENT_ID'], ENV['GOOGLE_CLIENT_SECRET'], {}
-
 
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing

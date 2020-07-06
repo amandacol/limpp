@@ -39,18 +39,6 @@
     .btn-face:hover {
       box-shadow: 0px 0px 0px rgba(0, 0, 0, 0) !important;
     }
-    .btn-google {
-      color: white;
-      background-color: #BF2D04;
-      border-radius: 30px;
-      padding: 0.5rem 1rem;
-      font-weight: bold;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 15px;
-    }
-    .btn-google:hover {
-      box-shadow: 0px 0px 0px rgba(0, 0, 0, 0) !important;
-    }
     i {
       margin-right: 20px;
     }
@@ -113,7 +101,6 @@
     <% end %>
     </div>
     <% unless current_user %>
-        <%= link_to '<i class="fab fa-google mt-1"></i>  Entrar com Google'.html_safe, user_google_oauth2_omniauth_authorize_path, class: "btn btn-google d-flex justify-content-center mt-3 mr-5 ml-5" %>
       <div>
         <%= link_to '<i class="fab fa-facebook-f"></i>  Entrar com Facebook'.html_safe, user_facebook_omniauth_authorize_path, class: "btn btn-face d-flex justify-content-center mt-3 mr-5 ml-5" %>
       </div>

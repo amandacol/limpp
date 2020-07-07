@@ -146,6 +146,11 @@
       padding: 8px;
       white-space: nowrap;
     }
+    .number{
+      color: #33D89E;
+      font-size: 25px;
+      margin-top: -7px;
+    }
   </style>
 
 <div class="container p-1">
@@ -195,11 +200,15 @@
 <div class="tab-content" id="pills-tabContent">
   <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
   <div class="d-flex align-items-center">
-  <ul>
-  <% @item.combinations.each do |combination| %>
-  <li class=" ingredientname mt-2"><%= link_to combination.ingredient.name, ingredient_path(combination.ingredient) %></li><div class="circle mb-3 ml-1"></div>
+  <% if @item.combinations.any? %>
+        <ul>
+        <% @item.combinations.each do |combination| %>
+        <li class=" ingredientname mt-2"><%= link_to combination.ingredient.name, ingredient_path(combination.ingredient) %></li><div class="circle mb-3 ml-1"></div>
+        <% end %>
+        </ul>
+     <% else %>
+        <p class="card-text"><%= 'Esse item não contém ingredientes tóxicos avaliados pelo limpp' %></p>
   <% end %>
-  </ul>
   </div>
   </div>
   <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
@@ -217,17 +226,15 @@
       <br><%=    link_to 'Seja o primeiro a avaliar esse produto', new_item_review_path(@item.id), class: "btn btn-cadastrar mt-1" %>
     <% else %>
     <p class="mr-1">Média geral</p>
-    <% @item.calculate_average.times do %>
-      <i class="fas fa-star star ml-2"></i>
-    <% end %>
-    <p class="ml-3 mr-2">de</p><%= @item.reviews.count %> <p class="ml-2">Avaliações</p>
+    <p class="number ml-3"><%= @item.calculate_average %></p>
+    <p class="ml-3 mr-1">de</p><p class="ml-1 font-weight-bold"><%= @item.reviews.count %></p> <p class="ml-2">Avaliação(ões)</p>
     </div>
     <% if @item.reviews.exists? %>
     <% @yes = (@item.reviews.where(buyagain: 1).count * 100.0 / @item.reviews.count).round(0) %>
     <% @no = (@item.reviews.where(buyagain: 0).count * 100.0 / @item.reviews.count).round(0) %>
     <% if @yes >= @no %>
       <div class="d-flex align-items-center">
-       <span class="likeitem fonthumb"><i class="far fa-thumbs-up"><%= @yes %>%</i></span><p class="flex-nowrap mt-3">Comprariam novamente</p>
+       <span class="likeitem fonthumb"><i class="far fa-thumbs-up"><%= @yes %>%</i></span><p class="flex-nowrap mt-4">Comprariam novamente</p>
       </div>
     <% else %>
       <div class="d-flex align-items-center">

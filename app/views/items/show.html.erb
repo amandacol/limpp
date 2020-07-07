@@ -56,8 +56,12 @@
       padding: 0.7rem;
     }
     .notavailable{
+      color: #707070;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      margin-left: -64px;
       position: absolute;
-      bottom: -56px;
+      top: 76px;
       left: 162px;
       color: #67D89E;
       font-size: 14px;
@@ -163,7 +167,7 @@
         <img src="https://images.unsplash.com/photo-1503236823255-94609f598e71?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" class="card-photo"/>
        <% end %>
        <% if @item.reviews.empty? %>
-          <p class="card-text font notavailable"><%= "Item não avaliado" %></p>
+          <p class="card-text notavailable"><%= "Item não avaliado" %></p>
           <% else %>
           <% @item.calculate_average.times do %>
             <i class="fas fa-star star ml-2"></i>

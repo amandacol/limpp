@@ -29,9 +29,9 @@ class ItemsController < ApplicationController
            when 'average'
     @items = policy_scope(Item).sort_by(&:calculate_average).reverse!
   when 'combinations'
-   @items = policy_scope(Item).left_joins(:combinations).group('items.id').order('count(combinations.*) asc')
+   @items = policy_scope(Item).left_outer_joins(:combinations).group('items.id').order('count(combinations.*) asc')
   when 'coupons'
-   @items = policy_scope(Item).left_joins(:coupons).group('items.id').order('count(coupons.*) desc')
+   @items = policy_scope(Item).left_outer_joins(:coupons).group('items.id').order('count(coupons.*) desc')
   when 'certifications'
     @items = policy_scope(Item).sort_by(&:count_certification_photo).reverse!
   end

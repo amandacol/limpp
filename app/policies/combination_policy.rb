@@ -4,6 +4,7 @@ class CombinationPolicy < ApplicationPolicy
       scope.all
     end
   end
+
   def rails_admin?(action)
     case action
       when :destroy, :new, :edit, :update, :create
@@ -20,4 +21,5 @@ class CombinationPolicy < ApplicationPolicy
   def show?
     return true
   end
+
 end

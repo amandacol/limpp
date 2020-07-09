@@ -1,5 +1,5 @@
 class CombinationsController < ApplicationController
-  before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :set_combination, only: [:show, :edit, :update, :destroy]
   def new
     @combination = Combination.new
     authorize @combination

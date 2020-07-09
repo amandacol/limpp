@@ -39,10 +39,12 @@ class CouponsController < ApplicationController
 
     def set_coupon
       @coupon = Coupon.find(params[:id])
+      authorize @coupon
     end
 
     def set_item
       @item = Item.find(params[:item_id])
+      authorize @item
     end
 
     def coupon_params

@@ -1,61 +1,76 @@
-<div class="container-fluid mt-5">
+<div class="container-fluid mt-2">
   <style>
-    .image{
-      width: 120px;
+    body {
+      height: 100vh;
+      margin: 0;
+      display: grid;
+      background: white;
     }
-    .lupa{
-      width: 30px;
+    .backgroud{
+      max-width: 320px;
+      position: relative;
+      background: linear-gradient(to bottom, #66d79f, #00cdc8, #00bde8, #33a7f0, #8d8bdc);
+      padding: 10px;
+      top: 20%;
+      left: 4%;
     }
-    .codigo{
-      width: 60px;
+    .module {
+      background: white;
+      padding: 10px;
+      color: #707070;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 10px;
     }
-    .hair{
-      width: 20px;
+    .btn-avaliacao{
+      color: white;
+      background-color: #8F89DD;
+      border-radius: 30px;
+      padding: 0.5rem 2rem;
+      font-weight: bold;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      box-shadow: 0px 2px 2px #33313261;
     }
-    .personal{
-      width: 50px;
+    .space{
+      margin-bottom: 1px;
     }
-    .skin{
-      width: 30px;
+    .subtitle{
+      font-size: 13px;
+      font-weight: bold;
     }
-    .make{
-      width: 40px;
-    }
-    .posts{
-      width: 200px;
-    }
-    .font{
-      color: #333132;
-      font-size: 14px;
+    .margindiv{
+      margin-right: 90px;
     }
   </style>
-  <div class="d-flex justify-content-center">
-    <%= image_tag "limpp-logo-cor.png", class:'image' %>
-  </div>
-    <form>
-    <div class="d-flex justify-content-center">
-     <div class="input-group mb-3">
-      <%= form_tag items_path, method: :get do %>
-        <%= text_field_tag :query,
-          params[:query],
-          class: "form-control rounded-pill shadow-sm p-3 bg-white rounded",
-          placeholder: "Busque por um produto ou ingrediente"
-        %>
-        <%= image_submit_tag("lupa.svg", class: 'lupa ml-3') %>
-      <% end %>
-     </div>
-    </div>
-   </form>
-  <div class="d-flex justify-content-around mt-5">
-    <nav>
-      <div class="nav nav-tabs ml-5" id="nav-tab" role="tablist">
-        <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true"><%= image_tag "hair.svg", class:'hair ml-4' %>  Cabelos</a>
-        <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false"><%= image_tag "personal.svg", class:'personal ml-3' %>  Higiene Pessoal</a>
-        <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false"><%= image_tag "skin.svg", class:'skin ml-4' %> Cuidados com a Pele</a>
-        <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false"><%= image_tag "make.svg", class:'make ml-4' %> Maquiagem</a>
+  <div class="row justify-content-center mr-2">
+  <div class="backgroud"><div class="module">
+    <h5 class="font-weight-bold text-center mt-2">Bem vinde ao limpp!</h5>
+    <p class="text-center mt-1 subtitle ml-1 mr-1">Conhecimentos compartilhados para uma beleza mais consciente.</p>
+  <div class="column d-flex flex-wrap">
+      <div class="margindiv">
+      <%= image_tag "buscainicial.svg" %>
+        <figcaption class="ml-2 mt-1 text-wrap mr-4"> Busque pelo ingrediente ou nome do produto</figcaption>
       </div>
-    </nav>
-  <div class="d-flex justify-content-center mt-5">
-    <%= image_tag "Posts-limpp.png", class:'posts' %>
+      <div class="margindiv">
+        <%= image_tag "termometroinicial.svg" %>
+        <figcaption class="ml-2 mt-1"> Conheça a avaliação dos ingredientes</figcaption>
+      </div>
+      <div class="margindiv">
+        <%= image_tag "avaliação.svg" %>
+        <figcaption class="ml-2 mt-1"> Sugira produtos para serem avaliados</figcaption>
+      </div>
+      <div class="margindiv">
+         <%= image_tag "descontosacola.svg" %>
+        <figcaption class="ml-2 mt-1"> Ganhe desconto em produtos limpos</figcaption>
+      </div>
+  </div>
+<%= link_to new_user_session_path, class:"btn btn-avaliacao mt-4" do %>
+      <figure class="d-flex align-items-center space">
+         <%= image_tag "userwhite.svg" %><figcaption class="ml-2 mt-1 space">Login</figcaption>
+       </figure>
+<% end %>
+    <p class="mt-4 ml-3"><%= image_tag "Posts-limpp.png" %></p>
+  </div></div>
   </div>
 </div>
+

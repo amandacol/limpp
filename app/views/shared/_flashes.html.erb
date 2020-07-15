@@ -1,5 +1,23 @@
+<style>
+  .customize{
+    min-width: 350px !important;
+    background-color: #33D89E;
+    font-size: 14px;
+    color: white;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+  }
+  .customizealert{
+    min-width: 350px !important;
+    background-color: #BE0B0B;
+    font-size: 14px;
+    color: white;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+  }
+</style>
 <% if notice %>
-  <div class="alert alert-info alert-dismissible fade show m-1" role="alert">
+  <div class="alert alert-info alert-dismissible fade show m-1 customize" role="alert">
     <%= notice %>
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
       <span aria-hidden="true">&times;</span>
@@ -7,7 +25,7 @@
   </div>
 <% end %>
 <% if alert %>
-  <div class="alert alert-warning alert-dismissible fade show m-1" role="alert">
+  <div class="alert alert-warning alert-dismissible fade show m-1 customizealert" role="alert">
     <%= alert %>
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
       <span aria-hidden="true">&times;</span>

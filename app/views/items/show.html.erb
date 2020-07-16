@@ -8,6 +8,11 @@
       height: 84px;
       width:180px;
     }
+    .fonttitle{
+      color: #707070;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+    }
     .desconto{
       width: 35px;
       height: 35px;
@@ -85,7 +90,9 @@
       background-color: white;
     }
     .sizelogo{
-      width: 60px;
+      width: 40px;
+      margin-left: 9px;
+      margin-bottom: -10px;
     }
     .colorstar{
       color: #33D89E;
@@ -125,15 +132,9 @@
       border-radius: 23px;
       color: #707070;
       padding: 8px;
-      padding-right: 50px;
+      padding-right: 45px;
       font-size: 13px;
 
-    }
-    .circle {
-      height: 35px;
-      width: 35px;
-      background-color: #D93500;
-      border-radius: 50%;
     }
     .evaluation{
       font-size: 30px;
@@ -155,6 +156,105 @@
       font-size: 25px;
       margin-top: -7px;
     }
+    .dotgreen2 {
+    height: 20px;
+    width: 20px;
+    background-color: #00B576;
+    border-radius: 50%;
+    display: inline-block;
+    margin-top: -20px;
+    margin-right: 10px;
+  }
+    .bigdotgreen {
+    height: 30px;
+    width: 30px;
+    background-color: #00B576;
+    border-radius: 50%;
+    display: inline-block;
+    margin-bottom: -35px;
+  }
+  .bigdotyellow{
+    height: 30px;
+    width: 30px;
+    background-color: #FFBA00;
+    border-radius: 50%;
+    display: inline-block;
+    margin-bottom: -35px;
+  }
+  .bigdotred{
+    height: 30px;
+    width: 30px;
+    background-color: #D80303;
+    border-radius: 50%;
+    display: inline-block;
+    margin-bottom: -35px;
+  }
+  .bigdotgrey{
+    height: 30px;
+    width: 30px;
+    background-color: #8391B5;
+    border-radius: 50%;
+    display: inline-block;
+    margin-bottom: -35px;
+  }
+  .potencialnao2{
+    background-color: #00B576;
+    border-radius: 30px;
+    display: inline-block;
+    margin-left: -2px;
+    margin-top: -10px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 0.2rem 0.6rem;
+  }
+  .marginhealth2{
+    margin-bottom: 18px;
+  }
+   .marginrisk{
+    margin-left: 15px;
+    color: #707070;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    margin-top: 15px;
+  }
+  .criterios{
+    color: #00B576;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    margin-left: 50px;
+  }
+  .criteriosyellow{
+    color: #FFBA00;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    margin-left: 50px;
+  }
+  .criteriosred{
+    color: #D80303;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    margin-left: 50px;
+  }
+  .criteriosgrey{
+    color: #8391B5;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    margin-left: 50px;
+  }
+  .criterioscinza{
+    color: #707070;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    margin-left: 50px;
+    margin-bottom: -10px;
+  }
   </style>
 
 <div class="container p-1">
@@ -204,15 +304,31 @@
 <div class="tab-content" id="pills-tabContent">
   <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
   <div class="d-flex align-items-center">
+    <div class="d-flex ingredientname">
   <% if @item.combinations.any? %>
         <ul>
         <% @item.combinations.each do |combination| %>
-        <li class=" ingredientname mt-2"><%= link_to combination.ingredient.name, ingredient_path(combination.ingredient) %></li><div class="circle mb-3 ml-1"></div>
+        <li class="mt-2 mb-2"><%= link_to combination.ingredient.name, ingredient_path(combination.ingredient) %></li>
+      <div class="d-flex">
+        <div>
+        <%= image_tag "saude.svg", class:"marginhealth2" %>
+        <span class="dotgreen2"></span>
+        </div>
+        <div>
+        <%= image_tag "ambiente.svg", class:"marginhealth2" %>
+        <span class="dotgreen2"></span>
+        </div>
+        <div>
+        <%= image_tag "alergia.svg", class:"marginhealth2" %>
+        <p class="potencialnao2">NÃO</p>
+        </div>
+      </div>
         <% end %>
         </ul>
      <% else %>
-        <p class="card-text"><%= 'Esse item não contém ingredientes tóxicos avaliados pelo limpp' %></p>
+        <p class="card-text ingredientname"><%= 'Esse item não contém ingredientes tóxicos avaliados pelo limpp' %></p>
   <% end %>
+    </div>
   </div>
   </div>
   <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
@@ -221,7 +337,7 @@
        <%= cl_image_tag photo.key, width: 80, height: 80, crop: :fill, class:"shadowcss bg-white rounded" %>
        <% end %>
      <% else %>
-        <p class="card-text"><%= 'Esse item não tem certificados aprovados pelo limpp' %></p>
+        <p class="card-text ingredientname"><%= 'Esse item não tem certificados aprovados pelo limpp' %></p>
      <% end %>
   </div>
   <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
@@ -252,21 +368,31 @@
 </div>
 
 
-  <div class="d-flex"><p class="font mt-5 ml-2">Critérios de avaliação</p><%= image_tag "logolimpp.svg" , class:"sizelogo mb-4" %> </div>
-  <div class="d-flex justify-content-right"><%= image_tag "criterios.png" %>
-      <div>
-        <div class="ml-4">
-        <p class="text-left mt-4 verde">VERDE</p>
-        <p class="text-left mt-3 mr-5">Produtos que todos os ingredientes são seguros e aprovados tanto para uso humano, como quando eliminado no meio ambiente.</p>
-        </div>
-        <div class="ml-4">
-        <p class="text-left mt-5 amarelo">AMARELO</p>
-        <p class="text-left mt-3 mr-5">São ingredientes que causam divergência no meio científico. Se enquadram produtos cujos ingredientes não são 100% transparentes em suas embalagens.</p>
-        </div>
-        <div class="ml-4">
-        <p class="text-left mt-5 vermelho">VERMELHO</p>
-        <p class="text-left mt-3 mr-5">Nesse caso, não existem evidências que provem o contrário. São ingredientes que muitas vezes já foram proibidos na Europa ou nos Estados Unidos.</p>
-        </div>
-      </div>
+  <div class="d-flex"><p class="fonttitle mt-4">Aspectos avaliados pelo</p><%= image_tag "logolimpp.svg" , class:"sizelogo" %> </div>
+    <div class="d-flex">
+    <%= image_tag "saude.svg", class:"marginhealth" %>
+    <p class="marginrisk">Risco à saúde</p>
     </div>
+    <div class="d-flex">
+    <%= image_tag "ambiente.svg", class:"marginhealth" %>
+    <p class="marginrisk">Risco ao meio ambiente</p>
+    </div>
+    <div class="d-flex">
+    <%= image_tag "alergia.svg", class:"marginhealth" %>
+    <p class="marginrisk">Potencial alegênico</p>
+    </div>
+
+<div class="d-flex"><p class="fonttitle mt-4">Critérios de avaliação</p><%= image_tag "logolimpp.svg" , class:"sizelogo" %> </div>
+    <span class="bigdotgreen"></span>
+    <p class="criterios"> Seguro em cosméticos </p>
+    <p class="criterioscinza"> É seguro em cosméticos sem restrições e sem causar impactos a saúde e/ou ao meio ambiente.</p>
+<span class="bigdotyellow"></span>
+    <p class="criteriosyellow"> Seguro em cosméticos, com restrições  </p>
+    <p class="criterioscinza"> É seguro em cosméticos com restrições e podem causar impactos a saúde e/ou ao meio ambiente.</p>
+<span class="bigdotred"></span>
+    <p class="criteriosred"> Inseguro em cosméticos </p>
+    <p class="criterioscinza"> Não são seguros em cosméticos e podem causar impactos graves a saúde e/ou ao meio ambiente.</p>
+<span class="bigdotgrey"></span>
+    <p class="criteriosgrey"> Potencial inconclusivo   </p>
+    <p class="criterioscinza"> Estudos não permitem nenhuma conclusão por estarem em andamento ou obterem dados divergentes sobre sua segurança a saúde e/ou impactos ao meio ambiente.</p>
 </div>

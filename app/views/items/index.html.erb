@@ -6,6 +6,14 @@
     .lupa{
       width: 30px;
     }
+    .purpleheart{
+      width: 20px;
+      margin-bottom: 10px;
+    }
+    .greyheart{
+      width: 30px;
+      margin-left: 5px;
+    }
     .desconto{
       width: 35px;
       height: 35px;
@@ -56,7 +64,7 @@
       bottom: -56px;
       left: 162px;
       color: #67D89E;
-      font-size: 14px;
+      font-size: 12px !important;
       font-weight: bold;
     }
     .case{
@@ -216,7 +224,7 @@
           <img src="https://images.unsplash.com/photo-1503236823255-94609f598e71?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" class="card-photo"/>
          <% end %>
          <% if item.reviews.empty? %>
-            <p class="card-text font notavailable"><%= "Não avaliado" %></p>
+            <p class="card-text font notavailable"><%= "Não avaliado ainda" %></p>
           <% else %>
             <% item.calculate_average.times do %>
               <i class="fas fa-star star ml-2"></i>
@@ -227,14 +235,16 @@
          <div class="d-flex justify-content-end space">
           <% if item.coupons.exists? %>
           <%= link_to item_coupons_path(item) do %>
-            <%= image_tag "desconto2.png", class:"desconto mb-1" %>
+            <%= image_tag "desconto2.png", class:"desconto mb-2" %>
           <% end %>
           <% end %>
-          <div>
+            <% if item.wishlists.any? %>
+            <%= image_tag("purpleheart.svg", class: 'purpleheart ml-2') %>
+            <% else %>
             <%= simple_form_for [item, Wishlist.new] do |s|  %>
-              <%= image_submit_tag("heart.png", class: 'lupa ml-2') %>
+              <%= image_submit_tag("heart.png", class: 'greyheart') %>
           <% end %>
-           </div>
+          <% end %>
          </div>
         <div class="d-flex justify-content-end">
         <%= link_to item_path(item), class:"component" do %>

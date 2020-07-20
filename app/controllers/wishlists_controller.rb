@@ -31,6 +31,7 @@ class WishlistsController < ApplicationController
 
   def set_wishlist
     @wishlist = Wishlist.find(params[:id])
+    authorize @wishlist
   end
 
   def wishlist_params

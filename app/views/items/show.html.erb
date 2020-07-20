@@ -63,7 +63,7 @@
     .notavailable{
       color: #707070;
       font-family: 'Montserrat', sans-serif;
-      font-size: 14px;
+      font-size: 12px !important;
       margin-left: -64px;
       position: absolute;
       top: 76px;
@@ -134,7 +134,6 @@
       padding: 8px;
       padding-right: 45px;
       font-size: 13px;
-
     }
     .evaluation{
       font-size: 30px;
@@ -255,6 +254,14 @@
     margin-left: 50px;
     margin-bottom: -10px;
   }
+  .purpleheart{
+      width: 20px;
+      margin-bottom: 10px;
+    }
+    .greyheart{
+      width: 30px;
+      margin-left: 5px;
+    }
   </style>
 
 <div class="container p-1">
@@ -267,7 +274,7 @@
         <img src="https://images.unsplash.com/photo-1503236823255-94609f598e71?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" class="card-photo"/>
        <% end %>
        <% if @item.reviews.empty? %>
-          <p class="card-text notavailable"><%= "Item não avaliado" %></p>
+          <p class="card-text notavailable"><%= "Não avaliado ainda" %></p>
           <% else %>
           <% @item.calculate_average.times do %>
             <i class="fas fa-star star ml-2"></i>
@@ -278,14 +285,16 @@
        <div class="d-flex justify-content-end space">
           <% if @item.coupons.exists? %>
           <%= link_to item_coupons_path(@item) do %>
-            <%= image_tag "desconto2.png", class:"desconto mb-1" %>
+            <%= image_tag "desconto2.png", class:"desconto mb-2" %>
           <% end %>
           <% end %>
-          <div>
+            <% if @item.wishlists.any? %>
+            <%= image_tag("purpleheart.svg", class: 'purpleheart ml-2') %>
+            <% else %>
           <%= simple_form_for [@item, Wishlist.new] do |s|  %>
-            <%= image_submit_tag("heart.png", class: 'lupa ml-2') %>
+            <%= image_submit_tag("heart.png", class: 'greyheart') %>
         <% end %>
-         </div>
+        <% end %>
        </div>
      </div>
   </div>

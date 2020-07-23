@@ -18,6 +18,22 @@
     display: inline-block;
     margin-left: 15px;
   }
+  .dotred {
+    height: 20px;
+    width: 20px;
+    background-color: #D80303;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 15px;
+  }
+  .dotyellow {
+    height: 20px;
+    width: 20px;
+    background-color: #FFBA00;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 15px;
+  }
   .marginhealth{
     margin-bottom: 18px;
   }
@@ -40,11 +56,22 @@
     font-weight: bold;
     padding: 0.2rem 0.6rem;
   }
+  .potencialsim{
+    background-color: #D80303;
+    border-radius: 30px;
+    display: inline-block;
+    margin-left: 15px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 0.2rem 0.6rem;
+  }
 </style>
 <div class="container-fluid">
  <div class="p-3 mr-5">
     <h1 class="mt-5 ingredientname"><%= @ingredient.name %></h1>
-    <p class="function">EMULSIONANTE Promove a formação de misturas íntimas de líquidos não miscíveis, alterando a tensão interfacial. ESTABILIZADOR DE EMULSÃO Ajuda o processo de emulsificação e melhora a estabilidade da emulsão e prazo de validade. CONDICIONANTE DE CABELO Deixa o cabelo mais fácil de pentear, flexível, macia e brilhante e / ou confere volume, leveza, brilho, etc. CONDICIONADOR DA PELE Mantém a pele em boas condições. SURFACTANTE/TENSOATIVO Diminui a tensão superficial da cosmética, bem como auxiliares de distribuição uniforme do produto, quando usado. REGULADOR DE VISCOSIDADE Aumenta ou diminui a viscosidade dos cosméticos.</p>
+    <p class="function"><%= @ingredient.classification %></p>
     <div class="d-flex">
     <%= image_tag "saude.svg", class:"marginhealth" %>
     <p class="marginrisk">Risco à saúde</p><span class="dotgreen"></span>
@@ -55,7 +82,12 @@
     </div>
     <div class="d-flex">
     <%= image_tag "alergia.svg", class:"marginhealth" %>
-    <p class="marginrisk">Potencial alegênico</p><p class="potencialnao">NÃO</p>
+    <p class="marginrisk">Potencial alegênico</p>
+    <% if @ingredient.impact == "sim" %>
+    <p class="potencialsim">SIM</p>
+    <% else %>
+    <p class="potencialnao">NÃO</p>
+    <% end %>
     </div>
     <div class="d-flex">
     <%= image_tag "ingrediente.svg", class:"marginhealth" %>

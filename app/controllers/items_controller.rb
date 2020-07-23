@@ -18,7 +18,7 @@ class ItemsController < ApplicationController
   end
 
   def index
-    @wishlist = Wishlist.new
+    @wishlist_item = WishlistItem.new
     @review = Review.new
     if params[:query].present?
       @items = policy_scope(Item).search_by_name_and_ingredient(params[:query])
@@ -41,7 +41,7 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @wishlist = Wishlist.new
+    @wishlist_item = WishlistItem.new
     @coupon = Coupon.new
     @reviews = @item.reviews
     @review = Review.new

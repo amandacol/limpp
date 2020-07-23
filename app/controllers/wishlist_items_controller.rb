@@ -8,7 +8,7 @@ class WishlistItemsController < ApplicationController
 
   def create
     @item = Item.find(params[:item_id])
-    @wishlist_item = WishlistItem.new(wishlist_item_params)
+    @wishlist_item = WishlistItem.new
     authorize @wishlist_item
     @wishlist_item.user = current_user
     @wishlist_item.save

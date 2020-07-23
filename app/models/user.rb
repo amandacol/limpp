@@ -8,6 +8,7 @@ class User < ApplicationRecord
 
   has_many :items, dependent: :destroy
   has_many :wishlists, dependent: :destroy
+  has_many :wishlist_items, dependent: :destroy
 
 
   def self.find_for_facebook_oauth(auth)

@@ -10,11 +10,11 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :users
   resources :items do
-    resources :wishlists, except: :index
     resources :reviews
     resources :coupons
   end
-  resources :wishlists, only: [:index]
+  resources :wishlists
+  resources :wishlist_items
   resources :newitems
   resources :ingredients
   resources :combination

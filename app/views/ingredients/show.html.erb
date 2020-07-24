@@ -1,6 +1,6 @@
 <style>
   .ingredientname{
-    color: #333132;
+    color: #8F89DD;
     font-family: 'Montserrat', sans-serif;
     font-size: 18px;
     font-weight: bold;
@@ -9,6 +9,12 @@
     color: #707070;
     font-family: 'Montserrat', sans-serif;
     font-size: 11px;
+  }
+  .risktext{
+    color: #707070;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    margin-left: 35px;
   }
   .dotgreen {
     height: 20px;
@@ -36,6 +42,9 @@
   }
   .marginhealth{
     margin-bottom: 18px;
+  }
+  .marginrestriction{
+    margin-left: -6px;
   }
   .marginrisk{
     margin-left: 15px;
@@ -74,26 +83,53 @@
     <p class="function"><%= @ingredient.classification %></p>
     <div class="d-flex">
     <%= image_tag "saude.svg", class:"marginhealth" %>
-    <p class="marginrisk">Risco à saúde</p><span class="dotgreen"></span>
+    <p class="marginrisk">Risco à saúde</p>
+    <% if @ingredient.risk_to_health == "yellow" %>
+        <span class="dotyellow"></span>
+        <% elsif @ingredient.risk_to_health == "red"  %>
+        <span class="dotred"></span>
+        <% else %>
+        <span class="dotgreen"></span>
+        <% end %>
     </div>
+    <% if @ingredient.risk_to_health == "yellow" || @ingredient.risk_to_health == "red" %>
+    <p class="risktext"><%= @ingredient.risk_to_health_text %></p>
+    <% end %>
     <div class="d-flex">
     <%= image_tag "ambiente.svg", class:"marginhealth" %>
-    <p class="marginrisk">Risco ao meio ambiente</p><span class="dotgreen"></span>
+    <p class="marginrisk">Risco ao meio ambiente</p>
+    <% if @ingredient.risk_to_enviroment == "yellow" %>
+        <span class="dotyellow"></span>
+        <% elsif @ingredient.risk_to_enviroment == "red"  %>
+        <span class="dotred"></span>
+        <% else %>
+        <span class="dotgreen"></span>
+        <% end %>
     </div>
+    <% if @ingredient.risk_to_enviroment == "yellow" || @ingredient.risk_to_enviroment == "red" %>
+     <p class="risktext"><%= @ingredient.risk_to_enviroment_text %></p>
+    <% end %>
     <div class="d-flex">
     <%= image_tag "alergia.svg", class:"marginhealth" %>
     <p class="marginrisk">Potencial alegênico</p>
     <% if @ingredient.impact == "sim" %>
-    <p class="potencialsim">SIM</p>
+     <p class="potencialsim">SIM</p>
     <% else %>
-    <p class="potencialnao">NÃO</p>
+     <p class="potencialnao">NÃO</p>
     <% end %>
     </div>
     <div class="d-flex">
     <%= image_tag "ingrediente.svg", class:"marginhealth" %>
     <p class="marginrisk">Outros nomes</p>
     </div>
-    <p class="function">• BUTYROSPERMUM PARKII BUTTER • BUTYROSPERMUM PARKII (SHEA BUTTER) • KARITE BUTTER • SHEA BUTTER • SHEA BUTTER FRUIT • MANTEIGA DE KARITÉ • VITELLARIA NILOTICA (SHEA) FRUIT BUTTER • VITELLARIA PARADOXA (SHEA BUTTER)</p>
+    <p class="function"><%= @ingredient.other_names %></p>
+    <% if @ingredient.restrictions.present? %>
+     <div class="d-flex">
+     <%= image_tag "restricoes.png", class:"marginrestriction" %>
+      <p class="marginrisk">Restrições</p>
+      <p class="risktext"><%= @ingredient.restrictions %></p>
+    <% end %>
+     </div>
     <div class="d-flex">
     <%= image_tag "ingrediente.svg", class:"marginhealth" %>
     <p class="marginrisk">Fontes</p>

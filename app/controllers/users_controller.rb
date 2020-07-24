@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show]
+  after_create :add_wishlist
 
   def show
     @user = User.find(params[:id])
@@ -13,6 +14,11 @@ class UsersController < ApplicationController
     else
       @users = policy_scope(User)
     end
+  end
+
+  def add_wishlist
+    @wishlist = Wishlist.new(current_user.id)
+    @wishlist.save
   end
 
   private

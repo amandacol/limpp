@@ -2,6 +2,7 @@ class WishlistsController < ApplicationController
   before_action :set_wishlist, only: [:destroy]
 
   def index
+  @user = current_user
   @user_items = current_user.items
   @user_wishlists = current_user.wishlists
   if params[:query].present?

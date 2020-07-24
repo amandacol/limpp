@@ -9,11 +9,11 @@ Rails.application.routes.draw do
   get '/responsible' => 'pages#responsible'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :users
+  resources :wishlists
   resources :items do
     resources :reviews
     resources :coupons
   end
-  resources :wishlists
   resources :wishlist_items
   resources :newitems
   resources :ingredients

@@ -292,6 +292,12 @@
       width: 30px;
       margin-left: 5px;
     }
+    .ingredientlink{
+      font-family: 'Montserrat', sans-serif;
+      font-weight: bold;
+      font-size: 11px;
+      color:#707070;
+    }
   </style>
 
 <div class="container p-1">
@@ -347,15 +353,27 @@
   <% if @item.combinations.any? %>
         <ul>
         <% @item.combinations.each do |combination| %>
-        <li class="mt-2 mb-2"><%= link_to combination.ingredient.name, ingredient_path(combination.ingredient) %></li>
+        <li class="mt-2 mb-2 ingredientlink"><%= link_to combination.ingredient.name, ingredient_path(combination.ingredient) %></li>
       <div class="d-flex">
         <div>
         <%= image_tag "saude.svg", class:"marginhealth2" %>
+        <% if combination.ingredient.risk_to_health == "yellow" %>
+        <span class="dotyellow2"></span>
+        <% elsif combination.ingredient.risk_to_health == "red"  %>
+        <span class="dotred2"></span>
+        <% else %>
         <span class="dotgreen2"></span>
+        <% end %>
         </div>
         <div>
         <%= image_tag "ambiente.svg", class:"marginhealth2" %>
+        <% if combination.ingredient.risk_to_enviroment == "yellow" %>
+        <span class="dotyellow2"></span>
+        <% elsif combination.ingredient.risk_to_enviroment == "red"  %>
+        <span class="dotred2"></span>
+        <% else %>
         <span class="dotgreen2"></span>
+        <% end %>
         </div>
         <div>
         <%= image_tag "alergia.svg", class:"marginhealth2" %>

@@ -327,7 +327,7 @@
             <% if @item.wishlists.any? %>
             <%= image_tag("purpleheart.svg", class: 'purpleheart ml-2') %>
             <% else %>
-          <%= simple_form_for [WishlistItem.new] do |s|  %>
+          <%= simple_form_for [Wishlist.new] do |s|  %>
             <%= image_submit_tag("heart.png", class: 'greyheart') %>
         <% end %>
         <% end %>

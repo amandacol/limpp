@@ -3,7 +3,7 @@ class Item < ApplicationRecord
   acts_as_taggable_on :subcategory
   acts_as_taggable_on :toxicity
   include PgSearch::Model
-  has_many :wishlist_items, dependent: :destroy
+  has_many :wishlists, dependent: :destroy
   has_many :reviews, dependent: :destroy
   has_many :coupons, dependent: :destroy
   has_many :combinations, dependent: :destroy

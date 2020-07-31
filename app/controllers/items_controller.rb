@@ -18,7 +18,7 @@ class ItemsController < ApplicationController
   end
 
   def index
-    @wishlist_item = WishlistItem.new
+    @wishlist = Wishlist.new
     @review = Review.new
     if params[:query].present?
       @items = policy_scope(Item).search_by_name_and_ingredient(params[:query])
@@ -41,7 +41,7 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @wishlist_item = WishlistItem.new
+    @wishlist = Wishlist.new
     @coupon = Coupon.new
     @reviews = @item.reviews
     @review = Review.new
@@ -59,11 +59,29 @@ class ItemsController < ApplicationController
   end
   end
 
-
-
   def destroy
     @item.destroy
     redirect_to items_path
+  end
+
+
+    def follow
+      skip_authorization
+    if current_user.follow(@item)
+      respond_to do |format|
+        format.html { redirect_to item_path }
+        format.js
+      end
+    end
+  end
+
+  def unfollow
+    if current_user.unfollow(@item.id)
+      respond_to do |format|
+        format.html { redirect_to item_path }
+        format.js { render action: :follow }
+      end
+    end
   end
 
   private

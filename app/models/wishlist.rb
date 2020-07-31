@@ -1,6 +1,6 @@
 class Wishlist < ApplicationRecord
   belongs_to :user
-  has_many :wishlist_items, dependent: :destroy
+  belongs_to :item
   validates :item, uniqueness: { scope: :user }
   include PgSearch::Model
   multisearchable associated_against: {

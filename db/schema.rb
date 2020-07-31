@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_23_202704) do
+ActiveRecord::Schema.define(version: 2020_07_31_000336) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -151,19 +151,12 @@ ActiveRecord::Schema.define(version: 2020_07_23_202704) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  create_table "wishlist_items", force: :cascade do |t|
-    t.bigint "wishlist_id"
-    t.bigint "item_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["item_id"], name: "index_wishlist_items_on_item_id"
-    t.index ["wishlist_id"], name: "index_wishlist_items_on_wishlist_id"
-  end
-
   create_table "wishlists", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
+    t.bigint "item_id"
+    t.index ["item_id"], name: "index_wishlists_on_item_id"
     t.index ["user_id"], name: "index_wishlists_on_user_id"
   end
 
@@ -175,7 +168,6 @@ ActiveRecord::Schema.define(version: 2020_07_23_202704) do
   add_foreign_key "reviews", "items"
   add_foreign_key "reviews", "users"
   add_foreign_key "taggings", "tags"
-  add_foreign_key "wishlist_items", "items"
-  add_foreign_key "wishlist_items", "wishlists"
+  add_foreign_key "wishlists", "items"
   add_foreign_key "wishlists", "users"
 end

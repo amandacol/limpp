@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show]
+  before_action :set_user, only: [:show, :follow, :unfollow]
+
 
   def show
     @user = User.find(params[:id])
@@ -8,18 +9,13 @@ class UsersController < ApplicationController
   end
 
   def index
-    if params[:query].present?
-      @users = policy_scope(User).search_by_name_and_ingredient(params[:query])
-    else
-      @users = policy_scope(User)
-    end
+    @users = User.where.not(id: current_user.id)
   end
 
   private
 
   def set_user
     @user = User.find(params[:id])
-    authorize @user
   end
 
   def user_params

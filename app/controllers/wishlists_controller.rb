@@ -2,14 +2,13 @@ class WishlistsController < ApplicationController
   before_action :set_wishlist, only: [:destroy]
 
   def index
-  @user = current_user
-  @user_items = current_user.items
-  @user_wishlists = current_user.wishlists
-  if params[:query].present?
-      @wishlists = policy_scope(Wishlist).multisearchable(params[:query])
-    else
-      @wishlists = policy_scope(Wishlist)
-    end
+    @user_items = current_user.items
+    @user_wishlists = current_user.wishlists
+    if params[:query].present?
+        @wishlists = policy_scope(Wishlist).multisearchable(params[:query])
+      else
+        @wishlists = policy_scope(Wishlist)
+      end
   end
 
   def create
@@ -40,7 +39,6 @@ class WishlistsController < ApplicationController
   end
 
   def filter_params
-    params[:wishlists_ids] ||=[] if params.has_key?(:wishlists_ids)
-    params.permit(wishlist_ids:[])
+    params.require(:wishlist).permit(:wishlist_id)
   end
 end

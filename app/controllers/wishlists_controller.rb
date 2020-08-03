@@ -17,9 +17,13 @@ class WishlistsController < ApplicationController
     authorize @wishlist
     @wishlist.item = @item
     @wishlist.user = current_user
-    @wishlist.save
+    if @wishlist.save
     redirect_to items_path, notice: "Adicionado a sua lista de desejos!"
+    else
+    redirect_to items_path, notice: "Você já adicionou esse item."
+    end
   end
+
 
   def destroy
     @wishlist.destroy
@@ -27,7 +31,10 @@ class WishlistsController < ApplicationController
     redirect_to wishlists_path
   end
 
+
+
   private
+
 
   def set_wishlist
     @wishlist = Wishlist.find(params[:id])

@@ -20,6 +20,7 @@ class ItemsController < ApplicationController
   def index
     @wishlist = Wishlist.new
     @review = Review.new
+    @user_wishlists = Item.where(id: current_user.wishlists.pluck(:item_id))
     if params[:query].present?
       @items = policy_scope(Item).search_by_name_and_ingredient(params[:query])
     elsif params[:search].present?
@@ -64,25 +65,6 @@ class ItemsController < ApplicationController
     redirect_to items_path
   end
 
-
-    def follow
-      skip_authorization
-    if current_user.follow(@item)
-      respond_to do |format|
-        format.html { redirect_to item_path }
-        format.js
-      end
-    end
-  end
-
-  def unfollow
-    if current_user.unfollow(@item.id)
-      respond_to do |format|
-        format.html { redirect_to item_path }
-        format.js { render action: :follow }
-      end
-    end
-  end
 
   private
 

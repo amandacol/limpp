@@ -43,6 +43,7 @@ class ItemsController < ApplicationController
 
   def show
     @wishlist = Wishlist.new
+    @user_wishlists = Item.where(id: current_user.wishlists.pluck(:item_id))
     @coupon = Coupon.new
     @reviews = @item.reviews
     @review = Review.new

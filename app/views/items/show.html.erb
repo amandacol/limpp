@@ -284,12 +284,15 @@
     margin-left: 50px;
     margin-bottom: -10px;
   }
-  .purpleheart{
-      width: 20px;
-      margin-bottom: 10px;
-    }
-    .greyheart{
+  .btn-purpleheart{
+      color: #8F89DD;
       width: 30px;
+      font-size: 25px;
+    }
+    .btn-greyheart{
+      color: #00000029;
+      width: 30px;
+      font-size: 25px;
       margin-left: 5px;
     }
     .ingredientlink{
@@ -321,12 +324,20 @@
        <div class="d-flex justify-content-end space">
           <% if @item.coupons.exists? %>
           <%= link_to item_coupons_path(@item) do %>
-            <%= image_tag "desconto2.png", class:"desconto mb-2" %>
+            <%= image_tag "desconto2.png", class:"desconto mt-2" %>
           <% end %>
           <% end %>
           <%= simple_form_for [@item, Wishlist.new] do |s|  %>
-            <%= image_submit_tag("heart.png", class: 'greyheart') %>
-        <% end %>
+            <% if @user_wishlists.include? @item  %>
+              <button type="submit" class="btn btn-purpleheart">
+                <i class="fas fa-heart"></i>
+              </button>
+                <% else %>
+                <button type="submit" class="btn btn-greyheart">
+                <i class="fas fa-heart"></i>
+              </button>
+                <% end %>
+            <% end %>
        </div>
      </div>
   </div>

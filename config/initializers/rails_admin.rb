@@ -1,7 +1,7 @@
 RailsAdmin.config do |config|
 
   ### Popular gems integration
-  config.included_models = ['ActsAsTaggableOn::Tag', 'Combination', 'Coupon', 'Ingredient', 'Item', 'Newitem', 'Review', 'User', 'Wishlist']
+  config.included_models = ['ActsAsTaggableOn::Tag', 'Combination', 'Coupon', 'Ingredient', 'Item', 'Merger', 'Newitem', 'Purpose', 'Review', 'User', 'Wishlist']
 
   ## == Devise ==
   config.authenticate_with do

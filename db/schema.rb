@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_31_000336) do
+ActiveRecord::Schema.define(version: 2020_08_04_002026) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -79,6 +79,15 @@ ActiveRecord::Schema.define(version: 2020_07_31_000336) do
     t.index ["user_id"], name: "index_items_on_user_id"
   end
 
+  create_table "mergers", force: :cascade do |t|
+    t.bigint "ingredient_id"
+    t.bigint "purpose_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["ingredient_id"], name: "index_mergers_on_ingredient_id"
+    t.index ["purpose_id"], name: "index_mergers_on_purpose_id"
+  end
+
   create_table "newitems", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -91,6 +100,13 @@ ActiveRecord::Schema.define(version: 2020_07_31_000336) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["searchable_type", "searchable_id"], name: "index_pg_search_documents_on_searchable_type_and_searchable_id"
+  end
+
+  create_table "purposes", force: :cascade do |t|
+    t.string "name"
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -165,6 +181,8 @@ ActiveRecord::Schema.define(version: 2020_07_31_000336) do
   add_foreign_key "combinations", "items"
   add_foreign_key "coupons", "items"
   add_foreign_key "items", "users"
+  add_foreign_key "mergers", "ingredients"
+  add_foreign_key "mergers", "purposes"
   add_foreign_key "reviews", "items"
   add_foreign_key "reviews", "users"
   add_foreign_key "taggings", "tags"

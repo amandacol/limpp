@@ -8,12 +8,12 @@
   .function{
     color: #707070;
     font-family: 'Montserrat', sans-serif;
-    font-size: 11px;
+    font-size: 10px;
   }
   .risktext{
     color: #707070;
     font-family: 'Montserrat', sans-serif;
-    font-size: 11px;
+    font-size: 10px;
     margin-left: 35px;
   }
   .dotgreen {
@@ -48,9 +48,9 @@
   }
   .marginrisk{
     margin-left: 15px;
-    color: #333132;
+    color: #707070;
     font-family: 'Montserrat', sans-serif;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: bold;
     margin-top: 5px;
   }
@@ -76,20 +76,34 @@
     font-weight: bold;
     padding: 0.2rem 0.6rem;
   }
+  .purposename{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: #707070;
+  }
+  .purposecontent{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    color: #707070;
+  }
 </style>
 <div class="container-fluid">
  <div class="p-3 mr-5">
-    <h1 class="mt-5 ingredientname"><%= @ingredient.name %></h1>
-    <p class="function"><%= @ingredient.classification %></p>
+    <h1 class="mt-5 mb-2 ingredientname"><%= @ingredient.name %></h1>
+        <% @ingredient.mergers.each do |merger| %>
+          <li class="mt-1 mb-1 purposename"><%= merger.purpose.name %></li>
+          <li class="mt-1 mb-1 purposecontent"><%= merger.purpose.content %></li>
+        <% end %>
     <div class="d-flex">
-    <%= image_tag "saude.svg", class:"marginhealth" %>
-    <p class="marginrisk">Risco à saúde</p>
+    <%= image_tag "saude.svg", class:"marginhealth mt-2" %>
+    <p class="marginrisk mt-3">Risco à saúde</p>
     <% if @ingredient.risk_to_health == "yellow" %>
-        <span class="dotyellow"></span>
+        <span class="dotyellow mt-3"></span>
         <% elsif @ingredient.risk_to_health == "red"  %>
-        <span class="dotred"></span>
+        <span class="dotred mt-3"></span>
         <% else %>
-        <span class="dotgreen"></span>
+        <span class="dotgreen mt-3"></span>
         <% end %>
     </div>
     <% if @ingredient.risk_to_health == "yellow" || @ingredient.risk_to_health == "red" %>

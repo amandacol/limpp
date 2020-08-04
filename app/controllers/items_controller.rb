@@ -47,7 +47,6 @@ class ItemsController < ApplicationController
     @coupon = Coupon.new
     @reviews = @item.reviews
     @review = Review.new
-    @item = Item.find(params[:id])
   end
 
   def edit

@@ -19,4 +19,5 @@ Rails.application.routes.draw do
   resources :newitems
   resources :ingredients
   resources :combination
+  resources :merger
 end

@@ -11,8 +11,11 @@
 </style>
 
 <%= simple_form_for @newitem do |f| %>
-
-
+        <%= f.input :email,
+                  label: "Seu e-mail para contato em caso de dúvidas (prometemos não enviar SPAM)",
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "email" } %>
         <%= f.input :photos, as: :file, input_html: { multiple: true } %>
         <%= image_submit_tag("fotografia.png", class: 'lupa ml-2') %>
       <% end %>

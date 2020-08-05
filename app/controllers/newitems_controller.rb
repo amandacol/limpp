@@ -31,6 +31,6 @@ class NewitemsController < ApplicationController
   end
 
   def newitem_params
-    params.require(:newitem).permit(photos: [])
+    params.require(:newitem).permit(:email, photos: [])
   end
 end

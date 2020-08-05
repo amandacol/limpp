@@ -13,10 +13,6 @@
       font-family: 'Montserrat', sans-serif;
       font-size: 14px;
     }
-    .desconto{
-      width: 35px;
-      height: 35px;
-    }
     .btn-cadastrar{
       color: white;
       background-color: #333132;
@@ -49,37 +45,8 @@
       font-family: 'Montserrat', sans-serif;
       font-size: 14px;
     }
-    .position{
-      margin-left: -10px;
-    }
-    .space{
-      position: absolute;
-      bottom: 0px;
-      right: 17px;
-    }
     .card-body{
       padding: 0.7rem;
-    }
-    .notavailable{
-      color: #707070;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 12px !important;
-      margin-left: -64px;
-      position: absolute;
-      top: 76px;
-      left: 162px;
-      color: #67D89E;
-      font-size: 14px;
-      font-weight: bold;
-    }
-    .case{
-      position: absolute;
-      bottom: -2px;
-      left: 162px;
-    }
-    .star{
-      color: #33D89E;
-      width: 10px;
     }
     .nav-link{
     display: block;
@@ -132,16 +99,12 @@
       border-radius: 23px;
       color: #707070;
       padding: 8px;
-      padding-right: 45px;
       font-size: 13px;
     }
     .evaluation{
       font-size: 30px;
       font-family: 'Montserrat', sans-serif;
       color: #333132 !important;
-    }
-    .shadowcss{
-      box-shadow: 2px 2px 4px #D6D6D6;
     }
     .fonthumb{
       color: #33D89E;
@@ -284,64 +247,25 @@
     margin-left: 50px;
     margin-bottom: -10px;
   }
-  .btn-purpleheart{
-      color: #8F89DD;
-      width: 30px;
-      font-size: 25px;
-    }
-    .btn-greyheart{
-      color: #00000029;
-      width: 30px;
-      font-size: 25px;
-      margin-left: 5px;
-    }
     .ingredientlink{
       font-family: 'Montserrat', sans-serif;
       font-weight: bold;
       font-size: 11px;
       color:#707070;
     }
+    .obs{
+      font-family: 'Montserrat', sans-serif;
+      font-weight: bold;
+      font-size: 9px;
+      color:#707070;
+    }
+    .marginul{
+      margin-left: -25px;
+    }
   </style>
 
 <div class="container p-1">
-  <div class="card shadow-sm bg-white mt-3" style="width: 20rem; border-radius: 8px; ">
-     <div class="card-body d-flex justify-content-start">
-       <div class="d-flex align-items-end position">
-       <% if @item.photo.attached? %>
-        <%= cl_image_tag @item.photo.key, width: 80, height: 80, crop: :fill, class:"shadowcss bg-white rounded" %>
-       <% else %>
-        <img src="https://images.unsplash.com/photo-1503236823255-94609f598e71?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" class="card-photo"/>
-       <% end %>
-       <% if @item.reviews.empty? %>
-          <p class="card-text notavailable"><%= "Não avaliado ainda" %></p>
-          <% else %>
-          <% @item.calculate_average.times do %>
-            <i class="fas fa-star star ml-2"></i>
-          <% end %>
-       <% end %>
-       </div>
-       <p class="card-text font case"><%= @item.name %></p>
-       <div class="d-flex justify-content-end space">
-          <% if @item.coupons.exists? %>
-          <%= link_to item_coupons_path(@item) do %>
-            <%= image_tag "desconto2.png", class:"desconto mt-2" %>
-          <% end %>
-          <% end %>
-          <%= simple_form_for [@item, Wishlist.new] do |s|  %>
-            <% if @user_wishlists.include? @item  %>
-              <button type="submit" class="btn btn-purpleheart">
-                <i class="fas fa-heart"></i>
-              </button>
-                <% else %>
-                <button type="submit" class="btn btn-greyheart">
-                <i class="fas fa-heart"></i>
-              </button>
-                <% end %>
-            <% end %>
-       </div>
-     </div>
-  </div>
-
+  <%= render 'cardshow' %>
   <ul class="nav nav-pills mt-3" id="pills-tab" role="tablist">
   <li class="nav-item" role="presentation">
     <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Ingredientes</a>
@@ -358,7 +282,7 @@
   <div class="d-flex align-items-center">
     <div class="d-flex ingredientname">
   <% if @item.combinations.any? %>
-        <ul>
+        <ul class="marginul">
         <% @item.combinations.each do |combination| %>
         <li class="mt-2 mb-2 ingredientlink"><%= link_to combination.ingredient.name, ingredient_path(combination.ingredient) %></li>
       <div class="d-flex">
@@ -415,7 +339,12 @@
     <% else %>
     <p class="mr-1">Média geral</p>
     <p class="number ml-3"><%= @item.calculate_average %></p>
-    <p class="ml-3 mr-1">de</p><p class="ml-1 font-weight-bold"><%= @item.reviews.count %></p> <p class="ml-2">Avaliação(ões)</p>
+    <p class="ml-3 mr-1">de</p><p class="ml-1 font-weight-bold"><%= @item.reviews.count %></p>
+    <% if @item.reviews.count == 1 %>
+    <p class="ml-2">Avaliação</p>
+    <% else %>
+    <p class="ml-2">Avaliações</p>
+    <% end %>
     </div>
     <% if @item.reviews.exists? %>
     <% @yes = (@item.reviews.where(buyagain: 1).count * 100.0 / @item.reviews.count).round(0) %>
@@ -434,6 +363,7 @@
     <% end %>
 </div>
 </div>
+      <p class="obs mt-3"><%= @item.ingredient %></p>
 
 
   <div class="d-flex"><p class="fonttitle mt-4">Aspectos avaliados pelo</p><%= image_tag "logolimpp.svg" , class:"sizelogo" %> </div>
@@ -464,3 +394,5 @@
     <p class="criteriosgrey"> Potencial inconclusivo   </p>
     <p class="criterioscinza"> Estudos não permitem nenhuma conclusão por estarem em andamento ou obterem dados divergentes sobre sua segurança a saúde e/ou impactos ao meio ambiente.</p>
 </div>
+
+      <p class="obs mt-4">O limpp é uma plataforma colaborativa, classificamos ingredientes em que as fotos dos produtos nos são enviadas por usuários. Não nos responsabilizamos por eventuais fraudes nas fotos, ao mesmo tempo em que estamos abertos para correções/atualizações de fórmula por parte dos fabricantes.</p>

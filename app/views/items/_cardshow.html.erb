@@ -51,7 +51,7 @@
      <div class="card-body d-flex justify-content-start">
        <div class="d-flex align-items-end position">
        <% if @item.photo.attached? %>
-        <%= cl_image_tag @item.photo.key, width: 80, height: 80, crop: :fill, class:"shadowcss bg-white rounded" %>
+        <%= cl_image_tag @item.photo.key, width: 80, height: 80, crop: :pad, class:"shadowcss bg-white rounded" %>
        <% else %>
         <img src="https://images.unsplash.com/photo-1503236823255-94609f598e71?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" class="card-photo"/>
        <% end %>

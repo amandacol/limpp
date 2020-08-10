@@ -326,7 +326,7 @@
   <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
      <% if @item.certification_photos.attached? %>
       <% @item.certification_photos.each do |photo| %>
-       <%= cl_image_tag photo.key, width: 80, height: 80, crop: :fill, class:"shadowcss bg-white rounded" %>
+       <%= cl_image_tag photo.key, width: 80, height: 80, crop: :pad, class:"shadowcss bg-white rounded" %>
        <% end %>
      <% else %>
         <p class="card-text ingredientname"><%= 'Esse item não tem certificados aprovados pelo limpp' %></p>

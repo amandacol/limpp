@@ -16,9 +16,9 @@ end
 lorem = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
 
 USERS = [
-  { email: 'thierry@hortatech.com.br', password: 'lewagon123', first_name: "Thierry", last_name: "Oliveira", admin: true },
-  { email: 'rayan@hortatech.com.br', password: 'lewagon123', first_name: "Rayan", last_name: "Castro", admin: true },
-  { email: 'amanda@limpp.com.br', password: 'lewagon123', first_name: "Amanda", last_name: "Colmenero", admin: true }
+  { email: 'thierry@hortatech.com.br', password: 'limpp123', first_name: "Thierry", last_name: "Oliveira", admin: true },
+  { email: 'rayan@hortatech.com.br', password: 'limpp123', first_name: "Rayan", last_name: "Castro", admin: true },
+  { email: 'amanda@limpp.com.br', password: 'limpp123', first_name: "Amanda", last_name: "Colmenero", admin: true }
 ]
 
 puts "Creating users..."
@@ -47,9 +47,9 @@ puts "You have #{Ingredient.count} ingredients"
 puts "Creating Itens"
 
 ITENS = [
-  { name: "Shampoo TRESemmé Detox Capilar", ingredient: Ingredient.all.sample, user: User.all.sample },
-  { name: "Batom Natura", ingredient: Ingredient.all.sample, user: User.all.sample },
-  { name: "Hidratante Corporal Jequiti", ingredient: Ingredient.all.sample, user: User.all.sample },
+  { name: "Shampoo TRESemmé Detox Capilar", ingredient: "EDTA (ETHYLENEDIAMINE TETRAACETIC ACID)", user: User.all.sample },
+  { name: "Batom Natura", ingredient: "Sodium Laureth Sulfate", user: User.all.sample },
+  { name: "Hidratante Corporal Jequiti", ingredient: "Amianto", user: User.all.sample },
 ]
 
 ITENS.each do |item_params|
@@ -71,17 +71,6 @@ Item.all.each do |item|
   end
   item.save
 end
-# item = Item.first.id
-
-# PHOTOS.each do |photo|
-#   selected_item = Item.find(item)
-#   img_path = './app/assets/images/' + photo
-#   File.open(img_path) do |file|
-#     selected_item.photo = file
-#   end
-#   selected_item.save
-#   item += 1
-# end
 
 puts "You have added #{PHOTOS.count} photos"
 

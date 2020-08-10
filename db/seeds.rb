@@ -74,4 +74,12 @@ end
 
 puts "You have added #{PHOTOS.count} photos"
 
+puts "Creating Combinations"
+
+5.times do
+  Combination.create!(item: Item.all.sample, ingredient: Ingredient.all.sample)
+end
+
+puts "You have now #{Combination.count} combinations"
+
 puts "End of seed!"

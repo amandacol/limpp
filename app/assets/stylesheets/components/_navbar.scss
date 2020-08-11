@@ -10,3 +10,47 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.userlog{
+    width: 50px;
+}
+
+.fontnav{
+    color: white;
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.line{
+    border-bottom: solid;
+    border-color: white;
+    border-width: 1px;
+    margin-left: 55px;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    background-image: linear-gradient(to bottom, #66d79f, #00cdc8, #00bde8, #33a7f0, #8d8bdc);
+    border: none;
+    color: white;
+    display: none;
+    align-items: right;
+    position: absolute;
+    flex-grow: 0;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+    border-radius: 5px;
+    right: -14px;
+    left: auto;
+}
+.dropdown:hover .dropdown-content {
+     display: block;
+    }
+    li {
+      list-style-type: none;
+    }

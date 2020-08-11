@@ -1,0 +1,95 @@
+    .fontbuy{
+      color: #707070;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      height: 4px;
+      width:180px;
+      white-space: nowrap;
+    }
+    p{
+    color: #707070;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    text-decoration: none;
+    }
+    .starreview{
+      color: #33D89E;
+      width: 20px !important;
+    }
+    .nav-link{
+    display: block;
+    padding: 0.5rem 0.6rem !important;
+}
+    .sizelogo{
+      width: 60px;
+    }
+    .backgroud{
+      background-color:#F2F2F2;
+      border-radius: 20px;
+      padding: 10px;
+    }
+    .buyagain{
+      color: #33D89E;
+      background-color: white;
+      border-radius: 30px;
+      padding: 0.4rem 1.2rem;
+      font-weight: bold;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 15px;
+    }
+    .select{
+      color: #707070;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+    }
+    a.br-active:after {
+      color: #67D89E !important;
+    }
+
+    a.br-selected:after {
+      color: #67D89E !important;
+    }
+    body {
+      padding-top: 50px;
+    }
+
+    .starter-template {
+      padding: 40px 15px;
+      text-align: center;
+    }
+    .fonthumby{
+      color: #33D89E;
+      background-color: white;
+      border-radius: 15px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 16px;
+      padding: 8px;
+      height: 4px;
+      width:180px;
+      white-space: nowrap;
+    }
+    .fonthumby:hover{
+      color: #707070;
+    }
+    .fonthumbno{
+      color: #33D89E;
+      background-color: white;
+      border-radius: 15px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 16px;
+      padding: 8px;
+      height: 4px;
+      width:180px;
+      white-space: nowrap;
+    }
+    .fonthumbno:hover{
+      color: #D93500;
+    }
+    .noshadow{
+      border: none !important;
+    }
+    .br-theme-css-stars .br-widget a {
+      margin-top: -15px;
+      font-size: 40px !important;
+      width: 40px;
+    }

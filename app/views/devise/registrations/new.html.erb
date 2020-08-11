@@ -1,5 +1,5 @@
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap" rel="stylesheet">
-<div class="container-fluid mt-5">
+<div class="container-fluid mt-3">
   <style>
     body{
       background-color: #8F89DD;
@@ -9,11 +9,23 @@
       color: white;
       font-size: 70px;
     }
+    .btn-face {
+          color: white;
+          background-color: #3A10AA;
+          border-radius: 30px;
+          padding: 0.4rem 1rem;
+          font-weight: bold;
+          font-family: 'Montserrat', sans-serif;
+          font-size: 15px;
+    }
+    .btn-face:hover {
+      box-shadow: 0px 0px 0px rgba(0, 0, 0, 0) !important;
+    }
     .btn-login{
       color: #33D89E;
       background-color: white;
       border-radius: 30px;
-      padding: 0.5rem 4rem;
+      padding: 0.4rem 4rem;
       font-weight: bold;
       font-family: 'Montserrat', sans-serif;
       font-size: 15px;
@@ -26,18 +38,8 @@
       color: white;
       font-weight: bold;
       font-family: 'Montserrat', sans-serif;
-    }
-    .btn-face {
-      color: white;
-      background-color: #3A10AA;
-      border-radius: 30px;
-      padding: 0.5rem 1rem;
+      font-size:14px;
       font-weight: bold;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 15px;
-    }
-    .btn-face:hover {
-      box-shadow: 0px 0px 0px rgba(0, 0, 0, 0) !important;
     }
     i {
       margin-right: 20px;
@@ -52,25 +54,26 @@
       font-size: 13px;
       box-shadow: 0px 2px 2px #33313261;
     }
-    .btn-inicio{
-      color: white;
-      border-radius: 30px;
-      font-weight: bold;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 13px;
-      padding-bottom: 0px;
-      padding-top: 12px;
-    }
-    .position{
+    .positionuser{
       margin-bottom: -18px;
     }
     .simple_form label {
       color: white;
       font-family: 'Montserrat', sans-serif;
+      font-size:13px;
+      font-weight: bold;
+      margin-left: 10px;
+    }
+    .text-muted{
+      color: white !important;
+      font-family: 'Montserrat', sans-serif !important;
+      font-size:11px !important;
+      font-weight: bold !important;
+      margin-left: 10px;
     }
   </style>
     <h1 class="text-center">limpp</h1>
-    <div class="position d-flex justify-content-center mt-4">
+    <div class="positionuser d-flex justify-content-center mt-4">
       <%= image_tag "usuario2.svg" %>
     </div>
     <div class="background p-4">
@@ -109,6 +112,6 @@
   <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-limpp" %>
 <% end %>
     <div class="d-flex justify-content-center mt-3">
-        <%=    link_to 'Já possuo login', user_session_path, class: "btn btn-login" %>
+        <%=    link_to 'Já possuo login', user_session_path, class: "btn btn-login mb-4" %>
     </div>
 </div>

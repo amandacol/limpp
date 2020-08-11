@@ -18,7 +18,8 @@ lorem = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
 USERS = [
   { email: 'thierry@hortatech.com.br', password: 'limpp123', first_name: "Thierry", last_name: "Oliveira", admin: true },
   { email: 'rayan@hortatech.com.br', password: 'limpp123', first_name: "Rayan", last_name: "Castro", admin: true },
-  { email: 'amanda@limpp.com.br', password: 'limpp123', first_name: "Amanda", last_name: "Colmenero", admin: true }
+  { email: 'limpp.com.vc@gmail.com', password: 'limpp123', first_name: "Beleza", last_name: "Limpp", admin: true },
+  { email: 'amanda@teste.com', password: 'limpp123', first_name: "Amanda", last_name: "Colmenero", admin: false }
 ]
 
 puts "Creating users..."

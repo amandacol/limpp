@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_05_215844) do
+ActiveRecord::Schema.define(version: 2020_08_11_213415) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,8 +56,6 @@ ActiveRecord::Schema.define(version: 2020_08_05_215844) do
 
   create_table "ingredients", force: :cascade do |t|
     t.string "name"
-    t.string "classification"
-    t.string "impact"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "article"
@@ -67,11 +65,12 @@ ActiveRecord::Schema.define(version: 2020_08_05_215844) do
     t.text "risk_to_enviroment_text"
     t.string "other_names"
     t.string "restrictions"
+    t.text "observation"
+    t.string "allergenic"
   end
 
   create_table "items", force: :cascade do |t|
     t.string "name"
-    t.string "ingredient"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"

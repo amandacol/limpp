@@ -33,9 +33,9 @@ puts "You have #{User.count} users"
 puts "Creating ingredients"
 
 INGREDIENTS = [
-  {name: "EDTA (ETHYLENEDIAMINE TETRAACETIC ACID)", impact: "Sim", article: lorem, risk_to_health: "Yellow", risk_to_health_text: "Pode causar irritação nos olhos, pele e trato respiratório", risk_to_enviroment: "Yellow", risk_to_enviroment_text: "Pode resultar em sua liberação para o meio ambiente através de vários fluxos de resíduos, desde sua produção ao descarte. Seu potencial de bioconcentração em organismos aquáticos é baixo, porém, existente", restrictions: "NA UNIÃO EUROPEIA (CosIng) – NÃO POSSUI", other_names: ['CALCIUM DISODIUM EDTA', 'DIAMMONIUM EDTA, DIPOTASSIUM EDTA', 'TRISODIUM HEDTA']},
-  {name: "Sodium Laureth Sulfate", impact: "Sim", article: lorem, risk_to_health: "Red", risk_to_health_text: "Pode causar alergia na pele", risk_to_enviroment: "Yellow", risk_to_enviroment_text: "Pode afetar a camada de ozonio", restrictions: "ESTADOS UNIDOS (CIR) – Concentração máxima de até 2%.", other_names: ['CALCIUM DISODIUM EDTA', 'DIPOTASSIUM EDTA', 'TRISODIUM HEDTA']},
-  {name: "Amianto", impact: "Sim", article: lorem, risk_to_health: "Red", risk_to_health_text: "Pode causar alergia na pele", risk_to_enviroment: "Yellow", risk_to_enviroment_text: "Pode afetar a camada de ozonio", restrictions: "ESTADOS UNIDOS (CIR) – Concentração máxima de até 2%.", other_names: ['CALCIUM DISODIUM EDTA', 'DIAMMONIUM EDTA, DIPOTASSIUM EDTA', 'TRISODIUM HEDTA']}
+  {name: "EDTA (ETHYLENEDIAMINE TETRAACETIC ACID)", allergenic: "sim", article: lorem, risk_to_health: "yellow", risk_to_health_text: "Pode causar irritação nos olhos, pele e trato respiratório", risk_to_enviroment: "yellow", risk_to_enviroment_text: "Pode resultar em sua liberação para o meio ambiente através de vários fluxos de resíduos, desde sua produção ao descarte. Seu potencial de bioconcentração em organismos aquáticos é baixo, porém, existente", restrictions: "NA UNIÃO EUROPEIA (CosIng) – NÃO POSSUI", other_names: ['CALCIUM DISODIUM EDTA', 'DIAMMONIUM EDTA, DIPOTASSIUM EDTA', 'TRISODIUM HEDTA']},
+  {name: "Sodium Laureth Sulfate", allergenic: "sim", article: lorem, risk_to_health: "red", risk_to_health_text: "Pode causar alergia na pele", risk_to_enviroment: "yellow", risk_to_enviroment_text: "Pode afetar a camada de ozonio", restrictions: "ESTADOS UNIDOS (CIR) – Concentração máxima de até 2%.", other_names: ['CALCIUM DISODIUM EDTA', 'DIPOTASSIUM EDTA', 'TRISODIUM HEDTA']},
+  {name: "Amianto", allergenic: "sim", article: lorem, risk_to_health: "red", risk_to_health_text: "Pode causar alergia na pele", risk_to_enviroment: "yellow", risk_to_enviroment_text: "Pode afetar a camada de ozonio", restrictions: "ESTADOS UNIDOS (CIR) – Concentração máxima de até 2%.", other_names: ['CALCIUM DISODIUM EDTA', 'DIAMMONIUM EDTA, DIPOTASSIUM EDTA', 'TRISODIUM HEDTA']}
 
 ]
 
@@ -48,9 +48,9 @@ puts "You have #{Ingredient.count} ingredients"
 puts "Creating Itens"
 
 ITENS = [
-  { name: "Shampoo TRESemmé Detox Capilar", ingredient: "EDTA (ETHYLENEDIAMINE TETRAACETIC ACID)", user: User.all.sample },
-  { name: "Batom Natura", ingredient: "Sodium Laureth Sulfate", user: User.all.sample },
-  { name: "Hidratante Corporal Jequiti", ingredient: "Amianto", user: User.all.sample },
+  { name: "Shampoo TRESemmé Detox Capilar",  user: User.all.sample },
+  { name: "Batom Natura", user: User.all.sample },
+  { name: "Hidratante Corporal Jequiti", user: User.all.sample },
 ]
 
 ITENS.each do |item_params|

@@ -74,7 +74,7 @@
     <div class="d-flex">
     <%= image_tag "alergia.svg", class:"marginhealth" %>
     <p class="marginrisk">Potencial alegênico</p>
-    <% if @ingredient.impact == "sim" %>
+    <% if @ingredient.allergenic == "sim" %>
      <p class="potencialsim">SIM</p>
     <% else %>
      <p class="potencialnao">NÃO</p>

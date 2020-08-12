@@ -14,13 +14,6 @@
       top: 20%;
       left: 4%;
     }
-    .module {
-      background: white;
-      padding: 10px;
-      color: #707070;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 10px;
-    }
     .btn-avaliacao{
       color: white;
       background-color: #8F89DD;
@@ -30,24 +23,6 @@
       font-family: 'Montserrat', sans-serif;
       font-size: 13px;
       box-shadow: 0px 2px 2px #33313261;
-    }
-    .space{
-      margin-bottom: 1px;
-    }
-    .subtitle{
-      font-size: 13px;
-      font-weight: bold;
-    }
-    .margemtermometro{
-      margin-left: 56px;
-    }
-    .margemsugestao{
-      margin-left: 0px;
-      margin-top: 6px;
-      margin-right: 4px;
-    }
-    .margemconheca{
-      margin-top: 9px;
     }
   </style>
  <div class="row justify-content-center mr-2">
@@ -70,8 +45,8 @@
           <figcaption class="text-center margemsugestao"> Ganhe desconto em produtos limpos</figcaption>
     <div class="form-actions mt-2 d-flex justify-content-center mr-3">
       <%= link_to new_user_session_path, class:"btn btn-avaliacao mt-4" do %>
-            <figure class="d-flex align-items-center space">
-               <%= image_tag "userwhite.svg" %><figcaption class="ml-2 mt-1 space">Login</figcaption>
+            <figure class="d-flex align-items-center spacefirst">
+               <%= image_tag "userwhite.svg" %><figcaption class="ml-2 mt-1 spacefirst">Login</figcaption>
              </figure>
       <% end %>
     </div>

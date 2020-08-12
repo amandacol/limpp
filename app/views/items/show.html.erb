@@ -65,14 +65,6 @@
   .marginhealth2{
     margin-bottom: 18px;
   }
-   .marginrisk{
-    margin-left: 15px;
-    color: #707070;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 13px;
-    font-weight: bold;
-    margin-top: 15px;
-  }
     .marginul{
       margin-left: -25px;
     }
@@ -122,7 +114,7 @@
         </div>
         <div>
         <%= image_tag "alergia.svg", class:"marginhealth2" %>
-          <% if combination.ingredient.impact == "sim" %>
+          <% if combination.ingredient.allergenic == "sim" %>
           <p class="potencialsim2">SIM</p>
           <% else %>
           <p class="potencialnao2">NÃO</p>
@@ -177,7 +169,7 @@
     <% end %>
 </div>
 </div>
-      <p class="obs mt-3"><%= @item.ingredient %></p>
+      <p class="obs mt-3">Teste por enquanto</p>
 
 
   <div class="d-flex"><p class="fonttitle mt-4">Aspectos avaliados pelo</p><%= image_tag "logolimpp.svg" , class:"sizelogo" %> </div>
@@ -209,4 +201,4 @@
     <p class="criterioscinza"> Estudos não permitem nenhuma conclusão por estarem em andamento ou obterem dados divergentes sobre sua segurança a saúde e/ou impactos ao meio ambiente.</p>
 </div>
 
-      <p class="obs mt-4">O limpp é uma plataforma colaborativa, classificamos ingredientes em que as fotos dos produtos nos são enviadas por usuários. Não nos responsabilizamos por eventuais fraudes nas fotos, ao mesmo tempo em que estamos abertos para correções/atualizações de fórmula por parte dos fabricantes.</p>
+      <p class="obs mt-4">O limpp é uma plataforma colaborativa, classificamos ingredientes em que as fotos dos produtos nos são enviadas por usuários da plataforma. Estamos abertos para correções/atualizações de fórmula por parte dos fabricantes.</p>

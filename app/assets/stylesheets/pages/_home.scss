@@ -1,8 +1,37 @@
 // Specific CSS for your home-page
-body {
-  background-color: white;
-}
+  body {
+    background-color: white;
+  }
 
-.imglimpp img {
-  width: 45%;
-}
+  .imglimpp img {
+    width: 45%;
+  }
+
+  .module {
+        background: white;
+        padding: 10px;
+        color: #707070;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 10px;
+  }
+
+   .spacefirst{
+        margin-bottom: 1px;
+    }
+
+    .margemtermometro{
+      margin-left: 56px;
+    }
+    .margemsugestao{
+      margin-left: 0px;
+      margin-top: 6px;
+      margin-right: 4px;
+    }
+    .margemconheca{
+      margin-top: 9px;
+    }
+
+    .subtitle{
+      font-size: 13px;
+      font-weight: bold;
+    }

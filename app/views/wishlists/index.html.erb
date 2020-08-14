@@ -27,17 +27,17 @@
   <p class="prateleira d-flex justify-content-center mt-2">Sua prateleira de produtos</p>
   <form>
     <div class="d-flex justify-content-center mt-4">
-       <div class="input-group mb-3">
-          <%= form_tag wishlists_path, method: :get do %>
+      <div class="input-group mb-3">
+        <%= form_tag wishlists_path, method: :get do %>
           <%= text_field_tag :query,
-            params[:query],
-            class: "form-control rounded-pill shadow-sm p-3 bg-white rounded",
-            placeholder: "Busque na sua lista de desejos"
+          params[:query],
+          class: "form-control rounded-pill shadow-sm p-3 bg-white rounded",
+          placeholder: "Busque na sua lista de desejos"
           %>
-        <%= image_submit_tag("lupa.svg", class: 'lupa ml-2') %>
+          <%= image_submit_tag("lupa.svg", class: 'lupa ml-2') %>
         <% end %>
-       </div>
-    </div>
+        </div>
+      </div>
    </form>
 
     <div class="row justify-content-center">

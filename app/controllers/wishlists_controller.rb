@@ -3,12 +3,12 @@ class WishlistsController < ApplicationController
 
   def index
     @user_items = current_user.items
-    @user_wishlists = current_user.wishlists
+    @wishlists = current_user.wishlists
     if params[:query].present?
-        @wishlists = policy_scope(Wishlist).multisearchable(params[:query])
-      else
-        @wishlists = policy_scope(Wishlist)
-      end
+      @wishlists = policy_scope(Wishlist).search_item_name(params[:query])
+    else
+      @wishlists = policy_scope(Wishlist)
+    end
   end
 
   def create

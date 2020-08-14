@@ -1,5 +1,5 @@
 <style>
-  .ingredientname{
+  .ingredientnameshow{
     color: #8F89DD;
     font-family: 'Montserrat', sans-serif;
     font-size: 18px;
@@ -38,9 +38,9 @@
 </style>
 <div class="container-fluid">
  <div class="p-3 mr-5">
-    <h1 class="mt-5 mb-2 ingredientname"><%= @ingredient.name %></h1>
+    <h1 class="mt-5 mb-2 ingredientnameshow"><%= @ingredient.name %></h1>
         <% @ingredient.mergers.each do |merger| %>
-          <li class="mt-1 mb-1 purposename"><%= merger.purpose.name %></li>
+          <li class="mt-3 mb-1 purposename"><%= merger.purpose.name %></li>
           <li class="mt-1 mb-1 purposecontent"><%= merger.purpose.content %></li>
         <% end %>
     <div class="d-flex">

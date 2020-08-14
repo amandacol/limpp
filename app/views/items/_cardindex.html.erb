@@ -24,21 +24,26 @@
             <%= image_tag "desconto2.png", class:"desconto mt-2" %>
           <% end %>
           <% end %>
-            <%= simple_form_for [item, Wishlist.new] do |s|  %>
-            <% if @user_wishlists.include? item  %>
-              <button type="submit" class="btn btn-purpleheart">
+          <%= link_to item_wishlists_path(item), method: :post do %>
+            <div class="<%= @user_wishlists.include?(item) ? "btn-purpleheart" : "btn-greyheart" %>">
+              <i class="fas fa-heart"></i>
+            </div>
+          <% end %>
+            <%#= simple_form_for [item, Wishlist.new] do |s|  %>
+            <%# if @user_wishlists.include? item  %>
+              <%# <button type="submit" class="btn btn-purpleheart">
                 <i class="fas fa-heart"></i>
-              </button>
-                <% else %>
-                <button type="submit" class="btn btn-greyheart">
+              </button> %>
+                <%# else %>
+                <%# <button type="submit" class="btn btn-greyheart">
                 <i class="fas fa-heart"></i>
-              </button>
-                <% end %>
-            <% end %>
+              </button> %>
+                <%# end %>
+            <%# end %>
          </div>
         <div class="d-flex justify-content-end">
         <%= link_to item_path(item), class:"component" do %>
-        <%= image_tag "Componente.svg" %>
+          <%= image_tag "Componente.svg" %>
         <% end %>
         </div>
        </div>

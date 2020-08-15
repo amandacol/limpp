@@ -47,44 +47,65 @@
       font-size: 14px;
     }
 </style>
-<div class="container-fluid mt-4 mr-2 ml-2">
+<div class="container mt-4 mr-2 ml-2 p-3">
   <div class="d-flex justify-content-center"><%= image_tag "responsability.svg" %></div>
-    <h5 class="text-center mt-5">Promover acesso à informação para empoderar escolhas conscientes.</h5>
-      <p class="text-left mt-5 title">Economicamente viável</p>
-      <p class="text-left mt-3">Sabemos que o mercado de cosméticos naturais ainda é pequeno e em alguns casos com valores mais altos que os convencionais. A ideia é ser uma plataforma que divulgue o diferencial desse mercado, fazendo com que as empresas que hoje atuam com produtos mais naturais cresçam.</p>
-      <p class="text-left mt-4 title">Socialmente justo</p>
-      <p class="text-left mt-3">Tudo o que é ser humano e suas relações. Desde as parcerias com negociações ganha ganha, até a garantia da saúde e bem estar dos nossos consumidores.</p>
+    <h5 class="text-center mt-5">Promover acesso à informação para empoderar escolhas conscientes</h5>
       <p class="text-left mt-4 title">Ecologicamente correto</p>
       <p class="text-left mt-3">Pensamos no meio ambiente. Sabemos que existem substâncias que em determinada quantidade são seguras para o ser humano, mas quando eliminadas via sistema de esgoto, ou utilizadas em mares e rios oferecem grandes riscos a natureza.</p>
+      <p class="text-left mt-4 title">Socialmente justo</p>
+      <p class="text-left mt-3">Tudo o que é ser humano e suas relações. Desde as parcerias com negociações ganha ganha, até a garantia da saúde e bem estar dos nossos consumidores.</p>
+      <p class="text-left mt-5 title">Economicamente viável</p>
+      <p class="text-left mt-3">Sabemos que o mercado de beleza limpa ainda é pequeno. A ideia é ser uma plataforma que divulgue o diferencial desse mercado, fazendo com que as empresas que hoje se preocupam com formulação sustentável cresçam, incentivando o pequeno produtor.</p>
 
     <h5 class="text-center mt-5">Nossos critérios são transparentes!</h5>
-      <p class="text-left mt-4">Todas as avaliações são feitas a partir das embalagens, ou seja, informações públicas que estão disponíveis para qualquer pessoa.</p>
-    <div class="d-flex justify-content-right"><%= image_tag "criterios.png" %>
-      <div>
-        <div class="ml-4">
-        <p class="text-left mt-4 verde">VERDE</p>
-        <p class="text-left mt-3">Produtos que todos os ingredientes são seguros e aprovados tanto para uso humano, como quando eliminado no meio ambiente. São ingredientes que até o momento não existe nenhuma evidência científica que causa algum dano.</p>
-        </div>
-        <div class="ml-4">
-        <p class="text-left mt-5 amarelo">AMARELO</p>
-        <p class="text-left mt-3">Produtos que possuem ingredientes com evidências científicas que causam dano ao ser humano ou ao meio ambiente, mas ao mesmo tempo existem outras evidências científicas que falam o contrário. São ingredientes que causam divergência no meio científico. Aqui também se enquadram produtos cujos os ingredientes não são 100% transparentes em suas embalagens. Logo, não conseguimos afirmar que são seguros, nem tóxicos.</p>
-        </div>
-        <div class="ml-4">
-        <p class="text-left mt-5 vermelho">VERMELHO</p>
-        <p class="text-left mt-3">Produtos que possuem ingredientes com evidências científicas que são tóxicos ou para o ser humano ou para o meio ambiente. Nesse caso, não existem evidências que provem o contrário. São ingredientes que muitas vezes já foram proibidos na Europa ou nos Estados Unidos. São aqueles ingredientes que devemos eliminar, para garantir saúde para nosso corpo e planeta.</p>
-        </div>
-      </div>
+      <p class="text-left mt-4">Todas as consultas de ingredientes contidos nos produtos são feitas a partir das <span style="color: #8F89DD; font-weight:bold;">embalagens</span>, ou seja, informações <span style="color: #8F89DD; font-weight:bold;">públicas</span> que estão disponíveis para qualquer pessoa. Caso as marcas entrem em <span style="color: #8F89DD; font-weight:bold;">contato</span> conosco com considerações e/ou certificados de pureza colocamos na plataforma.  </p>
+      <p class="text-left mt-4">Analisamos <span style="color: #8F89DD; font-weight:bold;">ingredientes/substâncias</span> em sua menor unidade, não apenas as classes ou grupos generalizados. Exemplo: classificamos o Metilparabeno, o Butilparabeno etc, e não parabenos em geral. </p>
+      <p class="text-left mt-4">Nos baseamos apenas em <span style="color: #8F89DD; font-weight:bold;">artigos científicos</span> mais recentes de organizações referências: CIR, Cos Ing, Pubchem, ECHA, FDA, Hotlist and Pollution Waste Canada, IFRA, EPA. </p>
+      <p class="text-left mt-4">Mínimo de <span style="color: #8F89DD; font-weight:bold;">3</span> artigos dessas <span style="color: #8F89DD; font-weight:bold;">fontes</span> por substância para considerarmos tóxico, sendo que esses órgãos já possuem critérios mínimos de tempo de observação e população avaliada. </p>
+    <div class="d-flex"><p class="fonttitle mt-2">Aspectos avaliados pelo</p><%= image_tag "logolimpp.svg" , class:"sizelogo mb-2" %> </div>
+    <div class="d-flex">
+    <%= image_tag "saude.svg", class:"marginhealth" %>
+    <p class="marginrisk">Risco à saúde</p>
     </div>
+    <div class="d-flex">
+    <%= image_tag "ambiente.svg", class:"marginhealth" %>
+    <p class="marginrisk">Risco ao meio ambiente</p>
+    </div>
+    <div class="d-flex">
+    <%= image_tag "alergia.svg", class:"marginhealth" %>
+    <p class="marginrisk">Potencial alegênico</p>
+    </div>
+
+<div class="d-flex"><p class="fonttitle mt-4">Critérios de avaliação</p><%= image_tag "logolimpp.svg" , class:"sizelogo" %> </div>
+    <span class="bigdotgreen"></span>
+    <p class="criterios"> Seguro em cosméticos </p>
+    <p class="criterioscinza"> É seguro em cosméticos sem restrições e sem causar impactos a saúde e/ou ao meio ambiente.</p>
+<span class="bigdotyellow"></span>
+    <p class="criteriosyellow"> Seguro em cosméticos, com restrições  </p>
+    <p class="criterioscinza"> É seguro em cosméticos com restrições, segundo evidências científicas. E podem causar impactos a saúde e/ou ao meio ambiente.</p>
+<span class="bigdotred"></span>
+    <p class="criteriosred"> Tóxico em cosméticos </p>
+    <p class="criterioscinza"> São considerados tóxicos em cosméticos, segundo evidências científicas. E podem causar impactos graves a saúde e/ou ao meio ambiente.</p>
+<span class="bigdotgrey"></span>
+    <p class="criteriosgrey"> Potencial inconclusivo   </p>
+    <p class="criterioscinza"> Estudos não permitem nenhuma conclusão por estarem em andamento ou obterem dados divergentes sobre sua segurança a saúde e/ou impactos ao meio ambiente.</p>
+
+
+      <p class="obs mt-4 mb-2">O limpp é uma plataforma colaborativa, classificamos ingredientes em que as fotos dos produtos nos são enviadas por usuários da plataforma. Estamos abertos para correções/atualizações de fórmula por parte dos fabricantes.</p>
+    </div>
+  </div>
+  </div>
+
     <div class="d-flex justify-content-right"><%= image_tag "articles.png" %>
       <div class="ml-4">
       <h6 class="text-left mt-5">ARTIGOS CIENTÍFICOS</h6>
-      <p class="text-left mt-3">Todas as evidências científicas serão compartilhadas publicamente em cada avaliação.</p>
+      <p class="text-left mt-3">Todas as evidências científicas serão compartilhadas publicamente em cada avaliação de ingrediente.</p>
       </div>
     </div>
     <div class="d-flex justify-content-right"><%= image_tag "certification.png" %>
       <div class="ml-4">
       <h6 class="text-left mt-5">CERTIFICAÇÕES</h6>
-      <p class="text-left mt-3"> Também temos uma aba de selos certificadores. Marcas que possuem selos oficiais que certificam que seus ingredientes são naturais, orgânicos, que não testam em animais e/ou que tem embalagem reciclável ganham pontos para nossa escolha. Assim temos certeza sobre a origem de seus ingredientes e vemos a preocupação da marca em pensar em todos os impactos que podem causar.</p>
+      <p class="text-left mt-3"> Também temos uma aba de selos certificadores. Marcas que possuem selos oficiais que certificam que seus ingredientes são naturais, orgânicos, não testam em animais e/ou que tem embalagem reciclável ganham pontos para nossa escolha. Assim temos certeza sobre a origem de seus ingredientes e vemos a preocupação da marca em pensar em todos os impactos que podem causar.</p>
       </div>
     </div>
 </div>

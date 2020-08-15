@@ -1,4 +1,4 @@
-<div class="container-fluid mt-5">
+<div class="container mt-5">
   <style>
     body{
       background-color: #F2F2F2;
@@ -155,10 +155,10 @@
     <p class="criterioscinza"> É seguro em cosméticos sem restrições e sem causar impactos a saúde e/ou ao meio ambiente.</p>
 <span class="bigdotyellow"></span>
     <p class="criteriosyellow"> Seguro em cosméticos, com restrições  </p>
-    <p class="criterioscinza"> É seguro em cosméticos com restrições e podem causar impactos a saúde e/ou ao meio ambiente.</p>
+    <p class="criterioscinza"> É seguro em cosméticos com restrições, segundo evidências científicas. E podem causar impactos a saúde e/ou ao meio ambiente.</p>
 <span class="bigdotred"></span>
-    <p class="criteriosred"> Inseguro em cosméticos </p>
-    <p class="criterioscinza"> Não são seguros em cosméticos e podem causar impactos graves a saúde e/ou ao meio ambiente.</p>
+    <p class="criteriosred"> Tóxico em cosméticos </p>
+    <p class="criterioscinza"> São considerados tóxicos em cosméticos, segundo evidências científicas. E podem causar impactos graves a saúde e/ou ao meio ambiente.</p>
 <span class="bigdotgrey"></span>
     <p class="criteriosgrey"> Potencial inconclusivo   </p>
     <p class="criterioscinza"> Estudos não permitem nenhuma conclusão por estarem em andamento ou obterem dados divergentes sobre sua segurança a saúde e/ou impactos ao meio ambiente.</p>
@@ -174,7 +174,7 @@
        <%= cl_image_tag photo.key, width: 80, height: 80, crop: :pad, class:"shadowcss bg-white rounded" %>
        <% end %>
      <% else %>
-        <p><%= 'Esse item não tem certificados aprovados pelo limpp' %></p>
+        <p class="card-text ingredientname"><%= 'Esse item não tem certificados aprovados pelo limpp' %></p>
      <% end %>
      <p class="linea">_____________________________________________________</p>
       <div class="d-flex"><p class="fonttitle mt-2">Nota da</p><%= image_tag "logolimpp.svg" , class:"sizelogo mb-2" %> </div>

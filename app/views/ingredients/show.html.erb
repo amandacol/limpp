@@ -8,11 +8,13 @@
         <span class="dotyellow mt-3"></span>
         <% elsif @ingredient.risk_to_health == "red"  %>
         <span class="dotred mt-3"></span>
+        <% elsif @ingredient.risk_to_health == "grey"  %>
+        <span class="dotgrey mt-3"></span>
         <% else %>
         <span class="dotgreen mt-3"></span>
         <% end %>
     </div>
-    <% if @ingredient.risk_to_health == "yellow" || @ingredient.risk_to_health == "red" %>
+    <% if !@ingredient.risk_to_health_text.to_s.empty? %>
     <p class="risktext"><%= @ingredient.risk_to_health_text %></p>
     <% end %>
     <div class="d-flex">
@@ -22,11 +24,13 @@
         <span class="dotyellow"></span>
         <% elsif @ingredient.risk_to_enviroment == "red"  %>
         <span class="dotred"></span>
+        <% elsif @ingredient.risk_to_enviroment == "grey"  %>
+        <span class="dotgrey"></span>
         <% else %>
         <span class="dotgreen"></span>
         <% end %>
     </div>
-    <% if @ingredient.risk_to_enviroment == "yellow" || @ingredient.risk_to_enviroment == "red" %>
+    <% if !@ingredient.risk_to_enviroment_text.to_s.empty? %>
      <p class="risktext"><%= @ingredient.risk_to_enviroment_text %></p>
     <% end %>
     <div class="d-flex">

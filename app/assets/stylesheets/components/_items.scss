@@ -27,6 +27,7 @@
       font-family: 'Montserrat', sans-serif;
       font-size: 14px;
       background: white;
+      font-weight: bold;
       border: none;
       color: #8F89DD;
       display: none;
@@ -90,16 +91,15 @@
     .obs{
       font-family: 'Montserrat', sans-serif;
       font-weight: bold;
-      font-size: 9px;
+      font-size: 12px;
       color:#707070;
       margin-left: 8px;
       margin-right: 5px;
     }
 
-    .sizelogo{
+    .sizelogoitems{
       width: 40px;
       margin-left: 9px;
-      margin-bottom: -10px;
     }
 
     .evaluation{
@@ -125,9 +125,14 @@
     }
     .linea{
       color: #F2F2F2;
-      font-size: 10px;
+      font-size: 12px;
+      font-weight: bold;
     }
     .backgroudshow{
       background-color: white;
       border-radius: 8px;
+    }
+
+    .imagewish{
+      width: 80px;
     }

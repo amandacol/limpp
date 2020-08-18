@@ -6,47 +6,55 @@
       display: grid;
       background: white;
     }
-    .backgroudfirst{
-      max-width: 320px;
-      position: relative;
-      background: linear-gradient(to bottom, #66d79f, #00cdc8, #00bde8, #33a7f0, #8d8bdc);
-      padding: 10px;
-      top: 20%;
-      left: 4%;
-    }
-    .btn-avaliacao{
+    .btn-tologin{
       color: white;
       background-color: #8F89DD;
       border-radius: 30px;
-      padding: 0.5rem 2rem;
+      padding: 0.4rem 1.5rem;
       font-weight: bold;
       font-family: 'Montserrat', sans-serif;
       font-size: 13px;
       box-shadow: 0px 2px 2px #33313261;
     }
+     .btn-inicio{
+      color: white;
+      background-color: #33D89E;
+      border-radius: 30px;
+      padding: 0.4rem 1.5rem;
+      font-weight: bold;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      box-shadow: 0px 2px 2px #33313261;
+    }
+
   </style>
  <div class="row justify-content-center mr-2">
     <div class="backgroudfirst"><div class="module">
       <h5 class="font-weight-bold text-center mt-2">Bem vinde ao limpp!</h5>
-      <p class="text-center mt-1 subtitle ml-1 mr-1">Conhecimentos compartilhados para uma beleza mais consciente.</p>
+      <p class="text-center mt-1 subtitle ml-1 mr-1">Queremos democratizar o acesso à Informações sobre ingredientes seguros, com uma linguagem acessível.</p>
         <div style="float: left; width: 170px;">
-          <%= image_tag "buscainicial.svg", class:"ml-5" %>
-          <figcaption class="text-wrap text-center mr-3"> Busque pelo ingrediente ou nome do produto</figcaption>
+          <%= image_tag "lupaverde.svg", class:"marginlupa" %>
+          <figcaption class="text-wrap text-center mr-4"> Busque pelo ingrediente ou nome do produto</figcaption>
         </div>
         <div style="float: left; width: 170px;">
-          <%= image_tag "termometroinicial.svg", class:"margemtermometro mt-2" %>
-          <figcaption class="text-center mr-3 margemconheca"> Conheça a avaliação dos ingredientes</figcaption>
+          <%= image_tag "farol.svg", class:"margemtermometro mt-2" %>
+          <figcaption class="text-center mr-4 margemconheca"> Conheça a avaliação dos ingredientes</figcaption>
         </div>
         <div>
           <%= image_tag "avaliação.svg", class:"ml-5" %>
           <figcaption class="text-center margemsugestao"> Sugira produtos para serem avaliados</figcaption>
         </div>
-          <%= image_tag "descontosacola.svg", class:"ml-5 mt-2" %>
-          <figcaption class="text-center margemsugestao"> Ganhe desconto em produtos limpos</figcaption>
-    <div class="form-actions mt-2 d-flex justify-content-center mr-3">
-      <%= link_to new_user_session_path, class:"btn btn-avaliacao mt-4" do %>
+          <%= image_tag "descontoverde.svg", class:"ml-5 mt-2" %>
+          <figcaption class="text-center margemdesconto"> Ganhe desconto em produtos limpos</figcaption>
+    <div class="form-actions mt-2 d-flex justify-content-around">
+      <%= link_to new_user_session_path, class:"btn btn-tologin mt-4" do %>
             <figure class="d-flex align-items-center spacefirst">
                <%= image_tag "userwhite.svg" %><figcaption class="ml-2 mt-1 spacefirst">Login</figcaption>
+             </figure>
+      <% end %>
+      <%= link_to items_path, class:"btn btn-inicio mt-4" do %>
+            <figure class="d-flex align-items-center spacefirst">
+               <%= image_tag "house.svg" %><figcaption class="ml-2 mt-1 spacefirst">Início</figcaption>
              </figure>
       <% end %>
     </div>

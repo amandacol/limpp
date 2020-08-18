@@ -6,12 +6,25 @@
       font-family: 'Montserrat', sans-serif;
       font-size: 14px;
     }
-    .btn-login{
+    .btn-filtrar{
       background-color: #67D89E;
       color: white;
       border-radius: 30px;
       font-weight: bold;
-      padding: 0.5rem 2rem;
+      padding: 0.3rem 1.2rem;
+    }
+    a{
+      color: #8F89DD;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      font-weight: bold;
+    }
+    a:hover{
+      color: #333132;
+      text-decoration: underline;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      font-weight: bold;
     }
 </style>
 <div class="container-fluid mt-5">
@@ -55,12 +68,12 @@
         <div class="dropdown-content index">
              <%= simple_form_for :search, method: "GET" do |f| %>
              <p class="fontfilter">Por categoria</p>
-              <%= f.input :category, label:"", required: false, collection: $category, as: :check_boxes %>
+              <%= f.input :category, label:"", required: false, collection: $category, as: :check_boxes, class:"greencheck" %>
              <p class="fontfilter">Por subcategoria</p>
               <%= f.input :subcategory, label:"", required: false,  collection: $subcategory, as: :check_boxes %>
              <p class="fontfilter">Por toxicidade</p>
               <%= f.input :toxicity, label:"", required: false,  collection: $toxicity, as: :check_boxes %>
-             <%= f.submit "Filtar", class: "btn btn-login" %>
+             <%= f.submit "Filtar", class: "btn btn-filtrar" %>
           <% end %>
        </div>
       </div>

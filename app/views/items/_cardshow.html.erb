@@ -21,17 +21,11 @@
             <%= image_tag "desconto2.png", class:"desconto mt-2" %>
           <% end %>
           <% end %>
-          <%= simple_form_for [@item, Wishlist.new] do |s|  %>
-            <% if @user_wishlists.include? @item  %>
-              <button type="submit" class="btn btn-purpleheart">
-                <i class="fas fa-heart"></i>
-              </button>
-                <% else %>
-                <button type="submit" class="btn btn-greyheart">
-                <i class="fas fa-heart"></i>
-              </button>
-                <% end %>
-            <% end %>
+          <%= link_to item_wishlists_path(@item), method: :post do %>
+            <div class="<%= @user_wishlists.include?(@item) ? "btn-purpleheart" : "btn-greyheart" %>">
+              <i class="fas fa-heart"></i>
+            </div>
+          <% end %>
        </div>
      </div>
 </div>

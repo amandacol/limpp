@@ -21,7 +21,7 @@
     }
     .nav-link{
     display: block;
-    padding: 0.5rem 0.6rem !important;
+    padding: 0.5rem 0.5rem !important;
     }
     .active{
       background-color: white !important;
@@ -30,7 +30,7 @@
       color: #333132 !important;
       font-family: 'Montserrat', sans-serif;
       font-weight: bold;
-      font-size: 14px;
+      font-size: 13px;
       padding: 20px;
     }
     .show {
@@ -53,21 +53,6 @@
       font-weight: bold;
       font-size: 12px;
     }
-    .fonthumb{
-      color: #33D89E;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 20px;
-      padding: 8px;
-      white-space: nowrap;
-    }
-    .number{
-      color: #33D89E;
-      font-size: 25px;
-      margin-top: -7px;
-    }
-  .marginhealth2{
-    margin-bottom: 18px;
-  }
   </style>
 
   <div class="container p-1">
@@ -91,11 +76,21 @@
         <ul class="marginul">
         <% @item.combinations.each do |combination| %>
         <div class="d-flex">
-        <li class="mt-4 mb-2 ingredientlink mr-3"><%= combination.ingredient.name %></li>
+          <% if combination.ingredient.name == "Talco" || combination.ingredient.name == "Silica" || combination.ingredient.name == "Parfum" %>
+          <li class="mt-2 mb-2 ingredientlink mr-3"><%= combination.ingredient.name %><%= image_tag "alert.svg", class:"alertsize" %></li>
         <%= link_to ingredient_path(combination.ingredient), class:"componentshow" do %>
           <%= image_tag "Componente.svg" %>
         <% end %>
         </div>
+        <% else %>
+        <div class="d-flex">
+        <li class="mt-2 mb-2 ingredientlink mr-3"><%= combination.ingredient.name %></li>
+        <%= link_to ingredient_path(combination.ingredient), class:"componentshow" do %>
+          <%= image_tag "Componente.svg" %>
+        <% end %>
+        </div>
+        </div>
+        <% end %>
       <div class="d-flex">
         <div>
         <%= image_tag "saude.svg", class:"marginhealth2" %>
@@ -103,6 +98,8 @@
         <span class="dotyellow2"></span>
         <% elsif combination.ingredient.risk_to_health == "red"  %>
         <span class="dotred2"></span>
+        <% elsif combination.ingredient.risk_to_health == "grey"  %>
+        <span class="dotgrey2"></span>
         <% else %>
         <span class="dotgreen2"></span>
         <% end %>
@@ -113,6 +110,8 @@
         <span class="dotyellow2"></span>
         <% elsif combination.ingredient.risk_to_enviroment == "red"  %>
         <span class="dotred2"></span>
+        <% elsif combination.ingredient.risk_to_enviroment == "grey"  %>
+        <span class="dotgrey2"></span>
         <% else %>
         <span class="dotgreen2"></span>
         <% end %>
@@ -132,7 +131,6 @@
      <% else %>
         <p class="card-text ingredientname"><%= 'Esse item não contém ingredientes tóxicos avaliados pelo limpp' %></p>
   <% end %>
-  <p class="obs mt-3">Teste por enquanto</p>
 
 
     <div class="d-flex mt-2"><%= image_tag "logolimpp.svg" , class:"sizelogoitems mr-1" %><p class="fonttitle mt-3"> é uma plataforma colaborativa!</p></div>

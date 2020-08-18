@@ -4,12 +4,6 @@
       border-radius: 30px;
       margin: 15px;
     }
-    .title{
-      font-family: 'Montserrat', sans-serif;
-      color: white;
-      font-weight: bold;
-      font-size: 18px;
-    }
     .btn-cadastrar{
       color: white;
       background-color: #333132;
@@ -27,9 +21,6 @@
       font-size: 15px;
       margin-left: 10px;
     }
-    .position{
-      margin-bottom: -40px;
-    }
     .btn-login{
       background-color: #67D89E;
       color: white;
@@ -38,11 +29,11 @@
       padding: 0.5rem 2rem;
     }
 </style>
-<div class="position d-flex justify-content-center mt-5">
+<div class="positiondevise d-flex justify-content-center mt-5">
       <%= image_tag "usuario2.svg" %>
 </div>
 <div class="background p-5">
-      <h2 class="title text-center mt-2">Esqueceu a senha?</h2>
+      <h2 class="titledevise text-center mt-2">Esqueceu a senha?</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= f.error_notification %>

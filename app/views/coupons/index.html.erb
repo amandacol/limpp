@@ -24,10 +24,10 @@
     }
 </style>
 <div class="container-fluid mt-5">
-  <div class="d-flex justify-content-center"><%= image_tag "coupongreen.png", class:"recebido mt-5" %></div>
+  <div class="d-flex justify-content-center"><%= image_tag "descontoverdesvg", class:"recebido mt-5" %></div>
     <% @coupons.each do |coupon| %>
     <h5 class="text-center mt-4"><%= coupon.content %></h5>
-    <p class="text-center mt-4">Temos um desconto exclusivo do limpp para este produto. Basta seguir pelo link abaixo.</p>
+    <p class="text-center mt-4">Temos um desconto exclusivo do limpp para este produto. Basta usar o cupom acima no link abaixo.</p>
     <div class="d-flex justify-content-center mt-">
       <%= link_to coupon.website do %>
         <p class="btn-avaliacao mb-1">Ir para o site</p>

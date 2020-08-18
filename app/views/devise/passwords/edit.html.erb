@@ -1,4 +1,32 @@
-<h2>Altere sua senha</h2>
+<style>
+  .background{
+      background-color: #67D89E;
+      border-radius: 30px;
+      margin: 15px;
+    }
+    .btn-cadastrar{
+      color: white;
+      background-color: #333132;
+      border-radius: 30px;
+      padding: 0.5rem 2rem;
+      font-weight: bold;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      box-shadow: 0px 2px 2px #33313261;
+    }
+    .simple_form label {
+      color: white;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: bold;
+      font-size: 15px;
+      margin-left: 10px;
+    }
+</style>
+<div class="positiondevise d-flex justify-content-center mt-5">
+      <%= image_tag "usuario2.svg" %>
+</div>
+<div class="background p-5">
+  <h2 class="titledevise text-center mt-2">Altere sua senha</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
@@ -12,16 +40,16 @@
                 required: true,
                 autofocus: true,
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
+                input_html: { autocomplete: "new-password", class: 'rounded-pill' } %>
     <%= f.input :password_confirmation,
                 label: "Confirme sua nova senha",
                 required: true,
-                input_html: { autocomplete: "new-password" } %>
+                input_html: { autocomplete: "new-password", class: 'rounded-pill' } %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Altere minha senha" %>
+    <%= f.button :submit, "Altere minha senha", class:"btn btn-cadastrar" %>
   </div>
 <% end %>
+</div>
 
-<%= render "devise/shared/links" %>

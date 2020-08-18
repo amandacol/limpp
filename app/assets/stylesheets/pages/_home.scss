@@ -24,14 +24,32 @@
     }
     .margemsugestao{
       margin-left: 0px;
-      margin-top: 6px;
-      margin-right: 4px;
+      margin-top: -1px;
+      margin-right: 0px;
+    }
+    .margemdesconto{
+      margin-left: 0px;
+      margin-top: 4px;
+      margin-right: 0px;
     }
     .margemconheca{
       margin-top: 9px;
     }
 
     .subtitle{
-      font-size: 13px;
+      font-size: 12px;
       font-weight: bold;
+    }
+
+    .marginlupa{
+          margin-left: 70px;
+    }
+    .backgroudfirst{
+      max-width: 320px;
+      position: relative;
+      background: linear-gradient(to bottom, #66d79f, #00cdc8, #00bde8, #33a7f0, #8d8bdc);
+      border-radius: 8px;
+      padding: 10px;
+      top: 20%;
+      left: 4%;
     }

@@ -60,9 +60,20 @@
     <h5 class="text-center mt-5">Nossos critérios são transparentes!</h5>
       <p class="text-left mt-4">Todas as consultas de ingredientes contidos nos produtos são feitas a partir das <span style="color: #8F89DD; font-weight:bold;">embalagens</span>, ou seja, informações <span style="color: #8F89DD; font-weight:bold;">públicas</span> que estão disponíveis para qualquer pessoa. Caso as marcas entrem em <span style="color: #8F89DD; font-weight:bold;">contato</span> conosco com considerações e/ou certificados de pureza colocamos na plataforma.  </p>
       <p class="text-left mt-4">Analisamos <span style="color: #8F89DD; font-weight:bold;">ingredientes/substâncias</span> em sua menor unidade, não apenas as classes ou grupos generalizados. Exemplo: classificamos o Metilparabeno, o Butilparabeno etc, e não parabenos em geral. </p>
-      <p class="text-left mt-4">Nos baseamos apenas em <span style="color: #8F89DD; font-weight:bold;">artigos científicos</span> mais recentes de organizações referências: CIR, Cos Ing, Pubchem, ECHA, FDA, Hotlist and Pollution Waste Canada, IFRA, EPA. </p>
-      <p class="text-left mt-4">Mínimo de <span style="color: #8F89DD; font-weight:bold;">3</span> artigos dessas <span style="color: #8F89DD; font-weight:bold;">fontes</span> por substância para considerarmos tóxico, sendo que esses órgãos já possuem critérios mínimos de tempo de observação e população avaliada. </p>
-    <div class="d-flex"><p class="fonttitle mt-2">Aspectos avaliados pelo</p><%= image_tag "logolimpp.svg" , class:"sizelogo mb-2" %> </div>
+    <div class="d-flex mt-4">
+    <%= image_tag "fontes.svg", class:"articleresponsible" %>
+    <p class="provenarticle">ARTIGOS CIENTÍFICOS</p>
+    </div>
+      <p class="text-left mt-2">Nos baseamos apenas em <span style="color: #8F89DD; font-weight:bold;">artigos científicos</span> mais recentes de organizações referências: CIR, Cos Ing, Pubchem, ECHA, FDA, Hotlist and Pollution Waste Canada, IFRA, EPA. </p>
+      <p class="text-left mt-4">Mínimo de <span style="color: #8F89DD; font-weight:bold;">3</span> artigos dessas <span style="color: #8F89DD; font-weight:bold;">fontes</span> por substância para considerarmos tóxico, sendo que esses órgãos já possuem critérios mínimos de tempo de observação e população avaliada. Todas as evidências científicas serão compartilhadas publicamente em cada avaliação de um ingrediente. </p>
+    <div class="d-flex mt-4">
+    <%= image_tag "fontes.svg", class:"articleresponsible" %>
+    <p class="provenarticle">CERTIFICAÇÕES</p>
+    </div>
+      <p class="text-left mt-2">Também temos uma aba de selos certificadores. Marcas que possuem selos oficiais que certificam que seus ingredientes são naturais, orgânicos, não testam em animais e/ou que tem embalagem reciclável ganham pontos para nossa escolha. Assim temos certeza sobre a origem de seus ingredientes e vemos a preocupação da marca em pensar em todos os impactos que podem causar.</p>
+
+
+    <div class="d-flex"><p class="fonttitle mt-2">Aspectos avaliados pelo</p><%= image_tag "logolimpp.svg" , class:"sizelogoitems mb-2" %> </div>
     <div class="d-flex">
     <%= image_tag "saude.svg", class:"marginhealth" %>
     <p class="marginrisk">Risco à saúde</p>
@@ -76,7 +87,7 @@
     <p class="marginrisk">Potencial alegênico</p>
     </div>
 
-<div class="d-flex"><p class="fonttitle mt-4">Critérios de avaliação</p><%= image_tag "logolimpp.svg" , class:"sizelogo" %> </div>
+<div class="d-flex"><p class="fonttitle mt-4">Critérios de avaliação</p><%= image_tag "logolimpp.svg" , class:"sizelogoitems" %> </div>
     <span class="bigdotgreen"></span>
     <p class="criterios"> Seguro em cosméticos </p>
     <p class="criterioscinza"> É seguro em cosméticos sem restrições e sem causar impactos a saúde e/ou ao meio ambiente.</p>
@@ -90,22 +101,7 @@
     <p class="criteriosgrey"> Potencial inconclusivo   </p>
     <p class="criterioscinza"> Estudos não permitem nenhuma conclusão por estarem em andamento ou obterem dados divergentes sobre sua segurança a saúde e/ou impactos ao meio ambiente.</p>
 
-
-      <p class="obs mt-4 mb-2">O limpp é uma plataforma colaborativa, classificamos ingredientes em que as fotos dos produtos nos são enviadas por usuários da plataforma. Estamos abertos para correções/atualizações de fórmula por parte dos fabricantes.</p>
-    </div>
-  </div>
-  </div>
-
-    <div class="d-flex justify-content-right"><%= image_tag "articles.png" %>
-      <div class="ml-4">
-      <h6 class="text-left mt-5">ARTIGOS CIENTÍFICOS</h6>
-      <p class="text-left mt-3">Todas as evidências científicas serão compartilhadas publicamente em cada avaliação de ingrediente.</p>
-      </div>
-    </div>
-    <div class="d-flex justify-content-right"><%= image_tag "certification.png" %>
-      <div class="ml-4">
-      <h6 class="text-left mt-5">CERTIFICAÇÕES</h6>
-      <p class="text-left mt-3"> Também temos uma aba de selos certificadores. Marcas que possuem selos oficiais que certificam que seus ingredientes são naturais, orgânicos, não testam em animais e/ou que tem embalagem reciclável ganham pontos para nossa escolha. Assim temos certeza sobre a origem de seus ingredientes e vemos a preocupação da marca em pensar em todos os impactos que podem causar.</p>
-      </div>
-    </div>
+    <div class="d-flex mt-2"><%= image_tag "logolimpp.svg" , class:"sizelogoitems mr-1" %><p class="fonttitle mt-3"> é uma plataforma colaborativa!</p></div>
+    <p class="obs mb-2">Classificamos ingredientes em que as fotos dos produtos nos são enviadas por usuários da plataforma. Estamos abertos para correções/atualizações de fórmula por parte dos fabricantes.</p>
 </div>
+

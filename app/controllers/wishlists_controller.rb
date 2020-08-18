@@ -1,5 +1,6 @@
 class WishlistsController < ApplicationController
   before_action :set_wishlist, only: [:destroy]
+  after_action :verify_authorized, except: [:create, :index]
 
   def index
     @user_items = current_user.items
@@ -13,14 +14,19 @@ class WishlistsController < ApplicationController
 
   def create
     @item = Item.find(params[:item_id])
-    @wishlist = Wishlist.new
-    authorize @wishlist
-    @wishlist.item = @item
-    @wishlist.user = current_user
-    if @wishlist.save
-    redirect_to items_path, notice: "Adicionado a sua lista de desejos!"
+    # check if user allready have an wishlist with this item
+    user_wishlists = Wishlist.where(item: @item, user: current_user)
+
+    if user_wishlists.empty?
+      @wishlist = Wishlist.new
+      authorize @wishlist
+      @wishlist.item = @item
+      @wishlist.user = current_user
+      if @wishlist.save
+        redirect_to items_path, notice: "Adicionado a sua lista de desejos!"
+      end
     else
-    redirect_to items_path, notice: "Você já adicionou esse item."
+      redirect_to items_path, notice: "Você já adicionou esse item."
     end
   end
 

@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     resources :coupons
     end
   resources :wishlists, only: [:index]
-  resources :newitems
+  resources :requested_items
   resources :ingredients
   resources :combination
   resources :merger

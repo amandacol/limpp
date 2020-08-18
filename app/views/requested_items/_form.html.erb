@@ -1,7 +1,4 @@
 <style>
-  .foto{
-    width: 40px;
-  }
     .simple_form label{
       color: white;
     }
@@ -48,7 +45,7 @@
 </style>
 <div class="p-4">
   <p class="confirm">Confirme seu e-mail (*campo obrigatório)</p>
-<%= simple_form_for @newitem do |f| %>
+<%= simple_form_for @requested_item do |f| %>
         <%= f.input :email,
                   required: true,
                   autofocus: true,

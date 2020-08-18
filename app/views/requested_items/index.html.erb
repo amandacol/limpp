@@ -25,8 +25,8 @@
     <h5 class="text-center mt-5">Não encontrou um produto e gostaria que ele fosse avaliado?</h5>
     <p class="text-center mt-5 evaluation">Para sugerir a avaliação, clique no botão abaixo e envie as fotos do rótulo para nossa equipe.</p>
     <div class="d-flex justify-content-center">
-    <% if policy(Newitem).create? %>
-        <%= link_to "Sugerir avaliação", new_newitem_path, class: "btn btn-avaliacao mt-4"%>
+    <% if policy(RequestedItem).create? %>
+        <%= link_to "Sugerir avaliação", new_requested_item_path, class: "btn btn-avaliacao mt-4"%>
     <% end %>
     </div>
 </div>

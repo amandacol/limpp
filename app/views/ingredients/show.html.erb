@@ -60,16 +60,16 @@
       <p class="marginrisk">Restrições</p>
      </div>
       <p class="risktext"><%= @ingredient.restrictions %></p>
-    <% end %>
      <p class="linea">_____________________________________________________</p>
+    <% end %>
     <% if @ingredient.observation.present? %>
      <div class="d-flex">
      <%= image_tag "alert.svg", class:"marginrestriction" %>
       <p class="marginrisk">Observações</p>
      </div>
       <p class="risktext"><%= @ingredient.observation %></p>
-    <% end %>
     <p class="linea">_____________________________________________________</p>
+    <% end %>
     <div class="d-flex">
     <%= image_tag "fontes.svg", class:"fontessize" %>
     <p class="marginrisk">Fontes</p>

@@ -46,13 +46,13 @@
         </div>
           <%= image_tag "descontoverde.svg", class:"ml-5 mt-2" %>
           <figcaption class="text-center margemdesconto"> Ganhe desconto em produtos limpos</figcaption>
-    <div class="form-actions mt-2 d-flex justify-content-around">
-      <%= link_to new_user_session_path, class:"btn btn-tologin mt-4" do %>
+    <div class="form-actions mt-2 d-flex justify-content-center">
+      <%= link_to new_user_session_path, class:"btn btn-tologin mt-4 mr-2" do %>
             <figure class="d-flex align-items-center spacefirst">
                <%= image_tag "userwhite.svg" %><figcaption class="ml-2 mt-1 spacefirst">Login</figcaption>
              </figure>
       <% end %>
-      <%= link_to items_path, class:"btn btn-inicio mt-4" do %>
+      <%= link_to items_path, class:"btn btn-inicio mt-4 ml-2" do %>
             <figure class="d-flex align-items-center spacefirst">
                <%= image_tag "house.svg" %><figcaption class="ml-2 mt-1 spacefirst">Início</figcaption>
              </figure>

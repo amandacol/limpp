@@ -39,7 +39,7 @@
                 label: "Nova senha",
                 required: true,
                 autofocus: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                hint: ("mínimo de #{@minimum_password_length} dígitos" if @minimum_password_length),
                 input_html: { autocomplete: "new-password", class: 'rounded-pill' } %>
     <%= f.input :password_confirmation,
                 label: "Confirme sua nova senha",

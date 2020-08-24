@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+
   devise_for :users,
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+
   get '/auth/:provider/callback', to: 'sessions#create'
+
   root to: 'pages#home'
   get '/first' => 'pages#first'
   get '/sendtous' => 'pages#sendtous'
@@ -20,4 +23,10 @@ Rails.application.routes.draw do
   resources :ingredients
   resources :combination
   resources :merger
+
+  namespace :api do
+    namespace :v1 do
+      get 'teste', to: 'coupon_leads#show'
+    end
+   end
 end

@@ -27,6 +27,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       get 'teste', to: 'coupon_leads#show'
+      post 'create_tracker', to: 'coupon_leads#create_coupon'
     end
    end
 end

@@ -1,0 +1,2 @@
+class CouponTracker < ApplicationRecord
+end

@@ -1,6 +1,6 @@
 class Item < ApplicationRecord
 
-  after_create :toxicity_classifier
+  # after_create :toxicity_classifier
 
 
   acts_as_taggable_on :category
@@ -45,7 +45,6 @@ class Item < ApplicationRecord
 
     def toxicity_classifier
       rated = 0
-      # colors = %w(red yellow)
       self.ingredients.each do |ingredient|
         rated += 10 if ingredient.risk_to_health == "red"
         rated += 5 if ingredient.risk_to_health == "yellow"

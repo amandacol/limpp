@@ -55,7 +55,7 @@
     }
   </style>
 
-  <div class="container p-1">
+  <div class="container">
   <%= render 'cardshow' %>
   <ul class="nav nav-pills mt-3" id="pills-tab" role="tablist">
   <li class="nav-item" role="presentation">
@@ -129,13 +129,11 @@
         <% end %>
         </ul>
      <% else %>
-        <p class="card-text ingredientname"><%= 'Esse item não contém ingredientes tóxicos avaliados pelo limpp' %></p>
+        <p class="card-text ingredientname"><%= 'Esse item não contém ingredientes suspeitos avaliados pela limpp' %></p>
   <% end %>
 
 
-    <div class="d-flex mt-2"><%= image_tag "logolimpp.svg" , class:"sizelogocolab mr-1 mt-2" %><p class="fontcolab mt-4"> é uma plataforma colaborativa!</p></div>
-    <p class="obs2 mb-2">Classificamos ingredientes em que as fotos dos produtos nos são enviadas por usuários da plataforma. Estamos abertos para correções/atualizações de fórmula por parte dos fabricantes.</p>
-  <div class="d-flex"><p class="fonttitle mt-3">Aspectos avaliados pelo</p><%= image_tag "logolimpp.svg" , class:"sizelogoitems" %> </div>
+    <p class="fonttitle mt-3">Aspectos avaliados por nós:</p>
     <div class="d-flex">
     <%= image_tag "saude.svg", class:"marginhealth" %>
     <p class="marginrisk">Risco à saúde</p>
@@ -152,18 +150,20 @@
 <div class="d-flex"><p class="fonttitle mt-3">Critérios de avaliação</p><%= image_tag "logolimpp.svg" , class:"sizelogoitems" %> </div>
     <span class="bigdotgreen"></span>
     <p class="criterios"> Seguro em cosméticos </p>
-    <p class="criterioscinza"> É seguro em cosméticos sem restrições e sem causar impactos a saúde e/ou ao meio ambiente.</p>
+    <p class="criterioscinza mr-5"> É seguro em cosméticos sem restrições e sem causar impactos a saúde e/ou ao meio ambiente.</p>
 <span class="bigdotyellow"></span>
-    <p class="criteriosyellow"> Seguro em cosméticos, com restrições  </p>
-    <p class="criterioscinza"> É seguro em cosméticos com restrições, segundo evidências científicas. E podem causar impactos a saúde e/ou ao meio ambiente.</p>
+    <p class="criteriosyellow mr-5"> Seguro em cosméticos, com restrições  </p>
+    <p class="criterioscinza mr-5"> É seguro em cosméticos com restrições, segundo evidências científicas. E podem causar impactos a saúde e/ou ao meio ambiente dependendo do uso ou quantidade.</p>
 <span class="bigdotred"></span>
-    <p class="criteriosred"> Tóxico em cosméticos </p>
-    <p class="criterioscinza"> São considerados tóxicos em cosméticos, segundo evidências científicas. E podem causar impactos graves a saúde e/ou ao meio ambiente.</p>
+    <p class="criteriosred"> Inseguro em cosméticos </p>
+    <p class="criterioscinza mr-5"> São considerados inseguros em cosméticos, segundo evidências científicas. E podem causar impactos graves a saúde e/ou ao meio ambiente.</p>
 <span class="bigdotgrey"></span>
     <p class="criteriosgrey"> Potencial inconclusivo   </p>
-    <p class="criterioscinza"> Estudos não permitem nenhuma conclusão por estarem em andamento ou obterem dados divergentes sobre sua segurança a saúde e/ou impactos ao meio ambiente.</p>
+    <p class="criterioscinza mr-5"> Estudos não permitem nenhuma conclusão por estarem em andamento ou obterem dados divergentes sobre sua segurança a saúde e/ou impactos ao meio ambiente.</p>
 </div>
   </div>
+    <div class="d-flex mt-2"><%= image_tag "logolimpp.svg" , class:"sizelogocolab mr-1 mt-2" %><p class="fontcolab mt-4"> é uma plataforma colaborativa!</p></div>
+    <p class="obs2 mb-2">Classificamos ingredientes em que as fotos dos produtos nos são enviadas por usuários da plataforma. Estamos abertos para correções/atualizações de fórmula por parte dos fabricantes.</p>
   </div>
   <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
      <% if @item.certification_photos.attached? %>
@@ -171,10 +171,10 @@
        <%= cl_image_tag photo.key, width: 80, height: 80, crop: :pad, class:"shadowcss bg-white rounded" %>
        <% end %>
      <% else %>
-        <p class="card-text ingredientname"><%= 'Esse item não tem certificados aprovados pelo limpp' %></p>
+        <p class="card-text ingredientname"><%= 'Esse item não tem certificados aprovados pela limpp' %></p>
      <% end %>
      <p class="linea mt-3">_____________________________________________________</p>
-      <div class="d-flex"><p class="fonttitle mt-2">Nota</p><%= image_tag "logolimpp.svg" , class:"sizelogoitems mb-2" %> </div>
+      <div class="d-flex"><p class="fonttitle mt-2">Nota da</p><%= image_tag "logolimpp.svg" , class:"sizelogoitems mb-2" %> </div>
       <p class="mt-2 ingredientlink">Marcas que possuem selos oficiais que certificam que seus ingredientes são naturais, orgânicos, que não testam em animais e/ou que tem embalagem reciclável ganham pontos para nossa escolha.</p>
   </div>
   <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">

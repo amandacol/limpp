@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_19_141620) do
+ActiveRecord::Schema.define(version: 2020_08_28_003625) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -73,10 +73,8 @@ ActiveRecord::Schema.define(version: 2020_08_19_141620) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_id"
     t.integer "average", default: 0
     t.integer "toxicity_rate"
-    t.index ["user_id"], name: "index_items_on_user_id"
   end
 
   create_table "mergers", force: :cascade do |t|
@@ -189,7 +187,6 @@ ActiveRecord::Schema.define(version: 2020_08_19_141620) do
   add_foreign_key "combinations", "ingredients"
   add_foreign_key "combinations", "items"
   add_foreign_key "coupons", "items"
-  add_foreign_key "items", "users"
   add_foreign_key "mergers", "ingredients"
   add_foreign_key "mergers", "purposes"
   add_foreign_key "requested_items", "users"

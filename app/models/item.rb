@@ -12,7 +12,6 @@ class Item < ApplicationRecord
   has_many :coupons, dependent: :destroy
   has_many :combinations, dependent: :destroy
   has_many :ingredients, through: :combinations
-  belongs_to :user
   has_one_attached :photo
   has_many_attached :certification_photos
 

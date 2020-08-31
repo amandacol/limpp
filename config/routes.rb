@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'partners/new'
+  get 'partners/create'
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   devise_for :users,
@@ -23,11 +25,13 @@ Rails.application.routes.draw do
   resources :ingredients
   resources :combination
   resources :merger
+  resources :partners, only: [:new, :create]
 
-  namespace :api do
+  namespace :api, defaults: { format: :json } do
     namespace :v1 do
       get 'teste', to: 'coupon_leads#show'
       post 'create_tracker', to: 'coupon_leads#create_coupon'
     end
    end
+
 end

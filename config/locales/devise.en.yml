@@ -38,7 +38,7 @@ en:
       updated_not_active: "Sua senha foi alterada com sucesso."
     registrations:
       destroyed: "Sua conta foi cancelada com sucesso. Esperamos te ver novamente em breve."
-      signed_up: "Bem vinde ao limpp! Você foi registradx com sucesso."
+      signed_up: "Bem vinde à limpp! Você foi registradx com sucesso."
       signed_up_but_inactive: "Você foi cadastrado com sucesso. No entanto, não foi possível fazer o login porque sua conta ainda não foi ativada. Cheque seu email."
       signed_up_but_locked: "Você foi cadastrado com sucesso. No entanto, não foi possível fazer o login porque sua conta está bloqueada."
       signed_up_but_unconfirmed: "Uma mensagem com um link de confirmação foi enviada para o seu endereço de e-mail. Por favor, siga o link para ativar sua conta."
@@ -46,7 +46,7 @@ en:
       updated: "Sua conta foi atualizada com sucesso."
       updated_but_not_signed_in: "Sua conta foi atualizada com sucesso, mas como sua senha foi alterada você precisa logar novamente."
     sessions:
-      signed_in: "Bem vinde ao limpp."
+      signed_in: "Bem vinde à limpp."
       signed_out: "Até breve."
       already_signed_out: "Até breve."
     unlocks:

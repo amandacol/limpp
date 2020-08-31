@@ -1,0 +1,126 @@
+
+<div class="row justify-content-center">
+  <div class="column d-flex flex-wrap">
+     <% @sponsoreditem1 = Item.find(11) %>
+     <div class="card shadow-sm bg-white mt-3 ml-3" style="width: 20rem; border-radius: 8px; ">
+       <div class="card-body d-flex justify-content-start">
+         <div><i class="far fa-check-circle sponsored"></i></div>
+         <div class="d-flex align-items-end position">
+         <% if @sponsoreditem1.photo.attached? %>
+          <%= cl_image_tag @sponsoreditem1.photo.key, width: 85, height: 85, crop: :pad, class:"shadowcss bg-white rounded" %>
+         <% else %>
+          <img src="https://images.unsplash.com/photo-1502977249166-824b3a8a4d6d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80" class="card-photo"/>
+         <% end %>
+         <% if @sponsoreditem1.reviews.empty? %>
+            <p class="card-text font notavailable"><%= "Não avaliado ainda" %></p>
+          <% else %>
+            <% @sponsoreditem1.calculate_average.times do %>
+              <i class="fas fa-star star"></i>
+            <% end %>
+          <% end %>
+         </div>
+         <p class="card-text font case"><%= @sponsoreditem1.name %></p>
+         <div class="d-flex justify-content-end space">
+          <% if @sponsoreditem1.coupons.exists? %>
+          <%= link_to item_coupons_path(@sponsoreditem1) do %>
+            <%= image_tag "desconto2.png", class:"desconto mt-2" %>
+          <% end %>
+          <% end %>
+          <%= link_to item_wishlists_path(@sponsoreditem1), method: :post do %>
+            <div class="<%= @user_wishlists.include?(@sponsoreditem1) ? "btn-purpleheart" : "btn-greyheart" %>">
+              <i class="fas fa-heart"></i>
+            </div>
+          <% end %>
+         </div>
+        <div class="d-flex justify-content-end">
+        <%= link_to item_path(@sponsoreditem1), class:"component" do %>
+          <%= image_tag "Componente.svg" %>
+        <% end %>
+        </div>
+       </div>
+     </div>
+</div>
+<div class="row justify-content-center">
+    <div class="column d-flex flex-wrap">
+     <% @sponsoreditem2 = Item.find(12) %>
+     <div class="card shadow-sm bg-white mt-3 ml-3" style="width: 20rem; border-radius: 8px; ">
+       <div class="card-body d-flex justify-content-start">
+         <div class="d-flex align-items-end position">
+         <% if @sponsoreditem2.photo.attached? %>
+          <%= cl_image_tag @sponsoreditem2.photo.key, width: 85, height: 85, crop: :pad, class:"shadowcss bg-white rounded" %>
+         <% else %>
+          <img src="https://images.unsplash.com/photo-1503236823255-94609f598e71?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" class="card-photo"/>
+         <% end %>
+         <% if @sponsoreditem2.reviews.empty? %>
+            <p class="card-text font notavailable"><%= "Não avaliado ainda" %></p>
+          <% else %>
+            <% @sponsoreditem2.calculate_average.times do %>
+              <i class="fas fa-star star"></i>
+            <% end %>
+          <% end %>
+         </div>
+         <p class="card-text font case"><%= @sponsoreditem2.name %></p>
+         <i class="far fa-check-circle sponsored"></i>
+         <div class="d-flex justify-content-end space">
+          <% if @sponsoreditem2.coupons.exists? %>
+          <%= link_to item_coupons_path(@sponsoreditem2) do %>
+            <%= image_tag "desconto2.png", class:"desconto mt-2" %>
+          <% end %>
+          <% end %>
+          <%= link_to item_wishlists_path(@sponsoreditem2), method: :post do %>
+            <div class="<%= @user_wishlists.include?(@sponsoreditem2) ? "btn-purpleheart" : "btn-greyheart" %>">
+              <i class="fas fa-heart"></i>
+            </div>
+          <% end %>
+         </div>
+        <div class="d-flex justify-content-end">
+        <%= link_to item_path(@sponsoreditem2), class:"component" do %>
+          <%= image_tag "Componente.svg" %>
+        <% end %>
+        </div>
+       </div>
+     </div>
+</div>
+<div class="row justify-content-center">
+     <div class="column d-flex flex-wrap">
+     <% @sponsoreditem3 = Item.find(13) %>
+     <div class="card shadow-sm bg-white mt-3 ml-3" style="width: 20rem; border-radius: 8px; ">
+       <div class="card-body d-flex justify-content-start">
+         <div class="d-flex align-items-end position">
+         <% if @sponsoreditem3.photo.attached? %>
+          <%= cl_image_tag @sponsoreditem3.photo.key, width: 85, height: 85, crop: :pad, class:"shadowcss bg-white rounded" %>
+         <% else %>
+          <img src="https://images.unsplash.com/photo-1503236823255-94609f598e71?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" class="card-photo"/>
+         <% end %>
+         <% if @sponsoreditem3.reviews.empty? %>
+            <p class="card-text font notavailable"><%= "Não avaliado ainda" %></p>
+          <% else %>
+            <% @sponsoreditem3.calculate_average.times do %>
+              <i class="fas fa-star star"></i>
+            <% end %>
+          <% end %>
+         </div>
+         <p class="card-text font case"><%= @sponsoreditem3.name %></p>
+         <i class="far fa-check-circle sponsored"></i>
+         <div class="d-flex justify-content-end space">
+          <% if @sponsoreditem3.coupons.exists? %>
+          <%= link_to item_coupons_path(@sponsoreditem3) do %>
+            <%= image_tag "desconto2.png", class:"desconto mt-2" %>
+          <% end %>
+          <% end %>
+          <%= link_to item_wishlists_path(@sponsoreditem3), method: :post do %>
+            <div class="<%= @user_wishlists.include?(@sponsoreditem3) ? "btn-purpleheart" : "btn-greyheart" %>">
+              <i class="fas fa-heart"></i>
+            </div>
+          <% end %>
+         </div>
+        <div class="d-flex justify-content-end">
+        <%= link_to item_path(@sponsoreditem3), class:"component" do %>
+          <%= image_tag "Componente.svg" %>
+        <% end %>
+        </div>
+       </div>
+     </div>
+</div>
+</div>
+

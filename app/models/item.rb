@@ -12,7 +12,6 @@ class Item < ApplicationRecord
   has_many :coupons, dependent: :destroy
   has_many :combinations, dependent: :destroy
   has_many :ingredients, through: :combinations
-  belongs_to :user
   has_one_attached :photo
   has_many_attached :certification_photos
 
@@ -32,7 +31,7 @@ class Item < ApplicationRecord
 
     $category = ['Cabelos', 'Higiene Pessoal', 'Cuidados com a pele', 'Maquiagem']
     $subcategory = ['Shampoos', 'Tratamentos Capilares', 'Finalizadores Capilares', 'Tinturas', 'Desodorantes', 'Higiene Bucal', 'Limpeza Facial', 'Limpeza Corporal', 'Tratamento Facial', 'Tratamento Corporal', 'Protetor Solar', 'Maquiagem Pele', 'Maquiagem Olhos', 'Maquiagem Lábios' ]
-    $toxicity = ['Não contém tóxicos avaliados pelo limpp', 'Vegano', 'Grávidas deveriam evitar', 'Contém glúten', 'Não alergênico']
+    $toxicity = ['Não contém ingredientes suspeitos', 'Vegano', 'Grávidas deveriam evitar', 'Contém glúten', 'Não alergênico']
 
     def calculate_average
       return 0 unless reviews.any?

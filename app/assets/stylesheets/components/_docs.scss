@@ -1,0 +1,149 @@
+.container {
+  .str{
+    color: #45b77e;
+  }
+
+  .pun {
+    color: $purple;
+  }
+
+  .lit {
+    color: $blue;
+  }
+}
+
+.section-guide {
+	font-family: "Proxima Nova", sans-serif;
+	padding: 1em 0;
+	background: #f7f7ff;
+}
+
+.section-guide .code-padding {
+	overflow-x: auto;
+	padding: 0.5em;
+	background: #f8f8f8;
+}
+
+.docs-sidebar {
+	position: fixed;
+	width: 17em;
+	float: left;
+	padding: 1em;
+	background: white;
+	border: 1px solid #eaeef1;
+}
+
+.content {
+	padding-left: 365px;
+}
+
+.content .section-header {
+	background: #121a3e;
+	padding: 1.25em 1.5em;
+	box-shadow: 0px 2px 3px #c5cad8;
+	border-radius: 6px;
+	margin-top: 1em;
+}
+
+.content .section-header:first-child {
+	margin-top: 0;
+}
+
+.content .section-header h1 {
+	font-size: 1.5em;
+	margin: 0;
+	padding: 0;
+}
+
+.content .section-header h1 a {
+	color: white;
+}
+
+.content p {
+	margin-bottom: 1.25em;
+}
+
+.content .group {
+	padding: 1.25em 1.5em;
+	background: white;
+	border: 1px solid #eaeef1;
+	box-shadow: 0px 2px 3px #c5cad8;
+	margin: 1em 0;
+}
+
+.content .group .group-header {
+  position: relative;
+}
+
+.content .group .group-header .environment-tag {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: $blue;
+  color: white;
+  font-weight: bold;
+  font-size: 12px;
+  border-radius: 5px;
+  padding: 4px 8px;
+}
+
+.content .group h2 {
+	font-size: 24px;
+	border-bottom: 1px solid #eaeef1;
+	padding-bottom: 0.25em;
+	margin-top: 0;
+	padding-top: 0;
+	margin-bottom: 0.75em;
+}
+
+.content .group h2 a {
+	color: #444;
+}
+
+pre code {
+	font-size: inherit;
+	color: inherit;
+	word-break: normal;
+}
+
+code {
+	font-size: 87.5%;
+	color: #fff;
+	word-break: break-word;
+}
+
+pre,
+code,
+kbd,
+samp {
+	font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+	font-size: 1em;
+}
+
+pre.prettyprint {
+	border: none !important;
+	background-color: rgba(240, 240, 240, 1) !important;
+	padding: 10px 0 8px 0px !important;
+}
+
+.flat-table {
+	font-family: sans-serif;
+	-webkit-font-smoothing: antialiased;
+	font-size: 14px;
+	overflow: auto;
+	width: 100%;
+}
+
+.flat-table th {
+	background-color: $blue;
+	color: white;
+	font-weight: normal;
+	padding: 20px 30px;
+	text-align: left;
+}
+
+.flat-table td {
+	background-color: #eee;
+	color: #6f6f6f;
+	padding: 20px 30px;
+}

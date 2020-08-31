@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get '/auth/:provider/callback', to: 'sessions#create'
 
   root to: 'pages#home'
+  get '/docs', to: 'pages#docs'
   get '/first' => 'pages#first'
   get '/sendtous' => 'pages#sendtous'
   get '/responsible' => 'pages#responsible'
@@ -29,7 +30,6 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
-      get 'teste', to: 'coupon_leads#show'
       post 'create_tracker', to: 'coupon_leads#create_coupon'
     end
    end

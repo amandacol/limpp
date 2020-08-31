@@ -1,0 +1,61 @@
+<div class="container">
+  <pre class="prettyprint lang-js"> POST "<%= request.original_url %>/api/v1/create_tracker"</pre>
+        <p>Vire um parceiro, e solicite sua token de autenticação</p>
+        <p><strong>Headers</strong></p>
+        <pre class="prettyprint lang-java">
+          {
+            "Content-Type": "application/json",
+            "Authorization": "YOUR_AUTH_TOKEN"
+          }
+        </pre>
+        <p><strong>Body</strong></p>
+        <pre class="prettyprint lang-json">
+          {
+            "coupon_tracker": {
+                "coupon_name": "NOME_DO_CUPOM",
+                "customer": "NOME_DA_EMPRESA",
+            }
+          }
+        </pre>
+
+        <%= render 'table', rows: [
+						{
+							"Atributo": "coupon_name",
+							"Tipo": "String",
+							"Descrição": "O nome do cupom usado para resgate",
+							"Requerimento": "Obrigatório"
+						},
+						{
+							"Atributo": "customer",
+							"Tipo": "string",
+							"Descrição": "O nome da empresa que emitiu o cupom (nossa parceira)",
+							"Requerimento": "Obrigatório"
+						}
+					]
+				%>
+        <p class="mt-3"><strong>Resposta em caso de sucesso</strong></p>
+        <pre class="prettyprint lang-json">
+          {
+            "coupon_tracker": {
+                "id": 1,
+                "coupon_name": "LEVETUDO",
+                "customer": "LIMPP",
+                "created_at": "2020-03-12T13:39:57.192-03:00",
+                "updated_at": "2020-03-12T13:39:57.192-03:00",
+                "coupon_id": 10,
+                "partner_id": 17
+            }
+          }
+        </pre>
+
+        <p><strong>Resposta em caso de falha</strong></p>
+        <pre class="prettyprint lang-json">
+          {
+            errors: [
+              "Mensagem com descrição do erro."
+            ]
+          }
+        </pre>
+
+</div>
+<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>

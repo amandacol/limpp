@@ -4,10 +4,6 @@ class Api::V1::CouponLeadsController < Api::V1::BaseController
   before_action :authenticate_user!, except: [:create_coupon]
 
 
-  def show
-    render json: 'teste'
-  end
-
   def create_coupon
 
     @coupon_tracker = CouponTracker.new(coupon_tracker_params)

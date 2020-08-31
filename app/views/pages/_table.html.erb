@@ -1,0 +1,16 @@
+<table class="flat-table">
+  <tbody>
+    <tr>
+      <% rows.first.keys.each do |header| %>
+        <th><%= header %></th>
+      <% end %>
+    </tr>
+    <% rows.each do |row| %>
+      <tr>
+        <% row.each do |key, value|  %>
+          <td><%= value %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

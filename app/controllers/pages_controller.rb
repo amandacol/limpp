@@ -5,4 +5,7 @@ class PagesController < ApplicationController
   end
   def first
   end
+
+  def docs
+  end
 end

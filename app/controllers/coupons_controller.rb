@@ -48,6 +48,6 @@ class CouponsController < ApplicationController
     end
 
     def coupon_params
-      params.require(:coupon).permit(:content, :website, :item_id)
+      params.require(:coupon).permit(:content, :website, :item_id, :name)
     end
 end

@@ -9,7 +9,7 @@ class Api::V1::CouponLeadsController < Api::V1::BaseController
     @coupon_tracker = CouponTracker.new(coupon_tracker_params)
 
     # Get the current coupon to save on tracker
-    @coupon = Coupon.find_by(content: params[:coupon_tracker][:coupon_name])
+    @coupon = Coupon.find_by(name: params[:coupon_tracker][:coupon_name])
 
     @coupon_tracker.coupon = @coupon
     @coupon_tracker.partner = @partner

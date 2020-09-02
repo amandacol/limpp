@@ -26,40 +26,59 @@
       font-size: 13px;
       box-shadow: 0px 2px 2px #33313261;
     }
+    .card{
+      width: 170px;
+      border: none !important;
+    }
 
   </style>
  <div class="row justify-content-center mr-2">
     <div class="backgroudfirst"><div class="module">
-      <h5 class="font-weight-bold text-center mt-2">Bem vinde à limpp!</h5>
-      <p class="text-center mt-1 subtitle ml-1 mr-1">Queremos democratizar o acesso à Informações sobre ingredientes seguros, com uma linguagem acessível.</p>
-        <div style="float: left; width: 170px;">
+      <h5 class="welcome mt-2">Bem vinde à limpp!</h5>
+      <p class="mt-2 subtitle mr-1">Queremos democratizar o acesso à Informações sobre ingredientes seguros, com uma linguagem acessível.</p>
+        <div class="d-flex margincard">
+        <div class="card">
+          <div style="float: left; width: 170px;">
           <%= image_tag "lupaverde.svg"%>
-          <figcaption class="text-wrap text-left mr-4"> Busque pelo ingrediente ou nome do produto</figcaption>
-        </div>
-        <div style="float: left; width: 170px;">
-          <%= image_tag "farol.svg", class:"mt-2" %>
-          <figcaption class="text-left mr-4 margemconheca"> Conheça a avaliação dos ingredientes</figcaption>
-        </div>
-        <div>
-          <%= image_tag "avaliação.svg" %>
+          <figcaption class="text-wrap text-left margembusca"> Busque pelo nome do ingrediente ou produto</figcaption>
+          </div>
+          </div>
+          <div class="card ml-4">
+          <div style="float: left; width: 170px;">
+          <%= image_tag "farol.svg" %>
+          <figcaption class="text-left margemconheca"> Conheça a avaliação dos ingredientes</figcaption>
+          </div>
+         </div>
+          </div>
+          <div class="d-flex mt-3">
+          <div class="card">
+            <div style="float: left; width: 170px;">
+          <%= image_tag "avaliação.svg", class:"mt-2" %>
           <figcaption class="text-left margemsugestao"> Sugira produtos para serem avaliados</figcaption>
-        </div>
+          </div>
+          </div>
+          <div class="card ml-4">
+            <div style="float: left; width: 170px;">
           <%= image_tag "descontoverde.svg", class:"mt-2" %>
           <figcaption class="text-left margemdesconto"> Ganhe desconto em produtos limpos</figcaption>
+          </div>
+          </div>
+           </div>
+
     <div class="form-actions mt-2 d-flex justify-content-center">
-      <%= link_to new_user_session_path, class:"btn btn-tologin mt-4 mr-2" do %>
+      <%= link_to new_user_session_path, class:"btn btn-tologin mt-5 mr-2" do %>
             <figure class="d-flex align-items-center spacefirst">
                <%= image_tag "userwhite.svg" %><figcaption class="ml-2 mt-1 spacefirst">Login</figcaption>
              </figure>
       <% end %>
-      <%= link_to items_path, class:"btn btn-inicio mt-4 ml-2" do %>
+      <%= link_to items_path, class:"btn btn-inicio mt-5 ml-2" do %>
             <figure class="d-flex align-items-center spacefirst">
                <%= image_tag "house.svg" %><figcaption class="ml-2 mt-1 spacefirst">Início</figcaption>
              </figure>
       <% end %>
     </div>
 
-    <div id="carouselExampleIndicators" class="carousel slide mt-4" data-ride="carousel">
+<!--     <div id="carouselExampleIndicators" class="carousel slide mt-4" data-ride="carousel">
     <ol class="carousel-indicators">
       <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
       <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -84,7 +103,7 @@
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="sr-only">Next</span>
     </a>
-    </div>
+    </div> -->
   </div></div>
  </div>
 </div>

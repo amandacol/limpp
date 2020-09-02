@@ -9,7 +9,7 @@
 
   .module {
         background: white;
-        padding: 10px;
+        padding: 20px;
         color: #707070;
         font-family: 'Montserrat', sans-serif;
         font-size: 10px;
@@ -21,21 +21,29 @@
 
     .margemsugestao{
       margin-left: 0px;
-      margin-top: -1px;
-      margin-right: 0px;
+      margin-top: 8px;
+      margin-right: 35px;
+      font-size: 11px;
+      text-align: left;
+      color: #707070;
+      font-family: 'Montserrat', sans-serif;
     }
     .margemdesconto{
       margin-left: 0px;
-      margin-top: 4px;
-      margin-right: 0px;
-    }
-    .margemconheca{
-      margin-top: 9px;
+      margin-top: 8px;
+      margin-right: 35px;
+      font-size: 11px;
+      text-align: left;
+      color: #707070;
+      font-family: 'Montserrat', sans-serif;
     }
 
     .subtitle{
       font-size: 12px;
-      font-weight: bold;
+      text-align: left;
+      color: #707070;
+      font-family: 'Montserrat', sans-serif;
+      line-height: 16px;
     }
 
     .backgroudfirst{
@@ -46,4 +54,32 @@
       padding: 10px;
       top: 20%;
       left: 4%;
+    }
+
+    .welcome{
+      font-size: 21px;
+      text-align: left;
+      font-weight: bold;
+      color: #333132;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .margembusca{
+      margin-right:45px;
+      margin-top:10px;
+      font-size: 11px;
+      text-align: left;
+      color: #707070;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .margemconheca{
+      margin-right:45px;
+      margin-top: 15px;
+      font-size: 11px;
+      text-align: left;
+      color: #707070;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .margincard{
+      margin-top: 32px;
     }

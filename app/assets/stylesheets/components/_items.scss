@@ -16,20 +16,25 @@
       margin-bottom: 3px;
       padding: 4px;
     }
+    .marginsearch{
+      margin-top:30px;
+    }
    .font-search{
       font-family: 'Montserrat', sans-serif;
-      font-size: 14px;
+      font-style: italic;
+      font-size: 12px;
    }
    .col-form-label{
     color: #333132 !important;
    }
   .index {
       font-family: 'Montserrat', sans-serif;
-      font-size: 14px;
+      font-size: 13px;
       background: white;
       font-weight: bold;
       border: none;
-      color: #8F89DD;
+      color: #707070;
+      line-height: 23px;
       display: none;
       align-items: right;
       position: absolute;
@@ -114,6 +119,12 @@
     .sizelogoitems{
       width: 40px;
       height: 40px;
+      margin-left: 9px;
+    }
+
+    .sizenoslogan{
+      width: 45px;
+      height: 45px;
       margin-left: 9px;
     }
 
@@ -237,15 +248,17 @@
     .beauty{
       color: white;
       font-family: 'Montserrat', sans-serif;
-      font-size: 16px;
+      font-size: 22px;
       font-weight: bold;
-      margin-right: 95px;
+      margin-right: 85px;
+      line-height: 27px;
     }
     .mailchimpindex{
       color: white;
       font-family: 'Montserrat', sans-serif;
-      font-size: 11px;
+      font-size: 12px;
       font-weight: bold;
+      margin-top: 25px;
     }
     .power{
       color: #707070;
@@ -259,4 +272,17 @@
       font-size: 14px;
       color: #8f89dd;
       font-weight: bold;
+    }
+    .merece{
+      color: #333132;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 20px;
+      font-weight: bold;
+      margin-right: 85px;
+      line-height: 27px;
+    }
+    .gradientlinea{
+      font-size: 2px;
+      background: linear-gradient(90deg, rgba(102,215,160,1) 0%, rgba(141,138,220,1) 100%);
+      color: #8D8BDB;
     }

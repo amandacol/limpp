@@ -14,10 +14,11 @@
       padding: 0.3rem 1.2rem;
     }
     a{
-      color: #8F89DD;
+      color: #707070;
       font-family: 'Montserrat', sans-serif;
       font-size: 14px;
       font-weight: bold;
+      line-height: 30px;
     }
     a:hover{
       color: #333132;
@@ -26,14 +27,17 @@
       font-size: 14px;
       font-weight: bold;
     }
+    .form-control{
+      border: none !important;
+    }
 </style>
-<div class="container-fluid mt-5">
+<div class="container-fluid mt-2">
   <div class="container p-1">
   <div class="d-flex justify-content-center">
     <%= image_tag "logolimpp.svg", class:'image' %>
   </div>
   <form>
-    <div class="d-flex justify-content-center mt-4">
+    <div class="d-flex justify-content-center marginsearch">
      <div class="input-group mb-3">
         <%= form_tag items_path, method: :get do %>
         <%= text_field_tag :query,
@@ -46,7 +50,9 @@
      </div>
     </div>
    </form>
+   <% if params[:query].present? || params[:order] || params[:search] %>
    <%= link_to "Eliminar filtros, ordenações e buscas", items_path, class:"font ml-3"  %>
+   <% end %>
 <div class="d-flex justify-content-between mt-2">
     <div class="dropdown">
       <button class="btn btn-dropdown dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -73,7 +79,7 @@
               <%= f.input :subcategory, label:"", required: false,  collection: $subcategory, as: :check_boxes %>
              <p class="fontfilter">Outros</p>
               <%= f.input :toxicity, label:"", required: false,  collection: $toxicity, as: :check_boxes %>
-             <%= f.submit "Filtar", class: "btn btn-filtrar" %>
+             <%= f.submit "Filtrar", class: "btn btn-filtrar d-flex justify-content-end" %>
           <% end %>
        </div>
       </div>

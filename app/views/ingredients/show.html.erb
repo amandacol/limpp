@@ -1,40 +1,40 @@
 <div class="container-fluid">
  <div class="p-3 mr-5">
-    <h1 class="mt-5 mb-2 ingredientnameshow"><%= @ingredient.name %></h1>
+    <h1 class="mt-5 mb-4 ingredientnameshow"><%= @ingredient.name %></h1>
     <div class="d-flex">
     <%= image_tag "saude.svg", class:"marginhealth mt-2" %>
-    <p class="marginrisk mt-3">Risco à saúde</p>
+    <p class="marginriskhealth">Risco à saúde</p>
     <% if @ingredient.risk_to_health == "yellow" %>
-        <span class="dotyellow mt-3"></span>
+        <span class="dotyellow"></span>
         <% elsif @ingredient.risk_to_health == "red"  %>
-        <span class="dotred mt-3"></span>
+        <span class="dotred"></span>
         <% elsif @ingredient.risk_to_health == "grey"  %>
-        <span class="dotgrey mt-3"></span>
+        <span class="dotgrey"></span>
         <% else %>
-        <span class="dotgreen mt-3"></span>
+        <span class="dotgreen"></span>
         <% end %>
     </div>
     <% if !@ingredient.risk_to_health_text.to_s.empty? %>
     <p class="risktext"><%= @ingredient.risk_to_health_text %></p>
     <% end %>
     <div class="d-flex">
-    <%= image_tag "ambiente.svg", class:"marginhealth" %>
+    <%= image_tag "ambiente.svg", class:"marginleaf" %>
     <p class="marginrisk">Risco ao meio ambiente</p>
     <% if @ingredient.risk_to_enviroment == "yellow" %>
-        <span class="dotyellow"></span>
+        <span class="dotyellow3"></span>
         <% elsif @ingredient.risk_to_enviroment == "red"  %>
-        <span class="dotred"></span>
+        <span class="dotred3"></span>
         <% elsif @ingredient.risk_to_enviroment == "grey"  %>
-        <span class="dotgrey"></span>
+        <span class="dotgrey3"></span>
         <% else %>
-        <span class="dotgreen"></span>
+        <span class="dotgreen3"></span>
         <% end %>
     </div>
     <% if !@ingredient.risk_to_enviroment_text.to_s.empty? %>
      <p class="risktext"><%= @ingredient.risk_to_enviroment_text %></p>
     <% end %>
     <div class="d-flex">
-    <%= image_tag "alergia.svg", class:"marginhealth" %>
+    <%= image_tag "alergia.svg", class:"marginalergenic" %>
     <p class="marginrisk">Potencial alegênico</p>
     <% if @ingredient.allergenic == "sim" %>
      <p class="potencialsim">SIM</p>
@@ -42,29 +42,29 @@
      <p class="potencialnao">NÃO</p>
     <% end %>
     </div>
-    <p class="linea">_____________________________________________________</p>
+    <p class="lineaingredient">_____________________________________________________</p>
         <div class="d-flex">
     <%= image_tag "purpose.svg", class:"purposesize" %>
-    <p class="marginrisk">Funções do ingrediente</p>
+    <p class="marginfunction">Funções do ingrediente</p>
     </div>
         <% @ingredient.mergers.each do |merger| %>
           <li class="purposename"><%= merger.purpose.name %></li>
           <li class="purposecontent"><%= merger.purpose.content %></li>
         <% end %>
-    <p class="linea">_____________________________________________________</p>
+    <p class="lineaingredient mt-4">_____________________________________________________</p>
     <div class="d-flex">
     <%= image_tag "ingrediente.svg", class:"marginhealth" %>
     <p class="marginrisk">Outros nomes do ingrediente</p>
     </div>
-    <p class="function"><%= @ingredient.other_names %></p>
-    <p class="linea">_____________________________________________________</p>
+    <p class="purposecontent"><%= @ingredient.other_names %></p>
+    <p class="lineaingredient">_____________________________________________________</p>
     <% if @ingredient.restrictions.present? %>
      <div class="d-flex">
      <%= image_tag "restrictions.svg", class:"marginrestriction" %>
       <p class="marginrisk">Restrições</p>
      </div>
       <p class="risktext"><%= @ingredient.restrictions %></p>
-     <p class="linea">_____________________________________________________</p>
+     <p class="lineaingredient">_____________________________________________________</p>
     <% end %>
     <% if @ingredient.observation.present? %>
      <div class="d-flex">
@@ -72,15 +72,21 @@
       <p class="marginrisk">Observações</p>
      </div>
       <p class="risktext"><%= @ingredient.observation %></p>
-    <p class="linea">_____________________________________________________</p>
+    <p class="lineaingredient">_____________________________________________________</p>
     <% end %>
     <div class="d-flex">
     <%= image_tag "fontes.svg", class:"fontessize" %>
     <p class="marginrisk">Fontes</p>
     </div>
-    <p class="function"><%= @ingredient.article %></p>
+    <% @ingredient.articles.each do |article| %>
+    <%= link_to article.link do %>
+        <ul>
+        <p class="articlename"><%= article.name %> <%= article.year %></p>
+      </ul>
+      <% end %>
+    <% end %>
 
-  <div class="d-flex"><p class="fonttitle mt-3">Critérios de avaliação</p><%= image_tag "logolimpp.svg" , class:"sizelogoitems" %> </div>
+  <div class="d-flex mt-5"><p class="fonttitle">Critérios de avaliação</p><%= image_tag "limppsemslogan.svg" , class:"sizesemlogan" %> </div>
     <span class="bigdotgreen"></span>
     <p class="criterios"> Seguro em cosméticos </p>
     <p class="criterioscinza"> É seguro em cosméticos sem restrições e sem causar impactos a saúde e/ou ao meio ambiente.</p>
@@ -92,6 +98,7 @@
     <p class="criterioscinza"> São considerados inseguros em cosméticos, segundo evidências científicas. E podem causar impactos graves a saúde e/ou ao meio ambiente.</p>
 <span class="bigdotgrey"></span>
     <p class="criteriosgrey"> Potencial inconclusivo   </p>
-    <p class="criterioscinza"> Estudos não permitem nenhuma conclusão por estarem em andamento ou obterem dados divergentes sobre sua segurança a saúde e/ou impactos ao meio ambiente.</p>
+    <p class="criterioscinza mb-3"> Estudos não permitem nenhuma conclusão por estarem em andamento ou obterem dados divergentes sobre sua segurança a saúde e/ou impactos ao meio ambiente.</p>
 </div>
+    </div>
 </div>

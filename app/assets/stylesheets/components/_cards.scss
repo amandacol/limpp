@@ -43,10 +43,27 @@
       font-size: 14px;
       font-weight: bold;
     }
+    .naoavaliadoshow{
+      color: #707070;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px !important;
+      margin-left: -64px;
+      position: absolute;
+      top: 13px;
+      left: 165px;
+      color: #67D89E;
+      font-size: 14px;
+      font-weight: bold;
+    }
     .star{
       color: #33D89E;
       width: 12px !important;
       margin-left: 10px;
+    }
+    .starshow{
+      color: #33D89E;
+      width: 7px !important;
+      margin-left: 12px;
     }
     .case{
       position: absolute;
@@ -54,10 +71,24 @@
       left: 159px;
       font-family: 'Montserrat', sans-serif;
     }
+    .showname{
+      position: absolute;
+      left: 102px;
+      font-family: 'Montserrat', sans-serif;
+      color: #707070;
+      font-size: 13px;
+      margin-right: 25px;
+      margin-top: 45px;
+    }
     .space{
       position: absolute;
-      bottom: 0px;
+      bottom: 3px;
       right: 17px;
+    }
+    .spaceshow{
+      position: absolute;
+      right: 17px;
+      top: -4px;
     }
     .desconto{
       width: 35px;

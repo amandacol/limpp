@@ -1,4 +1,4 @@
-<div class="container-fluid mt-5">
+<div class="mt-2">
   <style>
     body{
       background-color: #F2F2F2;
@@ -60,16 +60,16 @@
     }
   </style>
 
-  <div class="container p-1">
+  <div class="p-1">
   <%= render 'cardshow' %>
   <ul class="nav nav-pills mt-3" id="pills-tab" role="tablist">
   <li class="nav-item" role="presentation">
     <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Ingredientes</a>
   </li>
-  <li class="nav-item" role="presentation">
+  <li class="nav-item ml-1" role="presentation">
     <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Certificações</a>
   </li>
-  <li class="nav-item" role="presentation">
+  <li class="nav-item ml-1" role="presentation">
     <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Avaliações (<%= @item.reviews.count %>)</a>
   </li>
 </ul>
@@ -78,68 +78,14 @@
   <div class="d-flex align-items-center">
     <div class="ingredientname">
   <% if @item.combinations.any? %>
-        <ul class="marginul">
-        <% @item.combinations.each do |combination| %>
-        <div class="d-flex">
-          <% if combination.ingredient.name == "Talco" || combination.ingredient.name == "Silica" || combination.ingredient.name == "Parfum" %>
-          <li class="mt-2 mb-2 ingredientlink mr-3"><%= combination.ingredient.name %><%= image_tag "alert.svg", class:"alertsize" %></li>
-        <%= link_to ingredient_path(combination.ingredient), class:"componentshow" do %>
-          <%= image_tag "Componente.svg" %>
-        <% end %>
-        </div>
-        <% else %>
-        <div class="d-flex">
-        <li class="mt-2 mb-2 ingredientlink mr-3"><%= combination.ingredient.name %></li>
-        <%= link_to ingredient_path(combination.ingredient), class:"componentshow" do %>
-          <%= image_tag "Componente.svg" %>
-        <% end %>
-        </div>
-        </div>
-        <% end %>
-      <div class="d-flex">
-        <div>
-        <%= image_tag "saude.svg", class:"marginhealth2" %>
-        <% if combination.ingredient.risk_to_health == "yellow" %>
-        <span class="dotyellow2"></span>
-        <% elsif combination.ingredient.risk_to_health == "red"  %>
-        <span class="dotred2"></span>
-        <% elsif combination.ingredient.risk_to_health == "grey"  %>
-        <span class="dotgrey2"></span>
-        <% else %>
-        <span class="dotgreen2"></span>
-        <% end %>
-        </div>
-        <div>
-        <%= image_tag "ambiente.svg", class:"marginhealth2" %>
-        <% if combination.ingredient.risk_to_enviroment == "yellow" %>
-        <span class="dotyellow2"></span>
-        <% elsif combination.ingredient.risk_to_enviroment == "red"  %>
-        <span class="dotred2"></span>
-        <% elsif combination.ingredient.risk_to_enviroment == "grey"  %>
-        <span class="dotgrey2"></span>
-        <% else %>
-        <span class="dotgreen2"></span>
-        <% end %>
-        </div>
-        <div>
-        <%= image_tag "alergia.svg", class:"marginhealth2" %>
-          <% if combination.ingredient.allergenic == "sim" %>
-          <p class="potencialsim2">SIM</p>
-          <% else %>
-          <p class="potencialnao2">NÃO</p>
-          <% end %>
-        </div>
-      </div>
-        <p class="linea">___________________________________________________</p>
-        <% end %>
-        </ul>
+        <%= render 'carditemingredient' %>
      <% else %>
-        <p class="card-text ingredientname"><%= 'Esse item não contém ingredientes suspeitos avaliados pela limpp' %></p>
+        <p class="card-text ingredientname"><%= 'Esse item não contém ingredientes suspeitos avaliados pela limpp.' %></p>
         <p class="linea">___________________________________________________</p>
   <% end %>
 
-    <p class="fontdate mt-3">Item atualizado em <%= @item.updated_at %></p>
-    <p class="fonttitle mt-3">Aspectos avaliados por nós:</p>
+    <p class="fontdate mt-1">Item atualizado em <%= @item.updated_at %></p>
+    <p class="fonttitle mt-5">Aspectos avaliados por nós:</p>
     <div class="d-flex">
     <%= image_tag "saude.svg", class:"marginhealth" %>
     <p class="marginrisk">Risco à saúde</p>
@@ -153,7 +99,7 @@
     <p class="marginrisk">Potencial alegênico</p>
     </div>
 
-<div class="d-flex"><p class="fonttitle mt-3">Critérios de avaliação</p><%= image_tag "logolimpp.svg" , class:"sizelogoitems" %> </div>
+<div class="d-flex"><p class="fonttitle mt-5">Critérios de avaliação</p><%= image_tag "limppsemslogan.svg" , class:"sizelogocriteria" %> </div>
     <span class="bigdotgreen"></span>
     <p class="criterios"> Seguro em cosméticos </p>
     <p class="criterioscinza mr-5"> É seguro em cosméticos sem restrições e sem causar impactos a saúde e/ou ao meio ambiente.</p>
@@ -168,7 +114,7 @@
     <p class="criterioscinza mr-5"> Estudos não permitem nenhuma conclusão por estarem em andamento ou obterem dados divergentes sobre sua segurança a saúde e/ou impactos ao meio ambiente.</p>
 </div>
   </div>
-    <div class="d-flex mt-2"><%= image_tag "logolimpp.svg" , class:"sizelogocolab mr-1 mt-2" %><p class="fontcolab mt-4"> é uma plataforma colaborativa!</p></div>
+    <div class="d-flex mt-5"><%= image_tag "limppsemslogan.svg" , class:"sizelogocolab mr-1" %><p class="fontcolab mt-4"> é uma plataforma colaborativa!</p></div>
     <p class="obs2 mb-2">Classificamos ingredientes em que as fotos dos produtos nos são enviadas por usuários da plataforma. Estamos abertos para correções/atualizações de fórmula por parte dos fabricantes.</p>
   </div>
   <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
@@ -177,16 +123,16 @@
        <%= cl_image_tag photo.key, width: 80, height: 80, crop: :pad, class:"shadowcss bg-white rounded" %>
        <% end %>
      <% else %>
-        <p class="card-text ingredientname"><%= 'Esse item não tem certificados aprovados pela limpp' %></p>
+        <p class="card-text ingredientname"><%= 'Esse item não tem certificados aprovados pela limpp.' %></p>
      <% end %>
      <p class="linea mt-3">_____________________________________________________</p>
-      <div class="d-flex"><p class="fonttitle mt-2">Nota da</p><%= image_tag "logolimpp.svg" , class:"sizelogoitems mb-2" %> </div>
-      <p class="mt-2 ingredientlink">Marcas que possuem selos oficiais que certificam que seus ingredientes são naturais, orgânicos, que não testam em animais e/ou que tem embalagem reciclável ganham pontos para nossa escolha.</p>
+      <div class="d-flex"><p class="fontnota mt-4">Nota da</p><%= image_tag "limppsemslogan.svg" , class:"sizelogonota mb-2" %> </div>
+      <p class="mt-2 selosmarcas">Marcas que possuem selos oficiais que certificam que seus ingredientes são naturais, orgânicos, que não testam em animais e/ou que tem embalagem reciclável ganham pontos para nossa escolha.</p>
   </div>
   <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
     <div class="d-flex">
     <% if @item.reviews.empty? %>
-      <br><%=    link_to 'Seja o primeiro a avaliar esse produto', new_item_review_path(@item.id), class: "btn btn-cadastrar mt-1" %>
+      <br><%=    link_to 'Seja o primeiro a avaliar esse produto', new_item_review_path(@item.id), class: "btn btn-cadastrar mt-4 mb-4" %>
     <% else %>
     <p class="mr-1">Média geral</p>
     <p class="number ml-3"><%= @item.calculate_average %></p>

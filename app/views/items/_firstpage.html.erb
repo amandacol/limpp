@@ -7,6 +7,7 @@
       font-weight: bold;
       font-family: 'Montserrat', sans-serif;
       font-size: 14px;
+      margin-right: 10px;
     }
     #mc_embed_signup form{
       font-family: 'Montserrat', sans-serif;
@@ -17,38 +18,50 @@
     }
     #mc_embed_signup .indicates-required{
       text-align: left !important;
+      margin-right: 0px !important;
+      margin-top: 4px;
     }
     #mc_embed_signup input {
       border-radius: 20px !important;
-      margin: 0px !important;
+      margin: 6px !important;
     }
     .btn-knowlimpp{
       color: white;
       background-color: #333132;
       border-radius: 30px;
-      padding: 10px;
+      padding: 9px;
       font-weight: bold;
       font-family: 'Montserrat', sans-serif;
-      font-size: 14px;
+      font-size: 13px;
       margin-left: 30px;
       line-height: 15px !important;
-      width: 150px;
+      width: 140px;
       height: 40px;
-      margin-top: 35px;
+      margin-top: 22px;
+    }
+    .instabutton{
+      background-color: #67D89E;
+      color: white !important;
+      border-radius: 30px;
+      font-weight: bold;
+      padding: 0.2rem 1.0rem;
     }
 </style>
 <div>
-<p class="itemsindex">Busque, filtre ou ordene para ver mais itens</p>
-<div class="backgrounditems d-flex justify-content-center">
+
+
+<div class="contentfirstpage">
   <%= image_tag "postinsta.jpg", class:"sizeinsta" %>
+  </div>
   <div class="ml-4 mt-3">
   <p class="power">Use seu poder de consumo com consciência. </p>
-  <p class="followinsta">Siga nosso Instagram também: </p>
-  <p class="insta"><a href="https://www.instagram.com/limpp.com.vc/">@limpp.com.vc</a></p>
+  <div class="d-flex">
+  <p class="followinsta mt-1">Siga nosso Instagram também: </p>
+  <p class="instabutton mr-3"><a href="https://www.instagram.com/limpp.com.vc/"><span style="color: white">limpp.com.vc</span></a></p>
   </div>
 </div>
 <div class="backgroundmailchimp d-flex justify-content-center">
-  <div class="ml-3 mt-2">
+  <div class="ml-2 mt-2">
   <p class="beauty">Beleza consciente você vê por aqui. </p>
   <p class="mailchimpindex">Assine nossa newsletter gratuita para receber todo mês um compilado de notícias, pesquisas e novidades do mercado de beleza consciente e natural. </p>
   <div class="mcnTextContent" style="padding-top: 0;padding-right: 9px;padding-bottom: 9px;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;word-break: break-word;flex-flow: column;color: #FFFFFF;font-family: Montserrat;font-size: 24px;line-height: 150%;text-align: left;box-sizing: border-box !important;">
@@ -63,17 +76,18 @@
 <form action="https://gmail.us4.list-manage.com/subscribe/post?u=4d684a9643ae094a14dffe904&amp;id=dc1568c6a1" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
     <div id="mc_embed_signup_scroll">
 <div class="mc-field-group">
-  <label for="mce-EMAIL">Endereço de email  <span class="asterisk">*</span>
-</label>
-  <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+  <label for="mce-EMAIL"></label>
+  <input type="email" value="" name="EMAIL" class="required email" placeholder="nome@email.com" id="mce-EMAIL">
 </div>
   <div id="mce-responses" class="clear">
     <div class="response" id="mce-error-response" style="display:none"></div>
     <div class="response" id="mce-success-response" style="display:none"></div>
   </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
     <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_4d684a9643ae094a14dffe904_dc1568c6a1" tabindex="-1" value=""></div>
-    <div class="clear mt-2 mb-2"><input type="submit" value="Assinar" name="subscribe" id="mc-embedded-subscribe" class="btn btn-assinar"></div>
-<div class="indicates-required"><span class="asterisk">*</span> e-mail obrigatório para inscrição</div>
+    <div class="d-flex">
+    <div class="indicates-required"><span class="asterisk">*</span> e-mail obrigatório para inscrição</div>
+    <div class="clear mb-2"><input type="submit" value="Assinar" name="subscribe" id="mc-embedded-subscribe" class="btn btn-assinar"></div>
+    </div>
     <div class="mt-4">
     <p class="mailchimpindex">Enviamos uma mensagem de boas vindas, não esqueça de checar seu spam :) </p>
     </div>
@@ -88,7 +102,7 @@
 <div class="p-4">
 <p class="merece">Você merece saber o que consome em seus cosméticos e produtos de higiene. </p>
 <div class="d-flex">
-  <%= image_tag "responsability.svg" %>
+  <%= image_tag "responsability.svg", class:"responsiblesize" %>
   <%=    link_to 'Conheça a limpp', responsible_path, class: "btn btn-knowlimpp" %>
 </div>
 <p class="gradientlinea mt-3">.</p>

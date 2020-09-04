@@ -5,6 +5,7 @@
     border-radius: 50%;
     display: inline-block;
     margin-left: 15px;
+    margin-top: 8px;
   }
   .dotred {
     height: 20px;
@@ -13,6 +14,7 @@
     border-radius: 50%;
     display: inline-block;
     margin-left: 15px;
+    margin-top: 8px;
   }
   .dotyellow {
     height: 20px;
@@ -21,6 +23,7 @@
     border-radius: 50%;
     display: inline-block;
     margin-left: 15px;
+    margin-top: 8px;
   }
   .dotgrey {
     height: 20px;
@@ -29,6 +32,7 @@
     border-radius: 50%;
     display: inline-block;
     margin-left: 15px;
+    margin-top: 8px;
   }
  .dotgreen2 {
     height: 20px;
@@ -105,7 +109,7 @@
     margin-left: 15px;
     color: white;
     font-family: 'Montserrat', sans-serif;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: bold;
     padding: 0.2rem 0.6rem;
   }
@@ -116,7 +120,7 @@
     margin-left: 15px;
     color: white;
     font-family: 'Montserrat', sans-serif;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: bold;
     padding: 0.2rem 0.6rem;
   }
@@ -205,4 +209,41 @@
   .marginenvironment{
     margin-bottom: 12px;
     margin-left: 4px;
+  }
+
+   .dotgreen3 {
+    height: 20px;
+    width: 20px;
+    background-color: #00B576;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 13px;
+    margin-top: 2px;
+  }
+  .dotred3 {
+    height: 20px;
+    width: 20px;
+    background-color: #D80303;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 13px;
+    margin-top: 2px;
+  }
+  .dotyellow3 {
+    height: 20px;
+    width: 20px;
+    background-color: #FFBA00;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 13px;
+    margin-top: 2px;
+  }
+  .dotgrey3 {
+    height: 20px;
+    width: 20px;
+    background-color: #8391B5;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 13px;
+    margin-top: 2px;
   }

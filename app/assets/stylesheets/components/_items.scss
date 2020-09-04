@@ -231,11 +231,7 @@
       font-family: 'Montserrat', sans-serif;
       font-size: 11px;
     }
-    .backgrounditems{
-      background-color: #F2F2F2;
-      padding: 10px;
-      margin-top: -5px;
-    }
+
     .itemsindex{
       color: white;
       font-family: 'Montserrat', sans-serif;
@@ -251,8 +247,8 @@
     }
     .sizeinsta{
       width: 135px;
-      height: 130px;
-      margin-top: 15px;
+      height: 135px;
+      margin-top: 25px;
       margin-left: 10px;
     }
     .followinsta{
@@ -292,26 +288,35 @@
     .power{
       color: #707070;
       font-family: 'Montserrat', sans-serif;
-      font-size: 15px;
+      font-size: 16px;
       margin-right: 22px;
-      font-weight: bold;
     }
     .aspecto{
       font-family: 'Montserrat', sans-serif;
       font-size: 14px;
-      color: #8f89dd;
+      color: #707070;
       font-weight: bold;
     }
     .merece{
       color: #333132;
       font-family: 'Montserrat', sans-serif;
-      font-size: 20px;
+      font-size: 17px;
       font-weight: bold;
-      margin-right: 85px;
+      margin-right: 70px;
       line-height: 27px;
     }
     .gradientlinea{
       font-size: 2px;
       background: linear-gradient(90deg, rgba(102,215,160,1) 0%, rgba(141,138,220,1) 100%);
       color: #8D8BDB;
+    }
+
+    .contentfirstpage{
+      width: 50%;
+      margin: auto;
+    }
+
+    .responsiblesize{
+        width: 100px;
+        height:100px;
     }

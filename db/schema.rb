@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_04_123211) do
+ActiveRecord::Schema.define(version: 2020_09_04_202947) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,16 @@ ActiveRecord::Schema.define(version: 2020_09_04_123211) do
     t.index ["partner_id"], name: "index_api_logs_on_partner_id"
   end
 
+  create_table "articles", force: :cascade do |t|
+    t.string "name"
+    t.integer "year"
+    t.text "link"
+    t.bigint "ingredient_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["ingredient_id"], name: "index_articles_on_ingredient_id"
+  end
+
   create_table "combinations", force: :cascade do |t|
     t.bigint "item_id"
     t.bigint "ingredient_id"
@@ -82,7 +92,6 @@ ActiveRecord::Schema.define(version: 2020_09_04_123211) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text "article"
     t.string "risk_to_health"
     t.text "risk_to_health_text"
     t.string "risk_to_enviroment"
@@ -213,6 +222,7 @@ ActiveRecord::Schema.define(version: 2020_09_04_123211) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "api_logs", "coupons"
   add_foreign_key "api_logs", "partners"
+  add_foreign_key "articles", "ingredients"
   add_foreign_key "combinations", "ingredients"
   add_foreign_key "combinations", "items"
   add_foreign_key "coupon_trackers", "coupons"

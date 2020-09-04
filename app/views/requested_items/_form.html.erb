@@ -13,7 +13,7 @@
       font-family: 'Montserrat', sans-serif;
       background-color: white;
       padding: 4px 10px;
-      border-radius: 8px;
+      border-radius: 15px;
       font-size: 13px;
       font-weight: bold;
     }
@@ -51,7 +51,7 @@
                   autofocus: true,
                   input_html: { autocomplete: "email", class: 'rounded-pill' } %>
         <div class="upload-btn-wrapper">
-        <button class="btn">Escolha as fotos aqui</button>
+        <button class="btn mt-1">Escolha as fotos aqui</button>
         <input type="file" name="myfile" />
         <%= f.input :photos, as: :file, input_html: { multiple: true }, label: "." %>
         </div>

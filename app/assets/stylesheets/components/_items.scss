@@ -82,6 +82,12 @@
       font-family: 'Montserrat', sans-serif;
       font-size: 13px;
     }
+
+    .fontnota{
+      color: #333132;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+    }
     .fontdate{
       color: #707070;
       font-family: 'Montserrat', sans-serif;
@@ -91,14 +97,20 @@
       font-family: 'Montserrat', sans-serif;
       font-size: 12px;
       color:#707070;
-      padding: 8px;
-      overflow-wrap: break-word;
+      width: 175px;
+      margin-right: 5px;
+    }
+
+    .selosmarcas{
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      color:#707070;
     }
     .ingredientname{
       font-family: 'Montserrat', sans-serif;
       color: #707070;
-      padding: 8px;
       font-size: 13px;
+      margin-top: 5px;
     }
     .obs{
       font-family: 'Montserrat', sans-serif;
@@ -128,6 +140,13 @@
       margin-left: 9px;
     }
 
+    .sizelogonota{
+      width: 35px;
+      height: 35px;
+      margin-left: 9px;
+      margin-top: 16px;
+    }
+
     .evaluation{
       font-size: 30px;
       font-family: 'Montserrat', sans-serif;
@@ -144,15 +163,17 @@
   }
 
    .marginul{
-      margin-left: -32px;
+      margin-left: -49px;
     }
     .componentshow{
       margin-top: 7px;
     }
     .linea{
-      color: #F2F2F2;
+      color: #E2E2E2;
       font-size: 12px;
       font-weight: bold;
+      margin-bottom: -3px !important;
+      margin-top: -20px !important;
     }
     .backgroudshow{
       background-color: white;
@@ -175,7 +196,7 @@
       margin-top: -7px;
     }
     .marginhealth2{
-      margin-bottom: 18px;
+      margin-bottom: 12px;
     }
 
     .fonthumb{
@@ -195,6 +216,14 @@
       width: 35px;
       height: 35px;
       margin-left: 8px;
+      margin-top: 14px;
+    }
+
+    .sizelogocriteria{
+      width: 35px;
+      height: 35px;
+      margin-left: 8px;
+      margin-top: 40px;
     }
 
     .fontcolab{

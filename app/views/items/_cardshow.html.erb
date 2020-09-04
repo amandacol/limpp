@@ -1,21 +1,26 @@
-<div class="card shadow-sm bg-white mt-3" style="width: 20rem; border-radius: 8px; ">
+<style>
+  .cardshow{
+    background-color: #F2F2F2 !important;
+    border: none !important;
+  }
+</style>
+<div class="card cardshow mt-3 ml-1" style="width: 20rem; border-radius: 8px; ">
      <div class="card-body d-flex justify-content-start">
-       <div class="d-flex align-items-end position">
        <% if @item.photo.attached? %>
         <%= cl_image_tag @item.photo.key, width: 80, height: 80, crop: :pad, class:"shadowcss bg-white rounded" %>
        <% else %>
         <img src="https://images.unsplash.com/photo-1503236823255-94609f598e71?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" class="card-photo"/>
        <% end %>
+       <p class="card-text showname"><%= @item.name %></p>
        <% if @item.reviews.empty? %>
-          <p class="card-text naoavaliado"><%= "Não avaliado ainda" %></p>
+          <p class="card-text naoavaliadoshow"><%= "Não avaliado ainda" %></p>
           <% else %>
           <% @item.calculate_average.times do %>
-            <i class="fas fa-star star"></i>
+            <i class="fas fa-star starshow"></i>
           <% end %>
        <% end %>
        </div>
-       <p class="card-text font case"><%= @item.name %></p>
-       <div class="d-flex justify-content-end space">
+       <div class="d-flex justify-content-end spaceshow">
           <% if @item.coupons.exists? %>
           <%= link_to item_coupons_path(@item) do %>
             <%= image_tag "desconto2.png", class:"desconto mt-2" %>

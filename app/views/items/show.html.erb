@@ -79,10 +79,11 @@
     <div class="ingredientname">
   <% if @item.combinations.any? %>
         <%= render 'carditemingredient' %>
-     <% else %>
+  <% else %>
         <p class="card-text ingredientname"><%= 'Esse item não contém ingredientes suspeitos avaliados pela limpp.' %></p>
-        <p class="linea">___________________________________________________</p>
   <% end %>
+
+        <p class="linea">___________________________________________________</p>
 
     <p class="fontdate mt-1">Item atualizado em <%= @item.updated_at %></p>
     <p class="fonttitle mt-5">Aspectos avaliados por nós:</p>

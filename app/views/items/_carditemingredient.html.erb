@@ -7,7 +7,7 @@
         <% @item.combinations.each do |combination| %>
         <div class="card carditemingredient" style="width: 20rem; ">
           <div class="card-body d-flex justify-content-start">
-          <% if combination.ingredient.name == "Talco" || combination.ingredient.name == "Silica" || combination.ingredient.name == "Parfum" %>
+          <% if combination.ingredient.name == "TALCO" || combination.ingredient.name == "SILICA" || combination.ingredient.name == "PARFUM" %>
             <li class="mt-1 mb-2 ingredientlink"><%= combination.ingredient.name %><%= image_tag "alert.svg", class:"alertsize" %></li>
         <% else %>
             <li class="mt-1 mb-2 ingredientlink"><%= combination.ingredient.name %></li>

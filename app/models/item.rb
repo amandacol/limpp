@@ -23,7 +23,8 @@ class Item < ApplicationRecord
     category: [:name],
     subcategory: [:name],
     toxicity: [:name],
-    ingredients: [:name]
+    ingredients: [:name],
+    ingredients: [:other_names]
   },
     using: {
       tsearch: { prefix: true }

@@ -81,9 +81,9 @@
         <%= render 'carditemingredient' %>
   <% else %>
         <p class="card-text ingredientname"><%= 'Esse item não contém ingredientes suspeitos avaliados pela limpp.' %></p>
+        <p class="linea">___________________________________________________</p>
   <% end %>
 
-        <p class="linea">___________________________________________________</p>
 
     <p class="fontdate mt-1">Item atualizado em <%= @item.updated_at %></p>
     <p class="fonttitle mt-5">Aspectos avaliados por nós:</p>
@@ -116,7 +116,7 @@
 </div>
   </div>
     <div class="d-flex mt-5"><%= image_tag "limppsemslogan.svg" , class:"sizelogocolab mr-1" %><p class="fontcolab mt-4"> é uma plataforma colaborativa!</p></div>
-    <p class="obs2 mb-2">Classificamos ingredientes em que as fotos dos produtos nos são enviadas por usuários da plataforma. Estamos abertos para correções/atualizações de fórmula por parte dos fabricantes.</p>
+    <p class="obs2 mb-2">Classificamos ingredientes em que as fotos dos produtos nos são enviadas por usuários da plataforma. Estamos abertos para correções/atualizações de fórmula por parte dos fabricantes. Mostramos apenas os ingredientes que são considerados suspeitos. As demais substâncias da fórmula ou são seguras tanto para saúde como meio ambiente e não são alergênicas, ou ainda não foram avaliadas por nossa equipe. Sente falta de algum? Fale conosco através do e-mail limpp.com.vc@gmail.com</p>
   </div>
   <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
      <% if @item.certification_photos.attached? %>

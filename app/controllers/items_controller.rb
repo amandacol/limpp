@@ -25,20 +25,20 @@ class ItemsController < ApplicationController
       @items = policy_scope(Item).search_by_name_and_ingredient(params[:query])
     elsif params[:search].present?
       @filter = params["search"]["category"].concat(params["search"]["subcategory"]).concat(params["search"]["toxicity"]).flatten.reject(&:blank?)
-      @items = policy_scope(Item).search_by_name_and_ingredient("#{@filter}")
+      @items = policy_scope(Item).order(toxicity_rate: :asc).search_by_name_and_ingredient("#{@filter}")
     elsif case params[:order]
           when 'average'
-            @items = policy_scope(Item).sort_by(&:calculate_average).reverse!
+            @items = policy_scope(Item).order(toxicity_rate: :desc).sort_by(&:calculate_average).reverse!
           when 'cleanest'
           # @items = policy_scope(Item).left_outer_joins(:combinations).group('items.id').order('count(combinations.*) asc')
           @items = policy_scope(Item).order(toxicity_rate: :asc)
           when 'coupons'
           @items = policy_scope(Item).left_outer_joins(:coupons).group('items.id').order('count(coupons.*) desc')
           when 'certifications'
-            @items = policy_scope(Item).sort_by(&:count_certification_photo).reverse!
+            @items = policy_scope(Item).order(toxicity_rate: :asc).sort_by(&:count_certification_photo).reverse!
           end
     else
-      @items = policy_scope(Item)
+      @items = policy_scope(Item).order(toxicity_rate: :asc)
     end
   end
 

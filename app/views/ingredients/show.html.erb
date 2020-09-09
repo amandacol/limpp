@@ -58,14 +58,7 @@
     </div>
     <p class="purposecontent"><%= @ingredient.other_names %></p>
     <p class="lineaingredient">_____________________________________________________</p>
-    <% if @ingredient.restrictions.present? %>
-     <div class="d-flex">
-     <%= image_tag "restrictions.svg", class:"marginrestriction" %>
-      <p class="marginrisk">Restrições</p>
-     </div>
-      <p class="risktext"><%= @ingredient.restrictions %></p>
-     <p class="lineaingredient">_____________________________________________________</p>
-    <% end %>
+
     <% if @ingredient.observation.present? %>
      <div class="d-flex">
      <%= image_tag "alert.svg", class:"marginrestriction" %>

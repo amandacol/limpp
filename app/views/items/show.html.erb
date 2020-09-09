@@ -121,34 +121,28 @@
   <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
      <% if @item.certification_photos.attached? %>
       <% @item.certification_photos.each do |photo| %>
-       <%= cl_image_tag photo.key, width: 80, height: 80, crop: :pad, class:"shadowcss bg-white rounded" %>
+       <%= cl_image_tag photo.key, width: 80, height: 80, crop: :pad, class:"shadowcss bg-white rounded mt-3" %>
        <% end %>
      <% else %>
         <p class="card-text ingredientname"><%= 'Esse item não tem certificados aprovados pela limpp.' %></p>
      <% end %>
-     <p class="linea mt-3">_____________________________________________________</p>
+     <p class="lineacertification mt-3">___________________________________________________</p>
       <div class="d-flex"><p class="fontnota mt-4">Nota da</p><%= image_tag "limppsemslogan.svg" , class:"sizelogonota mb-2" %> </div>
       <p class="mt-2 selosmarcas">Marcas que possuem selos oficiais que certificam que seus ingredientes são naturais, orgânicos, que não testam em animais e/ou que tem embalagem reciclável ganham pontos para nossa escolha.</p>
   </div>
-  <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-    <div class="d-flex">
+<div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
     <% if @item.reviews.empty? %>
-      <br><%=    link_to 'Seja o primeiro a avaliar esse produto', new_item_review_path(@item.id), class: "btn btn-cadastrar mt-4 mb-4" %>
+      <br><%=    link_to 'Seja o primeiro a avaliar esse produto', new_item_review_path(@item.id), class: "btn btn-cadastrar mt-3 mb-5" %>
     <% else %>
-    <p class="mr-1">Média geral</p>
-    <p class="number ml-3"><%= @item.calculate_average %></p>
-    <p class="ml-3 mr-1">de</p><p class="ml-1 font-weight-bold"><%= @item.reviews.count %></p>
-    <% if @item.reviews.count == 1 %>
-    <p class="ml-2">Avaliação</p>
-    <% else %>
-    <p class="ml-2">Avaliações</p>
-    <% end %>
-    </div>
+    <p class="marginaverage">Média geral</p>
+    <p class="number"><%= @item.calculate_average %></p>
+
+    <p class="font-weight-bold marginevaluation">de <%= @item.reviews.count %> <% if @item.reviews.count == 1 %> Avaliação <% else %> Avaliações</p><% end %>
     <% if @item.reviews.exists? %>
     <% @yes = (@item.reviews.where(buyagain: 1).count * 100.0 / @item.reviews.count).round(0) %>
     <% @no = (@item.reviews.where(buyagain: 0).count * 100.0 / @item.reviews.count).round(0) %>
     <% if @yes >= @no %>
-      <div class="d-flex align-items-center">
+      <div class="d-flex align-items-center mt-3 ml-4">
        <span class="likeitem fonthumb"><i class="far fa-thumbs-up"><%= @yes %>%</i></span><p class="flex-nowrap mt-4">Comprariam novamente</p>
       </div>
     <% else %>
@@ -157,8 +151,7 @@
       </div>
     <% end %>
     <% end %>
-    <br><%=    link_to 'Clique para avaliar esse produto', new_item_review_path(@item.id), class: "btn btn-cadastrar mt-1" %>
+    <br><%=    link_to 'Quero avaliar esse produto', new_item_review_path(@item.id), class: "btn btn-cadastrar mt-1 ml-5 mb-3" %>
     <% end %>
 </div>
-</div>
-</div>
+

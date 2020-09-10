@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get '/first' => 'pages#first'
   get '/sendtous' => 'pages#sendtous'
   get '/responsible' => 'pages#responsible'
+  get '/thanks' => 'produtos#thanks'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   resources :users
@@ -23,6 +24,7 @@ Rails.application.routes.draw do
     end
   resources :wishlists, only: [:index]
   resources :requested_items
+  resources :produtos
   resources :ingredients
   resources :combination
   resources :merger

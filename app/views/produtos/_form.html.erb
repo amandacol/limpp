@@ -1,0 +1,64 @@
+<style>
+    .simple_form label{
+      color: white;
+    }
+    .upload-btn-wrapper {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn {
+      border: 2px solid #8F89DD;
+      color: #8F89DD;
+      font-family: 'Montserrat', sans-serif;
+      background-color: white;
+      padding: 4px 10px;
+      border-radius: 15px;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .upload-btn-wrapper input[type=file] {
+      font-size: 100px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      opacity: 0;
+    }
+    .confirm{
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      margin-bottom: -10px;
+      margin-left: 10px;
+    }
+    .btn-envio{
+      color: white;
+      background-color: #8F89DD;
+      border-radius: 30px;
+      padding: 0.5rem 2rem;
+      font-weight: bold;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      box-shadow: 0px 2px 2px #33313261;
+      margin-top: -30px;
+    }
+</style>
+<div class="p-4">
+  <p class="confirm">Seu e-mail (*campo obrigatório)</p>
+<%= simple_form_for @produto do |f| %>
+        <%= f.input :email,
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "email", class: 'rounded-pill' } %>
+        <p class="confirm">Você pode enviar apenas o site que contenha a fórmula:</p>
+        <%= f.input :url,
+                  input_html: { class: 'rounded-pill' } %>
+        <div class="upload-btn-wrapper">
+        <p>OU</p>
+        <button class="btn mt-1">Escolha as fotos aqui</button>
+        <input type="file" name="myfile" />
+        <%= f.input :photos, as: :file, input_html: { multiple: true }, label: "." %>
+        </div>
+        <%= f.button :submit, "Enviar", class:"btn btn-envio" %>
+      <% end %>
+</div>

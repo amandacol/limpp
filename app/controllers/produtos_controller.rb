@@ -31,6 +31,6 @@ class ProdutosController < ApplicationController
   end
 
   def produto_params
-    params.require(:produto).permit(:email, photos: [])
+    params.require(:produto).permit(:email, :url, photos: [])
   end
 end

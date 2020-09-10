@@ -1,6 +1,10 @@
 <style>
     .simple_form label{
       color: white;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      margin-bottom: -10px;
+      margin-left: 10px;
     }
     .upload-btn-wrapper {
       position: relative;
@@ -54,11 +58,11 @@
         <%= f.input :url,
                   input_html: { class: 'rounded-pill' } %>
         <div class="upload-btn-wrapper">
-        <p>OU</p>
+        <p class="ml-3">OU</p>
         <button class="btn mt-1">Escolha as fotos aqui</button>
         <input type="file" name="myfile" />
         <%= f.input :photos, as: :file, input_html: { multiple: true }, label: "." %>
         </div>
-        <%= f.button :submit, "Enviar", class:"btn btn-envio" %>
+        <%= f.button :submit, "Enviar", class:"btn btn-envio mt-1" %>
       <% end %>
 </div>

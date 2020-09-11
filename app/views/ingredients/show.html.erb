@@ -67,6 +67,16 @@
       <p class="risktext"><%= @ingredient.observation %></p>
     <p class="lineaingredient">_____________________________________________________</p>
     <% end %>
+
+    <% if @ingredient.restrictions.present? %>
+     <div class="d-flex">
+     <%= image_tag "restrictions.svg", class:"marginrestriction" %>
+      <p class="marginrisk">Restrições</p>
+     </div>
+      <p class="risktext"><%= @ingredient.restrictions %></p>
+    <p class="lineaingredient">_____________________________________________________</p>
+    <% end %>
+
     <div class="d-flex">
     <%= image_tag "fontes.svg", class:"fontessize" %>
     <p class="marginrisk">Fontes</p>
@@ -85,7 +95,7 @@
     <p class="criterioscinza"> É seguro em cosméticos sem restrições e sem causar impactos a saúde e/ou ao meio ambiente.</p>
 <span class="bigdotyellow"></span>
     <p class="criteriosyellow"> Seguro em cosméticos, com restrições  </p>
-    <p class="criterioscinza"> É seguro em cosméticos com restrições, segundo evidências científicas. E podem causar impactos a saúde e/ou ao meio ambiente dependendo do uso ou quantidade.</p>
+    <p class="criterioscinza"> É seguro em cosméticos com restrições de quantidade e/ou uso, segundo evidências científicas. E podem causar impactos a saúde e/ou ao meio ambiente se forem utilizadas em finalidades distintas as aprovadas ou em quantidade acima das permitidas.</p>
 <span class="bigdotred"></span>
     <p class="criteriosred"> Inseguro em cosméticos </p>
     <p class="criterioscinza"> São considerados inseguros em cosméticos, segundo evidências científicas. E podem causar impactos graves a saúde e/ou ao meio ambiente.</p>

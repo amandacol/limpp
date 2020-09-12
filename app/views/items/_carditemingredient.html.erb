@@ -49,7 +49,11 @@
           <%= image_tag "Componente.svg" %>
         <% end %>
         </div>
-        <p class="linea">______________________________________________</p>
+        <p class="linea">_____________________________________________</p>
         <% end %>
         </div>
         </ul>
+        <% if @item.obs.empty? %>
+        <% else %>
+        <p class="card-text itemobs">*<%= @item.obs %></p>
+  <% end %>

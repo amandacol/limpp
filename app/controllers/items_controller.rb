@@ -35,7 +35,7 @@ class ItemsController < ApplicationController
           when 'coupons'
           @items = policy_scope(Item).left_outer_joins(:coupons).group('items.id').order('count(coupons.*) desc')
           when 'certifications'
-            @items = policy_scope(Item).order(toxicity_rate: :asc).sort_by(&:count_certification_photo).reverse!
+            @items = policy_scope(Item).order(toxicity_rate: :desc).sort_by(&:count_certification_photo).reverse!
           end
     else
       @items = policy_scope(Item).order(toxicity_rate: :asc)

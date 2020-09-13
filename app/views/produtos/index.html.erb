@@ -23,7 +23,7 @@
 <div class="container-fluid mt-4">
   <div class="d-flex justify-content-center"><%= image_tag "barcode.svg" %></div>
     <h5 class="text-center mt-5">Gostaria de ter seu produto avaliado no nosso lançamento?</h5>
-    <p class="text-center mt-5 evaluation">Para sugerir a avaliação, clique no botão abaixo e envie as fotos do rótulo para nossa equipe.</p>
+    <p class="text-center mt-5 evaluation">Clique no botão abaixo para sugerir a avaliação dos seus produtos pela nossa equipe. Precisamos de fotos com: o rótulo principal, os ingredientes e o código de barras.</p>
     <div class="d-flex justify-content-center">
     <% if policy(Produto).create? %>
         <%= link_to "Sugerir avaliação", new_produto_path, class: "btn btn-avaliacao mt-4"%>

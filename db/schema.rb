@@ -120,6 +120,12 @@ ActiveRecord::Schema.define(version: 2020_09_10_014832) do
     t.index ["purpose_id"], name: "index_mergers_on_purpose_id"
   end
 
+  create_table "newitems", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "email"
+  end
+
   create_table "partners", force: :cascade do |t|
     t.string "name"
     t.string "authen_token"

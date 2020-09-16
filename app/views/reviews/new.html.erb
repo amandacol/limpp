@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div>
   <style>
     .btn-cadastrar{
       color: white;
@@ -10,21 +10,25 @@
       font-size: 13px;
       box-shadow: 0px 2px 2px #33313261;
     }
+    .simple_form label {
+      margin-bottom: 20px !important;
+   }
+
   </style>
-  <div class="container p-1">
+  <div class="p-1">
     <%= render 'cardreview' %>
    <div class="backgroud mt-3 mr-2">
     <div class="p-2 ml-2 justify-content-center">
       <div class="field mt-4">
         <%= simple_form_for [@item, @review] do |f| %>
-          <%= f.input :rating, collection: [ 1, 2, 3, 4, 5], class:"starcss", label: "Clique para avaliar" %>
-          <p class="fontbuy mt-4 align-self-center mb-5">Compraria esse produto novamente?</p>
+          <%= f.input :rating, collection: [ 1, 2, 3, 4, 5], class:"starcss", label: "Qual a sua avaliação desse produto?" %>
+          <p class="fontbuy mt-5 align-self-center mb-5">Compraria ele novamente?</p>
           <span class="likeitem fonthumby"><i class="far fa-thumbs-up"></i> Sim</span>
           <span class="dislikeitem fonthumbno ml-4"><i class="far fa-thumbs-down"></i> Não</span>
           <%= f.check_box :buyagain, class: "d-none" %>
       </div>
       <div class="mt-3">
-        <%= f.submit 'Avaliar', :class => "btn btn-cadastrar mt-4 mb-3" %>
+        <%= f.submit 'Avaliar', :class => "btn btn-cadastrar mt-5 mb-3" %>
         <% end %>
       </div>
         </div>

@@ -75,7 +75,9 @@
              <p class="fontfilter">Por categoria</p>
               <%= f.input :category, label:"", required: false, collection: $category, as: :check_boxes, class:"greencheck" %>
              <p class="fontfilter">Por subcategoria</p>
-              <%= f.input :subcategory, label:"", required: false,  collection: $subcategory, as: :check_boxes %>              <%= f.input :toxicity, label:"", required: false,  collection: $toxicity, as: :check_boxes %>
+              <%= f.input :subcategory, label:"", required: false,  collection: $subcategory, as: :check_boxes %>
+              <p class="fontfilter">Outros</p>
+              <%= f.input :toxicity, label:"", required: false,  collection: $toxicity, as: :check_boxes %>
              <%= f.submit "Filtrar", class: "btn btn-filtrar d-flex justify-content-end" %>
           <% end %>
        </div>

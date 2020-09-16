@@ -9,6 +9,7 @@ class WishlistsController < ApplicationController
       @wishlists = policy_scope(Wishlist).search_item_name(params[:query])
     else
       @wishlists = policy_scope(Wishlist)
+      @wishlists = current_user.wishlists
     end
   end
 

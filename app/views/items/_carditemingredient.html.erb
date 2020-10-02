@@ -21,6 +21,8 @@
         <span class="dotred2"></span>
         <% elsif combination.ingredient.risk_to_health == "grey"  %>
         <span class="dotgrey2"></span>
+        <% elsif combination.ingredient.risk_to_health == "orange"  %>
+        <span class="dotorange2"></span>
         <% else %>
         <span class="dotgreen2"></span>
         <% end %>
@@ -31,6 +33,8 @@
         <span class="dotyellow2"></span>
         <% elsif combination.ingredient.risk_to_enviroment == "red"  %>
         <span class="dotred2"></span>
+        <% elsif combination.ingredient.risk_to_enviroment == "orange"  %>
+        <span class="dotorange2"></span>
         <% elsif combination.ingredient.risk_to_enviroment == "grey"  %>
         <span class="dotgrey2"></span>
         <% else %>

@@ -47,8 +47,10 @@ class Item < ApplicationRecord
       rated = 0
       self.ingredients.each do |ingredient|
         rated += 10 if ingredient.risk_to_health == "red"
+        rated += 8 if ingredient.risk_to_health == "orange"
         rated += 5 if ingredient.risk_to_health == "yellow"
         rated += 10 if ingredient.risk_to_enviroment == "red"
+        rated += 8 if ingredient.risk_to_enviroment == "orange"
         rated += 5 if ingredient.risk_to_enviroment == "yellow"
         rated += 2 if ingredient.allergenic == "sim"
 

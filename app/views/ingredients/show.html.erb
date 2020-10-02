@@ -8,6 +8,8 @@
         <span class="dotyellow"></span>
         <% elsif @ingredient.risk_to_health == "red"  %>
         <span class="dotred"></span>
+        <% elsif @ingredient.risk_to_health == "orange"  %>
+        <span class="dotorange"></span>
         <% elsif @ingredient.risk_to_health == "grey"  %>
         <span class="dotgrey"></span>
         <% else %>
@@ -24,6 +26,8 @@
         <span class="dotyellow3"></span>
         <% elsif @ingredient.risk_to_enviroment == "red"  %>
         <span class="dotred3"></span>
+        <% elsif @ingredient.risk_to_enviroment == "orange"  %>
+        <span class="dotorange3"></span>
         <% elsif @ingredient.risk_to_enviroment == "grey"  %>
         <span class="dotgrey3"></span>
         <% else %>

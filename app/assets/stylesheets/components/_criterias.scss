@@ -16,6 +16,15 @@
     margin-left: 15px;
     margin-top: 8px;
   }
+  .dotorange {
+    height: 20px;
+    width: 20px;
+    background-color: #F19A3E;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 15px;
+    margin-top: 8px;
+  }
   .dotyellow {
     height: 20px;
     width: 20px;
@@ -47,6 +56,15 @@
     height: 20px;
     width: 20px;
     background-color: #D80303;
+    border-radius: 50%;
+    display: inline-block;
+    margin-top: -20px;
+    margin-right: 10px;
+  }
+  .dotorange2 {
+    height: 20px;
+    width: 20px;
+    background-color: #F19A3E;
     border-radius: 50%;
     display: inline-block;
     margin-top: -20px;
@@ -90,6 +108,14 @@
     height: 30px;
     width: 30px;
     background-color: #D80303;
+    border-radius: 50%;
+    display: inline-block;
+    margin-bottom: -35px;
+  }
+  .bigdotorange{
+    height: 30px;
+    width: 30px;
+    background-color: #F19A3E;
     border-radius: 50%;
     display: inline-block;
     margin-bottom: -35px;
@@ -166,6 +192,13 @@
   }
   .criteriosred{
     color: #D80303;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+    margin-left: 50px;
+  }
+  .criteriosorange{
+    color: #F19A3E;
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
     font-size: 13px;

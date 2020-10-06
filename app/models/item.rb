@@ -1,8 +1,5 @@
 class Item < ApplicationRecord
 
-  # after_create :toxicity_classifier
-
-
   acts_as_taggable_on :category
   acts_as_taggable_on :subcategory
   acts_as_taggable_on :toxicity

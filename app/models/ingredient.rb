@@ -1,4 +1,5 @@
 class Ingredient < ApplicationRecord
+  after_update :update_toxicity
   has_many :combinations, dependent: :destroy
   has_many :mergers, dependent: :destroy
   has_many :articles, dependent: :destroy
@@ -8,4 +9,11 @@ class Ingredient < ApplicationRecord
       using: {
         tsearch: { prefix: true }
       }
+
+  def update_toxicity
+    self.combinations.each do |combination|
+      combination.item.toxicity_classifier
+    end
+  end
+
 end

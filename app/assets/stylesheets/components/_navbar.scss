@@ -30,6 +30,11 @@
 .dropdown {
     position: relative;
     display: inline-block;
+    background-color: none !important;
+    font-family: 'Montserrat', sans-serif;
+    color: #495057;
+    font-size: 15px;
+    letter-spacing: 0.5px;
 }
 
 .dropdown-content {

@@ -18,7 +18,20 @@ before_action :set_ingredient, only: [:show, :edit, :update, :destroy]
   end
 
   def index
-    @ingredients = policy_scope(Ingredient)
+    if params[:query].present?
+      @ingredients = policy_scope(Ingredient).search_by_name(params[:query])
+    elsif params[:search].present?
+      @filter = params["search"]["confirmados"].concat(params["search"]["suspeitos"]).concat(params["search"]["outros"]).flatten.reject(&:blank?)
+      @ingredients = policy_scope(Ingredient).search_by_name("#{@filter}")
+    elsif case params[:order]
+      when 'cleanesti'
+      @ingredients = policy_scope(Ingredient).order(toxicity_ingredient: :asc)
+    when 'dirtiest'
+      @ingredients = policy_scope(Ingredient).order(toxicity_ingredient: :desc)
+    else
+      @ingredients = policy_scope(Ingredient)
+    end
+    end
   end
 
   def show
@@ -50,6 +63,6 @@ before_action :set_ingredient, only: [:show, :edit, :update, :destroy]
   end
 
   def ingredient_params
-    params.require(:ingredient).permit(:name, :classification, :impact, :article )
+    params.require(:ingredient).permit(:name, :classification, :impact, :order, :tag_list, :article )
   end
 end

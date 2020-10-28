@@ -39,11 +39,11 @@
   <form>
     <div class="d-flex justify-content-center marginsearch">
      <div class="input-group mb-3">
-        <%= form_tag items_path, method: :get do %>
+        <%= form_tag ingredients_path, method: :get do %>
         <%= text_field_tag :query,
           params[:query],
           class: "form-control rounded-pill shadow-sm p-3 bg-white rounded font-search",
-          placeholder: "Busque por um produto ou ingrediente"
+          placeholder: "Busque por um ingrediente"
         %>
       <%= image_submit_tag("lupa.svg", class: 'lupa ml-2') %>
       <% end %>
@@ -51,15 +51,14 @@
     </div>
    </form>
    <% if params[:query].present? || params[:order] || params[:search] %>
-   <%= link_to "Eliminar filtros, ordenações e buscas", items_path, class:"font ml-3"  %>
+   <%= link_to "Eliminar filtros, ordenações e buscas", ingredients_path, class:"font ml-3"  %>
    <% end %>
 <div class="d-flex justify-content-between mt-2">
     <div class="dropdown">
         <%= image_tag "ordenar.svg" %> Ordenar  ▾
         <div class="dropdown-content sort">
-        <a class="dropdown-item" href="#"> <%= link_to 'Melhor avaliados', items_path(order: 'average') %></a>
-        <a class="dropdown-item" href="#"> <%= link_to 'Com mais certificados', items_path(order: 'certifications') %></a>
-        <a class="dropdown-item" href="#"> <%= link_to 'Com mais cupons de desconto', items_path(order: 'coupons') %></a>
+        <a class="dropdown-item" href="#"> <%= link_to 'Mais limpos', ingredients_path(order: 'cleanesti') %></a>
+        <a class="dropdown-item" href="#"> <%= link_to 'Mais tóxicos', ingredients_path(order: 'dirtiest') %></a>
       </div>
     </div>
 
@@ -67,16 +66,16 @@
         <%= image_tag "filtrar.svg" %> Filtrar  ▾
         <div class="dropdown-content index">
              <%= simple_form_for :search, method: "GET" do |f| %>
-             <p class="fontfilter">Por categoria</p>
-              <%= f.input :category, label:"", required: false, collection: $category, as: :check_boxes, class:"greencheck" %>
-             <p class="fontfilter">Por subcategoria</p>
-              <%= f.input :subcategory, label:"", required: false,  collection: $subcategory, as: :check_boxes %>
+             <p class="fontfilter">Confirmados</p>
+              <%= f.input :confirmados, label:"", required: false, collection: $confirmados, as: :check_boxes, class:"greencheck" %>
+             <p class="fontfilter">Suspeitos</p>
+              <%= f.input :suspeitos, label:"", required: false,  collection: $suspeitos, as: :check_boxes %>
               <p class="fontfilter">Outros</p>
-              <%= f.input :toxicity, label:"", required: false,  collection: $toxicity, as: :check_boxes %>
+              <%= f.input :outros, label:"", required: false,  collection: $outros, as: :check_boxes %>
              <%= f.submit "Filtrar", class: "btn btn-filtrar d-flex justify-content-end" %>
           <% end %>
        </div>
-  </div>
+      </div>
 </div>
 <% if params[:query].present? || params[:order] || params[:search] %>
 <%= render 'cardindex' %>

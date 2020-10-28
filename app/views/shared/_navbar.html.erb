@@ -15,7 +15,13 @@
       <p class="line"></p>
       <%= link_to items_path, class:"dropdown-item fontnav" do %>
       <figure class="d-flex align-items-center mt-3">
-        <%= image_tag "lupa2.png" %><figcaption class="ml-2 mt-1"> Buscar por produto ou ingrediente</figcaption>
+        <%= image_tag "lupa2.png" %><figcaption class="ml-2 mt-1"> Buscar por produto</figcaption>
+      </figure>
+      <% end %>
+      <p class="line"></p>
+      <%= link_to ingredients_path, class:"dropdown-item fontnav" do %>
+      <figure class="d-flex align-items-center mt-3">
+        <%= image_tag "ingrediente.svg" %><figcaption class="ml-2 mt-1"> Buscar por ingrediente</figcaption>
       </figure>
       <% end %>
       <p class="line"></p>

@@ -25,9 +25,9 @@ class Ingredient < ApplicationRecord
         tsearch: { prefix: true }
       }
 
-    $confirmados = ['Câncer', 'Disruptor Endócrino', 'Toxicidade Reprodutiva', 'Irritantes ou Sensibilizantes']
+    $confirmados = ['Associados ao Câncer', 'Associados a Disruptores Endócrinos', 'Associados a Toxicidade Reprodutiva', 'Irritantes e/ou Sensibilizantes']
     $suspeitos = ['Câncer', 'Disruptor Endócrino', 'Toxicidade Reprodutiva', 'Irritantes ou Sensibilizantes']
-    $outros = ['Podem ser de origem animal ou vegetal', 'Podem conter glúten', 'Tóxico para o meio ambiente']
+    $outros = ['Pode ser de origem animal ou vegetal', 'Pode conter glúten', 'Tóxico para o meio ambiente', 'Estudos inconclusivos', 'Potencial alegênico']
 
   def update_toxicity
     self.combinations.each do |combination|
@@ -40,9 +40,11 @@ class Ingredient < ApplicationRecord
         rated += 10 if risk_to_health == "red"
         rated += 8 if risk_to_health == "orange"
         rated += 5 if risk_to_health == "yellow"
+        rated += 2 if risk_to_health == "grey"
         rated += 10 if risk_to_enviroment == "red"
         rated += 8 if risk_to_enviroment == "orange"
         rated += 5 if risk_to_enviroment == "yellow"
+        rated += 2 if risk_to_enviroment == "grey"
         rated += 2 if allergenic == "sim"
       self.toxicity_ingredient = rated
   end

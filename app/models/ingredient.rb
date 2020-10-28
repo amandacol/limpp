@@ -27,7 +27,7 @@ class Ingredient < ApplicationRecord
 
     $confirmados = ['Associados ao Câncer', 'Associados a Disruptores Endócrinos', 'Associados a Toxicidade Reprodutiva', 'Irritantes e/ou Sensibilizantes']
     $suspeitos = ['Câncer', 'Disruptor Endócrino', 'Toxicidade Reprodutiva', 'Irritantes ou Sensibilizantes']
-    $outros = ['Pode ser de origem animal ou vegetal', 'Pode conter glúten', 'Tóxico para o meio ambiente', 'Estudos inconclusivos', 'Potencial alegênico']
+    $outros = ['Pode ser de origem animal ou vegetal', 'Pode conter glúten', 'Tóxico para o meio ambiente', 'Estudos inconclusivos', 'Potencial alergênico']
 
   def update_toxicity
     self.combinations.each do |combination|

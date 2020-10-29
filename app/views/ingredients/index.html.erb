@@ -57,8 +57,8 @@
     <div class="dropdown">
         <%= image_tag "ordenar.svg" %> Ordenar  ▾
         <div class="dropdown-content sort">
-        <a class="dropdown-item" href="#"> <%= link_to 'Mais limpos', ingredients_path(order: 'cleanesti') %></a>
-        <a class="dropdown-item" href="#"> <%= link_to 'Mais tóxicos', ingredients_path(order: 'dirtiest') %></a>
+        <a class="dropdown-item" href="#"> <%= link_to 'Pelos mais limpos', ingredients_path(order: 'cleanesti') %></a>
+        <a class="dropdown-item" href="#"> <%= link_to 'Pelos mais preocupantes', ingredients_path(order: 'dirtiest') %></a>
       </div>
     </div>
 
@@ -66,9 +66,9 @@
         <%= image_tag "filtrar.svg" %> Filtrar  ▾
         <div class="dropdown-content index">
              <%= simple_form_for :search, method: "GET" do |f| %>
-             <p class="fontfilter">Confirmados</p>
+             <p class="fontfilter">Confirmados:</p>
               <%= f.input :confirmados, label:"", required: false, collection: $confirmados, as: :check_boxes, class:"greencheck" %>
-             <p class="fontfilter">Suspeitos</p>
+             <p class="fontfilter">Suspeitos com potencial de:</p>
               <%= f.input :suspeitos, label:"", required: false,  collection: $suspeitos, as: :check_boxes %>
               <p class="fontfilter">Outros</p>
               <%= f.input :outros, label:"", required: false,  collection: $outros, as: :check_boxes %>

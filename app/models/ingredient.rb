@@ -25,8 +25,8 @@ class Ingredient < ApplicationRecord
         tsearch: { prefix: true }
       }
 
-    $confirmados = ['Associados ao Câncer', 'Associados a Disruptores Endócrinos', 'Associados a Toxicidade Reprodutiva', 'Irritantes e/ou Sensibilizantes']
-    $suspeitos = ['Câncer', 'Disruptor Endócrino', 'Toxicidade Reprodutiva', 'Irritantes ou Sensibilizantes']
+    $confirmados = ['Potencial Carcinogênico', 'Potencial Disruptor Endócrino', 'Potencial Tóxico para Reprodução e/ou Feto', 'Potencial Irritante e/ou Sensibilizante']
+    $suspeitos = ['Câncer', 'Disruptor Endócrino', 'Tóxico para Reprodução e/ou Feto', 'Irritantes e/ou Sensibilizantes']
     $outros = ['Pode ser de origem animal ou vegetal', 'Pode conter glúten', 'Tóxico para o meio ambiente', 'Estudos inconclusivos', 'Potencial alergênico']
 
   def update_toxicity

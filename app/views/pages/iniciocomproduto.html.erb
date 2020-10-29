@@ -41,7 +41,7 @@
         <div class="card">
           <div style="float: left; width: 170px;">
           <%= image_tag "lupaverde.svg"%>
-          <figcaption class="text-wrap text-left margembusca"> Busque pelo nome do ingrediente</figcaption>
+          <figcaption class="text-wrap text-left margembusca"> Busque pelo nome do ingrediente ou produto</figcaption>
           </div>
           </div>
           <div class="card ml-4">
@@ -51,6 +51,20 @@
           </div>
          </div>
           </div>
+          <div class="d-flex mt-3">
+          <div class="card">
+            <div style="float: left; width: 170px;">
+          <%= image_tag "avaliação.svg", class:"mt-2" %>
+          <figcaption class="text-left margemsugestao"> Sugira produtos para serem avaliados</figcaption>
+          </div>
+          </div>
+          <div class="card ml-4">
+            <div style="float: left; width: 170px;">
+          <%= image_tag "descontoverde.svg", class:"mt-2" %>
+          <figcaption class="text-left margemdesconto"> Ganhe desconto em produtos limpos</figcaption>
+          </div>
+          </div>
+           </div>
 
     <div class="form-actions mt-2 d-flex justify-content-center">
       <%= link_to new_user_session_path, class:"btn btn-tologin mt-5 mr-2" do %>
@@ -58,13 +72,39 @@
                <%= image_tag "userwhite.svg" %><figcaption class="ml-2 mt-1 spacefirst">Login</figcaption>
              </figure>
       <% end %>
-      <%= link_to ingredients_path, class:"btn btn-inicio mt-5 ml-2" do %>
+      <%= link_to items_path, class:"btn btn-inicio mt-5 ml-2" do %>
             <figure class="d-flex align-items-center spacefirst">
                <%= image_tag "house.svg" %><figcaption class="ml-2 mt-1 spacefirst">Início</figcaption>
              </figure>
       <% end %>
     </div>
 
+<div id="carouselExampleIndicators" class="carousel slide mt-4" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <%= image_tag "Posts-limpp.png", class:"d-block w-100", alt:"First slide"  %>
+      </div>
+      <div class="carousel-item">
+        <%= image_tag "post4-ok.png", class:"d-block w-100", alt:"Second slide"  %>
+      </div>
+      <div class="carousel-item">
+        <%= image_tag "post9-ok.png", class:"d-block w-100", alt:"Third slide"  %>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+    </div>
   </div></div>
  </div>
 </div>

@@ -13,31 +13,15 @@
       </figure>
       <% end %>
       <p class="line"></p>
-      <%= link_to items_path, class:"dropdown-item fontnav" do %>
-      <figure class="d-flex align-items-center mt-3">
-        <%= image_tag "lupa2.png" %><figcaption class="ml-2 mt-1"> Buscar por produto</figcaption>
-      </figure>
-      <% end %>
-      <p class="line"></p>
+
       <%= link_to ingredients_path, class:"dropdown-item fontnav" do %>
       <figure class="d-flex align-items-center mt-3">
-        <%= image_tag "ingrediente.svg" %><figcaption class="ml-2 mt-1"> Buscar por ingrediente</figcaption>
+        <%= image_tag "lupa2.png" %><figcaption class="ml-2 mt-1"> Buscar por ingrediente</figcaption>
       </figure>
       <% end %>
       <p class="line"></p>
-      <%= link_to requested_items_path, class:"dropdown-item fontnav" do %>
-      <figure class="d-flex align-items-center mt-3">
-        <%= image_tag "code.svg" %><figcaption class="ml-2 mt-1"> Sugerir avaliação de um produto </figcaption>
-      </figure>
-      <% end %>
-      <p class="line"></p>
-      <%= link_to wishlists_path, class:"dropdown-item fontnav" do %>
-      <figure class="d-flex align-items-center mt-3">
-        <%= image_tag "coracao.svg" %><figcaption class="ml-2 mt-1"> Minha prateleira</figcaption>
-      </figure>
-      <% end %>
-      <p class="line"></p>
-      <%= link_to responsible_path, class:"dropdown-item fontnav" do %>
+
+      <%= link_to responsibleingredient_path, class:"dropdown-item fontnav" do %>
       <figure class="d-flex align-items-center mt-3">
         <%= image_tag "responsa.svg" %><figcaption class="ml-2 mt-1"> Responsabilidade limpp</figcaption>
       </figure>

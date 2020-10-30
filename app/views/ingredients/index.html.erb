@@ -66,12 +66,18 @@
         <%= image_tag "filtrar.svg" %> Filtrar  ▾
         <div class="dropdown-content index">
              <%= simple_form_for :search, method: "GET" do |f| %>
-             <p class="fontfilter">Confirmados:</p>
-              <%= f.input :confirmados, label:"", required: false, collection: $confirmados, as: :check_boxes, class:"greencheck" %>
-             <p class="fontfilter">Suspeitos com potencial de:</p>
-              <%= f.input :suspeitos, label:"", required: false,  collection: $suspeitos, as: :check_boxes %>
-              <p class="fontfilter">Outros</p>
-              <%= f.input :outros, label:"", required: false,  collection: $outros, as: :check_boxes %>
+             <p class="fontfilter">Potencial Carcinogênico</p>
+              <%= f.input :carcinogenico, label:"", required: false, collection: $carcinogenico, as: :check_boxes, class:"greencheck" %>
+             <p class="fontfilter">Potencial Disruptor Endócrino</p>
+              <%= f.input :disruptor, label:"", required: false,  collection: $disruptor, as: :check_boxes %>
+              <p class="fontfilter">Irritante e ou Sensibilizante </p>
+              <%= f.input :irritante, label:"", required: false,  collection: $irritante, as: :check_boxes %>
+              <p class="fontfilter">Tóxico para Reprodução e ou Feto </p>
+              <%= f.input :reproducao, label:"", required: false,  collection: $reproducao, as: :check_boxes %>
+              <p class="fontfilter">Importante para veganos </p>
+              <%= f.input :veganos, label:"", required: false,  collection: $veganos, as: :check_boxes %>
+              <p class="fontfilter">Para restrições ao glúten </p>
+              <%= f.input :gluten, label:"", required: false,  collection: $gluten, as: :check_boxes %>
              <%= f.submit "Filtrar", class: "btn btn-filtrar d-flex justify-content-end" %>
           <% end %>
        </div>

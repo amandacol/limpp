@@ -2,9 +2,12 @@ class Ingredient < ApplicationRecord
   after_update :update_toxicity
   before_save :toxicityingredient_classifier
 
-  acts_as_taggable_on :confirmados
-  acts_as_taggable_on :suspeitos
-  acts_as_taggable_on :outros
+  acts_as_taggable_on :carcinogenico
+  acts_as_taggable_on :disruptor
+  acts_as_taggable_on :reproducao
+  acts_as_taggable_on :irritante
+  acts_as_taggable_on :veganos
+  acts_as_taggable_on :gluten
 
 
   has_many :combinations, dependent: :destroy
@@ -17,17 +20,23 @@ class Ingredient < ApplicationRecord
   pg_search_scope :search_by_name,
       against: [ :name, :other_names ],
       associated_against: {
-      confirmados: [:name],
-      suspeitos: [:name],
-      outros: [:name],
+      carcinogenico: [:name],
+      disruptor: [:name],
+      reproducao: [:name],
+      irritante: [:name],
+      veganos: [:name],
+      gluten: [:name],
   },
       using: {
         tsearch: { prefix: true }
       }
 
-    $confirmados = ['Potencial Carcinogênico', 'Potencial Disruptor Endócrino', 'Potencial Tóxico para Reprodução e/ou Feto', 'Potencial Irritante e/ou Sensibilizante']
-    $suspeitos = ['Câncer', 'Disruptor Endócrino', 'Tóxico para Reprodução e/ou Feto', 'Irritantes e/ou Sensibilizantes']
-    $outros = ['Pode ser de origem animal ou vegetal', 'Pode conter glúten', 'Tóxico para o meio ambiente', 'Estudos inconclusivos', 'Potencial alergênico']
+    $carcinogenico = ['Confirmado Carcinogênico', 'Suspeito Carcinogênico']
+    $disruptor = ['Confirmado Disruptor', 'Suspeito Disruptor']
+    $reproducao = ['Potencial Confirmado', 'Potencial Suspeito']
+    $irritante = ['Potencial Confirmado na Pele', 'Potencial Suspeito na Pele']
+    $veganos = ['Pode ser de origem animal ou vegetal']
+    $gluten = ['Pode conter glúten']
 
   def update_toxicity
     self.combinations.each do |combination|

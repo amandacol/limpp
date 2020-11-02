@@ -10,7 +10,7 @@
             <li class="card-text fontingredientindex"><%= ingredient.name %></li>
         <% end %>
         </div>
-        <div>
+        <div class="margincardingredient">
         <%= image_tag "saude.svg", class:"marginhealth2" %>
           <% if ingredient.risk_to_health == "yellow" %>
             <span class="dotyellow2"></span>
@@ -25,7 +25,7 @@
           <% end %>
         </div>
 
-        <div>
+        <div class="margincardingredient">
           <%= image_tag "ambiente.svg", class:"marginenvironment" %>
           <% if ingredient.risk_to_enviroment == "yellow" %>
             <span class="dotyellow2"></span>
@@ -39,7 +39,7 @@
             <span class="dotgreen2"></span>
           <% end %>
         </div>
-        <div>
+        <div class="margincardingredient">
         <%= image_tag "alergia.svg", class:"marginhealth2" %>
           <% if ingredient.allergenic == "sim" %>
           <p class="potencialsim2">SIM</p>
@@ -48,7 +48,7 @@
           <% end %>
         </div>
         <div class="d-flex justify-content-end">
-        <%= link_to ingredient_path(ingredient), class:"component" do %>
+        <%= link_to ingredient_path(ingredient), class:"componentingredient" do %>
           <%= image_tag "Componente.svg" %>
         <% end %>
         </div>

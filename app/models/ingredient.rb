@@ -31,6 +31,7 @@ class Ingredient < ApplicationRecord
         tsearch: { prefix: true }
       }
 
+
     $carcinogenico = ['Confirmado Carcinogênico', 'Suspeito Carcinogênico']
     $disruptor = ['Confirmado Disruptor', 'Suspeito Disruptor']
     $reproducao = ['Potencial Confirmado', 'Potencial Suspeito']

@@ -123,6 +123,13 @@
       top: 8px;
       right: 10px;
     }
+
+    .componentingredient{
+      position: absolute;
+      top: 1px;
+      right: 8px;
+    }
+
     .trash{
       color: #33D89E;
     }
@@ -134,4 +141,9 @@
     .sponsored{
       color: #8F89DD;
       position: absolute;
+    }
+
+    .margincardingredient{
+      margin-top:5px;
+      margin-bottom: -5px;
     }

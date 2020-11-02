@@ -1,0 +1,32 @@
+<style>
+  h4{
+    color: #333132;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    }
+  .evaluation{
+    color: #707070;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    }
+    .btn-avaliacao{
+      color: white;
+      background-color: #8F89DD;
+      border-radius: 30px;
+      padding: 0.5rem 2rem;
+      font-weight: bold;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      box-shadow: 0px 2px 2px #33313261;
+    }
+</style>
+<div class="container-fluid mt-4">
+  <div class="d-flex justify-content-center"><%= image_tag "ingrediente.svg", class:"sizeingredientimage" %></div>
+    <h5 class="text-center mt-5">Não encontrou um ingrediente e gostaria que ele fosse avaliado?</h5>
+    <p class="text-center mt-5 evaluation">Para sugerir a avaliação, clique no botão abaixo e nos envie as informações necessárias.</p>
+    <div class="d-flex justify-content-center">
+    <% if policy(RequestedIngredient).create? %>
+        <%= link_to "Sugerir avaliação", new_requested_ingredient_path, class: "btn btn-avaliacao mt-4"%>
+    <% end %>
+    </div>
+</div>

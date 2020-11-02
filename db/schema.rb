@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_23_232153) do
+ActiveRecord::Schema.define(version: 2020_11_02_192656) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -153,6 +153,16 @@ ActiveRecord::Schema.define(version: 2020_10_23_232153) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "requested_ingredients", force: :cascade do |t|
+    t.string "email"
+    t.string "name"
+    t.text "comment"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_requested_ingredients_on_user_id"
+  end
+
   create_table "requested_items", force: :cascade do |t|
     t.string "email"
     t.bigint "user_id"
@@ -239,6 +249,7 @@ ActiveRecord::Schema.define(version: 2020_10_23_232153) do
   add_foreign_key "coupons", "items"
   add_foreign_key "mergers", "ingredients"
   add_foreign_key "mergers", "purposes"
+  add_foreign_key "requested_ingredients", "users"
   add_foreign_key "requested_items", "users"
   add_foreign_key "reviews", "items"
   add_foreign_key "reviews", "users"

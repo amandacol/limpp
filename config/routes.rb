@@ -25,6 +25,7 @@ Rails.application.routes.draw do
     end
   resources :wishlists, only: [:index]
   resources :requested_items
+  resources :requested_ingredients
   resources :produtos
   resources :ingredients
   resources :combination

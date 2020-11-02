@@ -21,6 +21,13 @@
       <% end %>
       <p class="line"></p>
 
+      <%= link_to requested_ingredients_path, class:"dropdown-item fontnav" do %>
+      <figure class="d-flex align-items-center mt-3">
+        <%= image_tag "code.svg" %><figcaption class="ml-2 mt-1"> Sugerir avaliação de um ingrediente </figcaption>
+      </figure>
+      <% end %>
+      <p class="line"></p>
+
       <%= link_to responsibleingredient_path, class:"dropdown-item fontnav" do %>
       <figure class="d-flex align-items-center mt-3">
         <%= image_tag "responsa.svg" %><figcaption class="ml-2 mt-1"> Responsabilidade limpp</figcaption>

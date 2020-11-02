@@ -21,7 +21,7 @@ before_action :set_ingredient, only: [:show, :edit, :update, :destroy]
     if params[:query].present?
       @ingredients = policy_scope(Ingredient).search_by_name(params[:query])
     elsif params[:search].present?
-      @filter = params["search"]["carcinogenico"].concat(params["search"]["disruptor"]).concat(params["search"]["reproducao"]).concat(params["search"]["irritante"]).concat(params["search"]["veganos"]).concat(params["search"]["gluten"]).flatten.reject(&:blank?)
+      @filter = params["search"]["status"].concat(params["search"]["type"]).concat(params["search"]["vegan"]).concat(params["search"]["gluten"]).flatten.reject(&:blank?)
       @ingredients = policy_scope(Ingredient).search_by_name("#{@filter}")
     elsif case params[:order]
       when 'cleanesti'
@@ -63,6 +63,6 @@ before_action :set_ingredient, only: [:show, :edit, :update, :destroy]
   end
 
   def ingredient_params
-    params.require(:ingredient).permit(:name, :classification, :impact, :order, :tag_list, :article )
+    params.require(:ingredient).permit(:name, :classification, :impact, :order, :tag_list, :status, :type, :vegan, :gluten, :article )
   end
 end

@@ -2,11 +2,9 @@ class Ingredient < ApplicationRecord
   after_update :update_toxicity
   before_save :toxicityingredient_classifier
 
-  acts_as_taggable_on :carcinogenico
-  acts_as_taggable_on :disruptor
-  acts_as_taggable_on :reproducao
-  acts_as_taggable_on :irritante
-  acts_as_taggable_on :veganos
+  acts_as_taggable_on :status
+  acts_as_taggable_on :type
+  acts_as_taggable_on :vegan
   acts_as_taggable_on :gluten
 
 
@@ -20,11 +18,9 @@ class Ingredient < ApplicationRecord
   pg_search_scope :search_by_name,
       against: [ :name, :other_names ],
       associated_against: {
-      carcinogenico: [:name],
-      disruptor: [:name],
-      reproducao: [:name],
-      irritante: [:name],
-      veganos: [:name],
+      status: [:name],
+      type: [:name],
+      vegan: [:name],
       gluten: [:name],
   },
       using: {
@@ -32,11 +28,9 @@ class Ingredient < ApplicationRecord
       }
 
 
-    $carcinogenico = ['Confirmado Carcinogênico', 'Suspeito Carcinogênico']
-    $disruptor = ['Confirmado Disruptor', 'Suspeito Disruptor']
-    $reproducao = ['Potencial Confirmado', 'Potencial Suspeito']
-    $irritante = ['Potencial Confirmado na Pele', 'Potencial Suspeito na Pele']
-    $veganos = ['Pode ser de origem animal ou vegetal']
+    $status = ['Potencial Confirmado', 'Potencial Suspeito']
+    $type = ['Carcinogênico', 'Disruptor Endócrino', 'Tóxico para Reprodução e ou Feto', 'Irritante e ou Sensibilizante']
+    $vegan = ['Pode ser de origem animal ou vegetal']
     $gluten = ['Pode conter glúten']
 
   def update_toxicity

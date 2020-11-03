@@ -2,7 +2,6 @@ class Ingredient < ApplicationRecord
   after_update :update_toxicity
   before_save :toxicityingredient_classifier
 
-  acts_as_taggable_on :status
   acts_as_taggable_on :type
   acts_as_taggable_on :vegan
   acts_as_taggable_on :gluten
@@ -18,7 +17,6 @@ class Ingredient < ApplicationRecord
   pg_search_scope :search_by_name,
       against: [ :name, :other_names ],
       associated_against: {
-      status: [:name],
       type: [:name],
       vegan: [:name],
       gluten: [:name],
@@ -28,7 +26,6 @@ class Ingredient < ApplicationRecord
       }
 
 
-    $status = ['Potencial Confirmado', 'Potencial Suspeito']
     $type = ['Carcinogênico', 'Disruptor Endócrino', 'Tóxico para Reprodução e ou Feto', 'Irritante e ou Sensibilizante']
     $vegan = ['Pode ser de origem animal ou vegetal']
     $gluten = ['Pode conter glúten']

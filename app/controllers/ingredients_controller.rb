@@ -22,7 +22,7 @@ before_action :set_ingredient, only: [:show, :edit, :update, :destroy]
       @ingredients = policy_scope(Ingredient).search_by_name(params[:query])
     elsif params[:search].present?
       @filter = params["search"]["type"].concat(params["search"]["vegan"]).concat(params["search"]["gluten"]).flatten.reject(&:blank?)
-      @ingredients = policy_scope(Ingredient).search_by_name("#{@filter}")
+      @ingredients = policy_scope(Ingredient).search_by_name("#{@filter}").order(toxicity_ingredient: :asc)
     elsif case params[:order]
       when 'cleanesti'
       @ingredients = policy_scope(Ingredient).order(toxicity_ingredient: :asc)

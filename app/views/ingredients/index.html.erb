@@ -66,13 +66,11 @@
         <%= image_tag "filtrar.svg" %> Filtrar  ▾
         <div class="dropdown-content index">
              <%= simple_form_for :search, method: "GET" do |f| %>
-             <p class="fontfilter">Status da substância</p>
-              <%= f.input :status, label:"", required: false, collection: $status, as: :check_boxes, class:"greencheck" %>
-             <p class="fontfilter">Dano que pode causar</p>
-              <%= f.input :type, label:"", required: false,  collection: $type, as: :check_boxes %>
-              <p class="fontfilter">Importante para veganos </p>
+                <p class="fontfilter">Potencial dano que pode causar</p>
+              <%= f.input :status, label:"", required: false, collection: $type, as: :check_boxes, class:"greencheck" %>
+                <p class="fontfilter">Importante para veganos </p>
               <%= f.input :vegan, label:"", required: false,  collection: $vegan, as: :check_boxes %>
-              <p class="fontfilter">Para restrições ao glúten </p>
+                <p class="fontfilter">Para restrições ao glúten </p>
               <%= f.input :gluten, label:"", required: false,  collection: $gluten, as: :check_boxes %>
              <%= f.submit "Filtrar", class: "btn btn-filtrar d-flex justify-content-end" %>
           <% end %>

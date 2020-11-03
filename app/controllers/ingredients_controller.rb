@@ -63,6 +63,6 @@ before_action :set_ingredient, only: [:show, :edit, :update, :destroy]
   end
 
   def ingredient_params
-    params.require(:ingredient).permit(:name, :classification, :impact, :order, :tag_list, :type, :vegan, :gluten, :article )
+    params.require(:ingredient).permit(:name, :classification, :impact, :order, :tag_list, :article )
   end
 end

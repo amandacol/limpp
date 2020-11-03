@@ -25,7 +25,6 @@ class Ingredient < ApplicationRecord
         tsearch: { prefix: true }
       }
 
-
     $type = ['Carcinogênico', 'Disruptor Endócrino', 'Tóxico para Reprodução e ou Feto', 'Irritante e ou Sensibilizante']
     $vegan = ['Pode ser de origem animal ou vegetal']
     $gluten = ['Pode conter glúten']

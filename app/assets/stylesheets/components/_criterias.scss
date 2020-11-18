@@ -182,12 +182,28 @@
     font-size: 13px;
     margin-left: 50px;
   }
+
+  .criterioslegenda{
+    color: #00B576;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+    margin-left: 16px;
+  }
   .criteriosyellow{
     color: #FFBA00;
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
     font-size: 13px;
     margin-left: 50px;
+    overflow-wrap: break-word;
+  }
+  .criterioslegendayellow{
+    color: #FFBA00;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+    margin-left: 16px;
     overflow-wrap: break-word;
   }
   .criteriosred{
@@ -197,6 +213,14 @@
     font-size: 13px;
     margin-left: 50px;
   }
+
+  .criterioslegendared{
+    color: #D80303;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+    margin-left: 16px;
+  }
   .criteriosorange{
     color: #F19A3E;
     font-family: 'Montserrat', sans-serif;
@@ -204,12 +228,28 @@
     font-size: 13px;
     margin-left: 50px;
   }
+
+  .criterioslegendaorange{
+    color: #F19A3E;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+    margin-left: 16px;
+  }
   .criteriosgrey{
     color: #8391B5;
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
     font-size: 13px;
     margin-left: 50px;
+  }
+
+  .criterioslegendagrey{
+    color: #8391B5;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+    margin-left: 16px;
   }
   .criterioscinza{
     color: #707070;

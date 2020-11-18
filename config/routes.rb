@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   get '/auth/:provider/callback', to: 'sessions#create'
 
+  get '/tagged', to: "ingredients#tagged", as: :tagged
+
   root to: 'pages#home'
   get '/docs', to: 'pages#docs'
   get '/first' => 'pages#first'

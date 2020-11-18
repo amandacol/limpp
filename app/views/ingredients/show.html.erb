@@ -1,6 +1,7 @@
 <div class="container-fluid">
  <div class="p-3 mr-5">
     <h1 class="mt-5 mb-4 ingredientnameshow"><%= @ingredient.name %></h1>
+
     <div class="d-flex">
     <%= image_tag "saude.svg", class:"marginhealth mt-2" %>
     <p class="marginriskhealth">Risco à saúde</p>
@@ -47,6 +48,18 @@
     <% end %>
     </div>
 <p class="text-left mt-2 risktext">Obs.: Ao existir um potencial alergênico não significa que você vá desenvolver uma alergia utilizando o produto. Mas sim, que são ingredientes que comumente oferecem maior probabilidade de irritação, sensibilização ou reação alérgica da pele. Mas lembre-se, seu médico é sempre a melhor pessoa para indicar ou contraindicar produtos.</p>
+    <% if @ingredient.type.any? %>
+    <p class="marginriskhealth">Dano potencial:</p>
+    <% @ingredient.type.each do |r| %>
+    <li><p  class="tagname"> <%= r.name %></p></li>
+    <% end %>
+    <% end %>
+    <% if @ingredient.vegan.any? %>
+    <p class="marginriskhealth">Outro:</p>
+    <% @ingredient.vegan.each do |s| %>
+    <li><p  class="tagname"> <%= s.name %></p></li>
+    <% end %>
+    <% end %>
     <p class="lineaingredient">_____________________________________________________</p>
         <div class="d-flex">
     <%= image_tag "purpose.svg", class:"purposesize" %>

@@ -3,6 +3,11 @@
     background-color: white;
   }
 
+  .imagefirst{
+      margin: auto;
+      width: 50%;
+    }
+
   .imglimpp img {
     width: 45%;
   }
@@ -40,7 +45,7 @@
 
     .subtitle{
       font-size: 12px;
-      text-align: left;
+      text-align: center;
       color: #707070;
       font-family: 'Montserrat', sans-serif;
       line-height: 16px;
@@ -58,23 +63,23 @@
 
     .welcome{
       font-size: 21px;
-      text-align: left;
+      text-align: center;
       font-weight: bold;
       color: #333132;
       font-family: 'Montserrat', sans-serif;
     }
 
     .margembusca{
-      margin-right:45px;
-      margin-top:10px;
+      margin-left:50px;
+      margin-top:20px;
       font-size: 11px;
       text-align: left;
       color: #707070;
       font-family: 'Montserrat', sans-serif;
     }
     .margemconheca{
-      margin-right:45px;
-      margin-top: 15px;
+      margin-left:43px;
+      margin-top:20px;
       font-size: 11px;
       text-align: left;
       color: #707070;
@@ -82,4 +87,21 @@
     }
     .margincard{
       margin-top: 32px;
+    }
+    .margemlupa{
+      margin-left: -30px;
+      margin-top:15px;
+    }
+
+    .margemfarol{
+      margin-left:54px;
+      margin-top:20px;
+      font-size: 11px;
+      text-align: left;
+      color: #707070;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .margemfarolvertical{
+      margin-left: -22px;
+      margin-top: 20px;
     }

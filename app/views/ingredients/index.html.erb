@@ -14,7 +14,7 @@
       padding: 0.3rem 1.2rem;
     }
     a{
-      color: #707070;
+      color: #33D89E;
       font-family: 'Montserrat', sans-serif;
       font-size: 14px;
       font-weight: bold;
@@ -57,8 +57,8 @@
     <div class="dropdown">
         <%= image_tag "ordenar.svg" %> Ordenar  ▾
         <div class="dropdown-content sort">
-        <a class="dropdown-item" href="#"> <%= link_to 'Pelos mais limpos', ingredients_path(order: 'cleanesti') %></a>
-        <a class="dropdown-item" href="#"> <%= link_to 'Pelos mais preocupantes', ingredients_path(order: 'dirtiest') %></a>
+        <a class="dropdown-item fontfilter" href="#"> <%= link_to 'Pelos mais limpos', ingredients_path(order: 'cleanesti') %></a>
+        <a class="dropdown-item fontfilter" href="#"> <%= link_to 'Pelos mais preocupantes', ingredients_path(order: 'dirtiest') %></a>
       </div>
     </div>
 
@@ -66,12 +66,10 @@
         <%= image_tag "filtrar.svg" %> Filtrar  ▾
         <div class="dropdown-content index">
             <%= simple_form_for :search, method: "GET" do |f| %>
-             <p class="fontfilter">Potencial dano que pode causar</p>
+             <p class="fontfilter">Dano potencial</p>
               <%= f.input :type, label:"", required: false, collection: $type, as: :check_boxes, class:"greencheck" %>
-              <p class="fontfilter">Importante para veganos </p>
+              <p class="fontfilter">Outros</p>
               <%= f.input :vegan, label:"", required: false,  collection: $vegan, as: :check_boxes %>
-              <p class="fontfilter">Para restrições ao glúten </p>
-              <%= f.input :gluten, label:"", required: false,  collection: $gluten, as: :check_boxes %>
              <%= f.submit "Filtrar", class: "btn btn-filtrar d-flex justify-content-end" %>
           <% end %>
        </div>

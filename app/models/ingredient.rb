@@ -4,7 +4,6 @@ class Ingredient < ApplicationRecord
 
   acts_as_taggable_on :type
   acts_as_taggable_on :vegan
-  acts_as_taggable_on :gluten
 
 
   has_many :combinations, dependent: :destroy
@@ -19,15 +18,13 @@ class Ingredient < ApplicationRecord
       associated_against: {
       type: [:name],
       vegan: [:name],
-      gluten: [:name],
   },
       using: {
         tsearch: { prefix: true }
       }
 
     $type = ['Carcinogênico', 'Disruptor Endócrino', 'Tóxico para Reprodução e ou Feto', 'Irritante e ou Sensibilizante']
-    $vegan = ['Pode ser de origem animal ou vegetal']
-    $gluten = ['Pode conter glúten']
+    $vegan = ['Pode ser de origem animal ou vegetal', 'Pode conter glúten']
 
   def update_toxicity
     self.combinations.each do |combination|

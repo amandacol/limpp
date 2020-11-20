@@ -1,0 +1,63 @@
+<style>
+    .simple_form label{
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      margin-bottom: -10px;
+      margin-left: 10px;
+      color: #707070;
+    }
+
+    .btn {
+      border: 2px solid #8F89DD;
+      color: #8F89DD;
+      font-family: 'Montserrat', sans-serif;
+      background-color: white;
+      padding: 4px 10px;
+      border-radius: 15px;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .upload-btn-wrapper input[type=file] {
+      font-size: 100px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      opacity: 0;
+    }
+    .confirm{
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      margin-bottom: -10px;
+      margin-left: 10px;
+    }
+    .btn-envio{
+      color: white;
+      background-color: #8F89DD;
+      border-radius: 30px;
+      padding: 0.5rem 2rem;
+      font-weight: bold;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      box-shadow: 0px 2px 2px #33313261;
+    }
+</style>
+<div class="p-4">
+<%= simple_form_for @solicitacao_ingrediente do |f| %>
+        <%= f.input :email,
+                  required: true,
+                  label: "Confirme seu e-mail (campo obrigatório)",
+                  autofocus: true,
+                  input_html: { autocomplete: "email", class: 'rounded-pill' } %>
+        <%= f.input :ingrediente,
+                  required: true,
+                  label: "Nome do Ingrediente conforme está escrito na embalagem (campo obrigatório)",
+                  autofocus: true,
+                  input_html: { class: 'rounded-pill' } %>
+        <%= f.input :obs,
+                  label: "Gostaria de adicionar algum comentário?",
+                  autofocus: true,
+                  input_html: { class: 'rounded-pill' } %>
+        <%= f.button :submit, "Enviar", class:"btn btn-envio" %>
+      <% end %>
+</div>

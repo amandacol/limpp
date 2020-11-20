@@ -28,6 +28,7 @@ Rails.application.routes.draw do
   resources :wishlists, only: [:index]
   resources :requested_items
   resources :requested_ingredients
+  resources :solicitacao_ingredientes
   resources :produtos
   resources :ingredients
   resources :combination

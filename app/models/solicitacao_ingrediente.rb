@@ -1,0 +1,2 @@
+class SolicitacaoIngrediente < ApplicationRecord
+end

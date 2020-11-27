@@ -3,11 +3,11 @@
     background-color: white;
   }
 
-  .imagefirst{
+
+    .imagefirst{
       margin: auto;
       width: 50%;
     }
-
   .imglimpp img {
     width: 45%;
   }
@@ -61,7 +61,7 @@
       left: 4%;
     }
 
-    .welcome{
+      .welcome{
       font-size: 21px;
       text-align: center;
       font-weight: bold;
@@ -69,39 +69,125 @@
       font-family: 'Montserrat', sans-serif;
     }
 
+
     .margembusca{
-      margin-left:50px;
-      margin-top:20px;
+      margin-left:15px;
+      margin-top:15px;
       font-size: 11px;
       text-align: left;
       color: #707070;
       font-family: 'Montserrat', sans-serif;
     }
     .margemconheca{
-      margin-left:43px;
-      margin-top:20px;
+      margin-left:12px;
+      margin-top:15px;
       font-size: 11px;
       text-align: left;
       color: #707070;
       font-family: 'Montserrat', sans-serif;
+      width: 130px;
     }
     .margincard{
       margin-top: 32px;
     }
     .margemlupa{
-      margin-left: -30px;
-      margin-top:15px;
+      margin-left: 15px;
+      margin-top:5px;
     }
 
     .margemfarol{
-      margin-left:54px;
-      margin-top:20px;
+      margin-left:22px;
+      margin-top:29px;
       font-size: 11px;
       text-align: left;
       color: #707070;
       font-family: 'Montserrat', sans-serif;
     }
     .margemfarolvertical{
-      margin-left: -22px;
+      margin-left: 22px;
+      margin-top: 25px;
+    }
+
+    .cardfirst{
+      padding:15px;
+    }
+
+    .marginbuttons{
+      margin-top: 220px;
+    }
+    .margemavaliacao{
+      margin-left: 13px;
+      margin-top:11px;
+    }
+
+    .cardblock{
+      margin-top:10px;
+    }
+
+    @include media-breakpoint-up(md){
+      .marginbuttons{
+      margin-top: 115px;
+      }
+      .imagefirst{
+        margin: auto;
+        width: 15%;
+      }
+      .module {
+            background: white;
+            padding: 40px;
+            color: #707070;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 10px;
+      }
+      .subtitle{
+        font-size: 12px;
+        color: #707070;
+        font-family: 'Montserrat', sans-serif;
+        line-height: 16px;
+        width: 300px;
+        margin-left: 105px;
+      }
+      .backgroudfirst{
+      max-width: 800px;
+      position: relative;
+      background: linear-gradient(to bottom, #66D8A0, #8D8BDB);
+      border-radius: 8px;
+      padding: 10px;
+      top: 20%;
+      left: 4%;
+      }
+      .welcome{
+        font-size: 30px;
+        text-align: center;
+        font-weight: bold;
+        color: #333132;
+        font-family: 'Montserrat', sans-serif;
+      }
+      .margemlupa{
+      margin-left: -5px;
+      margin-top:5px;
+      }
+      .margemavaliacao{
+      margin-left: 8px;
+      margin-top:15px;
+      }
+      .margemfarolvertical{
+      margin-left: 29px;
       margin-top: 20px;
+    }
+      .cardblock{
+      margin-top:20px;
+     }
+     .margemfarol{
+      margin-left:15px;
+      margin-top:15px;
+      font-size: 11px;
+      text-align: left;
+      color: #707070;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .margemfarolvertical{
+      margin-left: 10px;
+      margin-top: 20px;
+    }
     }

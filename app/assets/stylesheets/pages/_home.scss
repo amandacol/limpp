@@ -124,6 +124,84 @@
       margin-top:10px;
     }
 
+    .positionfirstpage{
+      margin-right: 0px;
+      margin-top: 10px;
+    }
+    .positionpower{
+      margin-top: 25px;
+      margin-left: 15px;
+    }
+    .power{
+      color: #707070;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 16px;
+      margin-right: 22px;
+    }
+
+    .positionbeauty{
+      margin-top: 20px;
+    }
+
+    .sizeinsta{
+    width: 135px;
+    height: 135px;
+    margin-top: 30px;
+    margin-left: 10px;
+    }
+
+    .backgroundmailchimp{
+    background-image: linear-gradient(#66D8A0, #8D8BDB);
+    padding: 10px;
+    }
+
+    .paddingingredients{
+      padding: 5px;
+    }
+
+    .beauty{
+      color: white;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 22px;
+      font-weight: bold;
+      margin-right: 85px;
+      line-height: 27px;
+    }
+
+     .mailchimpindex{
+      color: white;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      font-weight: bold;
+      margin-top: 25px;
+    }
+
+    .mailchimpspam{
+      color: white;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      font-weight: bold;
+      margin-top: 25px;
+      width: 257px;
+      margin-left: 2px;
+    }
+
+    .merece{
+      color: #333132;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 17px;
+      font-weight: bold;
+      margin-right: 70px;
+      line-height: 27px;
+    }
+    .responsiblesize{
+        width: 100px;
+        height:100px;
+    }
+    .largedevise{
+      padding: 20px;
+    }
+
     @include media-breakpoint-up(md){
       .marginbuttons{
       margin-top: 115px;
@@ -189,5 +267,83 @@
     .margemfarolvertical{
       margin-left: 10px;
       margin-top: 20px;
+    }
+    .positionfirstpage{
+      margin-right: 600px;
+      margin-top: 30px;
+    }
+    .positionpower{
+      margin-top:-130px;
+      margin-left: 400px;
+      width: 400px;
+    }
+      .power{
+      color: #707070;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 16px;
+      margin-right: 45px;
+      width: 300px;
+    }
+    .positionbeauty{
+      margin-top: 70px;
+    }
+      .sizeinsta{
+      width: 155px;
+      height: 155px;
+      margin-top: 25px;
+      margin-left: 10px;
+    }
+    .paddingingredients{
+      padding: 0px;
+    }
+    .beauty{
+      color: white;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 22px;
+      font-weight: bold;
+      margin-right: 85px;
+      line-height: 27px;
+      width: 210px;
+      margin-left: -15px;
+    }
+
+     .mailchimpindex{
+      color: white;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      font-weight: bold;
+      margin-top: 25px;
+      width: 340px;
+      margin-left: -15px;
+    }
+    .mcnTextMail{
+      margin-left: 350px;
+    }
+    .mailchimpspam{
+      color: white;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      font-weight: bold;
+      margin-top: 25px;
+      width: 340px;
+      margin-left: 10px;
+    }
+        .merece{
+      color: #333132;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 17px;
+      font-weight: bold;
+      margin-left: 80px;
+      line-height: 27px;
+      width: 180px;
+      margin-top: 20px;
+    }
+    .responsiblesize{
+        width: 150px;
+        height:150px;
+        margin-left: 210px;
+    }
+    .largedevise{
+      padding: 90px;
     }
     }

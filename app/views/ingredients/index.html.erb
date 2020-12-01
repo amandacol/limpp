@@ -54,7 +54,7 @@
    <%= link_to "Eliminar filtros, ordenações e buscas", ingredients_path, class:"font ml-3"  %>
    <% end %>
 <div class="d-flex justify-content-between mt-2">
-    <div class="dropdown">
+    <div class="dropdown orderdesk">
         <%= image_tag "ordenar.svg" %> Ordenar  ▾
         <div class="dropdown-content sort">
         <a class="dropdown-item fontfilter" href="#"> <%= link_to 'Pelos mais limpos', ingredients_path(order: 'cleanesti') %></a>
@@ -62,7 +62,7 @@
       </div>
     </div>
 
-  <div class="dropdown mr-4">
+  <div class="dropdown filterdesk">
         <%= image_tag "filtrar.svg" %> Filtrar  ▾
         <div class="dropdown-content index">
             <%= simple_form_for :search, method: "GET" do |f| %>

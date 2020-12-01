@@ -202,6 +202,10 @@
       padding: 20px;
     }
 
+    .filterdesk{
+      margin-right: 15px;
+    }
+
     @include media-breakpoint-up(md){
       .marginbuttons{
       margin-top: 115px;
@@ -299,11 +303,11 @@
     .beauty{
       color: white;
       font-family: 'Montserrat', sans-serif;
-      font-size: 22px;
+      font-size: 25px;
       font-weight: bold;
       margin-right: 85px;
       line-height: 27px;
-      width: 210px;
+      width: 230px;
       margin-left: -15px;
     }
 
@@ -331,19 +335,34 @@
         .merece{
       color: #333132;
       font-family: 'Montserrat', sans-serif;
-      font-size: 17px;
+      font-size: 20px;
       font-weight: bold;
       margin-left: 80px;
       line-height: 27px;
-      width: 180px;
+      width: 220px;
       margin-top: 20px;
     }
     .responsiblesize{
         width: 150px;
         height:150px;
-        margin-left: 210px;
+        margin-left: 300px;
     }
     .largedevise{
       padding: 90px;
+    }
+    .marginsearch{
+      margin-top:30px;
+      width: 400px;
+      margin:auto;
+    }
+    .image{
+    width: 140px;
+    margin-bottom: 70px;
+    }
+    .orderdesk{
+      margin-left: 370px;
+    }
+    .filterdesk{
+      margin-right: 400px;
     }
     }

@@ -50,9 +50,6 @@
      </div>
     </div>
    </form>
-   <% if params[:query].present? || params[:order] || params[:search] %>
-   <%= link_to "Eliminar filtros, ordenações e buscas", ingredients_path, class:"font ml-3"  %>
-   <% end %>
 <div class="d-flex justify-content-between mt-2">
     <div class="dropdown orderdesk">
         <%= image_tag "ordenar.svg" %> Ordenar  ▾
@@ -74,6 +71,11 @@
           <% end %>
        </div>
       </div>
+</div>
+<div class="fonteliminate">
+   <% if params[:query].present? || params[:order] || params[:search] %>
+   <%= link_to "(X) Eliminar filtros, ordenações e buscas", ingredients_path, class:"font ml-3"  %>
+   <% end %>
 </div>
 <% if params[:query].present? || params[:order] || params[:search] %>
 <%= render 'cardindex' %>

@@ -208,6 +208,27 @@
       .fonteliminate{
       margin-top: 20px;
     }
+    .inlinemobile{
+      display: inline-block;
+    }
+
+      .lineaingredientdesk{
+      color: white;
+      font-size: 2px;
+      width:10px;
+  }
+  .risktext{
+    color: #707070;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    margin-left: 35px;
+  }
+  .risktextdesk{
+    color: #707070;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    margin-left: 35px;
+  }
 
     @include media-breakpoint-up(md){
       .marginbuttons{
@@ -276,7 +297,7 @@
       margin-top: 20px;
     }
     .positionfirstpage{
-      margin-right: 600px;
+      margin-right: 470px;
       margin-top: 30px;
     }
     .positionpower{
@@ -311,7 +332,7 @@
       font-weight: bold;
       margin-right: 85px;
       line-height: 27px;
-      width: 230px;
+      width: 265px;
       margin-left: -15px;
     }
 
@@ -364,14 +385,15 @@
     margin-bottom: 70px;
     }
     .orderdesk{
-      margin-left: 370px;
+      margin-left: 330px;
     }
     .filterdesk{
-      margin-right: 400px;
+      margin-right: 350px;
     }
     .inlinedesk{
       display: inline-block;
     }
+
     .riscoslegenda{
       vertical-align: top;
     }
@@ -401,7 +423,7 @@
   }
   .desktopposition{
     margin-left: 440px;
-    margin-top: -406px;
+    margin-top: -387px;
   }
       .fonteliminate{
       margin-top: 20px;
@@ -472,4 +494,130 @@
       margin-left: 5px;
       margin-bottom:3px !important;
     }
+    .inlinemobile{
+      display: flex;
+    }
+    .dotgreen {
+    height: 20px;
+    width: 20px;
+    background-color: #00B576;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 2px;
+    margin-top: 8px;
+  }
+  .dotred {
+    height: 20px;
+    width: 20px;
+    background-color: #D80303;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 2px;
+    margin-top: 8px;
+  }
+  .dotorange {
+    height: 20px;
+    width: 20px;
+    background-color: #F19A3E;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 2px;
+    margin-top: 8px;
+  }
+  .dotyellow {
+    height: 20px;
+    width: 20px;
+    background-color: #FFBA00;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 2px;
+    margin-top: 8px;
+  }
+  .dotgrey {
+    height: 20px;
+    width: 20px;
+    background-color: #8391B5;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 2px;
+    margin-top: 8px;
+  }
+  .ingredientnameshow{
+    color: #333132;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: -30px;
+  }
+  .inlinedeskrisk{
+    display: inline-block;
+    vertical-align: text-top;
+    margin-top: -10px;
+    margin-left: 10px;
+  }
+  .lineaingredientdesk{
+      color: #E2E2E2;
+      font-size: 12px;
+      font-weight: bold;
+      margin-left: 10px;
+  }
+  .risktext{
+    color: #707070;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    margin-left: 35px;
+    width:200px;
+  }
+  .risktextdesk{
+    color: #707070;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    margin-left: 52px;
+    width:200px;
+  }
+    .risktextobs{
+    color: #707070;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    margin-left: 35px;
+    width:900px;
+  }
+  .inlinedeskcriteria{
+    display: inline-block;
+    vertical-align: text-top;
+  }
+  .marginriskdesk{
+    margin-left: 17px;
+  }
+  .purposecontent{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    color: #707070;
+    margin-left: 42px;
+    width: 900px;
+  }
+  .backgrouddesk{
+    background-color: #F2F2F2;
+    padding: 25px;
+  }
+  .criterioscinza{
+    color: #707070;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    margin-left: 50px;
+    margin-bottom: -10px;
+    overflow-wrap: break-word;
+    width: 280px;
+  }
+  .criteriosorange{
+    color: #F19A3E;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+    margin-left: 50px;
+    width: 275px;
+  }
+  .margincriteriadesk{
+    margin-top: 20px;
+  }
   }

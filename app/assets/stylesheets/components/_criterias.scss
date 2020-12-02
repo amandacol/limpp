@@ -4,7 +4,7 @@
     background-color: #00B576;
     border-radius: 50%;
     display: inline-block;
-    margin-left: 15px;
+    margin-left: 8px;
     margin-top: 8px;
   }
   .dotred {
@@ -13,7 +13,7 @@
     background-color: #D80303;
     border-radius: 50%;
     display: inline-block;
-    margin-left: 15px;
+    margin-left: -13px;
     margin-top: 8px;
   }
   .dotorange {
@@ -22,7 +22,7 @@
     background-color: #F19A3E;
     border-radius: 50%;
     display: inline-block;
-    margin-left: 15px;
+    margin-left: 8px;
     margin-top: 8px;
   }
   .dotyellow {
@@ -40,7 +40,7 @@
     background-color: #8391B5;
     border-radius: 50%;
     display: inline-block;
-    margin-left: 15px;
+    margin-left: 8px;
     margin-top: 8px;
   }
  .dotgreen2 {
@@ -87,6 +87,51 @@
     display: inline-block;
     margin-top: -20px;
     margin-right: 10px;
+  }
+  .dotgreen4 {
+    height: 20px;
+    width: 20px;
+    background-color: #00B576;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 13px;
+    margin-top: 8px;
+  }
+  .dotred4 {
+    height: 20px;
+    width: 20px;
+    background-color: #D80303;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 13px;
+    margin-top: 8px;
+  }
+  .dotorange4 {
+    height: 20px;
+    width: 20px;
+    background-color: #F19A3E;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 13px;
+    margin-top: 8px;
+  }
+  .dotyellow4 {
+    height: 20px;
+    width: 20px;
+    background-color: #FFBA00;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 13px;
+    margin-top: 8px;
+  }
+  .dotgrey4 {
+    height: 20px;
+    width: 20px;
+    background-color: #8391B5;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 13px;
+    margin-top: 8px;
   }
     .bigdotgreen {
     height: 30px;
@@ -138,6 +183,7 @@
     font-size: 12px;
     font-weight: bold;
     padding: 0.2rem 0.6rem;
+    margin-top: 8px;
   }
   .potencialsim{
     background-color: #D80303;
@@ -149,6 +195,7 @@
     font-size: 12px;
     font-weight: bold;
     padding: 0.2rem 0.6rem;
+    margin-top: 8px;
   }
   .potencialnao2{
     background-color: #00B576;
@@ -187,9 +234,10 @@
     color: #00B576;
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
-    font-size: 13px;
+    font-size: 11px;
     margin-left: 16px;
     margin-top:10px;
+    width: 72px;
   }
   .criteriosyellow{
     color: #FFBA00;
@@ -203,10 +251,11 @@
     color: #FFBA00;
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
-    font-size: 13px;
+    font-size: 11px;
     margin-left: 16px;
     overflow-wrap: break-word;
     margin-top:10px;
+    width: 96px;
   }
   .criteriosred{
     color: #D80303;
@@ -220,10 +269,10 @@
     color: #D80303;
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
-    font-size: 13px;
+    font-size: 11px;
     margin-left: 16px;
     margin-top:8px;
-    width: 240px;
+    width: 100px;
   }
   .criteriosorange{
     color: #F19A3E;
@@ -237,10 +286,10 @@
     color: #F19A3E;
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
-    font-size: 13px;
+    font-size: 11px;
     margin-left: 16px;
     margin-top:8px;
-    width: 240px;
+    width: 100px;
   }
   .criteriosgrey{
     color: #8391B5;
@@ -254,7 +303,7 @@
     color: #8391B5;
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
-    font-size: 13px;
+    font-size: 11px;
     margin-left: 16px;
     margin-top:10px;
   }
@@ -268,6 +317,12 @@
   }
 
 .risktext{
+    color: #707070;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    margin-left: 35px;
+  }
+  .risktextobs{
     color: #707070;
     font-family: 'Montserrat', sans-serif;
     font-size: 10px;

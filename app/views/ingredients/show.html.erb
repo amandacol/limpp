@@ -1,67 +1,81 @@
 <div class="container-fluid">
  <div class="p-3 mr-5">
-    <h1 class="mt-5 mb-4 ingredientnameshow"><%= @ingredient.name %></h1>
-
-    <div class="d-flex">
-    <%= image_tag "saude.svg", class:"marginhealth mt-2" %>
-    <p class="marginriskhealth">Risco à saúde</p>
-    <% if @ingredient.risk_to_health == "yellow" %>
-        <span class="dotyellow"></span>
-        <% elsif @ingredient.risk_to_health == "red"  %>
-        <span class="dotred"></span>
-        <% elsif @ingredient.risk_to_health == "orange"  %>
-        <span class="dotorange"></span>
-        <% elsif @ingredient.risk_to_health == "grey"  %>
-        <span class="dotgrey"></span>
-        <% else %>
-        <span class="dotgreen"></span>
-        <% end %>
-    </div>
-    <% if !@ingredient.risk_to_health_text.to_s.empty? %>
-    <p class="risktext"><%= @ingredient.risk_to_health_text %></p>
-    <% end %>
-    <div class="d-flex">
-    <%= image_tag "ambiente.svg", class:"marginleaf" %>
-    <p class="marginrisk">Risco ao meio ambiente</p>
-    <% if @ingredient.risk_to_enviroment == "yellow" %>
-        <span class="dotyellow3"></span>
-        <% elsif @ingredient.risk_to_enviroment == "red"  %>
-        <span class="dotred3"></span>
-        <% elsif @ingredient.risk_to_enviroment == "orange"  %>
-        <span class="dotorange3"></span>
-        <% elsif @ingredient.risk_to_enviroment == "grey"  %>
-        <span class="dotgrey3"></span>
-        <% else %>
-        <span class="dotgreen3"></span>
-        <% end %>
-    </div>
-    <% if !@ingredient.risk_to_enviroment_text.to_s.empty? %>
-     <p class="risktext"><%= @ingredient.risk_to_enviroment_text %></p>
-    <% end %>
-    <div class="d-flex">
-    <%= image_tag "alergia.svg", class:"marginalergenic" %>
-    <p class="marginrisk">Potencial alergênico</p>
-    <% if @ingredient.allergenic == "sim" %>
-     <p class="potencialsim">SIM</p>
-    <% else %>
-     <p class="potencialnao">NÃO</p>
-    <% end %>
-    </div>
-<p class="text-left mt-2 risktext">Obs.: Ao existir um potencial alergênico não significa que você vá desenvolver uma alergia utilizando o produto. Mas sim, que são ingredientes que comumente oferecem maior probabilidade de irritação, sensibilização ou reação alérgica da pele. Mas lembre-se, seu médico é sempre a melhor pessoa para indicar ou contraindicar produtos.</p>
+  <div class="inlinedesk">
+    <h1 class="ingredientnameshow"><%= @ingredient.name %></h1>
+  </div>
+  <div class="inlinedeskrisk">
     <% if @ingredient.type.any? %>
     <p class="marginriskhealth">Dano potencial:</p>
     <% @ingredient.type.each do |r| %>
     <li><p  class="tagname"> <%= r.name %></p></li>
     <% end %>
     <% end %>
+    </div>
+    <div class="inlinedeskrisk">
     <% if @ingredient.vegan.any? %>
     <p class="marginriskhealth">Outro:</p>
     <% @ingredient.vegan.each do |s| %>
     <li><p  class="tagname"> <%= s.name %></p></li>
     <% end %>
     <% end %>
+    </div>
+
+    <p class="lineaingredientdesk">______________________________________________________________________________________________________________________________________________________________________________________</p>
+    <div class="inlinedeskcriteria">
+    <div class="d-flex">
+    <%= image_tag "saude.svg", class:"marginhealth" %>
+    <p class="marginriskhealth">Risco à saúde</p>
+    <% if @ingredient.risk_to_health == "yellow" %>
+        <span class="dotyellow4"></span>
+        <% elsif @ingredient.risk_to_health == "red"  %>
+        <span class="dotred4"></span>
+        <% elsif @ingredient.risk_to_health == "orange"  %>
+        <span class="dotorange4"></span>
+        <% elsif @ingredient.risk_to_health == "grey"  %>
+        <span class="dotgrey4"></span>
+        <% else %>
+        <span class="dotgreen4"></span>
+        <% end %>
+    </div>
+    <% if !@ingredient.risk_to_health_text.to_s.empty? %>
+    <p class="risktext"><%= @ingredient.risk_to_health_text %></p>
+    <% end %>
+    </div>
+    <div class="inlinedeskcriteria">
+    <div class="d-flex marginriskdesk">
+    <%= image_tag "ambiente.svg", class:"marginleaf" %>
+    <p class="marginriskingredient">Risco ao meio ambiente</p>
+    <% if @ingredient.risk_to_enviroment == "yellow" %>
+        <span class="dotyellow4"></span>
+        <% elsif @ingredient.risk_to_enviroment == "red"  %>
+        <span class="dotred4"></span>
+        <% elsif @ingredient.risk_to_enviroment == "orange"  %>
+        <span class="dotorange4"></span>
+        <% elsif @ingredient.risk_to_enviroment == "grey"  %>
+        <span class="dotgrey4"></span>
+        <% else %>
+        <span class="dotgreen4"></span>
+        <% end %>
+    </div>
+    <% if !@ingredient.risk_to_enviroment_text.to_s.empty? %>
+     <p class="risktextdesk"><%= @ingredient.risk_to_enviroment_text %></p>
+    <% end %>
+    </div>
+    <div class="inlinedeskcriteria">
+    <div class="d-flex marginriskdesk">
+    <%= image_tag "alergia.svg", class:"marginalergenic" %>
+    <p class="marginriskingredient">Potencial alergênico</p>
+    <% if @ingredient.allergenic == "sim" %>
+     <p class="potencialsim">SIM</p>
+    <% else %>
+     <p class="potencialnao">NÃO</p>
+    <% end %>
+    </div>
+    </div>
+<p class="text-left mt-2 risktextobs">Obs.: Ao existir um potencial alergênico não significa que você vá desenvolver uma alergia utilizando o produto. Mas sim, que são ingredientes que comumente oferecem maior probabilidade de irritação, sensibilização ou reação alérgica da pele. Mas lembre-se, seu médico é sempre a melhor pessoa para indicar ou contraindicar produtos.</p>
     <p class="lineaingredient">_____________________________________________________</p>
-        <div class="d-flex">
+
+      <div class="d-flex">
     <%= image_tag "purpose.svg", class:"purposesize" %>
     <p class="marginfunction">Funções do ingrediente</p>
     </div>
@@ -91,7 +105,7 @@
      <%= image_tag "restrictions.svg", class:"marginrestriction" %>
       <p class="marginrisk">Restrições</p>
      </div>
-      <p class="risktext"><%= @ingredient.restrictions %></p>
+      <p class="purposecontent"><%= @ingredient.restrictions %></p>
     <p class="lineaingredient">_____________________________________________________</p>
     <% end %>
 
@@ -106,22 +120,35 @@
       </ul>
       <% end %>
     <% end %>
-  <div class="d-flex mt-5"><p class="fonttitle">Critérios de avaliação</p><%= image_tag "limppsemslogan.svg" , class:"sizesemlogan" %> </div>
+    <div class="backgrouddesk mt-5">
+  <div class="d-flex"><p class="fonttitle">Critérios de avaliação</p><%= image_tag "limppsemslogan.svg" , class:"sizesemlogan" %> </div>
+  <div class="inlinedeskcriteria">
   <span class="bigdotgreen"></span>
     <p class="criterios"> Seguro em cosméticos </p>
     <p class="criterioscinza mr-5"> É seguro em cosméticos sem restrições de uso ou quantidade, e sem causar impactos à saúde e/ou ao meio ambiente.</p>
+  </div>
+  <div class="inlinedeskcriteria">
 <span class="bigdotyellow"></span>
     <p class="criteriosyellow"> Seguro em cosméticos, com restrições  </p>
     <p class="criterioscinza mr-5"> É seguro em cosméticos com restrições de quantidade e/ou uso, segundo evidências científicas. E podem causar impactos à saúde e/ou ao meio ambiente se forem utilizadas em finalidades distintas as aprovadas ou em quantidade acima das permitidas.</p>
+  </div>
+  <div class="inlinedeskcriteria">
 <span class="bigdotorange"></span>
     <p class="criteriosorange"> Classificados como seguros, mas ainda em avaliação </p>
     <p class="criterioscinza mr-5"> São considerados seguros em cosméticos por órgãos especializados, porém, estão com estudos ainda em avaliação de danos mais graves.</p>
+  </div>
+  <div class="margincriteriadesk">
+  <div class="inlinedeskcriteria">
 <span class="bigdotred"></span>
     <p class="criteriosred"> Comprovadamente associados a danos graves </p>
     <p class="criterioscinza mr-5"> Já existe comprovação científica conclusiva que podem causar impactos graves à saúde e/ou ao meio ambiente.</p>
+  </div>
+  <div class="inlinedeskcriteria">
 <span class="bigdotgrey"></span>
     <p class="criteriosgrey"> Potencial inconclusivo   </p>
     <p class="criterioscinza mr-5"> Estudos não permitem nenhuma conclusão por estarem em andamento ou obterem dados divergentes sobre sua segurança a saúde e/ou impactos ao meio ambiente.</p>
+  </div>
+  </div>
 </div>
     </div>
 </div>

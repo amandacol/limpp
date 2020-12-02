@@ -3,6 +3,8 @@
     font-family: 'Montserrat', sans-serif;
     font-size: 18px;
     font-weight: bold;
+    margin-bottom:30px;
+    margin-top: 20px;
   }
   .function{
     color: #707070;
@@ -25,6 +27,15 @@
     font-size: 12px;
     font-weight: bold;
     margin-top: 5px;
+    margin-bottom: 5px;
+  }
+    .marginriskingredient{
+    margin-left: 15px;
+    color: #707070;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 10px;
     margin-bottom: 5px;
   }
 
@@ -68,11 +79,11 @@
   }
 
   .marginleaf{
-    margin-bottom: 2px;
+    margin-bottom: -7px;
   }
 
   .marginalergenic{
-    margin-bottom: 15px;
+    margin-bottom: 8px;
   }
 
   .lineaingredient{
@@ -118,7 +129,7 @@
   }
 
   .margemlegenda{
-    margin-bottom: 7px;
+    margin-bottom: 45px;
     margin-left: 10px;
   }
 
@@ -128,9 +139,8 @@
     font-family: 'Montserrat', sans-serif;
     font-size: 12px;
     font-weight: bold;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    width:84px;
+    margin-bottom: 1px;
+    width:60px;
   }
 
   .tagname{

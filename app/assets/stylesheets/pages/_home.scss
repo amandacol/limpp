@@ -205,6 +205,9 @@
     .filterdesk{
       margin-right: 15px;
     }
+      .fonteliminate{
+      margin-top: 20px;
+    }
 
     @include media-breakpoint-up(md){
       .marginbuttons{
@@ -299,6 +302,7 @@
     }
     .paddingingredients{
       padding: 0px;
+      max-width: 1040px !important;
     }
     .beauty{
       color: white;
@@ -365,4 +369,107 @@
     .filterdesk{
       margin-right: 400px;
     }
+    .inlinedesk{
+      display: inline-block;
     }
+    .riscoslegenda{
+      vertical-align: top;
+    }
+    .marginlegend{
+    margin-left: 7px;
+    color: #707070;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    width: 85px;
+  }
+  .margemlegenda{
+    margin-top: 15px;
+    margin-left: 10px;
+  }
+  .colorlegenda{
+    margin-left: 40px;
+    }
+    .backgroundrules{
+    margin-top: 10px;
+    background-color: #F2F2F2;
+    border-radius: 10px;
+    padding: 10px;
+    width: 435px;
+  }
+  .desktopposition{
+    margin-left: 440px;
+    margin-top: -406px;
+  }
+      .fonteliminate{
+      margin-top: 20px;
+    }
+    .criterioslegenda{
+    color: #00B576;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+    margin-left: 16px;
+    margin-top:10px;
+  }
+  .criterioslegenda{
+    color: #00B576;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+    margin-left: 16px;
+    margin-top:10px;
+    width: 75px;
+  }
+  .criterioslegendayellow{
+    color: #FFBA00;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+    margin-left: 16px;
+    overflow-wrap: break-word;
+    margin-top:10px;
+    width: 97px;
+  }
+  .criterioslegendaorange{
+    color: #F19A3E;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+    margin-left: 16px;
+    margin-top:8px;
+    width: 190px;
+  }
+  .criterioslegendared{
+    color: #D80303;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+    margin-left: 16px;
+    margin-top:8px;
+    width: 97px;
+  }
+  .criterioslegendagrey{
+    color: #8391B5;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+    margin-left: 16px;
+    margin-top:10px;
+    width: 75px;
+  }
+  .sizecarddesk {
+    width: 17rem !important;
+  }
+   .fontingredientindex{
+      color: #707070;
+      font-size: 13px;
+      font-family: 'Montserrat', sans-serif;
+      height: 60px;
+      width:140px;
+      margin-left: 5px;
+      margin-bottom:3px !important;
+    }
+  }

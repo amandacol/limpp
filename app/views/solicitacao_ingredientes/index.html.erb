@@ -4,6 +4,11 @@
     font-weight: bold;
     font-family: 'Montserrat', sans-serif;
     }
+     h5{
+    color: #333132;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    }
   .evaluation{
     color: #707070;
     font-family: 'Montserrat', sans-serif;
@@ -22,8 +27,8 @@
 </style>
 <div class="container-fluid mt-4">
   <div class="d-flex justify-content-center"><%= image_tag "ingredientred.svg", class:"sizeingredientimage" %></div>
-    <h5 class="text-center mt-5">Não encontrou um ingrediente e gostaria que ele fosse avaliado?</h5>
-    <p class="text-center mt-5 evaluation">Para sugerir a avaliação, clique no botão abaixo e nos envie as informações necessárias.</p>
+    <h5 class="text-center mt-5 sizenewingredient">Não encontrou um ingrediente e gostaria que ele fosse avaliado?</h5>
+    <p class="text-center mt-5 evaluation">Para sugerir a avaliação, clique no botão abaixo e nos envie as informações necessárias de ingredientes de produtos de higiene pessoal e cosmética.</p>
     <div class="d-flex justify-content-center">
     <% if policy(SolicitacaoIngrediente).create? %>
         <%= link_to "Sugerir avaliação", new_solicitacao_ingrediente_path, class: "btn btn-avaliacao mt-4"%>

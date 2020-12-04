@@ -42,22 +42,22 @@
       box-shadow: 0px 2px 2px #33313261;
     }
 </style>
-<div class="p-4">
+<div class="p-4 d-flex justify-content-center">
 <%= simple_form_for @solicitacao_ingrediente do |f| %>
         <%= f.input :email,
                   required: true,
-                  label: "Confirme seu e-mail (campo obrigatório)",
+                  label: "Seu e-mail (campo obrigatório)",
                   autofocus: true,
-                  input_html: { autocomplete: "email", class: 'rounded-pill' } %>
+                  input_html: { autocomplete: "email", class: 'rounded-pill sizeformdesk' } %>
         <%= f.input :ingrediente,
                   required: true,
-                  label: "Nome do Ingrediente conforme está escrito na embalagem (campo obrigatório)",
+                  label: "Nome do Ingrediente conforme escrito na embalagem (campo obrigatório)",
                   autofocus: true,
-                  input_html: { class: 'rounded-pill' } %>
+                  input_html: { class: 'rounded-pill sizeformdesk' } %>
         <%= f.input :obs,
                   label: "Gostaria de adicionar algum comentário?",
                   autofocus: true,
-                  input_html: { class: 'rounded-pill' } %>
+                  input_html: { class: 'rounded-pill sizeformdesk' } %>
         <%= f.button :submit, "Enviar", class:"btn btn-envio" %>
       <% end %>
 </div>

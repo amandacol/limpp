@@ -423,7 +423,7 @@
   }
   .desktopposition{
     margin-left: 440px;
-    margin-top: -387px;
+    margin-top: -405px;
   }
       .fonteliminate{
       margin-top: 20px;
@@ -604,20 +604,105 @@
     color: #707070;
     font-family: 'Montserrat', sans-serif;
     font-size: 12px;
-    margin-left: 50px;
+    margin-left: 35px;
     margin-bottom: -10px;
     overflow-wrap: break-word;
-    width: 280px;
+    width: 210px;
   }
   .criteriosorange{
     color: #F19A3E;
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
     font-size: 13px;
-    margin-left: 50px;
-    width: 275px;
+    margin-left: 40px;
+    width: 250px;
+  }
+  .criteriosred{
+    color: #D80303;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+    margin-left: 40px;
+    width: 250px;
+  }
+  .criteriosyellow{
+    color: #FFBA00;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+    margin-left: 40px;
+    overflow-wrap: break-word;
+    width: 200px;
   }
   .margincriteriadesk{
     margin-top: 20px;
+  }
+  .sizeformdesk{
+    width:550px;
+  }
+  .sizenewingredient{
+    width: 350px;
+    margin: auto;
+  }
+  .sizetextresponsible{
+    width: 550px;
+  }
+   .evaluation{
+      font-size: 14px;
+      font-family: 'Montserrat', sans-serif;
+      color: #333132 !important;
+      width: 500px;
+      margin: auto;
+    }
+    .sizedeskresponsible{
+      width: 320px;
+      text-align: left !important;
+    }
+    .marginresponsibledeskt{
+      margin-left: 50px;
+    }
+    .marginresponsibleall{
+      margin-left: 70px !important;
+    }
+     .fonttitledesk{
+      margin-top: 40px;
+    }
+    .textobs{
+       color: #707070;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    }
+    .leaf{
+    margin-bottom: 6px;
+    margin-left: 20px;
+  }
+  .alergenic{
+    margin-bottom: 6px;
+    margin-left: 20px;
+  }
+  .sizecriteria{
+    width: 155px;
+    text-align: left !important;
+  }
+  .sizecriteriatext{
+    width: 570px;
+    text-align: left !important;
+    margin-left: 15px;
+    margin-top:20px;
+  }
+  .sizecriteriatext2{
+    width: 570px;
+    text-align: left !important;
+    margin-left: -4px;
+    margin-top:20px;
+  }
+  .provenarticle{
+    color: #333132;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    margin-left: 10px;
+    margin-top: 5px;
+    width: 140px;
   }
   }

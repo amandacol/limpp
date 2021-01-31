@@ -1,46 +1,111 @@
-<div class="container-fluid mt-2">
-  <style>
-    body {
-      height: 100vh;
-      margin: 0;
-      display: grid;
-      background: white;
-    }
-    .btn-tologin{
-      color: white;
-      background-color: #8F89DD;
-      border-radius: 30px;
-      padding: 0.4rem 1.5rem;
-      font-weight: bold;
+<style>
+  .show{
+      min-width: 270px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      padding: 12px 16px;
       font-family: 'Montserrat', sans-serif;
-      font-size: 13px;
-      box-shadow: 0px 2px 2px #33313261;
+      font-size: 14px;
     }
-     .btn-inicio{
+    .btn-filtrar{
+      background-color: #67D89E;
       color: white;
-      background-color: #33D89E;
       border-radius: 30px;
-      padding: 0.4rem 1.5rem;
       font-weight: bold;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 13px;
-      box-shadow: 0px 2px 2px #33313261;
+      padding: 0.3rem 1.2rem;
     }
-    .card{
-      width: 170px;
+    a{
+      color: #33D89E;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      font-weight: bold;
+      line-height: 30px;
+    }
+    a:hover{
+      color: #333132;
+      text-decoration: underline;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      font-weight: bold;
+    }
+    .form-control{
       border: none !important;
     }
+       .btn-assinar{
+      color: #33D89E;
+      background-color: white;
+      border-radius: 30px;
+      padding: 0.3rem 2rem;
+      font-weight: bold;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      margin-right: 10px;
+    }
+    #mc_embed_signup form{
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px !important;
+    }
+    #mc_embed_signup form{
+      padding: 0px !important ;
+    }
+    #mc_embed_signup .indicates-required{
+      text-align: left !important;
+      margin-right: 0px !important;
+      margin-top: 4px;
+    }
+    #mc_embed_signup input {
+      border-radius: 20px !important;
+      margin: 6px !important;
+    }
+    .btn-knowlimpp{
+      color: white;
+      background-color: #333132;
+      border-radius: 30px;
+      padding: 7px;
+      font-weight: bold;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      margin-left: 20px;
+      line-height: 15px !important;
+      width: 150px;
+      height: 40px;
+      margin-top: 22px;
+      margin-right:3px;
+      padding-top: 10px;
+    }
+    .instabutton{
+      color: white;
+      background-color: #67D89E;
+      border-radius: 30px;
+      padding: 0.1rem 1.0rem;
+      font-weight: bold;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      width: 130px;
+      height: 40px;
+    }
+    .btn-busca{
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    background-image: linear-gradient(#66D8A0, #8D8BDB);
+    border-radius: 30px;
+    color: white;
+    }
 
+</style>
+<div class="container-fluid mt-2">
+  <div class="container paddingingredients">
+  <div class="d-flex justify-content-center">
+    <%= image_tag "logolimpp.svg", class:'image' %>
+  </div>
+ <div class="d-flex justify-content-center">
+   <%= link_to ingredients_path do %>
+   <p class="btn-busca mb-1">Buscar pelas substâncias</p>
+   <% end %>
+   </div>
 
-  </style>
- <div class="row justify-content-center mr-2">
-    <div class="backgroudfirst"><div class="module">
-      <%= image_tag "logolimpp.svg", class:'imagefirst d-flex justify-content-center' %>
-      <h5 class="welcome mt-5">Bem vinde à limpp!</h5>
-      <p class="mt-4 subtitle mr-1">Tudo sobre os ingredientes que você consome em higiene e beleza, de um jeito descomplicado.</p>
-
-
-          <div class="cardblock">
+    <div class="cardblock  d-flex justify-content-center mt-5">
           <div style="float: left; width: 170px;" class="d-flex">
           <%= image_tag "lupaverde.svg", class:"margemlupa"%>
           <p class="text-wrap text-left margembusca">Busque pelo nome do ingrediente</p>
@@ -55,23 +120,74 @@
           <%= image_tag "farolvertical.svg", class:"margemfarolvertical"%>
           <figcaption class="text-left margemfarol"> Conheça a avaliação dos ingredientes</figcaption>
           </div>
-          </div>
-
-
-    <div class="marginbuttons d-flex justify-content-center">
-      <%= link_to new_user_session_path, class:"btn btn-tologin" do %>
-            <figure class="d-flex align-items-center spacefirst">
-               <%= image_tag "userwhite.svg" %><figcaption class="ml-2 mt-1 spacefirst">Login</figcaption>
-             </figure>
-      <% end %>
-      <%= link_to ingredients_path, class:"btn btn-inicio ml-3" do %>
-            <figure class="d-flex align-items-center spacefirst">
-               <%= image_tag "house.svg" %><figcaption class="ml-2 mt-1 spacefirst">Início</figcaption>
-             </figure>
-      <% end %>
-    </div>
     </div>
 
+    <div class="d-flex justify-content-center positionfirstpage">
+  <%= image_tag "postinsta.jpg", class:"sizeinsta" %>
+</div>
+<div class="col-sm-6 col-md-6 col-lg-12 col-xl-12">
+  <div class="positionpower">
+  <div class="d-flex justify-content-center">
+  <p class="power">Use seu poder de consumo com consciência. </p>
+</div>
+<div class="d-flex justify-content-center">
+  <p class="followinsta mt-1">Siga nosso Instagram também: </p>
+  <span class="instabutton mr-2 mb-2"><a href="https://www.instagram.com/limpp.com.vc/"><span style="color: white;">limpp.com.vc</span></a></span>
+</div>
+</div>
+<div class="backgroundmailchimp d-flex justify-content-center positionbeauty">
+  <div class="mt-2 ml-2">
+  <p class="beauty">A primeira newsletter de beleza limpa do Brasil </p>
+  <p class="mailchimpindex">Assine gratuitamente para receber todo mês um compilado de notícias, pesquisas e novidades do mercado de beleza consciente e limpa. </p>
+  <div class="mcnTextMail" style="padding-top: 0;padding-right: 9px;padding-bottom: 9px;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;word-break: break-word;flex-flow: column;color: #FFFFFF;font-family: Montserrat;font-size: 24px;line-height: 150%;text-align: left;box-sizing: border-box !important;">
+  <!-- Begin Mailchimp Signup Form -->
+<link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+  #mc_embed_signup{ clear:left; font:14px Montserrat,sans-serif; }
+  /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+     We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+</style>
+<div id="mc_embed_signup">
+<form action="https://gmail.us4.list-manage.com/subscribe/post?u=4d684a9643ae094a14dffe904&amp;id=dc1568c6a1" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+    <div id="mc_embed_signup_scroll">
+<div class="mc-field-group">
+  <label for="mce-EMAIL"></label>
+  <input type="email" value="" name="EMAIL" class="required email" placeholder="nome@email.com" id="mce-EMAIL">
+</div>
+  <div id="mce-responses" class="clear">
+    <div class="response" id="mce-error-response" style="display:none"></div>
+    <div class="response" id="mce-success-response" style="display:none"></div>
+  </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_4d684a9643ae094a14dffe904_dc1568c6a1" tabindex="-1" value=""></div>
+    <div class="d-flex">
+    <div class="indicates-required"><span class="asterisk">*</span> e-mail obrigatório para inscrição</div>
+    <div class="clear mb-2"><input type="submit" value="Assinar" name="subscribe" id="mc-embedded-subscribe" class="btn btn-assinar"></div>
+    </div>
+    <div class="mt-4">
+    <p class="mailchimpspam">Enviamos uma mensagem de boas vindas, não esqueça de checar seu spam :) </p>
+    </div>
+    </div>
+</form>
+</div>
+<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+<!--End mc_embed_signup-->
   </div>
- </div>
+</div>
+</div>
+<div class="p-4">
+<p class="merece">Você merece saber o que consome em seus cosméticos e produtos de higiene. </p>
+<div class="d-flex">
+  <%= image_tag "responsability.svg", class:"responsiblesize" %>
+  <%=    link_to 'Conheça a limpp', responsible_path, class: "btn btn-knowlimpp" %>
+</div>
+<p class="gradientlinea mt-3">.</p>
+<div class="d-flex justify-content-between mb-4">
+<%= image_tag "limppsemslogan.svg" , class:"sizenosloganindex" %>
+<p class="mt-2 ml-2">limpp.com.vc@gmail.com</p>
+</div>
+</div>
+</div>
+</div>
+
+</div>
 </div>

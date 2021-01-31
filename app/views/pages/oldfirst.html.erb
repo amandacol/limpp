@@ -1,0 +1,77 @@
+<div class="container-fluid mt-2">
+  <style>
+    body {
+      height: 100vh;
+      margin: 0;
+      display: grid;
+      background: white;
+    }
+    .btn-tologin{
+      color: white;
+      background-color: #8F89DD;
+      border-radius: 30px;
+      padding: 0.4rem 1.5rem;
+      font-weight: bold;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      box-shadow: 0px 2px 2px #33313261;
+    }
+     .btn-inicio{
+      color: white;
+      background-color: #33D89E;
+      border-radius: 30px;
+      padding: 0.4rem 1.5rem;
+      font-weight: bold;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      box-shadow: 0px 2px 2px #33313261;
+    }
+    .card{
+      width: 170px;
+      border: none !important;
+    }
+
+
+  </style>
+ <div class="row justify-content-center mr-2">
+    <div class="backgroudfirst"><div class="module">
+      <%= image_tag "logolimpp.svg", class:'imagefirst d-flex justify-content-center' %>
+      <h5 class="welcome mt-5">Bem vinde à limpp!</h5>
+      <p class="mt-4 subtitle mr-1">Tudo sobre os ingredientes que você consome em higiene e beleza, de um jeito descomplicado.</p>
+
+
+          <div class="cardblock">
+          <div style="float: left; width: 170px;" class="d-flex">
+          <%= image_tag "lupaverde.svg", class:"margemlupa"%>
+          <p class="text-wrap text-left margembusca">Busque pelo nome do ingrediente</p>
+          </div>
+
+          <div style="float: left; width: 170px;" class="d-flex">
+          <%= image_tag "avaliação.svg" , class:"margemavaliacao" %>
+          <figcaption class="text-left margemconheca"> Sugira ingredientes para avaliação</figcaption>
+          </div>
+
+          <div style="float: left; width: 170px;" class="d-flex">
+          <%= image_tag "farolvertical.svg", class:"margemfarolvertical"%>
+          <figcaption class="text-left margemfarol"> Conheça a avaliação dos ingredientes</figcaption>
+          </div>
+          </div>
+
+
+    <div class="marginbuttons d-flex justify-content-center">
+      <%= link_to new_user_session_path, class:"btn btn-tologin" do %>
+            <figure class="d-flex align-items-center spacefirst">
+               <%= image_tag "userwhite.svg" %><figcaption class="ml-2 mt-1 spacefirst">Login</figcaption>
+             </figure>
+      <% end %>
+      <%= link_to ingredients_path, class:"btn btn-inicio ml-3" do %>
+            <figure class="d-flex align-items-center spacefirst">
+               <%= image_tag "house.svg" %><figcaption class="ml-2 mt-1 spacefirst">Início</figcaption>
+             </figure>
+      <% end %>
+    </div>
+    </div>
+
+  </div>
+ </div>
+</div>

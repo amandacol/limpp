@@ -397,6 +397,7 @@
     .riscoslegenda{
       vertical-align: top;
     }
+
     .marginlegend{
     margin-left: 7px;
     color: #707070;
@@ -406,6 +407,7 @@
     margin-top: 15px;
     margin-bottom: 5px;
     width: 85px;
+    line-height: 1.2;
   }
   .margemlegenda{
     margin-top: 15px;
@@ -441,46 +443,51 @@
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
     font-size: 13px;
-    margin-left: 16px;
+    margin-left: 7px;
     margin-top:10px;
     width: 75px;
+    line-height: 1.2;
   }
   .criterioslegendayellow{
     color: #FFBA00;
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
     font-size: 13px;
-    margin-left: 16px;
+    margin-left: 7px;
     overflow-wrap: break-word;
     margin-top:10px;
     width: 97px;
+    line-height: 1.2;
   }
   .criterioslegendaorange{
     color: #F19A3E;
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
     font-size: 13px;
-    margin-left: 16px;
+    margin-left: 7px;
     margin-top:8px;
     width: 190px;
+    line-height: 1.2;
   }
   .criterioslegendared{
     color: #D80303;
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
     font-size: 13px;
-    margin-left: 16px;
+    margin-left: 7px;
     margin-top:8px;
     width: 97px;
+    line-height: 1.2;
   }
   .criterioslegendagrey{
     color: #8391B5;
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
     font-size: 13px;
-    margin-left: 16px;
+    margin-left: 7px;
     margin-top:10px;
     width: 75px;
+    line-height: 1.2;
   }
   .sizecarddesk {
     width: 17rem !important;

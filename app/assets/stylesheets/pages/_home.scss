@@ -77,15 +77,16 @@
       text-align: left;
       color: #707070;
       font-family: 'Montserrat', sans-serif;
+      width: 105px;
     }
     .margemconheca{
       margin-left:12px;
-      margin-top:15px;
+      margin-top:14px;
       font-size: 11px;
       text-align: left;
       color: #707070;
       font-family: 'Montserrat', sans-serif;
-      width: 130px;
+      width: 109px;
     }
     .margincard{
       margin-top: 32px;
@@ -96,16 +97,18 @@
     }
 
     .margemfarol{
-      margin-left:22px;
-      margin-top:29px;
+      margin-left:14px;
+      margin-top:17px;
       font-size: 11px;
       text-align: left;
       color: #707070;
       font-family: 'Montserrat', sans-serif;
+      width: 120px;
     }
     .margemfarolvertical{
-      margin-left: 22px;
-      margin-top: 25px;
+      margin-left: 15px;
+      margin-top: 4px;
+      width: 50px;
     }
 
     .cardfirst{
@@ -117,7 +120,7 @@
     }
     .margemavaliacao{
       margin-left: 13px;
-      margin-top:11px;
+      margin-top:5px;
     }
 
     .cardblock{
@@ -144,8 +147,8 @@
     }
 
     .sizeinsta{
-    width: 135px;
-    height: 135px;
+    width: 175px;
+    height: 175px;
     margin-top: 30px;
     margin-left: 10px;
     }
@@ -277,30 +280,42 @@
         font-family: 'Montserrat', sans-serif;
       }
       .margemlupa{
-      margin-left: -5px;
+      margin-left: 30px;
       margin-top:5px;
+      width: 45px;
       }
       .margemavaliacao{
-      margin-left: 8px;
-      margin-top:15px;
+      margin-left: 40px;
+      margin-top:1px;
+      width: 50px;
       }
-      .margemfarolvertical{
-      margin-left: 29px;
-      margin-top: 20px;
+    .margemfarolvertical{
+      margin-left: 30px;
+      margin-top: 4px;
+      width: 80px;
+    }
+    .margemconheca{
+      margin-left:40px;
+      margin-top:23px;
+      font-size: 11px;
+      text-align: left;
+      color: #707070;
+      font-family: 'Montserrat', sans-serif;
+      width: 130px;
     }
       .cardblock{
       margin-top:20px;
      }
      .margemfarol{
-      margin-left:15px;
-      margin-top:15px;
+      margin-left:45px;
+      margin-top:18px;
       font-size: 11px;
       text-align: left;
       color: #707070;
       font-family: 'Montserrat', sans-serif;
     }
     .margemfarolvertical{
-      margin-left: 10px;
+      margin-left: 45px;
       margin-top: 20px;
     }
     .positionfirstpage{
@@ -315,18 +330,23 @@
       .power{
       color: #707070;
       font-family: 'Montserrat', sans-serif;
-      font-size: 16px;
-      margin-right: 45px;
+      font-size: 20px;
+      margin-left: 35px;
       width: 300px;
+      margin-top: -30px;
+    }
+    .followinsta{
+      margin-right: -45px;
+      width: 190px;
     }
     .positionbeauty{
       margin-top: 70px;
     }
       .sizeinsta{
-      width: 155px;
-      height: 155px;
+      width: 220px;
+      height: 220px;
       margin-top: 25px;
-      margin-left: 10px;
+      margin-left: 80px;
     }
     .paddingingredients{
       padding: 0px;
@@ -367,17 +387,20 @@
         .merece{
       color: #333132;
       font-family: 'Montserrat', sans-serif;
-      font-size: 20px;
+      font-size: 22px;
       font-weight: bold;
-      margin-left: 80px;
+      margin-left: 150px;
       line-height: 27px;
-      width: 220px;
+      width: 230px;
       margin-top: 20px;
     }
     .responsiblesize{
-        width: 150px;
-        height:150px;
-        margin-left: 300px;
+        width: 170px;
+        height:170px;
+        margin-left: 330px;
+        margin-right: 50px;
+        margin-top: -20px;
+        margin-bottom: 20px;
     }
     .largedevise{
       padding: 90px;
@@ -389,7 +412,7 @@
     }
     .image{
     width: 140px;
-    margin-bottom: 70px;
+    margin-bottom: 30px;
     }
     .orderdesk{
       margin-left: 330px;

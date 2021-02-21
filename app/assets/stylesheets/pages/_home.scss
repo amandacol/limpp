@@ -231,6 +231,12 @@
   }
 
     @include media-breakpoint-up(md){
+      .marginrighfacebook{
+        margin-right: 40px;
+      }
+      .paddingfirst{
+        padding: 90px;
+      }
       .marginbuttons{
       margin-top: 115px;
       }

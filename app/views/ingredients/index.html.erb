@@ -34,7 +34,9 @@
 <div class="container-fluid mt-2">
   <div class="container paddingingredients">
   <div class="d-flex justify-content-center">
+    <%= link_to root_path do %>
     <%= image_tag "logolimpp.svg", class:'image' %>
+    <% end %>
   </div>
   <form>
     <div class="d-flex justify-content-center marginsearch">
@@ -72,11 +74,7 @@
        </div>
       </div>
 </div>
-<div class="fonteliminate">
-   <% if params[:query].present? || params[:order] || params[:search] %>
-   <%= link_to "(X) Eliminar filtros, ordenações e buscas", ingredients_path, class:"font ml-3"  %>
-   <% end %>
-</div>
+
 <% if params[:query].present? || params[:order] || params[:search] %>
 <%= render 'cardindex' %>
 <% end %>

@@ -1,5 +1,10 @@
 <div class="container-fluid">
  <div class="p-3 mr-5">
+  <div class="d-flex justify-content-left">
+    <%= link_to root_path do %>
+    <%= image_tag "logolimpp.svg", class:'imageingredient' %>
+    <% end %>
+  </div>
   <div class="inlinedesk">
     <h1 class="ingredientnameshow"><%= @ingredient.name %></h1>
   </div>
@@ -23,7 +28,7 @@
     <p class="lineaingredientdesk">______________________________________________________________________________________________________________________________________________________________________________________</p>
     <div class="inlinedeskcriteria">
     <div class="d-flex">
-    <%= image_tag "saude.svg", class:"marginhealth" %>
+    <%= image_tag "saude.svg", class:"marginhealth marginhealthdesk" %>
     <p class="marginriskhealth">Risco à saúde</p>
     <% if @ingredient.risk_to_health == "yellow" %>
         <span class="dotyellow4"></span>
@@ -43,7 +48,7 @@
     </div>
     <div class="inlinedeskcriteria">
     <div class="d-flex marginriskdesk">
-    <%= image_tag "ambiente.svg", class:"marginleaf" %>
+    <%= image_tag "ambiente.svg", class:"marginleaf marginleafdesk" %>
     <p class="marginriskingredient">Risco ao meio ambiente</p>
     <% if @ingredient.risk_to_enviroment == "yellow" %>
         <span class="dotyellow4"></span>
@@ -63,7 +68,7 @@
     </div>
     <div class="inlinedeskcriteria">
     <div class="d-flex marginriskdesk">
-    <%= image_tag "alergia.svg", class:"marginalergenic" %>
+    <%= image_tag "alergia.svg", class:"marginalergenic marginalergenicdesk" %>
     <p class="marginriskingredient">Potencial alergênico</p>
     <% if @ingredient.allergenic == "sim" %>
      <p class="potencialsim">SIM</p>

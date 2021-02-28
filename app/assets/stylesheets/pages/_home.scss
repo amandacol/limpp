@@ -3,6 +3,10 @@
     background-color: white;
   }
 
+    .imageingredient{
+    width: 100px;
+    margin-bottom: 30px;
+    }
 
     .imagefirst{
       margin: auto;
@@ -238,8 +242,8 @@
         margin-right: 40px;
       }
       .paddingfirst{
-        margin-top: -150px;
-        padding: 142px;
+        margin-top: -250px;
+        padding: 250px;
       }
       .marginbuttons{
       margin-top: 115px;
@@ -352,14 +356,20 @@
       padding: 0px;
       max-width: 1040px !important;
     }
+
+     .backgroundmailchimp{
+    background-image: linear-gradient(#66D8A0, #8D8BDB);
+    padding: 30px;
+    }
+
     .beauty{
       color: white;
       font-family: 'Montserrat', sans-serif;
-      font-size: 25px;
+      font-size: 35px;
       font-weight: bold;
       margin-right: 85px;
-      line-height: 27px;
-      width: 265px;
+      line-height: 36px;
+      width: 330px;
       margin-left: -15px;
     }
 
@@ -413,6 +423,11 @@
     .image{
     width: 140px;
     margin-bottom: 30px;
+    }
+
+    .imageingredient{
+    width: 140px;
+    margin-bottom: 50px;
     }
     .orderdesk{
       margin-left: 330px;
@@ -474,6 +489,22 @@
       .fonteliminate{
       margin-top: 20px;
     }
+
+    .criterios{
+    color: #00B576;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+    margin-left: 55px;
+  }
+
+    .criteriosgrey{
+    color: #8391B5;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+    margin-left: 55px;
+  }
     .criterioslegenda{
     color: #00B576;
     font-family: 'Montserrat', sans-serif;
@@ -545,6 +576,8 @@
       margin-left: 5px;
       margin-bottom:3px !important;
     }
+
+
     .inlinemobile{
       display: flex;
     }
@@ -593,6 +626,79 @@
     margin-left: 2px;
     margin-top: 8px;
   }
+
+  .dotgreen4 {
+    height: 30px;
+    width: 30px;
+    background-color: #00B576;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 13px;
+    margin-top: 8px;
+  }
+
+  .dotred4 {
+    height: 30px;
+    width: 30px;
+    background-color: #D80303;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 13px;
+    margin-top: 8px;
+  }
+  .dotorange4 {
+    height: 30px;
+    width: 30px;
+    background-color: #F19A3E;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 13px;
+    margin-top: 8px;
+  }
+  .dotyellow4 {
+    height: 30px;
+    width: 30px;
+    background-color: #FFBA00;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 13px;
+    margin-top: 8px;
+  }
+  .dotgrey4 {
+    height: 30px;
+    width: 30px;
+    background-color: #8391B5;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 13px;
+    margin-top: 8px;
+  }
+
+   .potencialnao{
+    background-color: #00B576;
+    border-radius: 30px;
+    display: inline-block;
+    margin-left: 15px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 0.5rem 0.9rem;
+    margin-top: 8px;
+  }
+
+  .potencialsim{
+    background-color: #D80303;
+    border-radius: 30px;
+    display: inline-block;
+    margin-left: 15px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 0.5rem 0.9rem;
+    margin-top: 8px;
+  }
   .ingredientnameshow{
     color: #333132;
     font-family: 'Montserrat', sans-serif;
@@ -612,12 +718,26 @@
       font-weight: bold;
       margin-left: 10px;
   }
+
+  .marginalergenic{
+    margin-bottom: 21px;
+  }
+
+  .marginleafdesk{
+    margin-bottom: -2px;
+  }
+
+  .marginhealthdesk{
+    margin-bottom: 0px;
+  }
+
   .risktext{
     color: #707070;
     font-family: 'Montserrat', sans-serif;
     font-size: 10px;
     margin-left: 35px;
     width:200px;
+    margin-top: 10px;
   }
   .risktextdesk{
     color: #707070;
@@ -625,6 +745,8 @@
     font-size: 10px;
     margin-left: 52px;
     width:200px;
+    margin-top: 10px;
+
   }
     .risktextobs{
     color: #707070;
@@ -655,7 +777,7 @@
     color: #707070;
     font-family: 'Montserrat', sans-serif;
     font-size: 12px;
-    margin-left: 35px;
+    margin-left: 65px;
     margin-bottom: -10px;
     overflow-wrap: break-word;
     width: 210px;
@@ -665,7 +787,7 @@
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
     font-size: 13px;
-    margin-left: 40px;
+    margin-left: 55px;
     width: 250px;
   }
   .criteriosred{
@@ -673,7 +795,7 @@
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
     font-size: 13px;
-    margin-left: 40px;
+    margin-left: 55px;
     width: 250px;
   }
   .criteriosyellow{
@@ -681,7 +803,7 @@
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
     font-size: 13px;
-    margin-left: 40px;
+    margin-left: 55px;
     overflow-wrap: break-word;
     width: 200px;
   }
@@ -756,4 +878,53 @@
     margin-top: 5px;
     width: 140px;
   }
+
+  .bigdotorange{
+    height: 25px;
+    width: 25px;
+    background-color: #F19A3E;
+    border-radius: 50%;
+    display: inline-block;
+    margin-bottom: -35px;
+    margin-left: 12px;
+  }
+
+    .bigdotgreen {
+    height: 25px;
+    width: 25px;
+    background-color: #00B576;
+    border-radius: 50%;
+    display: inline-block;
+    margin-bottom: -35px;
+    margin-left: 12px;
+  }
+  .bigdotyellow{
+    height: 25px;
+    width: 25px;
+    background-color: #FFBA00;
+    border-radius: 50%;
+    display: inline-block;
+    margin-bottom: -35px;
+    margin-left: 12px;
+  }
+  .bigdotred{
+    height: 25px;
+    width: 25px;
+    background-color: #D80303;
+    border-radius: 50%;
+    display: inline-block;
+    margin-bottom: -35px;
+    margin-left: 12px;
+  }
+
+  .bigdotgrey{
+    height: 25px;
+    width: 25px;
+    background-color: #8391B5;
+    border-radius: 50%;
+    display: inline-block;
+    margin-bottom: -35px;
+    margin-left: 12px;
+  }
+
   }

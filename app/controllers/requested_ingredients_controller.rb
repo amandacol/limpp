@@ -1,4 +1,5 @@
 class RequestedIngredientsController < ApplicationController
+  skip_before_action :authenticate_user!
   before_action :set_requested_ingredient, only: [:show, :edit, :update, :destroy]
   def new
     @requested_ingredient = RequestedIngredient.new

@@ -1,10 +1,10 @@
-  <div class="d-flex justify-content-end">
-
+ <div class="d-flex justify-content-end">
+  <% if user_signed_in? %>
   <div class="dropdown mr-4 mt-1">
   <%= image_tag "menunavbar.svg" %>
   <div class="dropdown-content">
     <figure class="d-flex align-items-center mt-3">
-      <%= image_tag "usuario.svg", class:'userlog' %>
+      <%= image_tag "usuario.svg", class:'userlog' %><figcaption class="ml-2 mt-1"> <%= current_user.email %></figcaption>
     </figure>
     <li>
       <%= link_to root_path, class:"dropdown-item fontnav" do %>
@@ -34,7 +34,14 @@
       </figure>
       <% end %>
       <p class="line"></p>
+      <%= link_to destroy_user_session_path, method: :delete, class:"dropdown-item fontnav" do %>
+      <figure class="d-flex align-items-center mt-3">
+        <%= image_tag "logout.png" %><figcaption class="ml-2 mt-1"> Log out</figcaption>
+      </figure>
+      <% end %>
+      <p class="line"></p>
     </li>
   </div>
   </div>
+  <% end %>
   </div>

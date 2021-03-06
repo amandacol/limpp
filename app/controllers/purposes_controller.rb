@@ -1,4 +1,5 @@
 class PurposesController < ApplicationController
+  skip_before_action :authenticate_user!
   before_action :set_purpose, only: [:show, :edit, :update, :destroy]
   def new
     @purpose = Purpose.new

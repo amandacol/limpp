@@ -1,4 +1,5 @@
 class IngredientsController < ApplicationController
+skip_before_action :authenticate_user!
 before_action :set_ingredient, only: [:show, :edit, :update, :destroy]
   def new
     @ingredient = Ingredient.new

@@ -28,6 +28,12 @@
         margin-bottom: 1px;
     }
 
+    .textobs{
+    color: #707070;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    }
+
     .margemsugestao{
       margin-left: 0px;
       margin-top: 8px;
@@ -298,10 +304,21 @@
       margin-top: 4px;
       width: 80px;
     }
+
+    .margembusca{
+      margin-left:15px;
+      margin-top:15px;
+      font-size: 13px;
+      text-align: left;
+      color: #707070;
+      font-family: 'Montserrat', sans-serif;
+      width: 126px;
+    }
+
     .margemconheca{
       margin-left:40px;
       margin-top:23px;
-      font-size: 11px;
+      font-size: 13px;
       text-align: left;
       color: #707070;
       font-family: 'Montserrat', sans-serif;
@@ -313,10 +330,11 @@
      .margemfarol{
       margin-left:45px;
       margin-top:18px;
-      font-size: 11px;
+      font-size: 13px;
       text-align: left;
       color: #707070;
       font-family: 'Montserrat', sans-serif;
+      width: 148px;
     }
     .margemfarolvertical{
       margin-left: 45px;
@@ -376,7 +394,7 @@
      .mailchimpindex{
       color: white;
       font-family: 'Montserrat', sans-serif;
-      font-size: 12px;
+      font-size: 14px;
       font-weight: bold;
       margin-top: 25px;
       width: 340px;
@@ -388,7 +406,7 @@
     .mailchimpspam{
       color: white;
       font-family: 'Montserrat', sans-serif;
-      font-size: 12px;
+      font-size: 14px;
       font-weight: bold;
       margin-top: 25px;
       width: 340px;
@@ -734,7 +752,7 @@
   .risktext{
     color: #707070;
     font-family: 'Montserrat', sans-serif;
-    font-size: 10px;
+    font-size: 12px;
     margin-left: 35px;
     width:200px;
     margin-top: 10px;
@@ -742,7 +760,7 @@
   .risktextdesk{
     color: #707070;
     font-family: 'Montserrat', sans-serif;
-    font-size: 10px;
+    font-size: 12px;
     margin-left: 52px;
     width:200px;
     margin-top: 10px;
@@ -764,7 +782,7 @@
   }
   .purposecontent{
     font-family: 'Montserrat', sans-serif;
-    font-size: 10px;
+    font-size: 12px;
     color: #707070;
     margin-left: 42px;
     width: 900px;
@@ -836,12 +854,13 @@
     }
     .marginresponsibleall{
       margin-left: 70px !important;
+      padding: 50px !important;
     }
      .fonttitledesk{
       margin-top: 40px;
     }
     .textobs{
-       color: #707070;
+    color: #707070;
     font-family: 'Montserrat', sans-serif;
     font-size: 10px;
     }
@@ -856,6 +875,7 @@
   .sizecriteria{
     width: 155px;
     text-align: left !important;
+    margin-left: 79px;
   }
   .sizecriteriatext{
     width: 570px;
@@ -869,6 +889,12 @@
     margin-left: -4px;
     margin-top:20px;
   }
+
+    .articleresponsible{
+    width: 25px;
+    height: 25px;
+    margin-left: 77px;
+  }
   .provenarticle{
     color: #333132;
     font-family: 'Montserrat', sans-serif;
@@ -877,6 +903,16 @@
     margin-left: 10px;
     margin-top: 5px;
     width: 140px;
+  }
+
+  .articlename{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+  }
+
+  .responsabilitydesk{
+    width: 200px;
+    height: 200px;
   }
 
   .bigdotorange{

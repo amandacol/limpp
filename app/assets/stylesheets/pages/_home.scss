@@ -148,7 +148,7 @@
     .power{
       color: #707070;
       font-family: 'Montserrat', sans-serif;
-      font-size: 16px;
+      font-size: 21px;
       margin-right: 22px;
     }
 
@@ -157,8 +157,8 @@
     }
 
     .sizeinsta{
-    width: 190px;
-    height: 190px;
+    width: 300px;
+    height: 300px;
     margin-top: 20px;
     margin-left: 10px;
     }
@@ -353,7 +353,7 @@
       color: #707070;
       font-family: 'Montserrat', sans-serif;
       font-size: 20px;
-      margin-left: 35px;
+      margin-left: 91px;
       width: 300px;
       margin-top: -30px;
     }
@@ -361,14 +361,16 @@
       margin-right: -45px;
       width: 190px;
     }
+
+
     .positionbeauty{
-      margin-top: 70px;
+      margin-top: 100px;
     }
       .sizeinsta{
-      width: 220px;
-      height: 220px;
+      width: 350px;
+      height: 350px;
       margin-top: 25px;
-      margin-left: 80px;
+      margin-left: 120px;
     }
     .paddingingredients{
       padding: 0px;
@@ -513,15 +515,17 @@
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
     font-size: 13px;
-    margin-left: 55px;
-  }
+    margin-left: 64px;
+    margin-top: 8px !important;
+    }
 
     .criteriosgrey{
     color: #8391B5;
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
     font-size: 13px;
-    margin-left: 55px;
+    margin-left: 64px;
+    margin-top: 8px !important;
   }
     .criterioslegenda{
     color: #00B576;
@@ -772,6 +776,7 @@
     font-size: 10px;
     margin-left: 35px;
     width:900px;
+    margin-top: 30px !important;
   }
   .inlinedeskcriteria{
     display: inline-block;
@@ -800,12 +805,16 @@
     overflow-wrap: break-word;
     width: 210px;
   }
+
+  .oneline{
+    margin-top: 27px !important;
+  }
   .criteriosorange{
     color: #F19A3E;
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
     font-size: 13px;
-    margin-left: 55px;
+    margin-left: 64px;
     width: 250px;
   }
   .criteriosred{
@@ -813,7 +822,7 @@
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
     font-size: 13px;
-    margin-left: 55px;
+    margin-left: 64px;
     width: 250px;
   }
   .criteriosyellow{
@@ -821,7 +830,7 @@
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
     font-size: 13px;
-    margin-left: 55px;
+    margin-left: 64px;
     overflow-wrap: break-word;
     width: 200px;
   }
@@ -966,5 +975,19 @@
   .deskimage{
     margin-top: -45px;
   }
+
+      .instabutton{
+      color: white;
+      background-color: #67D89E;
+      border-radius: 30px;
+      padding: 0.1rem 1.0rem;
+      font-weight: bold;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      width: 130px;
+      height: 36px;
+      margin-left: -60px !important;
+      margin-top: 50px !important;
+    }
 
   }

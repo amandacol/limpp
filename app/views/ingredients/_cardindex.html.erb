@@ -63,6 +63,8 @@ a:hover{
 </div>
 </div>
 
+
+
 <div class="row justify-content-center desktopposition">
   <div class="column d-flex flex-wrap">
      <% @ingredients.each do |ingredient| %>
@@ -124,6 +126,8 @@ a:hover{
         </div>
      </div>
      <% end %>
-
+<% if params[:query].present? && @ingredient.nil? %>
+<%=    link_to 'Caso não encontre o ingrediente desejado, você pode solicitar para nós clicando aqui.', solicitacao_ingredientes_path, class: "notfound" %>
+<% end %>
   </div>
 </div>

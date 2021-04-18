@@ -243,6 +243,14 @@
     margin-left: 35px;
   }
 
+  .notfound{
+    color: #707070;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    margin-top: 15px;
+    margin-left: 14px;
+  }
+
     @include media-breakpoint-up(md){
       .marginrighfacebook{
         margin-right: 40px;
